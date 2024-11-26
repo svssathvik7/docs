@@ -5,6 +5,11 @@ id: sdk
 import DocCardList from '@theme/DocCardList';
 
 # SDK
+
+:::warning
+Heads up! We're currently working on a new version of our Garden SDK alongside revamped documentation. Stay tuned—fresh documentation is coming soon!
+:::
+
 The **Garden SDK** is a set of typescript packages that allow you to bridge Bitcoin to EVM-based chains. It is an abstraction over the Garden APIs, allowing developers to integrate Garden components into their dApps easily.
 
 Want to know how everything works internally? Check out [Core Concepts](./CoreConcepts.md).
