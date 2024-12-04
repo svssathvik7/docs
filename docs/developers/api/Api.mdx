@@ -1,0 +1,56 @@
+---
+id: api
+---
+
+import ApiHeader from "./ApiHeader.tsx";
+
+# Garden API
+
+Welcome to the Garden Finance API documentation. This guide will walk you through the integration flow and provide details on the available API endpoints.
+
+The Garden API is designed to facilitate seamless interaction with our DEX, supporting atomic swaps between Bitcoin and EVM-compatible chains.
+
+## Integration Flow Summary
+
+Here’s a high-level overview of the integration flow:
+
+1. **Authenticate**
+    - Use the `/nonce` and `/auth` endpoints to establish a secure session for the user.
+2. **Request Quote**
+    - Call `/quote` to retrieve price details for a specific trading pair.
+    - Obtain an attested quote using `/attested-quote` to prepare for order creation.
+3. **Create Order**
+    - Submit the attested quote to `/create-order` to execute the swap on-chain.
+    - Retrieve an `orderId` for tracking the transaction.
+4. **Track Order**
+    - Use `/get-order` with the `orderId` to monitor the status and progress of the transaction.
+
+Each step is covered in respective sessions.
+
+# User Actions
+
+Swapping assets across chains typically requires user interaction at two key stages:  
+
+1. **Initiating the Swap**: The user must sign the transaction and approve the swap on the source chain.  
+2. **Redeeming the Swap**: The user needs to redeem the assets on the destination chain.  
+
+To simplify this process and reduce the complexity for developers, we provide a **Relayer Service**.  
+
+### Relayer Service  
+The Relayer Service abstracts user actions, automating the initiation and redemption steps. This eliminates the need for manual intervention, making the swap process seamless for end users.  
+
+#### How to Use the Relayer Service  
+
+- **Initiate the Swap**  
+  Call the `/initiate` endpoint to start the swap on the source chain.  
+
+- **Redeem the Swap**  
+  Use the `/redeem` endpoint to finalize the swap on the destination chain.  
+
+With these endpoints, you can offload the complexities of user interactions to the Relayer Service, ensuring a smoother developer and user experience.
+
+## Next Steps
+
+- Use this flow to integrate Garden Finance’s API into your application.  
+- For advanced workflows, refer to the [Cookbook](cookbook.md).  
+- If you encounter any issues, don’t hesitate to [contact support](support.md).
