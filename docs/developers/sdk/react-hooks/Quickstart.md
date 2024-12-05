@@ -73,14 +73,29 @@ if (secretManager.ok && secretManager.val.getMasterPrivKey()) {
     sendAmount: sendAmount.toString(),
     receiveAmount: quoteAmount.toString(),
     additionalData: { btcAddress, strategyId: _strategy },
-  });
+  }); //creates order and initiates the tx if source chain is EVM
+
 }
 ```
 
+#### Bitcoin as source chain
+
+```tsx
+import {isBitcoin} from "@gardenfi/orderbook"
+
+if (isBitcoin(res.val.source_swap.chain)) {
+      const bitcoinAddress = res.val.source_swap.swap_id;
+        //user needs to fund the bitcoinAddress
+      }
+```
+
+Once the user funds the generated Bitcoin address, our backend will detect the transaction and automatically complete the swap.
+
 :::note  
 Heads-up: The client needs to active (user needs to stay on app) during the process. If they leave, the transaction will pause and resume when they’re back.  
-And that’s it! 🎉 Now, wait for the transaction to complete.  
 :::  
+
+And that’s it! 🎉 Now, wait for the transaction to complete.  
 
 ### Common Questions
 
@@ -88,7 +103,12 @@ And that’s it! 🎉 Now, wait for the transaction to complete.
 It simplifies the complexity of atomic swaps. By generating and managing secrets/secret hashes via a MasterKey, the `GardenProvider` takes care of everything securely, using `localStorage` to store and retrieve secrets.  
 
 #### What if `swapAndInitiate` fails?  
-No worries! This happens occasionally on testnets (fund issues, gas, etc.). Use the `evmInitiate` fallback to re-initiate the swap.  
+No worries! Occasionally initiating on EVM testnets (fund issues, gas, etc.). 
+Use the `evmInitiate` from `useGarden` hook to re-initiate the swap. 
+ 
+```ts
+evmInitiate?: (order: MatchedOrder) => AsyncResult<MatchedOrder, string>;
+```
 
 #### How can I check order status?  
 You can use the `orderBook` from `useGarden` to fetch order details:  

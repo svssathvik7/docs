@@ -11,29 +11,61 @@ import InstallAlert from "./\_install-alert.mdx";
 <InstallAlert/>
 
 To install the `Garden SDK`, You can use the following options:
-<Tabs>
-<TabItem value="npm" label="npm" default>
+<Tabs>  
 
-```shell
-npm install @catalogfi/wallets @gardenfi/orderbook @gardenfi/core
-```
+<TabItem value="npm" label="npm">  
 
-</TabItem>
-<TabItem value="yarn" label="yarn">
-```shell
-yarn add @catalogfi/wallets @gardenfi/orderbook @gardenfi/core
-```
-</TabItem>
-<TabItem value="pnpm" label="pnpm">
-```shell
-pnpm add @catalogfi/wallets @gardenfi/orderbook @gardenfi/core
-```
-</TabItem>
-<TabItem value="bun" label="bun">
-```shell
-bun add @catalogfi/wallets @gardenfi/orderbook @gardenfi/core
-```
-</TabItem>
-</Tabs>
+```bash
+npm install @gardenfi/core @gardenfi/utils
+```  
 
-If you are using ethers alongside the Garden SDK, we recommend using `ethers@6.8.0` for compatibility.
+</TabItem>  
+
+<TabItem value="yarn" label="yarn">  
+
+```bash
+yarn add @gardenfi/core @gardenfi/utils
+```  
+
+</TabItem>  
+
+<TabItem value="pnpm" label="pnpm">  
+
+```bash
+pnpm add @gardenfi/core @gardenfi/utils
+```  
+
+</TabItem>  
+
+</Tabs>  
+
+#### Additional Dependencies
+
+To install additional dependencies, you can use the following options:
+<Tabs>  
+
+<TabItem value="npm" label="npm">  
+
+```bash
+npm install viem @catalogfi/wallets
+```  
+
+</TabItem>  
+
+<TabItem value="yarn" label="yarn">  
+
+```bash
+yarn add viem @catalogfi/wallets
+```  
+
+</TabItem>  
+
+<TabItem value="pnpm" label="pnpm">  
+
+```bash
+pnpm add viem @catalogfi/wallets
+```  
+
+</TabItem>  
+
+</Tabs>  
