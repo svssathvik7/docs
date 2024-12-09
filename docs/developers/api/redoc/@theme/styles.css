@@ -6,10 +6,17 @@
 .docItemCol_VOVn{
     width: 100%;
 }
+*::selection{
+    background-color: var(--ifm-color-primary);
+    color: white!important;
+}
 .beDZfq *{
     color: var(--ifm-font-color-base)!important;
 }
-.sc-iRVXky *, .fbQvpV >ul >li.react-tabs__tab--selected, .sc-hSyjfr, .sc-hSyjfr > *{
+.drdvPg, .bvhSud{
+    border-radius: 1rem;
+}
+.sc-iRVXky *, .fbQvpV >ul >li.react-tabs__tab--selected, .sc-hSyjfr, .sc-hSyjfr > *, .gMCIcp{
     color: #333!important;
 }
 .zvQzH, .iqHzp, .eqWzJe, .kKXAng{
