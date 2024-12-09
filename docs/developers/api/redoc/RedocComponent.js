@@ -11,7 +11,7 @@ const RedocComponent = ({ specUrl }) => (
             main: '#3498db',
           },
           text: {
-            primary: '#333',
+            primary: '#fff',
             secondary: '#555',
           },
         },
