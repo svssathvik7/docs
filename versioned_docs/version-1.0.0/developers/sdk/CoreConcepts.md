@@ -18,7 +18,7 @@ When you place an order, as previously explained, it gets matched by a Filler. I
 
 ![order matching system](../images/order_matching.png)
 
-## Order Execution
+## Settlement
 
 :::note
 This section assumes you have basic knowledge of how atomic swaps work. If you are new to atomic swaps, we recommend you read [this](https://www.catalog.fi/blog/atomic-swaps) blog post.

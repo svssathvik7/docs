@@ -8,7 +8,7 @@ The `useGarden` hook is a comprehensive, pre-packaged React hook that simplifies
 
 ---
 
-## Properties and Methods
+## Properties and methods
 
 | **Property/Method**       | **Description**                                                                                                                                               | **Type**                                                                 |
 |----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|

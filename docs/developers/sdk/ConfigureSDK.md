@@ -6,7 +6,7 @@ id: configure-sdk
 
 To use the Garden SDK, you’ll need to set up wallets, API clients, and initialize the core components. Follow the steps below:  
 
-### 1. Initialize Dependencies  
+### 1. Initialize dependencies  
 
 Set up your Ethereum and Bitcoin wallets, along with the necessary API clients.  
 
@@ -43,7 +43,7 @@ const bitcoinProvider = new BitcoinProvider(
 
 ---
 
-### 2. Set Up Wallets and Secret Manager  
+### 2. Set up wallets and secret manager  
 
 Use the **SecretManager** to securely manage secrets for your Bitcoin wallet.  
 
@@ -62,7 +62,7 @@ const btcWallet = BitcoinWallet.fromPrivateKey(
 
 ---
 
-### 3. Configure Garden Core  
+### 3. Configure Garden core  
 
 Initialize the **Garden** instance with the required components.  
 

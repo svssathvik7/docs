@@ -27,7 +27,7 @@ We use these terms in the next sections to refer to the participants in the Orde
 
 - **Orderpair:** The assets to be exchanged (e.g., BTC for WBTC).
 - **Amounts:** The quantity of each asset involved in the trade (e.g., 0.1 BTC and 0.097 WBTC).
-- **Fee:** The amount the maker is willing to pay for order execution.
+- **Fee:** The amount the maker is willing to pay for Settlement.
 - **Additional Parameters:** Refer to the dedicated [API](../../orderbook-api/OrderbookAPI.md#create-order) section for details on other configurable options.
 
 Once submitted, the Orderbook engine broadcasts the OrderRequest to all **Fillers**. Fillers can then evaluate the offer based on their matching strategies. An order will only be matched if a Filler identifies it as a profitable opportunity.

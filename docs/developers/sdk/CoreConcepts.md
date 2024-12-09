@@ -2,7 +2,7 @@
 id: core-concepts
 ---
 
-# Core Concepts
+# Core concepts
 
 Bringing Bitcoin to EVM-based chains or vice versa is not a simple process. To accomplish this, Garden utilizes an atomic swap contract. If Alice, a trader, wants to swap her Bitcoin for an asset on an EVM-based chain or Ethereum itself, she needs a way to communicate with Garden that she wants to swap Bitcoin. This is where Garden comes into play; Garden uses an Orderbook engine to create orders that are matched by actors known as Fillers. Alice can now use the Garden to place an order to swap her Bitcoin for WBTC on Ethereum. We'll cover more details on how this swapping works below.
 
@@ -12,19 +12,19 @@ Bringing Bitcoin to EVM-based chains or vice versa is not a simple process. To a
 
 An order is a request to swap assets between two chains. It is created by a trader and matched by a Filler. The order is executed using a concept called [Atomic Swaps](https://www.catalog.fi/blog/atomic-swaps).
 
-## Order Matching
+## Order matching
 
 When you place an order, as previously explained, it gets matched by a Filler. In simple terms, a Filler is the counterparty in the trade. Fillers play a role as liquidity providers within the Garden ecosystem and are incentivized to match and fulfill orders.
 
 ![order matching system](../images/order_matching.png)
 
-## Order Execution
+## Settlement
 
 :::note
 This section assumes you have basic knowledge of how atomic swaps work. If you are new to atomic swaps, we recommend you read [this](https://www.catalog.fi/blog/atomic-swaps) blog post.
 :::
 
-Garden uses an **Atomic Swap smart contract to execute the swap on EVM-based chains**. In the case of Bitcoin, it generates a **Hash Time Locked Contract (HTLC)** on demand to execute the swap.
+Garden uses an **Atomic swap smart contract to execute the swap on EVM-based chains**. In the case of Bitcoin, it generates a **Hash Time Locked Contract (HTLC)** on demand to execute the swap.
 
 ### Initiating
 

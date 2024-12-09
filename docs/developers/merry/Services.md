@@ -2,7 +2,7 @@
 id: merry-services
 ---
 
-# Supported Services
+# Supported services
 
 Merry supports following services:
 

@@ -25,9 +25,9 @@ import { useGarden } from '@gardenfi/react-hooks';
 const { swapAndInitiate, getQuote, initializeSecretManager } = useGarden();
 ```
 
-## How to Use  
+## How to use  
 
-### 1. Fetch a Quote  
+### 1. Fetch a quote  
 
 Fetch the quote details using the `getQuote` function:  
 
@@ -41,7 +41,7 @@ const quote = await getQuote({
 const [_strategy, quoteAmount] = Object.entries(quote.val.quotes)[0];
 ```
 
-### 2. Initialize the Secret Manager  
+### 2. Initialize the secret manager  
 
 Ensure that the Secret Manager is ready for managing the atomic swap secrets:  
 
@@ -53,7 +53,7 @@ if (!secretManager.ok || !secretManager.val.getMasterPrivKey()) {
 }
 ```
 
-### 3. Execute the Swap  
+### 3. Execute the swap  
 
 Use the `swapAndInitiate` function to create and execute the swap:  
 
@@ -84,5 +84,5 @@ The user must remain online during the swap process. If they leave, the transact
 
 ## Tips  
 
-- **Error Handling**: Always validate responses and handle errors gracefully to ensure a smooth user experience.  
-- **React Hooks**: If you're using our **React hooks**, this process is already streamlined for you. Just call `swapAndInitiate` with the necessary parameters and let it handle the rest. 
+- **Error handling**: Always validate responses and handle errors gracefully to ensure a smooth user experience.  
+- **React hooks**: If you're using our **React hooks**, this process is already streamlined for you. Just call `swapAndInitiate` with the necessary parameters and let it handle the rest. 

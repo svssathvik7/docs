@@ -5,12 +5,12 @@ id: sdk
 import DocCardList from '@theme/DocCardList';
 
 # Garden SDK
-The **Garden SDK** is a set of typescript packages that allow you to bridge Bitcoin to EVM-based chains. It is an abstraction over the Garden APIs, allowing developers to integrate Garden components into their dApps easily.
+The **Garden SDK** is a set of typescript packages that allow you to bridge Bitcoin to EVM or non-EVM chains. It is an abstraction over the Garden APIs, allowing developers to integrate Garden components into their dApps easily.
 
 Want to know how everything works internally? Check out [Core Concepts](./CoreConcepts.md).
 
 ## Features
-- **Cross-chain Swaps**: Swap assets between Bitcoin and EVM-based chains.
+- **Cross-chain swaps**: Swap assets between Bitcoin and EVM or non EVM chains.
 - **OTAs**: Create one-time Bitcoin accounts using your Web3 providers, giving you access to all Bitcoin wallet features.
 ### Integrating Garden SDK v2
 
@@ -18,9 +18,9 @@ Integrating Garden SDK v2 into your dApp should feel as smooth as planting seeds
 
 ---
 
-### The Big Picture: How It Works  
+### The big picture: how it works  
 
-Bringing Bitcoin to EVM-based chains or vice versa is not a simple process. To accomplish this, Garden utilizes an atomic swap contract. If Alice, a trader, wants to swap her Bitcoin for an asset on an EVM-based chain or Ethereum itself, she needs a way to communicate with Garden that she wants to swap Bitcoin. This is where Garden comes into play; Garden uses an Orderbook engine to create orders that are matched by actors known as Solvers. Alice can now use the Garden to place an order to swap her Bitcoin for WBTC on Ethereum. We'll cover more details on how this swapping works below.
+Bringing Bitcoin to EVM or non-EVM chains or vice versa is not a simple process. To accomplish this, Garden utilizes an atomic swap contract. If Alice, a trader, wants to swap her Bitcoin for an asset on any chain or Ethereum itself, she needs a way to communicate with Garden that she wants to swap Bitcoin. This is where Garden comes into play; Garden uses an Orderbook engine to create orders that are matched by actors known as Solvers. Alice can now use the Garden to place an order to swap her Bitcoin for WBTC on Ethereum. We'll cover more details on how this swapping works below.
 
 ![alice creates order](../images/alice_create_order.png)
 
@@ -28,13 +28,13 @@ Bringing Bitcoin to EVM-based chains or vice versa is not a simple process. To a
 
 An order is a request to swap assets between two chains. It is created by a trader and matched by a Solver. The order is executed using a concept called [Atomic Swaps](https://www.catalog.fi/blog/atomic-swaps).
 
-## Order Matching
+## Order matching
 
 When you place an order, as previously explained, it gets matched by a Solver. In simple terms, a Solver is the counterparty in the trade. Solvers play a role as liquidity providers within the Garden ecosystem and are incentivized to match and fulfill orders.
 
 ![order matching system](../images/order_matching.png)
 
-## Order Execution
+## Settlement
 
 :::note
 This section assumes you have basic knowledge of how atomic swaps work. If you are new to atomic swaps, we recommend you read [this](https://www.catalog.fi/blog/atomic-swaps) blog post.
@@ -65,19 +65,19 @@ The contract has a refund mechanism if the trader fails to redeem the funds. The
 ![refunding](../images/refunding.png)
 ---
 
-#### What’s New in v2?  
+#### What’s new in v2?  
 We’ve reduced user dependencies and improved the overall experience, making it simpler and more intuitive for both developers and users alike.
 
 ## How it works with code?
 
 - **Authentication**: Use `Siwe` to authenticate your Ethereum wallet with the Garden orderbook.  
-- **Quote Service**: Use `Quote` to fetch price details for swaps.  
+- **Quote service**: Use `Quote` to fetch price details for swaps.  
   - Supports attested quotes to ensure price validity and trust during execution.  
-- **Secret Manager**: Generate and manage secrets for order security.  
+- **Secret manager**: Generate and manage secrets for order security.  
 - **Wallets**:  
   - Ethereum Wallet via `viem`.  
   - Bitcoin Wallet via `@catalogfi/wallets`.  
-- **Garden Core**: The heart of the SDK for creating and managing orders.  
-- **Relay Service**: For gasless swaps using the `EvmRelay`.  
+- **Garden core**: The heart of the SDK for creating and managing orders.  
+- **Relay service**: For gasless swaps using the `EvmRelay`.  
 
 > **Note:** If you’re using our React hooks, we’ve abstracted these complexities for you—making integration effortless! 🎉

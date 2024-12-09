@@ -24,7 +24,7 @@ const quoteApi = "https://price.garden.finance";
 const quote = new Quote(quoteApi);
 ```
 
-## Fetching a Quote  
+## Fetching a quote  
 
 To fetch a quote, define your source and destination assets along with the send amount:  
 
@@ -47,7 +47,7 @@ console.log("Strategy ID:", firstQuote[0]);
 console.log("Quote Amount:", firstQuote[1]);
 ```
 
-### Using Attested Quotes  
+### Using attested quotes  
 
 You can get attested quotes that come with cryptographic proof:  
 

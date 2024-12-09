@@ -10,7 +10,7 @@ The `swapAndInitiate` method in the React Hooks section is a crucial function th
 
 ## Functionality
 
-### Key Operations:
+### Key operations:
 1. **Fetching Quotes**:
    `getQuote` is used to retrieve price details from both the `/quote` and `/attested-quote` endpoints simultaneously. This ensures cryptographically secured quote on chain.
 
@@ -24,15 +24,15 @@ The `swapAndInitiate` method in the React Hooks section is a crucial function th
 
 ---
 
-## Retry Mechanism
+## Retry mechanism
 
-### EVM Chains:  
+### EVM chains:  
 If the initiation fails on EVM chains (e.g., due to insufficient gas or amount), developers can use the `evmInitiate` function to retry the initiation.  
 ```ts
 evmInitiate?: (order: MatchedOrder) => AsyncResult<MatchedOrder, string>;
 ```
 
-### Bitcoin as the Source Chain:  
+### Bitcoin as the source chain:  
 For Bitcoin to Any Asset swaps (BTC -> X), users must manually send funds to the generated bitcoin address , which is derived as `order.source_swap.swap_id`.
 
 ---

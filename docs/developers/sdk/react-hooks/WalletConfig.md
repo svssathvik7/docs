@@ -2,7 +2,7 @@
 id: wallet-config
 ---
 
-# Wallet Config
+# Wallet config
 
 `wagmiConfig.ts:`
 ```tsx

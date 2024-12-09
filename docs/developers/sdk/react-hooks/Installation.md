@@ -10,7 +10,7 @@ Get started by installing the necessary dependencies for **Garden SDK v2**. Use 
 
 ---
 
-### Garden Dependencies  
+### Garden dependencies  
 
 Add the core Garden packages:  
 
@@ -38,7 +38,7 @@ Add the core Garden packages:
     </TabItem>
 </Tabs>
 
-### Wagmi Dependencies
+### Wagmi dependencies
 
 For a seamless integration with wagmi, install the following versions (feel free to experiment with lower versions if necessary, but these have been tested):
 ```bash

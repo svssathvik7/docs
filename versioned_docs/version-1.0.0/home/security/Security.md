@@ -4,9 +4,9 @@ id: security
 
 # Security
 
-## Safeguarding Your Assets: Security Practices at Garden Finance
+## Safeguarding Your Assets: Security Practices at Garden Protocol
 
-At Garden Finance, we believe that the security of your funds and data is paramount. Our commitment to protecting your assets begins at the earliest stages of product development and extends throughout every aspect of our operations. Here's an inside look at how we prioritize security from ideation to implementation:
+At Garden Protocol, we believe that the security of your funds and data is paramount. Our commitment to protecting your assets begins at the earliest stages of product development and extends throughout every aspect of our operations. Here's an inside look at how we prioritize security from ideation to implementation:
 
 ## A Security-First Mindset
 
@@ -44,7 +44,7 @@ We are constantly evaluating and improving our security practices to stay ahead 
 
 Your Security is Our Priority
 
-At Garden Finance, we understand that the security of your funds and data is essential. We are committed to providing a secure and trustworthy platform for your financial needs.
+At Garden Protocol, we understand that the security of your funds and data is essential. We are committed to providing a secure and trustworthy platform for your financial needs.
 
 # Remember
 

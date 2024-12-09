@@ -2,7 +2,7 @@
 id: redeems-and-refunds
 ---
 
-# Redeems and Refunds  
+# Redeems and refunds  
 
 Handling redeems and refunds is a critical aspect of ensuring your atomic swaps operate securely and efficiently. These processes manage the completion or recovery of funds on the destination chain based on the state of the swap.  
 
@@ -10,10 +10,10 @@ Handling redeems and refunds is a critical aspect of ensuring your atomic swaps 
 
 Redeeming a swap finalizes the transaction on the destination chain, allowing the user to claim their funds.  
 
-### How It Works  
+### How it works  
 
-- **HTLC Completion**: The secret generated during the initiation phase is used to unlock the HTLC and complete the transaction.  
-- **Funds Transfer**: The redeemed funds are sent to the specified wallet on the destination chain.  
+- **HTLC completion**: The secret generated during the initiation phase is used to unlock the HTLC and complete the transaction.  
+- **Funds transfer**: The redeemed funds are sent to the specified wallet on the destination chain.  
 
 ### Implementation  
 
@@ -67,9 +67,9 @@ console.log("Refund successful:", refundResult);
 
 ## Best Practices  
 
-- **Monitor Time Locks**: Ensure your application monitors the status of swaps and time locks to manage redeems and refunds efficiently.  
-- **Notify Users**: Notify users about the status of their swaps and prompt them to take action when required.  
-- **React Hooks Advantage**: If you're using our **React hooks**, redeem and refund functionalities are abstracted for you, making the process easier.  
+- **Monitor time locks**: Ensure your application monitors the status of swaps and time locks to manage redeems and refunds efficiently.  
+- **Notify users**: Notify users about the status of their swaps and prompt them to take action when required.  
+- **React hooks advantage**: If you're using our **React hooks**, redeem and refund functionalities are abstracted for you, making the process easier.  
 
 :::info  
 For detailed examples and troubleshooting tips, refer to the [Cookbook](../cookbook/Cookbook.md) or reach out to us.  

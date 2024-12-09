@@ -4,7 +4,7 @@ id: quickstart
 
 # Quickstart  
 
-## What You’ll Need Before We Start  
+## What you’ll need before we start  
 
 - **WBTC/BTC balance** on testnet (we’ll provide testnet funds—just ask).  
 - **SepoliaETH** for gas fees on Sepolia.  
@@ -21,7 +21,7 @@ Add Supported Testnets to Your `wagmi` Config
 
 ---
 
-### Wrap Your App with `GardenProvider`  
+### Wrap your app with `GardenProvider`  
 This handles swap secrets for HTLCs and ensures transactions complete even if the user reconnects later.  
 
 #### Example: `main.tsx`  
@@ -47,7 +47,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 );
 ```
 
-## Integrate Swap Logic into Your Component  
+## Integrate swap logic into your component  
 
 ### Example Code  
 
@@ -99,7 +99,7 @@ And that’s it! 🎉 Now, wait for the transaction to complete.
 
 ### Common Questions
 
-#### What’s the Secret Manager for?  
+#### What’s the secret manager for?  
 It simplifies the complexity of atomic swaps. By generating and managing secrets/secret hashes via a MasterKey, the `GardenProvider` takes care of everything securely, using `localStorage` to store and retrieve secrets.  
 
 #### What if `swapAndInitiate` fails?  

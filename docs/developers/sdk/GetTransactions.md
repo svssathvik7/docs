@@ -2,11 +2,11 @@
 id: get-transactions
 ---
 
-# Get Transactions  
+# Get transactions  
 
 Tracking the status of swaps is crucial for providing users with real-time updates about their transactions. The Garden SDK provides tools to monitor and fetch details of orders efficiently.  
 
-## Fetching Transactions  
+## Fetching transactions  
 
 You can fetch the transaction history and statuses directly using the `orderBook` instance.  
 
@@ -68,9 +68,9 @@ garden.on("success", (order, action, txHash) => {
 
 ## Best Practices  
 
-- **Poll Regularly**: For long-running transactions, poll the orderBook periodically to provide accurate updates.  
-- **User Notifications**: Notify users when their transactions are pending, completed, or require attention.  
-- **Leverage React Hooks**: Using our **React hooks**, tracking transactions becomes seamless and integrated into your components.  
+- **Poll regularly**: For long-running transactions, poll the orderBook periodically to provide accurate updates.  
+- **User notifications**: Notify users when their transactions are pending, completed, or require attention.  
+- **Leverage react hooks**: Using our **React hooks**, tracking transactions becomes seamless and integrated into your components.  
 
 :::info  
 For advanced use cases and configuration options, refer to the [Cookbook](../cookbook/Cookbook.md).  

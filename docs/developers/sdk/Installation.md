@@ -39,7 +39,7 @@ pnpm add @gardenfi/core @gardenfi/utils
 
 </Tabs>  
 
-#### Additional Dependencies
+#### Additional dependencies
 
 To install additional dependencies, you can use the following options:
 <Tabs>  

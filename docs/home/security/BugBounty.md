@@ -108,7 +108,7 @@ Our Bug Bounty Program invites skilled security researchers to proactively ident
 - Lack of liquidity.
 - Best practice critiques.
 - Sybil attacks.
-- DoS/DDoS of Garden Finance infrastructure.
+- DoS/DDoS of Garden Protocol infrastructure.
 
 ### URLs & APIs
 
