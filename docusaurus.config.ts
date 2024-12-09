@@ -101,20 +101,6 @@ const config: Config = {
           label: 'Developers',
         },
         {
-          to: '/cookbook',
-          type: 'doc',
-          position: 'left',
-          docId: 'cookbook/cookbook',
-          label: 'Cookbook',
-        },
-        {
-          to: '/community',
-          type: 'doc',
-          position: 'left',
-          docId: 'community/community',
-          label: 'Community',
-        },
-        {
           href: 'https://github.com/catalogfi/garden.js',
           position: 'right',
           className: 'header-link header-github-link',

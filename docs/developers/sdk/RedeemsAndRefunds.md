@@ -72,5 +72,5 @@ console.log("Refund successful:", refundResult);
 - **React Hooks Advantage**: If you're using our **React hooks**, redeem and refund functionalities are abstracted for you, making the process easier.  
 
 :::info  
-For detailed examples and troubleshooting tips, refer to the [Cookbook](cookbook.md) or reach out to us.  
+For detailed examples and troubleshooting tips, refer to the [Cookbook](../cookbook/Cookbook.md) or reach out to us.  
 :::

@@ -5,7 +5,6 @@ id: orderbook
 # Orderbook
 
 import React from 'react';
-import SwaggerUI from 'swagger-ui-react';
-import 'swagger-ui-react/swagger-ui.css';
+import RedocComponent from './redoc/RedocComponent';
 
-<SwaggerUI url="/swagger/orderbook.json" />
+<RedocComponent specUrl="/swagger/orderbook.json" />

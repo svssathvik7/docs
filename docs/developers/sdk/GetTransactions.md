@@ -73,5 +73,5 @@ garden.on("success", (order, action, txHash) => {
 - **Leverage React Hooks**: Using our **React hooks**, tracking transactions becomes seamless and integrated into your components.  
 
 :::info  
-For advanced use cases and configuration options, refer to the [Cookbook](cookbook.md).  
+For advanced use cases and configuration options, refer to the [Cookbook](../cookbook/Cookbook.md).  
 :::

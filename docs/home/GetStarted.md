@@ -36,7 +36,7 @@ Garden is a community-driven project that encourages and appreciates developers'
 If you're a developer looking to integrate or build on Garden, these are good places to start:
 
 - [SDK](../developers/sdk/Sdk.md): A simple guide to using the Garden SDK.
-- [Cookbook](../cookbook/Cookbook.md): If you're looking for some inspiration, you can find the projects cooked up by our devs and partners here! _chef's kiss_
+- [Cookbook](../developers/cookbook/Cookbook.md): If you're looking for some inspiration, you can find the projects cooked up by our devs and partners here! _chef's kiss_
   To get your hands dirty in Garden (pun intended), check out the [Developers](../developers/Developers.md) section.
 
 ### Provide
