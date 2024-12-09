@@ -18,3 +18,13 @@
 .property, .cpnVKx, .ezdXRP, .bbQame, .IVbnb{
     color: #fff!important;
 }
+.enkzRg{
+    transition: all 0.3s ease;
+}
+.enkzRg:hover{
+    border-radius: 1rem;
+    text-decoration: underline;
+    background-color: var(--ifm-color-primary);
+    color: white!important;
+    border: thin solid white;
+}
