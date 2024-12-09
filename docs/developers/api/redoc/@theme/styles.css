@@ -1,0 +1,20 @@
+@media (min-width: 997px) {
+    .row .docItemCol_VOVn {
+        max-width: 100% !important;
+    }
+}
+.docItemCol_VOVn{
+    width: 100%;
+}
+.beDZfq *{
+    color: var(--ifm-font-color-base)!important;
+}
+.sc-iRVXky *, .fbQvpV >ul >li.react-tabs__tab--selected, .sc-hSyjfr, .sc-hSyjfr > *{
+    color: #333!important;
+}
+.zvQzH, .iqHzp, .eqWzJe, .kKXAng{
+    color: var(--ifm-invert-font-color)!important;
+}
+.property, .cpnVKx, .ezdXRP, .bbQame, .IVbnb{
+    color: #fff!important;
+}

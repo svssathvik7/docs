@@ -1,26 +1,19 @@
 import React from 'react';
 import { RedocStandalone } from 'redoc';
-
+import "./@theme/styles.css"
 const RedocComponent = ({ specUrl }) => (
   <RedocStandalone
     specUrl={specUrl}
-    options={{
-      theme: {
-        colors: {
-          primary: {
-            main: '#3498db',
-          },
-          text: {
-            primary: '#fff',
-            secondary: '#555',
-          },
-        },
-        sidebar: {
-          backgroundColor: '#f4f4f4',
-          textColor: '#333',
-        },
-      },
-    }}
+    options={
+      {
+        theme: {
+          sidebar: {
+            backgroundColor: '#f4f4f4',
+            textColor: '#333',
+          }
+        }
+      }
+    }
   />
 );
 
