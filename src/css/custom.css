@@ -34,7 +34,7 @@
     --ifm-font-color: #000;
     --ifm-invert-font-color: #fff;
     --ifm-success-background-color: rgb(9, 162, 9);
-    --ifm-failure-background-color: rgb(190, 10, 10);
+    --ifm-failure-background-color: rgb(144, 17, 17);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */

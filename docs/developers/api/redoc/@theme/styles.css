@@ -15,7 +15,7 @@
     color: #fff!important;
 }
 .sc-gohMHu{
-    background-color: var(--ifm-failure-background-color)!important;
+    border: thin solid var(--ifm-failure-background-color)!important;
 }
 .docItemCol_VOVn{
     width: 100%;
@@ -31,6 +31,7 @@
 }
 .sc-dFqmTM{
     width: 400px;
+    box-shadow: 1px 1px 4px #333;
 }
 @media print, screen and (min-width: 75rem) {
     .sc-fAUdSK {
@@ -75,7 +76,10 @@
 }
 div > div:first-of-type > .sc-gohMHu:first-of-type{
     opacity: 1!important;
-    background-color: var(--ifm-success-background-color)!important;
+    border: thin solid var(--ifm-success-background-color)!important;
+}
+div > div > .sc-gohMHu *{
+    color: var(--ifm-font-color)!important;
 }
 @media (min-width: 997px) {
     .row .docItemCol_VOVn {
