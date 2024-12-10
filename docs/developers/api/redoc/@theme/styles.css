@@ -1,56 +1,74 @@
-@media (min-width: 997px) {
-    .row .docItemCol_VOVn {
-        max-width: 100% !important;
-    }
-}
-.docItemCol_VOVn{
-    width: 100%;
-}
 *::selection{
     background-color: var(--ifm-color-primary);
     color: white!important;
 }
-.beDZfq *{
+.sc-dntaoT *{
+    color: white!important;
+}
+.sc-iMPxVN *{
     color: var(--ifm-font-color-base)!important;
 }
-.drdvPg, .bvhSud{
-    border-radius: 1rem;
-}
-.sc-iRVXky *, .fbQvpV >ul >li.react-tabs__tab--selected, .sc-hSyjfr, .sc-hSyjfr > *, .gMCIcp{
+.sc-iRVXky *, .fbQvpV >ul >li.react-tabs__tab--selected, .sc-hSyjfr, .sc-hSyjfr > *, .sc-hPGoDJ{
     color: #333!important;
 }
-.zvQzH, .iqHzp, .eqWzJe, .kKXAng{
-    color: var(--ifm-invert-font-color)!important;
+.docItemCol_VOVn{
+    width: 100%;
 }
-.property, .cpnVKx, .ezdXRP, .bbQame, .IVbnb{
+.sc-dFqmTM, .sc-dntaoT{
+    border-radius: 1rem;
+}
+.property, .sc-txhaY, .sc-eWPXlR, .sc-erSfwj, .sc-txhaY{
     color: #fff!important;
 }
-.enkzRg{
-    transition: all 0.3s ease;
+.sc-keTIit, .sc-etPtWW, .sc-fufdwm, .sc-UblHX{
+    color: var(--ifm-invert-font-color)!important;
 }
-.enkzRg:hover{
-    border-radius: 1rem;
-    text-decoration: underline;
-    background-color: var(--ifm-color-primary);
-    color: white!important;
-    border: thin solid white;
-}
-.drdvPg{
+.sc-dFqmTM{
     width: 400px;
 }
 @media print, screen and (min-width: 75rem) {
-    .dFrZq {
+    .sc-fAUdSK {
         width: 100%!important;
         padding: 0px 120px!important;
+        margin-bottom: 2rem;
     }
 }
-.dECWTf{
+.sc-kLhKbu{
     flex-direction: column!important;
     display: flex;
 }
-.oECKJ{
+.sc-ivxoEo{
     width: 100%!important;
     background-color: rgb(38, 50, 56)!important;
     padding: 1rem!important;
-    margin: 1%!important;
+    border-radius: 1rem;
+}
+.sc-eEVuZf{
+    display: none!important;
+}
+.sc-dntaoT{
+    background-color: transparent;
+    margin: 2%;
+}
+.sc-dntaoT:first-of-type{
+    border-radius: 1rem;
+    background-color: #333;
+}
+.sc-kEsJEW{
+    transition: all 0.3s ease;
+    border-radius: 1rem;
+    text-decoration: underline;
+    color: black!important;
+    background-color: #fff;
+    font-weight: bold;
+}
+.sc-kEsJEW:hover{
+    color: white!important;
+    background-color: #000;
+    border: thin solid black!important;
+}
+@media (min-width: 997px) {
+    .row .docItemCol_VOVn {
+        max-width: 100% !important;
+    }
 }
