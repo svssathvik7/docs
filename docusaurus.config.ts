@@ -97,7 +97,7 @@ const config: Config = {
           to: '/developers',
           type: 'doc',
           position: 'left',
-          docId: 'developers/developers',
+          docId: 'developers/supported-chains',
           label: 'Developers',
         },
         {

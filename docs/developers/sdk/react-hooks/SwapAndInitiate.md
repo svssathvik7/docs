@@ -16,7 +16,7 @@ The `swapAndInitiate` method in the React Hooks section is a crucial function th
 
 2. **Secret Manager Validation**:  
    Before initiating a swap, the availability of the `secretManager` is checked. This ensures that the atomic swap can be securely facilitated.  
-   - The `secretManager` is responsible for handling secrets, which are stored and retrieved via the client’s localStorage.  
+   - The `secretManager` is responsible for handling secrets.  
    - GardenProvider manages the `secretManager`, so developers don’t need to worry about its lifecycle or maintenance.
 
 3. **Order Creation and Source Chain Initiation**:  

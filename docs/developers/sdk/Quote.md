@@ -61,6 +61,11 @@ if (attestedQuoteResult.error) {
 console.log("Attested Quote:", attestedQuoteResult.val);
 ```
 
+you can also use `isExactOut` param to handle exact out case;
+```tsx
+
+```
+
 ## Tips  
 
 - Always validate the response for potential errors, especially on testnets.  
