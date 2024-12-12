@@ -11,7 +11,10 @@ const RedocComponent = ({ specUrl }) => (
             backgroundColor: '#f4f4f4',
             textColor: '#333',
           }
-        }
+        },
+        typography: {
+          fontFamily: "'Montserrat', sans-serif",
+        },
       }
     }
   />

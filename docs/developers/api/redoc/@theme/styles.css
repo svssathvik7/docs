@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+/* enforse fallable montserrat to all the text */
+*{
+    font-family: 'Montserrat', sans-serif!important;
+}
+
 *::selection{
     background-color: var(--ifm-color-primary);
     color: white!important;
@@ -71,15 +78,18 @@
 .sc-kEsJEW{
     transition: all 0.3s ease;
     border-radius: 1rem;
+    border: thin solid #000!important;
     text-decoration: underline;
     color: black!important;
     background-color: #fff;
     font-weight: bold;
+    margin: 1rem;
 }
 .sc-kEsJEW:hover{
     color: white!important;
     background-color: #000;
     border: thin solid black!important;
+    border: thin solid #fff!important;
 }
 /* success responses */
 div > div:first-of-type > .sc-gohMHu:first-of-type{
@@ -96,6 +106,32 @@ div > div > .sc-gohMHu *{
     }
 }
 /* response type expander arrow */
-.sc-cHqXqK > polygon, .sc-bqvdXA > i{
+.sc-cHqXqK > polygon{
     fill: var(--ifm-font-color)!important;
+}
+
+/* content type mini heading */
+.sc-fufdwm{
+    background-color: var(--ifm-color-primary);
+    padding: 0 1%;
+    border-radius: 1rem;
+}
+
+/* response codes font color */
+.react-tabs__tab-list li{
+    color: #fff!important;
+}
+
+/* bearer header expanded and compact */
+.sc-bqvdXA > i{
+    background-color: #fff;
+    color: #333!important;
+    padding: 0 1%;
+    border-radius: 1rem;
+    margin: 0 1%;
+}
+
+
+td{
+    padding: 1rem!important;
 }
