@@ -2,36 +2,42 @@
     background-color: var(--ifm-color-primary);
     color: white!important;
 }
+/* api description - api response pairs */
 .sc-dntaoT *{
     color: white!important;
 }
+/* total side and content panels */
 .sc-iMPxVN *{
     color: var(--ifm-font-color-base)!important;
 }
 .sc-iRVXky *, .fbQvpV >ul >li.react-tabs__tab--selected, .sc-hSyjfr, .sc-hSyjfr > *, .sc-hPGoDJ{
     color: #333!important;
 }
+/* response buttons */
 .sc-gohMHu *{
     color: #fff!important;
 }
+/* failure responses */
 .sc-gohMHu{
     border: thin solid var(--ifm-failure-background-color)!important;
 }
+/* complete doc except the left navbar */
 .docItemCol_VOVn{
     width: 100%;
 }
 .sc-dFqmTM, .sc-dntaoT{
     border-radius: 1rem;
 }
+/* the left search bar */
+.sc-dFqmTM{
+    width: 400px;
+    box-shadow: 1px 1px 4px #333;
+}
 .property, .sc-txhaY, .sc-eWPXlR, .sc-erSfwj, .sc-txhaY, .sc-ixGGxD, .sc-ixGGxD *, .sc-fAUdSK p{
     color: #fff!important;
 }
 .sc-keTIit, .sc-etPtWW, .sc-fufdwm, .sc-UblHX{
     color: var(--ifm-invert-font-color)!important;
-}
-.sc-dFqmTM{
-    width: 400px;
-    box-shadow: 1px 1px 4px #333;
 }
 @media print, screen and (min-width: 75rem) {
     .sc-fAUdSK {
@@ -61,6 +67,7 @@
     border-radius: 1rem;
     background-color: #333;
 }
+/* the download button */
 .sc-kEsJEW{
     transition: all 0.3s ease;
     border-radius: 1rem;
@@ -74,10 +81,12 @@
     background-color: #000;
     border: thin solid black!important;
 }
+/* success responses */
 div > div:first-of-type > .sc-gohMHu:first-of-type{
     opacity: 1!important;
     border: thin solid var(--ifm-success-background-color)!important;
 }
+/* success and failure response types  */
 div > div > .sc-gohMHu *{
     color: var(--ifm-font-color)!important;
 }
