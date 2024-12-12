@@ -95,3 +95,7 @@ div > div > .sc-gohMHu *{
         max-width: 100% !important;
     }
 }
+/* response type expander arrow */
+.sc-cHqXqK > polygon, .sc-bqvdXA > i{
+    fill: var(--ifm-font-color)!important;
+}
