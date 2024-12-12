@@ -72,7 +72,12 @@
 }
 .sc-dntaoT:first-of-type{
     border-radius: 1rem;
-    background-color: #333;
+    /* shimmer effect */
+    background: linear-gradient(-45deg, #444 40%, #555 50%, #444 60%);
+    background-position-x: 0%;
+    transition: all 0.7s ease;
+    background-size: 200% 100%;
+    animation: shimmer 5s linear infinite;
 }
 /* the download button */
 .sc-kEsJEW{
@@ -131,7 +136,23 @@ div > div > .sc-gohMHu *{
     margin: 0 1%;
 }
 
-
+/* target the table cells */
 td{
     padding: 1rem!important;
 }
+
+/* shimmer */
+@keyframes shimmer {
+    0% {
+        background-position-x: 100%;
+    }
+    100%{
+        background-position-x: 0%;
+    }
+ }
+
+
+ .sathvik{
+    z-index: 100!important;
+    color: white;
+ }
