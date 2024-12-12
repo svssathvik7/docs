@@ -1,0 +1,14 @@
+/* current changes */
+.footer__links{
+    padding: 2rem!important;
+}
+.footer__copyright{
+    padding: 1rem!important;
+    align-items: center;
+}
+.footer__col{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
