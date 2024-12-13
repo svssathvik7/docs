@@ -1,13 +1,24 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "Orderbook API",
+        "title": "Garden API",
         "version": "1.0.0",
-        "description": "This document outlines the REST API endpoints for initiating, redeeming swaps and creating orders."
+        "description": "This document outlines the REST API endpoints for initiating, redeeming swaps and creating orders.",
+        "license": {
+            "name": "Closed Source",
+            "url": "https://evm-swapper-relay.onrender.com"
+        }
     },
+    "servers": [
+        {
+            "url": "https://evm-swapper-relay.onrender.com"
+        }
+    ],
+    "security": [],
     "paths": {
         "/id/unmatched/{id}": {
             "get": {
+                "operationId": "getUnmatchedOrderById",
                 "summary": "Retrieve an unmatched order by its create ID.",
                 "parameters": [
                     {
@@ -22,21 +33,58 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "CreateOrder",
+                        "description": "The unmatched order.",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ApiResponseCreateOrder"
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Ok"
+                                        },
+                                        "result": {
+                                            "type": "object",
+                                            "properties": {
+                                                "id": {
+                                                    "type": "string",
+                                                    "example": "12345"
+                                                },
+                                                "user": {
+                                                    "type": "string",
+                                                    "example": "0xAbC12345D67890Ef"
+                                                },
+                                                "createdAt": {
+                                                    "type": "string",
+                                                    "example": "2024-12-13T12:34:56Z"
+                                                },
+                                                "amount": {
+                                                    "type": "number",
+                                                    "example": 100.5
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
                     },
                     "400": {
-                        "description": "Bad Request",
+                        "description": "Bad Request. Invalid or missing parameters.",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Error"
+                                        },
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Invalid ID or missing parameters"
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -46,6 +94,7 @@
         },
         "/user/unmatched/{user}": {
             "get": {
+                "operationId": "getUnmatchedOrdersByUser",
                 "summary": "Retrieve all unmatched orders for a specific user.",
                 "parameters": [
                     {
@@ -78,21 +127,78 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "PaginatedData<CreateOrder>",
+                        "description": "The paginated unmatched orders for the user.",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ApiResponsePaginatedCreateOrder"
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Ok"
+                                        },
+                                        "result": {
+                                            "type": "object",
+                                            "properties": {
+                                                "page": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "per_page": {
+                                                    "type": "integer",
+                                                    "example": 10
+                                                },
+                                                "total": {
+                                                    "type": "integer",
+                                                    "example": 100
+                                                },
+                                                "data": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "id": {
+                                                                "type": "string",
+                                                                "example": "12345"
+                                                            },
+                                                            "user": {
+                                                                "type": "string",
+                                                                "example": "0xAbC12345D67890Ef"
+                                                            },
+                                                            "createdAt": {
+                                                                "type": "string",
+                                                                "example": "2024-12-13T12:34:56Z"
+                                                            },
+                                                            "amount": {
+                                                                "type": "number",
+                                                                "example": 100.5
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
                     },
                     "400": {
-                        "description": "Bad Request",
+                        "description": "Bad Request. Invalid or missing parameters.",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Error"
+                                        },
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Invalid user address or pagination parameters"
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -102,6 +208,7 @@
         },
         "/matched": {
             "get": {
+                "operationId": "getAllMatchedOrders",
                 "summary": "Retrieve all matched orders with pagination.",
                 "parameters": [
                     {
@@ -125,21 +232,78 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "PaginatedData<MatchedOrderVerbose>",
+                        "description": "The paginated matched orders.",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ApiResponsePaginatedMatchedOrderVerbose"
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Ok"
+                                        },
+                                        "result": {
+                                            "type": "object",
+                                            "properties": {
+                                                "page": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "per_page": {
+                                                    "type": "integer",
+                                                    "example": 10
+                                                },
+                                                "total": {
+                                                    "type": "integer",
+                                                    "example": 100
+                                                },
+                                                "data": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "id": {
+                                                                "type": "string",
+                                                                "example": "12345"
+                                                            },
+                                                            "user": {
+                                                                "type": "string",
+                                                                "example": "0xAbC12345D67890Ef"
+                                                            },
+                                                            "createdAt": {
+                                                                "type": "string",
+                                                                "example": "2024-12-13T12:34:56Z"
+                                                            },
+                                                            "amount": {
+                                                                "type": "number",
+                                                                "example": 100.5
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
                     },
                     "400": {
-                        "description": "Bad Request",
+                        "description": "Bad Request. Invalid or missing parameters.",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Error"
+                                        },
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Invalid pagination parameters"
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -149,6 +313,7 @@
         },
         "/unmatched": {
             "get": {
+                "operationId": "getAllUnmatchedOrders",
                 "summary": "Retrieve all unmatched orders with pagination.",
                 "parameters": [
                     {
@@ -172,21 +337,78 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "PaginatedData<CreateOrder>",
+                        "description": "The paginated unmatched orders.",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ApiResponsePaginatedCreateOrder"
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Ok"
+                                        },
+                                        "result": {
+                                            "type": "object",
+                                            "properties": {
+                                                "page": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "per_page": {
+                                                    "type": "integer",
+                                                    "example": 10
+                                                },
+                                                "total": {
+                                                    "type": "integer",
+                                                    "example": 100
+                                                },
+                                                "data": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "id": {
+                                                                "type": "string",
+                                                                "example": "12345"
+                                                            },
+                                                            "user": {
+                                                                "type": "string",
+                                                                "example": "0xAbC12345D67890Ef"
+                                                            },
+                                                            "createdAt": {
+                                                                "type": "string",
+                                                                "example": "2024-12-13T12:34:56Z"
+                                                            },
+                                                            "amount": {
+                                                                "type": "number",
+                                                                "example": 100.5
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
                     },
                     "400": {
-                        "description": "Bad Request",
+                        "description": "Bad Request. Invalid or missing parameters.",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Error"
+                                        },
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Invalid pagination parameters"
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -196,6 +418,7 @@
         },
         "/id/matched/{id}": {
             "get": {
+                "operationId": "getMatchedOrderById",
                 "summary": "Retrieve a matched order by its create ID.",
                 "parameters": [
                     {
@@ -210,21 +433,62 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "MatchedOrderVerbose | null",
+                        "description": "The matched order.",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ApiResponseMatchedOrderVerbose"
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Ok"
+                                        },
+                                        "result": {
+                                            "type": "object",
+                                            "properties": {
+                                                "id": {
+                                                    "type": "string",
+                                                    "example": "12345"
+                                                },
+                                                "user": {
+                                                    "type": "string",
+                                                    "example": "0xAbC12345D67890Ef"
+                                                },
+                                                "matchedAt": {
+                                                    "type": "string",
+                                                    "example": "2024-12-13T12:34:56Z"
+                                                },
+                                                "amount": {
+                                                    "type": "number",
+                                                    "example": 100.5
+                                                },
+                                                "status": {
+                                                    "type": "string",
+                                                    "example": "Matched"
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
                     },
                     "400": {
-                        "description": "Bad Request",
+                        "description": "Bad Request. Invalid or missing parameters.",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Error"
+                                        },
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Invalid ID or missing parameters"
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -234,6 +498,7 @@
         },
         "/user/matched/{user}": {
             "get": {
+                "operationId": "getMatchedOrdersByUser",
                 "summary": "Retrieve all matched orders for a specific user.",
                 "parameters": [
                     {
@@ -275,21 +540,82 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "PaginatedData<MatchedOrderVerbose>",
+                        "description": "The paginated matched orders for the user.",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ApiResponsePaginatedMatchedOrderVerbose"
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Ok"
+                                        },
+                                        "result": {
+                                            "type": "object",
+                                            "properties": {
+                                                "page": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "per_page": {
+                                                    "type": "integer",
+                                                    "example": 10
+                                                },
+                                                "total": {
+                                                    "type": "integer",
+                                                    "example": 50
+                                                },
+                                                "data": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "id": {
+                                                                "type": "string",
+                                                                "example": "12345"
+                                                            },
+                                                            "user": {
+                                                                "type": "string",
+                                                                "example": "0xAbC12345D67890Ef"
+                                                            },
+                                                            "matchedAt": {
+                                                                "type": "string",
+                                                                "example": "2024-12-13T12:34:56Z"
+                                                            },
+                                                            "amount": {
+                                                                "type": "number",
+                                                                "example": 100.5
+                                                            },
+                                                            "status": {
+                                                                "type": "string",
+                                                                "example": "Matched"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
                     },
                     "400": {
-                        "description": "Bad Request",
+                        "description": "Bad Request. Invalid or missing parameters.",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Error"
+                                        },
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Invalid user address or pagination parameters"
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -299,6 +625,7 @@
         },
         "/user/count/{user}": {
             "get": {
+                "operationId": "getOrderCountByUser",
                 "summary": "Get the total number of orders for a specific user.",
                 "parameters": [
                     {
@@ -313,342 +640,44 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Number of orders",
+                        "description": "The total number of orders for the user.",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ApiResponseNumber"
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Ok"
+                                        },
+                                        "result": {
+                                            "type": "integer",
+                                            "example": 15
+                                        }
+                                    }
                                 }
                             }
                         }
                     },
                     "400": {
-                        "description": "Bad Request",
+                        "description": "Bad Request. Invalid or missing parameters.",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Error"
+                                        },
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Invalid user address"
+                                        }
+                                    }
                                 }
                             }
                         }
-                    }
-                }
-            }
-        }
-    },
-    "components": {
-        "schemas": {
-            "ApiResponseCreateOrder": {
-                "type": "object",
-                "properties": {
-                    "status": {
-                        "type": "string",
-                        "enum": [
-                            "Ok",
-                            "Error"
-                        ]
-                    },
-                    "result": {
-                        "$ref": "#/components/schemas/CreateOrder"
-                    },
-                    "error": {
-                        "type": "string",
-                        "nullable": true
-                    }
-                }
-            },
-            "ApiResponsePaginatedCreateOrder": {
-                "type": "object",
-                "properties": {
-                    "status": {
-                        "type": "string",
-                        "enum": [
-                            "Ok",
-                            "Error"
-                        ]
-                    },
-                    "result": {
-                        "$ref": "#/components/schemas/PaginatedDataCreateOrder"
-                    },
-                    "error": {
-                        "type": "string",
-                        "nullable": true
-                    }
-                }
-            },
-            "ApiResponsePaginatedMatchedOrderVerbose": {
-                "type": "object",
-                "properties": {
-                    "status": {
-                        "type": "string",
-                        "enum": [
-                            "Ok",
-                            "Error"
-                        ]
-                    },
-                    "result": {
-                        "$ref": "#/components/schemas/PaginatedDataMatchedOrderVerbose"
-                    },
-                    "error": {
-                        "type": "string",
-                        "nullable": true
-                    }
-                }
-            },
-            "ApiResponseMatchedOrderVerbose": {
-                "type": "object",
-                "properties": {
-                    "status": {
-                        "type": "string",
-                        "enum": [
-                            "Ok",
-                            "Error"
-                        ]
-                    },
-                    "result": {
-                        "$ref": "#/components/schemas/MatchedOrderVerbose"
-                    },
-                    "error": {
-                        "type": "string",
-                        "nullable": true
-                    }
-                }
-            },
-            "ApiResponseNumber": {
-                "type": "object",
-                "properties": {
-                    "status": {
-                        "type": "string",
-                        "enum": [
-                            "Ok",
-                            "Error"
-                        ]
-                    },
-                    "result": {
-                        "type": "number"
-                    },
-                    "error": {
-                        "type": "string",
-                        "nullable": true
-                    }
-                }
-            },
-            "ErrorResponse": {
-                "type": "object",
-                "properties": {
-                    "status": {
-                        "type": "string",
-                        "enum": [
-                            "Ok",
-                            "Error"
-                        ]
-                    },
-                    "error": {
-                        "type": "string"
-                    }
-                }
-            },
-            "CreateOrder": {
-                "type": "object",
-                "properties": {
-                    "created_at": {
-                        "type": "string"
-                    },
-                    "updated_at": {
-                        "type": "string"
-                    },
-                    "deleted_at": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "create_id": {
-                        "type": "string"
-                    },
-                    "block_number": {
-                        "type": "string"
-                    },
-                    "source_chain": {
-                        "type": "string"
-                    },
-                    "destination_chain": {
-                        "type": "string"
-                    },
-                    "source_asset": {
-                        "type": "string"
-                    },
-                    "destination_asset": {
-                        "type": "string"
-                    },
-                    "initiator_source_address": {
-                        "type": "string"
-                    },
-                    "initiator_destination_address": {
-                        "type": "string"
-                    },
-                    "source_amount": {
-                        "type": "string"
-                    },
-                    "destination_amount": {
-                        "type": "string"
-                    },
-                    "fee": {
-                        "type": "string"
-                    },
-                    "nonce": {
-                        "type": "string"
-                    },
-                    "min_destination_confirmations": {
-                        "type": "integer"
-                    },
-                    "timelock": {
-                        "type": "integer"
-                    },
-                    "secret_hash": {
-                        "type": "string"
-                    },
-                    "additional_data": {
-                        "type": "object",
-                        "properties": {
-                            "bitcoin_optional_recipient": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                }
-            },
-            "SingleSwap": {
-                "type": "object",
-                "properties": {
-                    "created_at": {
-                        "type": "string"
-                    },
-                    "updated_at": {
-                        "type": "string"
-                    },
-                    "deleted_at": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "swap_id": {
-                        "type": "string"
-                    },
-                    "chain": {
-                        "type": "string"
-                    },
-                    "asset": {
-                        "type": "string"
-                    },
-                    "initiator": {
-                        "type": "string"
-                    },
-                    "redeemer": {
-                        "type": "string"
-                    },
-                    "timelock": {
-                        "type": "integer"
-                    },
-                    "filled_amount": {
-                        "type": "string"
-                    },
-                    "amount": {
-                        "type": "string"
-                    },
-                    "secret_hash": {
-                        "type": "string"
-                    },
-                    "secret": {
-                        "type": "string"
-                    },
-                    "initiate_tx_hash": {
-                        "type": "string"
-                    },
-                    "redeem_tx_hash": {
-                        "type": "string"
-                    },
-                    "refund_tx_hash": {
-                        "type": "string"
-                    },
-                    "initiate_block_number": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "redeem_block_number": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "refund_block_number": {
-                        "type": "string",
-                        "nullable": true
-                    }
-                }
-            },
-            "MatchedOrderVerbose": {
-                "type": "object",
-                "properties": {
-                    "created_at": {
-                        "type": "string"
-                    },
-                    "updated_at": {
-                        "type": "string"
-                    },
-                    "deleted_at": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "source_swap": {
-                        "$ref": "#/components/schemas/SingleSwap"
-                    },
-                    "destination_swap": {
-                        "$ref": "#/components/schemas/SingleSwap"
-                    },
-                    "create_order": {
-                        "$ref": "#/components/schemas/CreateOrder"
-                    }
-                }
-            },
-            "PaginatedDataCreateOrder": {
-                "type": "object",
-                "properties": {
-                    "data": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/CreateOrder"
-                        }
-                    },
-                    "page": {
-                        "type": "integer"
-                    },
-                    "total_pages": {
-                        "type": "integer"
-                    },
-                    "total_items": {
-                        "type": "integer"
-                    },
-                    "per_page": {
-                        "type": "integer"
-                    }
-                }
-            },
-            "PaginatedDataMatchedOrderVerbose": {
-                "type": "object",
-                "properties": {
-                    "data": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/MatchedOrderVerbose"
-                        }
-                    },
-                    "page": {
-                        "type": "integer"
-                    },
-                    "total_pages": {
-                        "type": "integer"
-                    },
-                    "total_items": {
-                        "type": "integer"
-                    },
-                    "per_page": {
-                        "type": "integer"
                     }
                 }
             }
