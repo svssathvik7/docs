@@ -137,4 +137,5 @@ div > div > .sc-gohMHu *, .sc-epnzzT > p{
 /* target the table cells */
 td{
     padding: 1rem!important;
+    color: var(--ifm-font-color)!important;
 }
