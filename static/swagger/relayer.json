@@ -1,330 +1,336 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "Relayer",
-        "version": "1.0.0",
-        "description": "This document outlines the REST API endpoints for initiating, redeeming swaps and creating orders."
+      "title": "Relayer",
+      "version": "1.0.0",
+      "description": "This document outlines the REST API endpoints for initiating, redeeming swaps and creating orders."
     },
-    "paths": {
-        "/initiate": {
-            "post": {
-                "summary": "Initiates a swap with a signature.",
-                "security": [
-                    {
-                        "bearerAuth": []
-                    }
-                ],
-                "requestBody": {
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/InitiateRequest"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "Transaction hash",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ResponseString"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Internal Server Error",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/redeem": {
-            "post": {
-                "summary": "Redeems a swap using the secret.",
-                "security": [
-                    {
-                        "bearerAuth": []
-                    }
-                ],
-                "requestBody": {
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/RedeemRequest"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "Transaction hash",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ResponseString"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Internal Server Error",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/create-order": {
-            "post": {
-                "summary": "Creates a new order.",
-                "security": [
-                    {
-                        "bearerAuth": []
-                    }
-                ],
-                "requestBody": {
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/CreateOrderRequest"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "Create ID",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ResponseString"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Internal Server Error",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/health": {
-            "get": {
-                "summary": "Checks the health status of the API.",
-                "responses": {
-                    "200": {
-                        "description": "Online",
-                        "content": {
-                            "text/plain": {
-                                "schema": {
-                                    "type": "string",
-                                    "example": "Online"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+    "servers": [
+        {
+            "url": "https://evm-swapper-relay.onrender.com"
         }
+    ],
+    "paths": {
+      "/initiate": {
+        "post": {
+          "summary": "Initiates a swap with a signature.",
+          "security": [
+            {
+              "bearerAuth": []
+            }
+          ],
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InitiateRequest"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Transaction hash",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ResponseString"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ErrorResponse"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ErrorResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/redeem": {
+        "post": {
+          "summary": "Redeems a swap using the secret.",
+          "security": [
+            {
+              "bearerAuth": []
+            }
+          ],
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RedeemRequest"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Transaction hash",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ResponseString"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ErrorResponse"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ErrorResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/create-order": {
+        "post": {
+          "summary": "Creates a new order.",
+          "security": [
+            {
+              "bearerAuth": []
+            }
+          ],
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateOrderRequest"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Create ID",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ResponseString"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ErrorResponse"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ErrorResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/health": {
+        "get": {
+          "summary": "Checks the health status of the API.",
+          "responses": {
+            "200": {
+              "description": "Online",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "string",
+                    "example": "Online"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     },
     "components": {
-        "securitySchemes": {
-            "bearerAuth": {
-                "type": "http",
-                "scheme": "bearer",
-                "bearerFormat": "JWT"
-            }
-        },
-        "schemas": {
-            "ResponseString": {
-                "type": "object",
-                "properties": {
-                    "status": {
-                        "type": "string",
-                        "enum": [
-                            "Ok",
-                            "Error"
-                        ]
-                    },
-                    "result": {
-                        "type": "string"
-                    },
-                    "error": {
-                        "type": "string",
-                        "nullable": true
-                    }
-                }
-            },
-            "ErrorResponse": {
-                "type": "object",
-                "properties": {
-                    "status": {
-                        "type": "string",
-                        "enum": [
-                            "Ok",
-                            "Error"
-                        ]
-                    },
-                    "error": {
-                        "type": "string"
-                    }
-                }
-            },
-            "InitiateRequest": {
-                "type": "object",
-                "properties": {
-                    "order_id": {
-                        "type": "string"
-                    },
-                    "signature": {
-                        "type": "string"
-                    },
-                    "perform_on": {
-                        "type": "string",
-                        "enum": [
-                            "Source",
-                            "Destination"
-                        ]
-                    }
-                }
-            },
-            "RedeemRequest": {
-                "type": "object",
-                "properties": {
-                    "order_id": {
-                        "type": "string"
-                    },
-                    "secret": {
-                        "type": "string"
-                    },
-                    "perform_on": {
-                        "type": "string",
-                        "enum": [
-                            "Source",
-                            "Destination"
-                        ]
-                    }
-                }
-            },
-            "CreateOrderRequest": {
-                "type": "object",
-                "properties": {
-                    "source_chain": {
-                        "type": "string"
-                    },
-                    "destination_chain": {
-                        "type": "string"
-                    },
-                    "source_asset": {
-                        "type": "string"
-                    },
-                    "destination_asset": {
-                        "type": "string"
-                    },
-                    "initiator_source_address": {
-                        "type": "string"
-                    },
-                    "initiator_destination_address": {
-                        "type": "string"
-                    },
-                    "source_amount": {
-                        "type": "string"
-                    },
-                    "destination_amount": {
-                        "type": "string"
-                    },
-                    "fee": {
-                        "type": "string"
-                    },
-                    "nonce": {
-                        "type": "string"
-                    },
-                    "min_destination_confirmations": {
-                        "type": "integer"
-                    },
-                    "timelock": {
-                        "type": "integer"
-                    },
-                    "secret_hash": {
-                        "type": "string"
-                    },
-                    "additional_data": {
-                        "type": "object",
-                        "properties": {
-                            "strategy_id": {
-                                "type": "string"
-                            },
-                            "input_token_price": {
-                                "type": "number"
-                            },
-                            "output_token_price": {
-                                "type": "number"
-                            },
-                            "deadline": {
-                                "type": "string"
-                            },
-                            "bitcoin_optional_recipient": {
-                                "type": "string",
-                                "nullable": true
-                            }
-                        }
-                    }
-                }
-            }
+      "securitySchemes": {
+        "bearerAuth": {
+          "type": "http",
+          "scheme": "bearer",
+          "bearerFormat": "JWT"
         }
+      },
+      "schemas": {
+        "ResponseString": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "Ok",
+                "Error"
+              ]
+            },
+            "result": {
+              "type": "string"
+            },
+            "error": {
+              "type": "string",
+              "nullable": true
+            }
+          }
+        },
+        "ErrorResponse": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "Ok",
+                "Error"
+              ]
+            },
+            "error": {
+              "type": "string"
+            }
+          }
+        },
+        "InitiateRequest": {
+          "type": "object",
+          "properties": {
+            "order_id": {
+              "type": "string"
+            },
+            "signature": {
+              "type": "string"
+            },
+            "perform_on": {
+              "type": "string",
+              "enum": [
+                "Source",
+                "Destination"
+              ]
+            }
+          }
+        },
+        "RedeemRequest": {
+          "type": "object",
+          "properties": {
+            "order_id": {
+              "type": "string"
+            },
+            "secret": {
+              "type": "string"
+            },
+            "perform_on": {
+              "type": "string",
+              "enum": [
+                "Source",
+                "Destination"
+              ]
+            }
+          }
+        },
+        "CreateOrderRequest": {
+          "type": "object",
+          "properties": {
+            "source_chain": {
+              "type": "string"
+            },
+            "destination_chain": {
+              "type": "string"
+            },
+            "source_asset": {
+              "type": "string"
+            },
+            "destination_asset": {
+              "type": "string"
+            },
+            "initiator_source_address": {
+              "type": "string"
+            },
+            "initiator_destination_address": {
+              "type": "string"
+            },
+            "source_amount": {
+              "type": "string"
+            },
+            "destination_amount": {
+              "type": "string"
+            },
+            "fee": {
+              "type": "string"
+            },
+            "nonce": {
+              "type": "string"
+            },
+            "min_destination_confirmations": {
+              "type": "integer"
+            },
+            "timelock": {
+              "type": "integer"
+            },
+            "secret_hash": {
+              "type": "string"
+            },
+            "additional_data": {
+              "type": "object",
+              "properties": {
+                "strategy_id": {
+                  "type": "string"
+                },
+                "input_token_price": {
+                  "type": "number"
+                },
+                "output_token_price": {
+                  "type": "number"
+                },
+                "deadline": {
+                  "type": "string"
+                },
+                "bitcoin_optional_recipient": {
+                  "type": "string",
+                  "nullable": true
+                }
+              }
+            }
+          }
+        }
+      }
     }
-}
+  }
+  
