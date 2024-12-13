@@ -8,23 +8,15 @@ const config: Config = {
   tagline: 'Bringing bitcoin based assets to your dApp.',
   favicon: 'img/flower.svg',
 
-  // Set the production url of your site here
   url: 'https://*.garden.finance',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'gardenfi', // Usually your GitHub org/user name.
-  projectName: 'garden docs', // Usually your repo name.
+  organizationName: 'gardenfi',
+  projectName: 'garden docs',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -35,13 +27,21 @@ const config: Config = {
       return {
         name: 'docusaurus-tailwindcss',
         configurePostCss(postcssOptions) {
-          // Appends TailwindCSS and AutoPrefixer.
           postcssOptions.plugins.push(require('tailwindcss'));
           postcssOptions.plugins.push(require('autoprefixer'));
           return postcssOptions;
         },
       };
     },
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        routeBasePath: 'api',  // Adjust as per your setup
+        sidebarPath: './sidebars.ts',
+        sidebarItemsGenerator: sidebarItemsGenerator,
+        editUrl: 'https://github.com/your-org/your-repo/edit/main/',
+      },
+    ],
   ],
 
   presets: [
@@ -66,11 +66,7 @@ const config: Config = {
       apiKey: process.env.ALGOLIA_API_KEY,
       indexName: process.env.ALGOLIA_INDEX_NAME,
       appId: process.env.ALGOLIA_APP_ID,
-      // Optional
       contextualSearch: true,
-      // Optional: Algolia search parameters
-      searchParameters: {},
-      // Optional: path for search page that enabled by default (`false` to disable it)
       searchPagePath: 'search',
     },
     colorMode: {
@@ -135,61 +131,31 @@ const config: Config = {
         {
           title: 'Application',
           items: [
-            {
-              label: 'Swap',
-              to: 'https://garden.finance/swap',
-            },
-            {
-              label: 'Stake',
-              to: 'https://garden.finance/stake',
-            },
-            {
-              label: 'Leaderboard',
-              to: 'https://garden.finance/leaderboard',
-            },
+            { label: 'Swap', to: 'https://garden.finance/swap' },
+            { label: 'Stake', to: 'https://garden.finance/stake' },
+            { label: 'Leaderboard', to: 'https://garden.finance/leaderboard' },
           ],
         },
         {
           title: 'Resources',
           items: [
-            {
-              label: 'Blog',
-              to: 'https://garden.finance/blog/',
-            },
-            {
-              label: 'Audits',
-              to: 'https://github.com/catalogfi/audits',
-            },
+            { label: 'Blog', to: 'https://garden.finance/blog/' },
+            { label: 'Audits', to: 'https://github.com/catalogfi/audits' },
           ],
         },
         {
           title: 'Ecosystem',
           items: [
-            {
-              label: 'Analytics',
-              to: 'https://dune.com/garden_finance/gardenfinance',
-            },
-            {
-              label: 'Explorer',
-              to: 'https://main--symphonious-chaja-a69e12.netlify.app/',
-            },
+            { label: 'Analytics', to: 'https://dune.com/garden_finance/gardenfinance' },
+            { label: 'Explorer', to: 'https://main--symphonious-chaja-a69e12.netlify.app/' },
           ],
         },
         {
           title: 'Community',
           items: [
-            {
-              label: 'Discord',
-              to: 'https://discord.com/invite/Fp4ZmZZrFu',
-            },
-            {
-              label: 'Telegram',
-              to: 'https://t.me/GardenTownhall',
-            },
-            {
-              label: 'X',
-              to: 'https://x.com/intent/follow?screen_name=garden_finance',
-            },
+            { label: 'Discord', to: 'https://discord.com/invite/Fp4ZmZZrFu' },
+            { label: 'Telegram', to: 'https://t.me/GardenTownhall' },
+            { label: 'X', to: 'https://x.com/intent/follow?screen_name=garden_finance' },
           ],
         },
       ],
