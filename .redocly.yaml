@@ -1,5 +1,0 @@
-extends:
-  - recommended
-apis:
-  auth:
-    root: ./static/swagger/auth.json
