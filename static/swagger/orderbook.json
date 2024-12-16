@@ -11,10 +11,23 @@
     },
     "servers": [
         {
-            "url": "https://evm-swapper-relay.onrender.com"
+            "url": "https://evm-swapper-relay.onrender.com/orders"
         }
     ],
-    "security": [],
+    "components": {
+      "securitySchemes": {
+        "bearer":{
+          "type": "http",
+          "scheme": "bearer",
+          "bearerFormat": "JWT"
+        }
+      }
+    },
+    "security": [
+      {
+        "bearer": []
+      }
+    ],
     "paths": {
         "/id/unmatched/{id}": {
             "$ref": "./orderbook/unmatchedOrdersById.json"
@@ -26,7 +39,7 @@
             "$ref": "./orderbook/matchedOrders.json"
         },
         "/unmatched": {
-            "$ref": "./orderbook/allUnmatchedOrders.json"
+            "$ref": "./orderbook/unmatchedOrders.json"
         },
         "/id/matched/{id}": {
             "$ref": "./orderbook/matchedOrdersById.json"

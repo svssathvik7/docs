@@ -1,7 +1,8 @@
 {
     "get": {
         "operationId": "getMatchedOrderById",
-        "summary": "Retrieve a matched order by its create ID.",
+        "summary": "Get Matched Order by ID",
+        "description": "Retrieve a matched order by its create ID.",
         "parameters": [
             {
                 "name": "id",

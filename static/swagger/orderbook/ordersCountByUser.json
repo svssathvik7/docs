@@ -1,7 +1,8 @@
 {
     "get": {
         "operationId": "getOrderCountByUser",
-        "summary": "Get the total number of orders for a specific user.",
+        "summary": "Get Order Count for User",
+        "description": "Get the total number of orders for a specific user.",
         "parameters": [
             {
                 "name": "user",

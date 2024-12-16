@@ -1,7 +1,8 @@
 {
     "get": {
         "operationId": "getMatchedOrdersByUser",
-        "summary": "Retrieve all matched orders for a specific user.",
+        "summary": "Get Matched Orders by User",
+        "description": "Retrieve all matched orders for a specific user.",
         "parameters": [
             {
                 "name": "user",

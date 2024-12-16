@@ -1,7 +1,8 @@
 {
     "get": {
         "operationId": "getAllMatchedOrders",
-        "summary": "Retrieve all matched orders with pagination.",
+        "summary": "Get All Matched Orders",
+        "description": "Retrieve all matched orders with pagination.",
         "parameters": [
             {
                 "name": "page",

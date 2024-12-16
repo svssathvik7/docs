@@ -1,76 +1,76 @@
 {
     "get": {
         "operationId": "getUnmatchedOrderById",
-        "summary": "Retrieve an unmatched order by its create ID.",
+        "summary": "Retrieve Unmatched Order by Id",
+        "description": "Retrieve an unmatched order by its create ID.",
         "parameters": [
-            {
-                "name": "id",
-                "in": "path",
-                "required": true,
-                "schema": {
-                    "type": "string"
-                },
-                "description": "The create ID of the unmatched order"
-            }
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The create ID of the unmatched order"
+          }
         ],
         "responses": {
             "200": {
-                "description": "The unmatched order.",
-                "content": {
-                    "application/json": {
-                        "schema": {
-                            "type": "object",
-                            "properties": {
-                                "status": {
-                                    "type": "string",
-                                    "example": "Ok"
-                                },
-                                "result": {
-                                    "type": "object",
-                                    "properties": {
-                                        "id": {
-                                            "type": "string",
-                                            "example": "12345"
-                                        },
-                                        "user": {
-                                            "type": "string",
-                                            "example": "0xAbC12345D67890Ef"
-                                        },
-                                        "createdAt": {
-                                            "type": "string",
-                                            "example": "2024-12-13T12:34:56Z"
-                                        },
-                                        "amount": {
-                                            "type": "number",
-                                            "example": 100.5
-                                        }
-                                    }
-                                }
+            "description": "Order retrieved successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "enum": ["Ok"]
+                    },
+                    "result": {
+                      "type": "object",
+                      "properties": {
+                        "createId": {
+                          "type": "string"
+                        },
+                        "orderDetails": {
+                          "type": "object",
+                          "properties": {
+                            "product": {
+                              "type": "string"
+                            },
+                            "quantity": {
+                              "type": "integer"
                             }
+                          }
                         }
+                      }
                     }
+                  },
+                  "required": ["status", "result"]
                 }
-            },
-            "400": {
-                "description": "Bad Request. Invalid or missing parameters.",
-                "content": {
-                    "application/json": {
-                        "schema": {
-                            "type": "object",
-                            "properties": {
-                                "status": {
-                                    "type": "string",
-                                    "example": "Error"
-                                },
-                                "error": {
-                                    "type": "string",
-                                    "example": "Invalid ID or missing parameters"
-                                }
-                            }
-                        }
-                    }
-                }
+              }
             }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "enum": ["Error"]
+                    },
+                    "error": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["status", "error"]
+                }
+              }
+            }
+          }
         }
     }
 }

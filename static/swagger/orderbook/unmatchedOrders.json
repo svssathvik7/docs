@@ -1,7 +1,8 @@
 {
     "get": {
         "operationId": "getAllUnmatchedOrders",
-        "summary": "Retrieve all unmatched orders with pagination.",
+        "summary": "Get All Unmatched Orders",
+        "description": "Retrieve all unmatched orders with pagination.",
         "parameters": [
             {
                 "name": "page",
