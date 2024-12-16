@@ -1,6 +1,8 @@
 ---
 id: quickstart
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Quickstart  
 
@@ -24,21 +26,25 @@ Add Supported Testnets to Your `wagmi` Config
 ### Wrap your app with `GardenProvider`  
 This handles swap secrets for HTLCs and ensures transactions complete even if the user reconnects later.  
 
-#### Example: `main.tsx`  
-
+<Tabs>
+   <TabItem value="main.tsx" label="main.tsx" default>
 ```tsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { WagmiProvider } from 'wagmi';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
-import { GardenProvider } from '@gardenfi/react-hooks';
-import { wagmiConfig } from './config/wagmi.ts';
+import { environment, GardenProvider } from '@gardenfi/react-hooks';
+import { wagmiConfig } from 'wagmi.ts';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <WagmiProvider config={wagmiConfig}>
       <QueryClientProvider client={new QueryClient()}>
-        <GardenProvider config={{ ...yourGardenConfig }}>
+        <GardenProvider 
+        config={{
+                store: localStorage,
+                environment: environment.testnet,
+              }}>
           <App />
         </GardenProvider>
       </QueryClientProvider>
@@ -47,36 +53,62 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 );
 ```
 
+</TabItem> 
+<TabItem value="wagmi.ts" label="wagmi.ts">
+```tsx
+import { createConfig, http } from 'wagmi';
+import { arbitrum, arbitrumSepolia, mainnet, sepolia } from 'wagmi/chains';
+import { injected, metaMask, safe } from 'wagmi/connectors';
+
+export const wagmiConfig = createConfig({
+  chains: [mainnet, arbitrum, sepolia, arbitrumSepolia],
+  connectors: [injected(), metaMask(), safe()],
+  transports: {
+    [mainnet.id]: http(),
+    [arbitrum.id]: http(),
+    [sepolia.id]: http(),
+    [arbitrumSepolia.id]: http(),
+  },
+});
+```
+</TabItem>
+</Tabs>
+
 ## Integrate swap logic into your component  
 
 ### Example Code  
-
+<Tabs>
+   <TabItem value="swap.tsx" label="swap.tsx" default>
 ```tsx 
 import { useGarden } from '@gardenfi/react-hooks';
 
-const { initializeSecretManager, swapAndInitiate, getQuote } = useGarden();
+export const SwapComponent = () => {
+  const { initializeSecretManager, swapAndInitiate, getQuote } = useGarden();
 
-const quote = await getQuote({
-  fromAsset: inputToken,
-  toAsset: outputToken,
-  amount: sendAmount,
-});
-
-const [_strategy, quoteAmount] = Object.entries(quote.val.quotes)[0];
-
-const secretManager = await initializeSecretManager();
-
-if (secretManager.ok && secretManager.val.getMasterPrivKey()) {
-  const res = await swapAndInitiate({
+  const quote = await getQuote({
     fromAsset: inputToken,
     toAsset: outputToken,
-    sendAmount: sendAmount.toString(),
-    receiveAmount: quoteAmount.toString(),
-    additionalData: { btcAddress, strategyId: _strategy },
-  }); //creates order and initiates the tx if source chain is EVM
+    amount: sendAmount,
+  });
 
-}
+  const [_strategy, quoteAmount] = Object.entries(quote.val.quotes)[0];
+
+  const secretManager = await initializeSecretManager();
+
+  if (secretManager.ok && secretManager.val.getMasterPrivKey()) {
+    const res = await swapAndInitiate({
+      fromAsset: inputToken,
+      toAsset: outputToken,
+      sendAmount: sendAmount.toString(),
+      receiveAmount: quoteAmount.toString(),
+      additionalData: { btcAddress, strategyId: _strategy },
+    }); //creates order and initiates the tx if source chain is EVM
+
+  }
+};
 ```
+</TabItem>
+</Tabs>
 
 #### Bitcoin as source chain
 
@@ -100,7 +132,7 @@ And that’s it! 🎉 Now, wait for the transaction to complete.
 ### Common Questions
 
 #### What’s the secret manager for?  
-It simplifies the complexity of atomic swaps. By generating and managing secrets/secret hashes via a MasterKey, the `GardenProvider` takes care of everything securely, using `localStorage` to store and retrieve secrets.  
+It simplifies the complexity of atomic swaps. By generating and managing secrets/secret hashes via a MasterKey, the `GardenProvider` takes care of everything securely, generating and retrieving secrets in-memory.  
 
 #### What if `swapAndInitiate` fails?  
 No worries! Occasionally initiating on EVM testnets (fund issues, gas, etc.). 
@@ -114,10 +146,19 @@ evmInitiate?: (order: MatchedOrder) => AsyncResult<MatchedOrder, string>;
 You can use the `orderBook` from `useGarden` to fetch order details:  
 
 ```tsx
+import { OrderStatus } from "@gardenfi/core"
 const { orderBook } = useGarden();
 
-const fetchOrders = async () => {
+const getPendingOrders = async () => {
   const res = await orderBook.fetchOrders(true, false, { per_page: 4 });
+
+  const pendingOrders = res.val.data.filter(
+        (order) =>
+          order.status !== OrderStatus.RedeemDetected &&
+          order.status !== OrderStatus.Matched
+      );
+
+  return pendingOrders;
 };
 ```
 

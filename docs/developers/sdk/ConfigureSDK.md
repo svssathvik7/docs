@@ -8,22 +8,17 @@ To use the Garden SDK, you’ll need to set up wallets, API clients, and initial
 
 ### 1. Initialize dependencies  
 
-Set up your Ethereum and Bitcoin wallets, along with the necessary API clients.  
+Set up your Ethereum wallet, along with the necessary API clients.  
 
 ```typescript
 import { Siwe } from "@gardenfi/core";
-import { BitcoinProvider, BitcoinNetwork, BitcoinWallet } from "@catalogfi/wallets";
-import { privateKeyToAccount, createWalletClient, createPublicClient, http, sepolia } from "viem";
+import { BitcoinProvider, BitcoinNetwork } from "@catalogfi/wallets";
+import { privateKeyToAccount, createWalletClient, http, sepolia } from "viem";
 
 // Ethereum Wallet Setup
 const account = privateKeyToAccount(privateKey());
 const ethereumWalletClient = createWalletClient({
   account,
-  chain: sepolia,
-  transport: http(),
-});
-
-const publicClient = createPublicClient({
   chain: sepolia,
   transport: http(),
 });
@@ -48,6 +43,8 @@ const bitcoinProvider = new BitcoinProvider(
 Use the **SecretManager** to securely manage secrets for your Bitcoin wallet.  
 
 ```typescript
+import { BitcoinWallet } from "@catalogfi/wallets";
+
 const result = await SecretManager.fromWalletClient(ethereumWalletClient);
 if (result.error) {
   throw new Error(result.error);

@@ -75,14 +75,7 @@ const sidebars: SidebarsConfig = {
   ],
 
   developers: [
-    'developers/developers',
-
-    {
-      type: 'category',
-      label: 'Supported Chains',
-      link: { type: 'doc', id: 'developers/supported-chains' },
-      items: [],
-    },
+    'developers/supported-chains',
     {
       type: 'category',
       label: 'Garden API',
@@ -108,7 +101,6 @@ const sidebars: SidebarsConfig = {
           items: [
             'developers/sdk/react-hooks/installation',
             'developers/sdk/react-hooks/quickstart',
-            'developers/sdk/react-hooks/wallet-config',
             'developers/sdk/react-hooks/usegarden-hook',
             'developers/sdk/react-hooks/swap-and-initiate',
             'developers/sdk/react-hooks/auto-redeems',

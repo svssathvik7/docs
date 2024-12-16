@@ -11,13 +11,13 @@ Auto Redeems provide a seamless way to handle the redemption of funds on the des
 ## How Auto Redeems Work
 
 1. **Relayer integration**:  
-   Once a swap has completed, the redemption of funds on the destination chain (such as Ethereum or Bitcoin) is handled by the relayer. This process is fully automated, so developers don’t need to worry about manually triggering the redeem function.
+   Once a swap has completed, the redemption of funds on the destination chain (only Ethereum) is handled by the relayer. This process is fully automated, so developers don’t need to worry about manually triggering the redeem function.
 
 2. **Connection via GardenProvider**:  
    When using React hooks, GardenProvider ensures a seamless connection between the client and the relayer, ensuring that the redemption happens smoothly as soon as the client is active.
 
 3. **Client activity dependency**:  
-   For the redemption to happen, the client must be online and active. If the client is inactive at the time of the redemption, the relayer will automatically pick up the transaction and complete the process as soon as the client comes back online.
+   For the redemption to happen, the client must be online and active. If the client is inactive at the time of the redemption, the process resumes as soon as the client comes back online.
 
 ---
 
