@@ -1,0 +1,59 @@
+{
+    "get": {
+        "operationId": "getOrderCountByUser",
+        "summary": "Get the total number of orders for a specific user.",
+        "parameters": [
+            {
+                "name": "user",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "description": "The user's address"
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "The total number of orders for the user.",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "Ok"
+                                },
+                                "result": {
+                                    "type": "integer",
+                                    "example": 15
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "400": {
+                "description": "Bad Request. Invalid or missing parameters.",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "Error"
+                                },
+                                "error": {
+                                    "type": "string",
+                                    "example": "Invalid user address"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

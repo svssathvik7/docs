@@ -1,0 +1,98 @@
+{
+    "get": {
+        "operationId": "verifyMessage",
+        "summary": "Verifies the signed message and returns a JWT token",
+        "description": "Verifies the signed message and nonce, and returns a JWT token if valid.",
+        "parameters": [
+            {
+                "name": "message",
+                "in": "query",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "example": "Garden.fi"
+                },
+                "description": "The message to be verified."
+            },
+            {
+                "name": "signature",
+                "in": "query",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "description": "The signed message to verify."
+            },
+            {
+                "name": "nonce",
+                "in": "query",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "description": "The nonce used in the verification process."
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "JWT token successfully returned.",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "Ok"
+                                },
+                                "data": {
+                                    "type": "string",
+                                    "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.CwQHc49-QhP...qkfhC0"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "400": {
+                "description": "Bad request due to invalid parameters.",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "Error"
+                                },
+                                "error": {
+                                    "type": "string",
+                                    "example": "Invalid signature or message"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "500": {
+                "description": "Internal Server Error. The server failed to process the request.",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "error": {
+                                    "type": "string",
+                                    "description": "Error message explaining the server-side issue."
+                                }
+                            },
+                            "example": {
+                                "error": "Failed to verify message"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

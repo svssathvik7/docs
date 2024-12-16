@@ -1,0 +1,16 @@
+{
+    "post": {
+        "summary": "Creates a new order.",
+        "responses": {
+            "200": {
+                "description": "Create ID"
+            },
+            "400": {
+                "description": "Bad Request"
+            },
+            "500": {
+                "description": "Internal Server Error"
+            }
+        }
+    }
+}

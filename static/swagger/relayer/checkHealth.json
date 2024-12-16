@@ -1,0 +1,18 @@
+{
+    "get": {
+        "summary": "Checks the health status of the API.",
+        "responses": {
+            "200": {
+                "description": "Online",
+                "content": {
+                    "text/plain": {
+                        "schema": {
+                            "type": "string",
+                            "example": "Online"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "post": {
+        "operationId": "initiateSwapWithSign",
+        "summary": "Initiates a swap with a signature.",
+        "responses": {
+            "200": {
+                "description": "Transaction hash"
+            },
+            "400": {
+                "description": "Bad Request"
+            },
+            "500": {
+                "description": "Internal Server Error"
+            }
+        }
+    }
+}

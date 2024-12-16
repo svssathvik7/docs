@@ -1,0 +1,80 @@
+{
+    "get": {
+                "operationId": "getMatchedOrderById",
+                "summary": "Retrieve a matched order by its create ID.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "The create ID of the matched order"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The matched order.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Ok"
+                                        },
+                                        "result": {
+                                            "type": "object",
+                                            "properties": {
+                                                "id": {
+                                                    "type": "string",
+                                                    "example": "12345"
+                                                },
+                                                "user": {
+                                                    "type": "string",
+                                                    "example": "0xAbC12345D67890Ef"
+                                                },
+                                                "matchedAt": {
+                                                    "type": "string",
+                                                    "example": "2024-12-13T12:34:56Z"
+                                                },
+                                                "amount": {
+                                                    "type": "number",
+                                                    "example": 100.5
+                                                },
+                                                "status": {
+                                                    "type": "string",
+                                                    "example": "Matched"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request. Invalid or missing parameters.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Error"
+                                        },
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Invalid ID or missing parameters"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+}

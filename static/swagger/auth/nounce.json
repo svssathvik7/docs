@@ -1,0 +1,48 @@
+{
+    "get": {
+        "operationId": "getNonce",
+        "summary": "Generates a nonce for the user to sign.",
+        "responses": {
+            "200": {
+                "description": "The generated nonce.",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "Ok"
+                                },
+                                "data": {
+                                    "type": "string",
+                                    "example": "1234567890abcdef"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "500": {
+                "description": "Internal Server Error. The server failed to process the request.",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "Error"
+                                },
+                                "error": {
+                                    "type": "string",
+                                    "example": "Failed to generate nonce"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

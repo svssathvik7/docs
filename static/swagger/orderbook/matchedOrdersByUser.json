@@ -1,0 +1,127 @@
+{
+    "get": {
+        "operationId": "getMatchedOrdersByUser",
+        "summary": "Retrieve all matched orders for a specific user.",
+        "parameters": [
+            {
+                "name": "user",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "description": "The user's address"
+            },
+            {
+                "name": "page",
+                "in": "query",
+                "schema": {
+                    "type": "integer",
+                    "default": 1
+                },
+                "description": "Page number for pagination"
+            },
+            {
+                "name": "per_page",
+                "in": "query",
+                "schema": {
+                    "type": "integer",
+                    "default": 10
+                },
+                "description": "Number of items per page"
+            },
+            {
+                "name": "pending",
+                "in": "query",
+                "schema": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "description": "User pending actions"
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "The paginated matched orders for the user.",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "Ok"
+                                },
+                                "result": {
+                                    "type": "object",
+                                    "properties": {
+                                        "page": {
+                                            "type": "integer",
+                                            "example": 1
+                                        },
+                                        "per_page": {
+                                            "type": "integer",
+                                            "example": 10
+                                        },
+                                        "total": {
+                                            "type": "integer",
+                                            "example": 50
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string",
+                                                        "example": "12345"
+                                                    },
+                                                    "user": {
+                                                        "type": "string",
+                                                        "example": "0xAbC12345D67890Ef"
+                                                    },
+                                                    "matchedAt": {
+                                                        "type": "string",
+                                                        "example": "2024-12-13T12:34:56Z"
+                                                    },
+                                                    "amount": {
+                                                        "type": "number",
+                                                        "example": 100.5
+                                                    },
+                                                    "status": {
+                                                        "type": "string",
+                                                        "example": "Matched"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "400": {
+                "description": "Bad Request. Invalid or missing parameters.",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "Error"
+                                },
+                                "error": {
+                                    "type": "string",
+                                    "example": "Invalid user address or pagination parameters"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
