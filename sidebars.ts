@@ -17,61 +17,85 @@ const sidebars: SidebarsConfig = {
 
   home: [
     { type: 'doc', label: 'Get Started', id: 'home/get-started' },
-    'home/roadmap',
     {
       type: 'category',
-      label: 'Basics',
-      link: { type: 'doc', id: 'home/basics/basics' },
+      label: 'FUNDAMENTALS',
+      collapsible: false,
+
       items: [
         {
           type: 'category',
-          label: 'Swap',
-          link: { type: 'doc', id: 'home/basics/swap/swap' },
+          label: 'Introduction',
+          link: { type: 'doc', id: 'home/fundamentals/introduction/introduction' },
           items: [
-            'home/basics/swap/atomic-swaps',
-            'home/basics/swap/order-matching-engine',
+            'home/fundamentals/introduction/intents',
+            'home/fundamentals/introduction/solvers',
+            'home/fundamentals/introduction/stakers',
+            'home/fundamentals/introduction/auctions',
+            'home/fundamentals/introduction/atomic-swaps',
           ],
         },
-        'home/basics/stake/stake',
-        'home/basics/liquidity-provision',
         {
           type: 'category',
-          label: 'Token',
-          link: { type: 'doc', id: 'home/basics/token/token' },
-          items: ['home/basics/token/seasons'],
+          label: 'How it works',
+          link: { type: 'doc', id: 'home/fundamentals/how-it-works/how-it-works' },
+          items: [
+            'home/fundamentals/how-it-works/intent-flow',
+            'home/fundamentals/how-it-works/cross-chain-coincidence-of-wants-xcow',
+          ],
         },
-        'home/basics/supported-chains',
+        {
+          type: 'category',
+          label: 'Benefits',
+          link: { type: 'doc', id: 'home/fundamentals/benefits/benefits' },
+          items: [
+            'home/fundamentals/benefits/cross-chain-intents',
+            'home/fundamentals/benefits/free-option-protection',
+            'home/fundamentals/benefits/better-price',
+          ],
+        },
         {
           type: 'category',
           label: 'Guides',
-          link: { type: 'doc', id: 'home/basics/guides/guides' },
+
           items: [
-            'home/basics/guides/btc-wbtc',
-            'home/basics/guides/wbtc-btc',
-            'home/basics/guides/wbtc-wbtc',
-            'home/basics/guides/btc-swbtc',
-            'home/basics/guides/swbtc-btc',
-            'home/basics/guides/btc-dlcbtc',
-            'home/basics/guides/dlcbtc-btc',
-            'home/basics/guides/stake-seed',
+            {
+              type: 'category',
+              label: 'Swap',
+
+              items: [
+                'home/basics/guides/swap/btc-wbtc',
+                'home/basics/guides/swap/wbtc-btc',
+                'home/basics/guides/swap/wbtc-wbtc',
+                'home/basics/guides/swap/btc-swbtc',
+                'home/basics/guides/swap/swbtc-btc',
+                'home/basics/guides/swap/btc-dlcbtc',
+                'home/basics/guides/swap/dlcbtc-btc',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Stake',
+
+              items: [
+                'home/basics/guides/stake/stake-seed',
+              ]
+            },
           ],
         },
       ],
     },
     {
       type: 'category',
-      label: 'Security',
-      link: { type: 'doc', id: 'home/security/security' },
-      items: ['home/security/bug-bounty'],
+      label: 'GOVERNANCE',
+      collapsible: false,
+
+      items: [
+        'home/governance/token',
+        'home/governance/governance-process',
+        'home/governance/snapshot',
+      ]
     },
-    'home/governance',
-    {
-      type: 'category',
-      label: 'FAQs',
-      link: { type: 'doc', id: 'home/faqs/faqs' },
-      items: ['home/faqs/support'],
-    },
-    'home/garden-brand-guide',
   ],
 
   developers: [
