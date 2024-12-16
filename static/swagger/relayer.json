@@ -3,7 +3,11 @@
     "info": {
       "title": "Relayer",
       "version": "1.0.0",
-      "description": "This document outlines the REST API endpoints for initiating, redeeming swaps and creating orders."
+      "description": "This document outlines the REST API endpoints for initiating, redeeming swaps and creating orders.",
+      "license": {
+          "name": "Closed Source",
+          "url": "https://evm-swapper-relay.onrender.com"
+      }
     },
     "servers": [
         {

@@ -1,7 +1,7 @@
 {
     "get": {
         "operationId": "verifyMessage",
-        "summary": "Verifies the signed message and returns a JWT token",
+        "summary": "Verify Message",
         "description": "Verifies the signed message and nonce, and returns a JWT token if valid.",
         "parameters": [
             {
