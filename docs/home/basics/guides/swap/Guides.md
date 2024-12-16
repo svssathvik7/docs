@@ -14,25 +14,25 @@ items={[
 type: "link",
 href: "./btc-wbtc",
 label: "How to swap BTC to WBTC",
-docId: "home/basics/guides/btc-wbtc",
+docId: "home/basics/guides/swap/btc-wbtc",
 },
 {
 type: "link",
 href: "./wbtc-btc",
 label: "How to swap WBTC to BTC",
-docId: "home/basics/guides/wbtc-btc",
+docId: "home/basics/guides/swap/wbtc-btc",
 },
 {
 type: "link",
 href: "./wbtc-wbtc",
 label: "How to swap WBTC to WBTC",
-docId: "home/basics/guides/wbtc-wbtc",
+docId: "home/basics/guides/swap/wbtc-wbtc",
 },
 {
 type: "link",
 href: "./stake-seed",
 label: "How to stake SEED",
-docId: "home/basics/guides/stake-seed",
+docId: "home/basics/guides/stake/stake-seed",
 }
 ]}
 />

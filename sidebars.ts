@@ -56,15 +56,16 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
-          label: 'Guides',
+          label: 'GUIDES',
+          collapsible: false,
 
           items: [
             {
               type: 'category',
               label: 'Swap',
+              link: { type: 'doc', id: 'home/basics/guides/swap/btc-wbtc' },
 
               items: [
-                'home/basics/guides/swap/btc-wbtc',
                 'home/basics/guides/swap/wbtc-btc',
                 'home/basics/guides/swap/wbtc-wbtc',
                 'home/basics/guides/swap/btc-swbtc',
@@ -76,10 +77,9 @@ const sidebars: SidebarsConfig = {
             {
               type: 'category',
               label: 'Stake',
+              link: { type: 'doc', id: 'home/basics/guides/stake/stake-seed' },
 
-              items: [
-                'home/basics/guides/stake/stake-seed',
-              ]
+              items: []
             },
           ],
         },
@@ -99,7 +99,7 @@ const sidebars: SidebarsConfig = {
   ],
 
   developers: [
-    'developers/supported-chains',
+    'developers/developers',
     {
       type: 'category',
       label: 'Garden API',
