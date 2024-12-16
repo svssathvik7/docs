@@ -14,7 +14,20 @@
             "url": "https://evm-swapper-relay.onrender.com"
         }
     ],
-    "security": [],
+    "components": {
+      "securitySchemes": {
+        "bearer":{
+          "type": "http",
+          "scheme": "bearer",
+          "bearerFormat": "JWT"
+        }
+      }
+    },
+    "security": [
+      {
+        "bearer": []
+      }
+    ],
     "paths": {
       "/initiate": {
         "$ref": "./relayer/initiateSwapWithSign.json"

@@ -1,9 +1,12 @@
 {
     "get": {
-        "summary": "Checks the health status of the API.",
+        "operationId": "checkHealth",
+        "summary": "Check Health",
+        "description": "Checks the health status of the API.",
+        "security": [],
         "responses": {
             "200": {
-                "description": "Online",
+                "description": "Server is working and online.",
                 "content": {
                     "text/plain": {
                         "schema": {

@@ -1,15 +1,119 @@
 {
     "post": {
-        "summary": "Redeems a swap using the secret.",
+        "operationId": "redeemSwap",
+        "summary": "Redeem Swap",
+        "description": "Redeems a swap using the secret.",
+        "requestBody": {
+            "required": true,
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "order_id": {
+                                "type": "string",
+                                "description": "The ID of the order to redeem"
+                            },
+                            "secret": {
+                                "type": "string",
+                                "description": "The secret for redeeming the swap"
+                            },
+                            "perform_on": {
+                                "type": "string",
+                                "enum": [
+                                    "Source",
+                                    "Destination"
+                                ],
+                                "description": "Whether the action is performed on the source or destination"
+                            }
+                        },
+                        "required": [
+                            "order_id",
+                            "secret",
+                            "perform_on"
+                        ]
+                    }
+                }
+            }
+        },
         "responses": {
             "200": {
-                "description": "Transaction hash"
+                "description": "Swap redeemed successfully",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "enum": [
+                                        "Ok"
+                                    ]
+                                },
+                                "result": {
+                                    "type": "string",
+                                    "description": "Transaction hash"
+                                }
+                            },
+                            "required": [
+                                "status",
+                                "result"
+                            ]
+                        }
+                    }
+                }
             },
             "400": {
-                "description": "Bad Request"
+                "description": "Bad request, invalid input data",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "enum": [
+                                        "Error"
+                                    ]
+                                },
+                                "error": {
+                                    "type": "string",
+                                    "description": "Error message"
+                                }
+                            },
+                            "required": [
+                                "status",
+                                "error"
+                            ]
+                        }
+                    }
+                }
             },
             "500": {
-                "description": "Internal Server Error"
+                "description": "Internal server error",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "enum": [
+                                        "Error"
+                                    ]
+                                },
+                                "error": {
+                                    "type": "string",
+                                    "description": "Error message"
+                                }
+                            },
+                            "required": [
+                                "status",
+                                "error"
+                            ]
+                        }
+                    }
+                }
             }
         }
     }

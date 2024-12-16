@@ -1,16 +1,163 @@
 {
     "post": {
-        "summary": "Creates a new order.",
+        "operationId": "createOrder",
+        "summary": "Create Order",
+        "description": "Creates a new order.",
+        "requestBody": {
+            "required": true,
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "source_chain": {
+                                "type": "string"
+                            },
+                            "destination_chain": {
+                                "type": "string"
+                            },
+                            "source_asset": {
+                                "type": "string"
+                            },
+                            "destination_asset": {
+                                "type": "string"
+                            },
+                            "initiator_source_address": {
+                                "type": "string"
+                            },
+                            "initiator_destination_address": {
+                                "type": "string"
+                            },
+                            "source_amount": {
+                                "type": "string"
+                            },
+                            "destination_amount": {
+                                "type": "string"
+                            },
+                            "fee": {
+                                "type": "string"
+                            },
+                            "nonce": {
+                                "type": "string"
+                            },
+                            "min_destination_confirmations": {
+                                "type": "integer"
+                            },
+                            "timelock": {
+                                "type": "integer"
+                            },
+                            "secret_hash": {
+                                "type": "string"
+                            },
+                            "additional_data": {
+                                "type": "object",
+                                "properties": {
+                                    "strategy_id": {
+                                        "type": "string"
+                                    },
+                                    "input_token_price": {
+                                        "type": "number",
+                                        "format": "float"
+                                    },
+                                    "output_token_price": {
+                                        "type": "number",
+                                        "format": "float"
+                                    },
+                                    "deadline": {
+                                        "type": "string"
+                                    },
+                                    "bitcoin_optional_recipient": {
+                                        "type": "string"
+                                    }
+                                },
+                                "additionalProperties": false
+                            }
+                        },
+                        "required": [
+                            "source_chain",
+                            "destination_chain",
+                            "source_asset",
+                            "destination_asset",
+                            "initiator_source_address",
+                            "initiator_destination_address",
+                            "source_amount",
+                            "destination_amount",
+                            "fee",
+                            "nonce",
+                            "min_destination_confirmations",
+                            "timelock",
+                            "secret_hash",
+                            "additional_data"
+                        ]
+                    }
+                }
+            }
+        },
         "responses": {
             "200": {
-                "description": "Create ID"
+                "description": "Order created successfully",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "enum": [
+                                        "Ok"
+                                    ]
+                                },
+                                "result": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
             },
             "400": {
-                "description": "Bad Request"
+                "description": "Bad request",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "enum": [
+                                        "Error"
+                                    ]
+                                },
+                                "error": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
             },
             "500": {
-                "description": "Internal Server Error"
+                "description": "Internal server error",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "enum": [
+                                        "Error"
+                                    ]
+                                },
+                                "error": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
+
 }
