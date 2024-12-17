@@ -39,6 +39,6 @@ Provide liquidity to Garden and earn fees by becoming a [solver](fundamentals/in
 
 ### Stake <a href="#stake" id="stake"></a>
 
-Garden's [staking](fundamentals/introduction/Stakers.md) system employs a game-theoretic mechanism to ensure solver integrity while incentivizing long-term [**SEED**](governance/Token.md) commitment through native Bitcoin rewards.
+Garden's [staking](fundamentals/introduction/Stakers.md) system employs a game-theoretic mechanism to ensure solver integrity while incentivizing long-term [**SEED**](governance/Tokenomics.md) commitment through native Bitcoin rewards.
 
 Jump straight to [How to stake SEED](../home/basics/guides/stake/StakeSEED.md) for next steps.&#x20;
