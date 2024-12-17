@@ -8,35 +8,37 @@ id: get-started
 
 ## What is Garden?
 
-Garden is the fastest Bitcoin bridge and enables cross-chain Bitcoin swaps in as little as 30 seconds. It is built using an intents based architecture with trustless settlements, ensuring zero custody risk for the users.
+Garden is the fastest Bitcoin bridge, enabling cross-chain Bitcoin swaps in as little as 30 seconds. It is built using an intents-based architecture with trustless settlements, ensuring zero custody risk for the users.
 
-Garden has facilitated over a billion dollars in volume and stands out from other bridges due to these [benefits](fundamentals/benefits/).
+With over a billion dollars in volume facilitated, Garden stands apart from other bridges thanks to these [benefits](fundamentals/benefits/Benefits.md).
 
 ## Use Cases[​](https://docs.garden.finance/#use-cases) <a href="#use-cases" id="use-cases"></a>
 
-#### [Swap​](https://app.garden.finance/swap/) <a href="#swap" id="swap"></a>
+### Swap <a href="#swap" id="swap"></a>
 
-Buy and sell Bitcoin in one click. Garden makes bridging trustless and simple. If you're a new user, these guides will help you perform your first swap on Garden:
+Buy and sell Bitcoin with ease. Garden simplifies trustless bridging, making the process seamless and secure. If you're new to Garden, these guides will walk you through your first swap:
 
 * [How to swap BTC to WBTC](../home/basics/guides/swap/BtcWbtc.md)
 * [How to swap WBTC to BTC](../home/basics/guides/swap/WbtcBtc.md)
 
 To learn how your swap is executed under the hood by Garden protocol, read the [intent lifecycle](fundamentals/how-it-works/IntentFlow.md).
 
-#### Build[​](https://docs.garden.finance/#build) <a href="#build" id="build"></a>
+### Build <a href="#build" id="build"></a>
 
-Garden is a community-driven project that encourages and appreciates developers' use of its composable dev stack to build cool Bitcoin cross-chain experiences. If you're a developer looking to integrate or build on Garden, these are good places to start:
+Garden is a community-focused project that values and supports developers in creating innovative Bitcoin cross-chain applications using its composable development stack. If you're a developer interested in building or integrating with Garden, here are some key resources to get started:
 
-* API: A simple breakdown of Garden's API usage.
-* [SDK](https://docs.garden.finance/developers/sdk/): A simple guide to using the Garden SDK.
-* [Cookbook](https://docs.garden.finance/cookbook/): If you're looking for some inspiration, you can find the projects cooked up by our devs and partners here! _chef's kiss_ To get your hands dirty in Garden (pun intended), check out the [Developers](https://docs.garden.finance/developers/) section.
+* API: A straightforward guide to understanding and utilizing Garden's API.
+* [SDK](https://docs.garden.finance/developers/sdk/): A practical introduction to working with the Garden SDK.
+* [Cookbook](https://docs.garden.finance/cookbook/): Explore projects developed by our team and partners for inspiration.
 
-#### Provide​ <a href="#provide" id="provide"></a>
+For hands-on exploration, head over to the [Developers](https://docs.garden.finance/developers/) section to dive into the Garden ecosystem.
+
+### Provide​ <a href="#provide" id="provide"></a>
 
 Provide liquidity to Garden and earn fees by becoming a [solver](fundamentals/introduction/Solvers.md) for the Garden protocol. If you are interested, reach out to us in the townhall to discuss the next steps.
 
-#### [Stake](https://app.garden.finance/stake/)[​](https://docs.garden.finance/#stake) <a href="#stake" id="stake"></a>
+### Stake <a href="#stake" id="stake"></a>
 
-Garden's [staking](fundamentals/introduction/Stakers.md) system creates a game-theoretic mechanism to maintain solvers' integrity and incentivise long term [**SEED**](governance/Token.md) commitment with native Bitcoin rewards.
+Garden's [staking](fundamentals/introduction/Stakers.md) system employs a game-theoretic mechanism to ensure solver integrity while incentivizing long-term [**SEED**](governance/Token.md) commitment through native Bitcoin rewards.
 
 Jump straight to [How to stake SEED](../home/basics/guides/stake/StakeSEED.md) for next steps.&#x20;
