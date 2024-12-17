@@ -35,7 +35,7 @@ For hands-on exploration, head over to the [Developers](https://docs.garden.fina
 
 ### Provide​ <a href="#provide" id="provide"></a>
 
-Provide liquidity to Garden and earn fees by becoming a [solver](fundamentals/introduction/Solvers.md) for the Garden protocol. If you are interested, reach out to us in the townhall to discuss the next steps.
+Provide liquidity to Garden and earn fees by becoming a [solver](fundamentals/introduction/Solvers.md) for the Garden protocol. If you are interested, reach out to us in the [townhall](https://discord.com/invite/Fp4ZmZZrFu) to discuss the next steps.
 
 ### Stake <a href="#stake" id="stake"></a>
 
