@@ -4,11 +4,11 @@ id: stakers
 
 # Stakers
 
-Staking is the entry point for interested people into Garden protocol, ensuring its decentralisation, efficiency, and accountability. By staking **SEED tokens**, stakers get to vote for [solvers](Solvers.md) they trust to execute intents reliably and earn rewards based on their performance. This system incentivizes long-term [commitment](https://dune.com/garden_finance/gardenfinance#stake-your-seed), balances solver selection, and helps maintain the protocol’s fairness and reliability.&#x20;
+Staking serves as the gateway for users to engage with the Garden protocol, supporting its decentralization, efficiency, and accountability. By staking **SEED tokens**, stakers can vote for trusted [solvers](Solvers.md) to execute intents and earn rewards based on their performance. This system incentivizes long-term [commitment](https://dune.com/garden_finance/gardenfinance#stake-your-seed), balances solver selection, and helps maintain the protocol’s fairness and reliability.
 
 ## How does it work?
 
-1. Anyone holding a minimum of 2100 SEED tokens is eligible to [stake](https://app.garden.finance/stake/). Staking has to be done in multiples of 2100 SEED. Stakers deposit **SEED tokens** into the protocol, locking them for a chosen duration. Longer lock periods result in a higher staking multiplier, increasing both votes and potential rewards. Follow this tutorial for a step-by-step breakdown of staking.
+1. Anyone holding a minimum of **2,100 SEED** tokens is eligible to [stake](https://app.garden.finance/stake/). Staking has to be done in multiples of 2,100 SEED. Stakers deposit **SEED tokens** into the protocol, locking them for a chosen duration. Longer lock periods result in a higher staking multiplier, increasing both votes and potential rewards. Follow [this tutorial](basics/guides/stake/StakeSEED.md) for a step-by-step breakdown of staking.
 
 <figure><img src="/assets/staking.png" alt=""/><figcaption></figcaption></figure>
 
@@ -18,7 +18,7 @@ Staking is the entry point for interested people into Garden protocol, ensuring 
 
 ## Why are stakers important?
 
-Stakers are not necessarily a passive actor in Garden protocol, they are incentivised to:
+Stakers are not necessarily a passive actor in Garden protocol, they are incentivized to:
 
 * Maintain accountability among solvers because stakers would only vote for solvers who settle all their assigned intents (complete rate) without downtime (speed).
 * Remove solver monopoly as staker rewards are adjusted by the voting concentration of a particular solver. Stakers seeking higher returns are incentivized to distribute their votes across underrepresented solvers, ensuring a balanced and fair ecosystem.
