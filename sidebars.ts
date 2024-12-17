@@ -66,12 +66,13 @@ const sidebars: SidebarsConfig = {
               link: { type: 'doc', id: 'home/basics/guides/swap/btc-wbtc' },
 
               items: [
+                'home/basics/guides/swap/btc-wbtc',
                 'home/basics/guides/swap/wbtc-btc',
                 'home/basics/guides/swap/wbtc-wbtc',
+                'home/basics/guides/swap/btc-ibtc',
+                'home/basics/guides/swap/ibtc-btc',
                 'home/basics/guides/swap/btc-swbtc',
                 'home/basics/guides/swap/swbtc-btc',
-                'home/basics/guides/swap/btc-dlcbtc',
-                'home/basics/guides/swap/dlcbtc-btc',
               ],
             },
             {
