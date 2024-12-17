@@ -3,7 +3,7 @@ id: solvers
 ---
 # Solvers
 
-Solvers are the market makers of Garden protocol, responsible for ensuring user [intents](Intents.md) are executed efficiently and securely. By leveraging diverse liquidity sources—on-chain, off-chain, and private order flows—solvers are incentivised to optimize every transaction for users, delivering competetive quotes.
+Solvers are the market makers of Garden protocol, responsible for ensuring user [intents](Intents.md) are executed efficiently and securely. By leveraging diverse liquidity sources—on-chain, off-chain, and private order flows—solvers are incentivized to optimize every transaction for users, delivering competetive quotes.
 
 Solvers address key challenges in decentralized systems. They enhance liquidity access by enabling the protocol to utilize existing DeFi liquidity rather than fragmenting it with native pools. For users, solvers offer [benefits](Intents.md#why-are-intents-better) such as better pricing, MEV resistance, and higher chances of transaction finality, making the system more efficient and user-friendly.
 
@@ -18,7 +18,7 @@ Currently, Garden doesn’t impose any protocol fee for users or solvers.
 
 ## How to become a solver?
 
-Being a solver is a hands-on job, here's what you need:
+To become a solver, here's what you need:
 
 * Solvers must stake **210,000 SEED** as collateral. This stake aligns solvers with the network’s goals and acts as a safeguard against dishonesty or inefficiency.
 * Solvers should have the ability to run arbitrage bots, manage liquidity, and maintain 24/7 operational uptime to meet the demands of intent execution.
