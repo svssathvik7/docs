@@ -92,7 +92,7 @@ const sidebars: SidebarsConfig = {
       collapsible: false,
 
       items: [
-        'home/governance/token',
+        'home/governance/tokenomics',
         'home/governance/governance-process',
         'home/governance/snapshot',
       ]
