@@ -19,7 +19,7 @@ const sidebars: SidebarsConfig = {
     { type: 'doc', label: 'Get Started', id: 'home/get-started' },
     {
       type: 'category',
-      label: 'FUNDAMENTALS',
+      label: 'Fundamentals',
       collapsible: false,
 
       items: [
@@ -56,7 +56,7 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
-          label: 'GUIDES',
+          label: 'Guides',
           collapsible: false,
 
           items: [
@@ -87,7 +87,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'GOVERNANCE',
+      label: 'Governance',
       collapsible: false,
 
       items: [
