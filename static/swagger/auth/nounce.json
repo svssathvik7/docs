@@ -13,11 +13,13 @@
                             "properties": {
                                 "status": {
                                     "type": "string",
-                                    "example": "Ok"
+                                    "example": "Ok",
+                                    "description": "Enum representing the success of /nonce ['OK','Error']"
                                 },
-                                "data": {
+                                "result": {
                                     "type": "string",
-                                    "example": "1234567890abcdef"
+                                    "example": "d2ea8a7ce1d18f50db51de1f7522e45706330cf3a2dcf269930b5d38b5461fcb",
+                                    "description": "The generated nonce for user to sign."
                                 }
                             }
                         }
@@ -33,11 +35,13 @@
                             "properties": {
                                 "status": {
                                     "type": "string",
-                                    "example": "Error"
+                                    "example": "Error",
+                                    "description": "Enum representing the success of /nonce ['OK','Error']"
                                 },
                                 "error": {
                                     "type": "string",
-                                    "example": "Failed to generate nonce"
+                                    "example": "Failed to generate nonce",
+                                    "description": "Server failed to issue nonce!"
                                 }
                             }
                         }
