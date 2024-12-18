@@ -14,7 +14,8 @@
                                 "status": {
                                     "type": "string",
                                     "example": "Ok",
-                                    "description": "Enum representing the success of /nonce ['OK','Error']"
+                                    "description": "Enum representing the success of /nonce",
+                                    "enum": ["Ok"]
                                 },
                                 "result": {
                                     "type": "string",
@@ -36,7 +37,8 @@
                                 "status": {
                                     "type": "string",
                                     "example": "Error",
-                                    "description": "Enum representing the success of /nonce ['OK','Error']"
+                                    "description": "Enum representing the failure of /nonce",
+                                    "enum": ["Error"]
                                 },
                                 "error": {
                                     "type": "string",
