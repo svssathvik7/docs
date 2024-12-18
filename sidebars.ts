@@ -78,16 +78,6 @@ const sidebars: SidebarsConfig = {
     'developers/supported-chains',
     {
       type: 'category',
-      label: 'Garden API',
-      link: { type: 'doc', id: 'developers/api/api' },
-      items: [
-        'developers/api/auth',
-        'developers/api/relayer',
-        'developers/api/orderbook',
-      ],
-    },
-    {
-      type: 'category',
       label: 'Garden SDK',
       link: { type: 'doc', id: 'developers/sdk/sdk' },
       items: [

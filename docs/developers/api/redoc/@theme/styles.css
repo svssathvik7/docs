@@ -72,13 +72,17 @@
     margin: 2%;
 }
 .sc-dntaoT:first-of-type{
-    display: none;
+    background-color: #333!important;
+}
+
+.sc-dntaoT:first-of-type .sc-epnzzT *{
+    color: #fff!important;
 }
 .sc-dntaoT:nth-child(2){
     padding-top: 0!important;
 }
 /* the download button - deleted page header commenting for future reference */
-/* .sc-kEsJEW{
+.sc-kEsJEW{
     transition: all 0.3s ease;
     border-radius: 1rem;
     border: thin solid #000!important;
@@ -91,9 +95,8 @@
 .sc-kEsJEW:hover{
     color: white!important;
     background-color: #000;
-    border: thin solid black!important;
     border: thin solid #fff!important;
-} */
+}
 /* success responses */
 div > div:first-of-type > .sc-gohMHu:first-of-type{
     opacity: 1!important;

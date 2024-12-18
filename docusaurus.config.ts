@@ -101,6 +101,13 @@ const config: Config = {
           label: 'Developers',
         },
         {
+          to: '/developers/api/openapi',
+          type: 'doc',
+          position: 'left',
+          docId: 'developers/api/openapi',
+          label: 'Garden API',
+        },
+        {
           href: 'https://github.com/catalogfi/garden.js',
           position: 'right',
           className: 'header-link header-github-link',
