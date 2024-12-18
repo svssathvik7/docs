@@ -32,6 +32,7 @@
     --ifm-heading-color: #554b6a;
     --ifm-font-color-base: #554b6a;
     --ifm-font-color: #000;
+    --ifm-border-background-color: rgb(87, 98, 104);
     --ifm-invert-font-color: #fff;
     --ifm-success-background-color: rgb(9, 162, 9);
     --ifm-failure-background-color: rgb(144, 17, 17);
@@ -53,12 +54,13 @@
     --ifm-color-primary-light: #e36492;
     --ifm-color-primary-lighter: #e36492;
     --ifm-color-primary-lightest: #e36492;
-    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+    --docusaurus-highlighted-code-line-bg: rgba(245, 246, 247, 0.05);
     --ifm-footer-background-color: #1b1b1d;
     --ifm-navbar-background-color: #1b1b1d;
     --ifm-heading-color: #f2f7fb;
     --ifm-font-color-base: #f2f7fb;
     --ifm-font-color: #fff;
+    --ifm-border-background-color: rgb(159, 180, 190);
     --ifm-success-background-color: rgba(29, 202, 29, 0.5);
     --ifm-failure-background-color: rgba(255, 0, 0, 0.5);;
     --ifm-invert-font-color: #fff;

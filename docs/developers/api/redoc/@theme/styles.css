@@ -41,7 +41,7 @@
     border: thin solid var(--ifm-color-primary);
     transition: all 0.2s ease-in;
 }
-.property, .sc-txhaY, .sc-eWPXlR, .sc-erSfwj, .sc-txhaY{
+.property.token.string, .sc-txhaY, .sc-eWPXlR, .sc-erSfwj, .sc-txhaY{
     color: #fff!important;
 }
 .sc-keTIit, .sc-etPtWW, .sc-fufdwm, .sc-UblHX{
@@ -128,10 +128,12 @@ div > div > .sc-gohMHu *{
 
 /* target the table cells */
 td{
-    padding: 1rem!important;
+    padding: 10px 10px 10px 0!important;
     color: var(--ifm-font-color)!important;
 }
-
+/* .sc-ovuCP{
+    border-left: thin solid var(--ifm-color-primary)!important;
+} */
 /* endpoint headings */
 .sc-khLCKb, .sc-ixGGxD{
     font-size: 2.5rem!important;
@@ -154,4 +156,67 @@ td{
 /* sc-etPtWW is route text */
 .sc-epnzzT, .sc-etPtWW{
     font-size: 1rem!important;
+}
+
+/* required text */
+.sc-hGZxvd{
+    color: red!important;
+}
+
+
+/* examples */
+.sc-cSzYSJ{
+    background-color: var(--docusaurus-highlighted-code-line-bg)!important;
+}
+
+table, td{
+    border: none!important;
+}
+table tr{
+    background-color: transparent!important;
+}
+/* table left connector */
+.sc-ovuCP{
+    border-left: 1px solid var(--ifm-color-primary)!important;
+}
+tr:first-of-type>.sc-eauhAA{
+    border: none!important;
+    background-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        transparent 22px,
+        #e36492 22px,
+        #e36492 100%
+      )!important;
+}
+tr:last-child>.sc-eauhAA{
+    border: none!important;
+    background-image: linear-gradient(
+      to bottom,
+      #e36492 0%,
+      #e36492 22px,
+      transparent 22px,
+      transparent 100%
+    )!important;
+}
+/* single param tables */
+tr:first-child:last-child>.sc-eauhAA{
+    background-image: none!important;
+}
+/* td left border extensions or pointers */
+.sc-gQaihK::before, .sc-gQaihK::after{
+    background: var(--ifm-color-primary)!important;
+}
+/* table param description cells*/
+.sc-fFoeYl{
+    border-bottom: 1px solid var(--ifm-border-background-color)!important;
+}
+/* copy, expand, collapse all buttons */
+.sc-uYFMi button{
+    color: #fff!important;
+}
+/* response samples values */
+.token.string{
+    background-color: transparent!important;
+    color: rgb(160, 251, 170)!important;
 }
