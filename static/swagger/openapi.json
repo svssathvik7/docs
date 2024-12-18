@@ -12,9 +12,6 @@
   "servers": [
     {
       "url": "https://evm-swapper-relay.onrender.com"
-    },
-    {
-      "url": "https://evm-swapper-relay.onrender.com/orders"
     }
   ],
   "components": {
@@ -45,7 +42,7 @@
     {
       "name": "orderbook",
       "x-displayName": "Orderbook",
-      "description": "All about the orderbook routes"
+      "description": "At the core of the Garden lies the Orderbook. It is responsible for order creation, matching, and settlement. One can create orders, track their status, and securely settle them using Atomic Swaps."
     }
   ],
   "paths": {
