@@ -37,9 +37,10 @@
 }
 /* the left search bar */
 .sc-dFqmTM{
-    width: 400px;
+    width: 300px!important;
     border: thin solid var(--ifm-color-primary);
     transition: all 0.2s ease-in;
+    padding: 0.5rem;
 }
 .property.token.string, .sc-txhaY, .sc-eWPXlR, .sc-erSfwj, .sc-txhaY{
     color: #fff!important;
@@ -62,6 +63,7 @@
     background-color: rgb(38, 50, 56)!important;
     padding: 1rem!important;
     border-radius: 1rem;
+    margin: 1rem 0!important;
 }
 .sc-eEVuZf{
     display: none!important;
@@ -140,7 +142,7 @@ td{
     font-weight: 700!important;
 }
 .sc-enMaOJ{
-    font-size: 0.8rem!important;
+    font-size: 1rem!important;
 }
 /* download button */
 .sc-kEsJEW{
@@ -202,6 +204,10 @@ tr:last-child>.sc-eauhAA{
 /* single param tables */
 tr:first-child:last-child>.sc-eauhAA{
     background-image: none!important;
+    border: none!important;
+}
+tr:first-child:last-child > *{
+    border: none!important;
 }
 /* td left border extensions or pointers */
 .sc-gQaihK::before, .sc-gQaihK::after{
@@ -210,13 +216,42 @@ tr:first-child:last-child>.sc-eauhAA{
 /* table param description cells*/
 .sc-fFoeYl{
     border-bottom: 1px solid var(--ifm-border-background-color)!important;
+    padding: 0 1rem!important;
 }
 /* copy, expand, collapse all buttons */
 .sc-uYFMi button{
     color: #fff!important;
 }
+.token.punctuation, .collapser, .ellipsis, .collapsed, .hoverable{
+    color: #fff!important;
+}
 /* response samples values */
-.token.string{
+.token.string, .token.number{
     background-color: transparent!important;
     color: rgb(160, 251, 170)!important;
+}
+
+/* endpoint text */
+.sc-hSyjfr{
+    color: var(--ifm-color-primary)!important;
+}
+
+tbody{
+    width: 100%!important;
+}
+
+.sc-dpBQxM{
+    border: none!important;
+}
+/* nested schema expander */
+td.sc-ovuCP.sc-eOzmre *{
+    background-color: transparent!important;
+    color: var(--ifm-font-color-base)!important;
+}
+td.sc-eOzmre{
+    border: none!important;
+}
+
+.last.expanded > td{
+    background: none!important;
 }

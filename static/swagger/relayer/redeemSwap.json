@@ -12,11 +12,13 @@
                         "properties": {
                             "order_id": {
                                 "type": "string",
-                                "description": "The ID of the order to redeem"
+                                "description": "The ID of the order to redeem",
+                                "example": "12345"
                             },
                             "secret": {
                                 "type": "string",
-                                "description": "The secret for redeeming the swap"
+                                "description": "The secret for redeeming the swap",
+                                "example": "u8zK3aPq4L9w!xF6QyE@t&7N$RjV5#XfHzBkYd*WpCgTm2UvJn"
                             },
                             "perform_on": {
                                 "type": "string",
