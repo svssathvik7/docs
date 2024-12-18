@@ -41,7 +41,7 @@
     border: thin solid var(--ifm-color-primary);
     transition: all 0.2s ease-in;
 }
-.property, .sc-txhaY, .sc-eWPXlR, .sc-erSfwj, .sc-txhaY, .sc-ixGGxD, .sc-ixGGxD *, .sc-fAUdSK p{
+.property, .sc-txhaY, .sc-eWPXlR, .sc-erSfwj, .sc-txhaY{
     color: #fff!important;
 }
 .sc-keTIit, .sc-etPtWW, .sc-fufdwm, .sc-UblHX{
@@ -51,7 +51,6 @@
     .sc-fAUdSK {
         width: 100%!important;
         padding: 0px 1rem!important;
-        margin-bottom: 2rem;
     }
 }
 .sc-kLhKbu{
@@ -71,18 +70,8 @@
     background-color: transparent;
     margin: 2%;
 }
-.sc-dntaoT:first-of-type{
-    background-color: #333!important;
-}
-
-.sc-dntaoT:first-of-type .sc-epnzzT *{
-    color: #fff!important;
-}
-.sc-dntaoT:nth-child(2){
-    padding-top: 0!important;
-}
 /* the download button - deleted page header commenting for future reference */
-.sc-kEsJEW{
+/* .sc-kEsJEW{
     transition: all 0.3s ease;
     border-radius: 1rem;
     border: thin solid #000!important;
@@ -96,14 +85,14 @@
     color: white!important;
     background-color: #000;
     border: thin solid #fff!important;
-}
+} */
 /* success responses */
 div > div:first-of-type > .sc-gohMHu:first-of-type{
     opacity: 1!important;
     border: thin solid var(--ifm-success-background-color)!important;
 }
 /* success and failure response types  */
-div > div > .sc-gohMHu *, .sc-epnzzT > p{
+div > div > .sc-gohMHu *{
     color: var(--ifm-font-color)!important;
 }
 @media (min-width: 997px) {
@@ -141,4 +130,28 @@ div > div > .sc-gohMHu *, .sc-epnzzT > p{
 td{
     padding: 1rem!important;
     color: var(--ifm-font-color)!important;
+}
+
+/* endpoint headings */
+.sc-khLCKb, .sc-ixGGxD{
+    font-size: 2.5rem!important;
+    font-weight: 700!important;
+}
+.sc-enMaOJ{
+    font-size: 0.8rem!important;
+}
+/* download button */
+.sc-kEsJEW{
+    border: thin solid var(--ifm-color-primary)!important;
+    color: var(--ifm-color-primary)!important;
+}
+
+.api-reference--btn{
+    color: var(--ifm-color-primary)!important;
+    text-decoration: none;
+    font-weight: 400!important;
+}
+/* sc-etPtWW is route text */
+.sc-epnzzT, .sc-etPtWW{
+    font-size: 1rem!important;
 }

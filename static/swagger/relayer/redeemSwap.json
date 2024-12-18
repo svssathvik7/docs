@@ -2,7 +2,7 @@
     "post": {
         "operationId": "redeemSwap",
         "summary": "Redeem Swap",
-        "description": "Redeems a swap using the secret.",
+        "description": "Redeems a token swap by providing the secret and specifying the execution side.",
         "requestBody": {
             "required": true,
             "content": {

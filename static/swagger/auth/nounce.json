@@ -2,7 +2,7 @@
     "get": {
         "operationId": "getNonce",
         "summary": "Generate Nounce",
-        "description": "Generates a nonce for the user to sign.",
+        "description": "Generates a unique nonce for the user to sign during authentication.",
         "responses": {
             "200": {
                 "description": "The generated nonce.",

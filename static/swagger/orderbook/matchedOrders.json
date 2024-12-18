@@ -2,7 +2,7 @@
     "get": {
         "operationId": "getAllMatchedOrders",
         "summary": "Get All Matched Orders",
-        "description": "Retrieve all matched orders with pagination.",
+        "description": "Retrieves all matched orders with optional pagination.",
         "servers": [
             {
                 "url": "https://evm-swapper-relay.onrender.com/orders"

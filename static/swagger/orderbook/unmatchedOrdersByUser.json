@@ -2,7 +2,7 @@
     "get": {
         "operationId": "getUnmatchedOrdersByUser",
         "summary": "Get Unmatched orders by user",
-        "description": "Retrieve all unmatched orders for a specific user.",
+        "description": "Retrieves all unmatched orders for a specific user, with optional pagination.",
         "servers": [
             {
                 "url": "https://evm-swapper-relay.onrender.com/orders"

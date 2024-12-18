@@ -2,7 +2,7 @@
     "get": {
         "operationId": "getOrderCountByUser",
         "summary": "Get Order Count for User",
-        "description": "Get the total number of orders for a specific user.",
+        "description": "Fetches the total number of orders for a specific user based on their address.",
         "servers": [
             {
                 "url": "https://evm-swapper-relay.onrender.com/orders"

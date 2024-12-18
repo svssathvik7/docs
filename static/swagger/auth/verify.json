@@ -2,7 +2,7 @@
     "get": {
         "operationId": "verifyMessage",
         "summary": "Verify Message",
-        "description": "Verifies the signed message and nonce, and returns a JWT token if valid.",
+        "description": "Verifies a signed SIWE message with a nonce and issues a JWT for authentication.",
         "parameters": [
             {
                 "name": "message",

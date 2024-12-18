@@ -2,7 +2,7 @@
     "get": {
         "operationId": "getMatchedOrdersByUser",
         "summary": "Get Matched Orders by User",
-        "description": "Retrieve all matched orders for a specific user.",
+        "description": "Retrieves all matched orders for a specific user, with optional pagination and pending action filtering.",
         "servers": [
             {
                 "url": "https://evm-swapper-relay.onrender.com/orders"

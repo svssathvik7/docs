@@ -2,7 +2,7 @@
     "get": {
         "operationId": "getMatchedOrderById",
         "summary": "Get Matched Order by ID",
-        "description": "Retrieve a matched order by its create ID.",
+        "description": "Retrieves a matched order by its unique create ID from the order book.",
         "servers": [
             {
                 "url": "https://evm-swapper-relay.onrender.com/orders"

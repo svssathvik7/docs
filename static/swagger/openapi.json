@@ -2,12 +2,8 @@
   "openapi": "3.0.0",
   "info": {
     "title": "Garden API",
-    "version": "1.0.0",
-    "description": "This is a sample API for testing purposes.",
-    "license": {
-      "name": "Closed Source",
-      "url": "https://evm-swapper-relay.onrender.com"
-    }
+    "version": "x.x.x",
+    "description": "These are the API references for 0x API v2. If you are looking for API v1 references, <a href='https://docs.garden.finance/' class='api-reference--btn'>see here</a>."
   },
   "servers": [
     {
@@ -32,12 +28,12 @@
     {
       "name": "auth",
       "x-displayName": "Auth",
-      "description": "All about the auth routes"
+      "description": "Handles user authentication via nonce generation, message verification, and JWT issuance for secure access."
     },
     {
       "name": "relayer",
       "x-displayName": "Relayer",
-      "description": "All about the relayer routes"
+      "description": "The relayer enables secure initiation, redemption, and order creation for cross-chain swaps with health monitoring."
     },
     {
       "name": "orderbook",

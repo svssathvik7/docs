@@ -2,7 +2,7 @@
     "post": {
         "operationId": "initiateSwapWithSign",
         "summary": "Intiate swap",
-        "description": "Initiates a swap with a signature.",
+        "description": "Initiates a token swap by submitting an order signature and specifying the execution side.",
         "requestBody": {
             "required": true,
             "content": {
