@@ -272,6 +272,11 @@ td.sc-eOzmre{
 /* redocly footer */
 .sc-fUEImY{
     background-color: #f2f7fb!important;
+    /* border-radius: 0 0 1rem 1rem!important; */
+    padding: 0 1rem!important;
+    position: fixed!important;
+    bottom: 0!important;
+    width: 287px!important;
 }
 .sc-fUEImY > a{
     border: none!important;

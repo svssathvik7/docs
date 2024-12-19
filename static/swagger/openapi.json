@@ -3,7 +3,7 @@
   "info": {
     "title": "Garden API",
     "version": "x.x.x",
-    "description": "These are the API references for 0x API v2. If you are looking for API v1 references, <a href='https://docs.garden.finance/' class='api-reference--btn'>see here</a>."
+    "description": "These are the API references for API v2. If you are looking for API v1 references, <a target='_blank' href='https://docs.garden.finance/' class='api-reference--btn'>see here</a>."
   },
   "servers": [
     {
