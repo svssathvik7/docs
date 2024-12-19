@@ -10,86 +10,7 @@
                     "schema": {
                         "type": "object",
                         "properties": {
-                            "source_chain": {
-                                "type": "string",
-                                "description": "The blockchain network where the swap originates."
-                            },
-                            "destination_chain": {
-                                "type": "string",
-                                "description": "The blockchain network where the swap completes."
-                            },
-                            "source_asset": {
-                                "type": "string",
-                                "description":"The asset being swapped on the source blockchain."
-                            },
-                            "destination_asset": {
-                                "type": "string",
-                                "description":"The asset to be received on the destination blockchain."
-                            },
-                            "initiator_source_address": {
-                                "type": "string",
-                                "description":"The wallet address initiating the swap on the source blockchain."
-                            },
-                            "initiator_destination_address": {
-                                "type": "string",
-                                "description": "The wallet address to receive the asset on the destination blockchain."
-                            },
-                            "source_amount": {
-                                "type": "string",
-                                "description": "The amount of the asset being swapped on the source blockchain."
-                            },
-                            "destination_amount": {
-                                "type": "string",
-                                "description": "The amount of the asset expected on the destination blockchain."
-                            },
-                            "fee": {
-                                "type": "string",
-                                "description": "The total cost associated with the swap transaction."
-                            },
-                            "nonce": {
-                                "type": "string",
-                                "description": "A unique identifier for the swap transaction to prevent duplication."
-                            },
-                            "min_destination_confirmations": {
-                                "type": "integer",
-                                "description": "The minimum number of confirmations required on the destination blockchain to finalize the swap."
-                            },
-                            "timelock": {
-                                "type": "integer",
-                                "description": "A timeout period after which the swap expires if not completed."
-                            },
-                            "secret_hash": {
-                                "type": "string",
-                                "description": "A cryptographic hash used to verify the transaction's security."
-                            },
-                            "additional_data": {
-                                "type": "object",
-                                "properties": {
-                                    "strategy_id": {
-                                        "type": "string",
-                                        "description": "Provided by the quote server"
-                                    },
-                                    "input_token_price": {
-                                        "type": "number",
-                                        "format": "float",
-                                        "description": "Provided by the quote server"
-                                    },
-                                    "output_token_price": {
-                                        "type": "number",
-                                        "format": "float",
-                                        "description": "Provided by the quote server"
-                                    },
-                                    "deadline": {
-                                        "type": "string",
-                                        "description": "Validity till the current quote is valid"
-                                    },
-                                    "bitcoin_optional_recipient": {
-                                        "type": "string",
-                                        "description": "An optional Bitcoin address to receive the output token, if specified."
-                                    }
-                                },
-                                "additionalProperties": false
-                            }
+                            "$ref": "../orderbook/components/createOrder.json"
                         },
                         "required": [
                             "source_chain",
@@ -122,11 +43,15 @@
                                 "status": {
                                     "type": "string",
                                     "enum": [
-                                        "Ok"
-                                    ]
+                                        "Ok",
+                                        "Error"
+                                    ],
+                                    "example":"Ok"
                                 },
                                 "result": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "description":"Transaction hash",
+                                    "example":"0x4e9f6b8c3a3d7b92e5f789cc83dfac35f6a12348b7d0e9c1a4e5b6a8f7c123d4"
                                 }
                             }
                         }
@@ -143,11 +68,15 @@
                                 "status": {
                                     "type": "string",
                                     "enum": [
+                                        "Ok",
                                         "Error"
-                                    ]
+                                    ],
+                                    "example": "Error"
                                 },
                                 "error": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "description": "Error message",
+                                    "example": "order expired"
                                 }
                             }
                         }
@@ -164,11 +93,15 @@
                                 "status": {
                                     "type": "string",
                                     "enum": [
+                                        "Ok",
                                         "Error"
-                                    ]
+                                    ],
+                                    "example": "Error"
                                 },
                                 "error": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "description": "Error message",
+                                    "example": "internal error"
                                 }
                             }
                         }

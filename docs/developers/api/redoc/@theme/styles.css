@@ -40,9 +40,18 @@
     width: 300px!important;
     border: thin solid var(--ifm-color-primary);
     transition: all 0.2s ease-in;
-    padding: 0.5rem;
+    padding: 0.5rem 0!important;
+    background-color: transparent!important;
 }
-.property.token.string, .sc-txhaY, .sc-eWPXlR, .sc-erSfwj, .sc-txhaY{
+.sc-dFqmTM *{
+    background-color: transparent!important;
+    color: var(--ifm-font-color-base)!important;
+}
+/* search icon */
+.sc-kBpWFy > path{
+    fill: var(--ifm-font-color-base)!important;
+}
+.property.token.string, .sc-txhaY, .sc-eWPXlR, .sc-txhaY{
     color: #fff!important;
 }
 .sc-keTIit, .sc-etPtWW, .sc-fufdwm, .sc-UblHX{
@@ -95,7 +104,7 @@ div > div:first-of-type > .sc-gohMHu:first-of-type{
 }
 /* success and failure response types  */
 div > div > .sc-gohMHu *{
-    color: var(--ifm-font-color)!important;
+    color: var(--ifm-font-color-base)!important;
 }
 @media (min-width: 997px) {
     .row .docItemCol_VOVn {
@@ -104,7 +113,7 @@ div > div > .sc-gohMHu *{
 }
 /* response type expander arrow */
 .sc-cHqXqK > polygon{
-    fill: var(--ifm-font-color)!important;
+    fill: var(--ifm-font-color-base)!important;
 }
 
 /* content type mini heading */
@@ -131,7 +140,7 @@ div > div > .sc-gohMHu *{
 /* target the table cells */
 td{
     padding: 10px 10px 10px 0!important;
-    color: var(--ifm-font-color)!important;
+    color: var(--ifm-font-color-base)!important;
 }
 /* .sc-ovuCP{
     border-left: thin solid var(--ifm-color-primary)!important;
@@ -230,7 +239,10 @@ tr:first-child:last-child > *{
     background-color: transparent!important;
     color: rgb(160, 251, 170)!important;
 }
-
+/* null values */
+.token.keyword{
+    color: rgb(209, 148, 158)!important;
+}
 /* endpoint text */
 .sc-hSyjfr{
     color: var(--ifm-color-primary)!important;
@@ -254,4 +266,22 @@ td.sc-eOzmre{
 
 .last.expanded > td{
     background: none!important;
+}
+
+
+/* redocly footer */
+.sc-fUEImY{
+    background-color: #f2f7fb!important;
+}
+.sc-fUEImY > a{
+    border: none!important;
+}
+
+.sc-erSfwj[type="get"]{
+    background-color: #2F8132!important;
+    color: #fff!important;
+}
+.sc-erSfwj[type="post"]{
+    background-color: #186FAF!important;
+    color: #fff!important;
 }

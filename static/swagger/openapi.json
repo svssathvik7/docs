@@ -73,7 +73,7 @@
       "$ref": "./orderbook/unmatchedOrders.json"
     },
     "/id/matched/{id}": {
-      "$ref": "./orderbook/matchedOrders.json"
+      "$ref": "./orderbook/matchedOrdersById.json"
     },
     "/user/matched/{user}": {
       "$ref": "./orderbook/matchedOrdersByUser.json"

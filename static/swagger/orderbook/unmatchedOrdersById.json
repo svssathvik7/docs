@@ -14,7 +14,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "example": "123456"
             },
             "description": "The create ID of the unmatched order"
           }
@@ -29,25 +30,13 @@
                   "properties": {
                     "status": {
                       "type": "string",
-                      "enum": ["Ok"]
+                      "enum": ["Ok","Error"],
+                      "example": "Ok"
                     },
                     "result": {
                       "type": "object",
                       "properties": {
-                        "createId": {
-                          "type": "string"
-                        },
-                        "orderDetails": {
-                          "type": "object",
-                          "properties": {
-                            "product": {
-                              "type": "string"
-                            },
-                            "quantity": {
-                              "type": "integer"
-                            }
-                          }
-                        }
+                        "$ref": "./components/createOrder.json"
                       }
                     }
                   },
@@ -65,10 +54,12 @@
                   "properties": {
                     "status": {
                       "type": "string",
-                      "enum": ["Error"]
+                      "enum": ["Ok","Error"],
+                      "example": "Error"
                     },
                     "error": {
-                      "type": "string"
+                      "type": "string",
+                      "example": "unauthorized"
                     }
                   },
                   "required": ["status", "error"]
