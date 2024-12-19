@@ -42,43 +42,46 @@
     }
   ],
   "paths": {
-    "/nonce": {
+    "/auth/nonce": {
       "$ref": "./auth/nounce.json"
     },
-    "/verify": {
+    "/auth/verify": {
       "$ref": "./auth/verify.json"
     },
-    "/initiate": {
+    "/gasless/order/initiate": {
       "$ref": "./relayer/initiateSwapWithSign.json"
     },
-    "/redeem": {
+    "/gasless/order/redeem": {
       "$ref": "./relayer/redeemSwap.json"
     },
-    "/create-order": {
+    "/gasless/order": {
       "$ref": "./relayer/createOrder.json"
+    },
+    "/gasless/order/refund": {
+      "$ref": "./relayer/instantRefund.json"
     },
     "/health": {
       "$ref": "./relayer/checkHealth.json"
     },
-    "/id/unmatched/{id}": {
+    "/unmatched": {
+      "$ref": "./orderbook/unmatchedOrders.json"
+    },
+    "/id/{id}/unmatched": {
       "$ref": "./orderbook/unmatchedOrdersById.json"
     },
-    "/user/unmatched/{user}": {
+    "/user/{user}/unmatched": {
       "$ref": "./orderbook/unmatchedOrdersByUser.json"
     },
     "/matched": {
       "$ref": "./orderbook/matchedOrders.json"
     },
-    "/unmatched": {
-      "$ref": "./orderbook/unmatchedOrders.json"
-    },
-    "/id/matched/{id}": {
+    "/id/{id}/matched": {
       "$ref": "./orderbook/matchedOrdersById.json"
     },
-    "/user/matched/{user}": {
+    "/user/{user}/matched": {
       "$ref": "./orderbook/matchedOrdersByUser.json"
     },
-    "/user/count/{user}": {
+    "/user/{user}/count": {
       "$ref": "./orderbook/ordersCountByUser.json"
     }
   }
