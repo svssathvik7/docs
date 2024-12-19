@@ -35,7 +35,7 @@
 .sc-dFqmTM, .sc-dntaoT{
     border-radius: 1rem;
 }
-/* the left search bar */
+/* the left search layout */
 .sc-dFqmTM{
     width: 300px!important;
     border: thin solid var(--ifm-color-primary);
@@ -50,6 +50,11 @@
 /* search icon */
 .sc-kBpWFy > path{
     fill: var(--ifm-font-color-base)!important;
+}
+/* search bar */
+.sc-dtOqdk{
+    display: flex!important;
+    flex-direction: row-reverse!important;
 }
 .property.token.string, .sc-txhaY, .sc-eWPXlR, .sc-txhaY{
     color: #fff!important;
