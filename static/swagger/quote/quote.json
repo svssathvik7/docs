@@ -1,0 +1,69 @@
+{
+    "post": {
+        "operationId": "attestedQuote",
+        "summary": "Get an attested quote for an order",
+        "description": "Validates the order and retrieves an attested quote based on token prices. The input order includes only the `strategy_id` in the `additional_data` field, while the output includes fully populated `additional_data`.",
+        "requestBody": {
+            "required": true,
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "$ref": "../components/order.json"
+                        }
+                    }
+                }
+            }
+        },
+        "responses": {
+            "200": {
+                "description": "Successfully retrieved attested quote.",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "enum": [
+                                        "Ok",
+                                        "Error"
+                                    ],
+                                    "example": "Ok"
+                                },
+                                "data": {
+                                    "type": "object",
+                                    "properties": {
+                                        "$ref": "../components/order.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "400": {
+                "description": "Failed to retrieve attested quote.",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "status": {
+                                    "type": "integer",
+                                    "example": "401"
+                                },
+                                "error": {
+                                    "type": "string",
+                                    "example": "Invalid amount: expected an integer"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "tags": [
+            "quote"
+        ]
+    }
+}

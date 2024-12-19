@@ -10,7 +10,7 @@
                     "schema": {
                         "type": "object",
                         "properties": {
-                            "$ref": "../orderbook/components/createOrder.json"
+                            "$ref": "../components/order.json"
                         },
                         "required": [
                             "source_chain",

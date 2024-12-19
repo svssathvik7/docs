@@ -1,0 +1,107 @@
+{
+    "get": {
+        "operationId": "price",
+        "summary": "Get a quote for an order pair",
+        "description": "Retrieves a quote for the specified order pair, considering the exact output or input amount.",
+        "parameters": [
+            {
+                "name": "order_pair",
+                "in": "query",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "description": "The order pair for which the quote is needed."
+            },
+            {
+                "name": "exact_out",
+                "in": "query",
+                "required": false,
+                "schema": {
+                    "type": "boolean"
+                },
+                "description": "Indicates whether the exact output amount is specified."
+            },
+            {
+                "name": "amount",
+                "in": "query",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "format": "decimal"
+                },
+                "description": "The amount for the quote."
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "Successfully retrieved quote.",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "enum": [
+                                        "Ok",
+                                        "Error"
+                                    ],
+                                    "example": "Ok"
+                                },
+                                "data": {
+                                    "type": "object",
+                                    "properties": {
+                                        "quotes": {
+                                            "type": "object",
+                                            "additionalProperties": {
+                                                "type": "number"
+                                            },
+                                            "example": {
+                                                "route1": 0.99,
+                                                "route2": 0.98
+                                            }
+                                        },
+                                        "input_token_price": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "description": "The USD price of the input token."
+                                        },
+                                        "output_token_price": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "description": "The USD price of the output token."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "400": {
+                "description": "Failed to retrieve quote.",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "number",
+                                    "example": 401
+                                },
+                                "error": {
+                                    "type": "string",
+                                    "example": "Invalid amount: expected an integer"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "tags": [
+            "quote"
+        ]
+    }
+}

@@ -27,7 +27,7 @@
     "create_order": {
         "type": "object",
         "properties": {
-            "$ref": "./createOrder.json"
+            "$ref": "../../components/order.json"
         }
     }
 }

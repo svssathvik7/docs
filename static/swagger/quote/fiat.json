@@ -1,0 +1,77 @@
+{
+    "get": {
+        "operationId": "usdForOrderPair",
+        "summary": "Get USD prices for an order pair",
+        "description": "Retrieves the USD prices for the input and output tokens of the specified order pair.",
+        "parameters": [
+            {
+                "name": "order_pair",
+                "in": "query",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "description": "The order pair for which USD prices are needed."
+                }
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "Successfully retrieved USD prices.",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "description": "Specifies the source and destination chain and asset in the format {fromChain}:{fromAsset}::{toChain}:{toAsset}",
+                            "properties": {
+                                "status":{
+                                    "type": "string",
+                                    "enum": ["Ok","Error"]
+                                },
+                                "data": {
+                                    "type": "object",
+                                    "properties": {
+                                        "input_token_price": {
+                                            "type": "number",
+                                            "format": "double",
+                                            "description": "",
+                                            "example": "1.00"
+                                        },
+                                        "output_token_price": {
+                                            "type": "number",
+                                            "format": "double",
+                                            "description": "",
+                                            "example": "0.99"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "400": {
+                "description": "Failed to retrieve USD prices.",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "number",
+                                    "example": 401
+                                },
+                                "error": {
+                                    "type": "string",
+                                    "example": "failed to get fiat values"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "tags": [
+            "quote"
+        ]
+    }
+}

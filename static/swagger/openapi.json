@@ -11,19 +11,19 @@
     }
   ],
   "components": {
-      "securitySchemes": {
-        "bearer":{
-          "type": "http",
-          "scheme": "bearer",
-          "bearerFormat": "JWT"
-        }
+    "securitySchemes": {
+      "bearer": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
       }
-    },
-    "security": [
-      {
-        "bearer": []
-      }
-    ],
+    }
+  },
+  "security": [
+    {
+      "bearer": []
+    }
+  ],
   "tags": [
     {
       "name": "auth",
@@ -39,6 +39,11 @@
       "name": "orderbook",
       "x-displayName": "Orderbook",
       "description": "At the core of the Garden lies the Orderbook. It is responsible for order creation, matching, and settlement. One can create orders, track their status, and securely settle them using Atomic Swaps."
+    },
+    {
+      "name": "quote",
+      "x-displayName": "Quote",
+      "description": "Retrieve token prices, market quotes, and actionable trading strategies for informed decision-making."
     }
   ],
   "paths": {
@@ -66,23 +71,35 @@
     "/unmatched": {
       "$ref": "./orderbook/unmatchedOrders.json"
     },
-    "/id/{id}/unmatched": {
-      "$ref": "./orderbook/unmatchedOrdersById.json"
-    },
-    "/user/{user}/unmatched": {
-      "$ref": "./orderbook/unmatchedOrdersByUser.json"
-    },
     "/matched": {
       "$ref": "./orderbook/matchedOrders.json"
     },
+    "/id/{id}/unmatched": {
+      "$ref": "./orderbook/unmatchedOrdersById.json"
+    },
     "/id/{id}/matched": {
       "$ref": "./orderbook/matchedOrdersById.json"
+    },
+    "/user/{user}/unmatched": {
+      "$ref": "./orderbook/unmatchedOrdersByUser.json"
     },
     "/user/{user}/matched": {
       "$ref": "./orderbook/matchedOrdersByUser.json"
     },
     "/user/{user}/count": {
       "$ref": "./orderbook/ordersCountByUser.json"
+    },
+    "/fiat": {
+      "$ref": "./quote/fiat.json"
+    },
+    "/quote": {
+      "$ref": "./quote/quote.json"
+    },
+    "/strategies": {
+      "$ref": "./quote/strategies.json"
+    },
+    "/price": {
+      "$ref": "./quote/price.json"
     }
   }
 }

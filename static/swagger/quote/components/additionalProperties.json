@@ -1,0 +1,67 @@
+{
+    "id": {
+        "type": "string",
+        "description": "Unique identifier for the strategy."
+    },
+    "source_chain_address": {
+        "type": "string",
+        "description": "Address on the source chain."
+    },
+    "dest_chain_address": {
+        "type": "string",
+        "description": "Address on the destination chain."
+    },
+    "source_chain": {
+        "type": "string",
+        "description": "Name of the source chain."
+    },
+    "dest_chain": {
+        "type": "string",
+        "description": "Name of the destination chain."
+    },
+    "source_asset": {
+        "$ref": "./asset.json",
+        "description": "Asset on the source chain."
+    },
+    "dest_asset": {
+        "$ref": "./asset.json",
+        "description": "Asset on the destination chain."
+    },
+    "makers": {
+        "type": "array",
+        "items": {
+            "type": "string"
+        },
+        "description": "List of maker addresses."
+    },
+    "min_amount": {
+        "type": "string",
+        "format": "decimal",
+        "description": "Minimum trade amount for the strategy."
+    },
+    "max_amount": {
+        "type": "string",
+        "format": "decimal",
+        "description": "Maximum trade amount for the strategy."
+    },
+    "min_source_timelock": {
+        "type": "integer",
+        "format": "int64",
+        "description": "Minimum timelock for the source chain."
+    },
+    "min_source_confirmations": {
+        "type": "integer",
+        "format": "int64",
+        "description": "Minimum number of confirmations on the source chain."
+    },
+    "min_price": {
+        "type": "number",
+        "format": "float",
+        "description": "Minimum price for the strategy."
+    },
+    "fee": {
+        "type": "integer",
+        "format": "int64",
+        "description": "Fee in basis points (bips)."
+    }
+}

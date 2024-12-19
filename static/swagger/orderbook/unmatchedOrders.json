@@ -60,7 +60,7 @@
                                             "items": {
                                                 "type": "object",
                                                 "properties": {
-                                                    "$ref": "./components/createOrder.json"
+                                                    "$ref": "../components/order.json"
                                                 }
                                             }
                                         }

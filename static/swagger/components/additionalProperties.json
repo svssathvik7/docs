@@ -1,0 +1,37 @@
+{
+    "type": "object",
+    "properties": {
+        "strategy_id": {
+            "type": "string",
+            "description": "Provided by the quote server"
+        },
+        "input_token_price": {
+            "type": "number",
+            "format": "float",
+            "description": "Provided by the quote server"
+        },
+        "output_token_price": {
+            "type": "number",
+            "format": "float",
+            "description": "Provided by the quote server"
+        },
+        "deadline": {
+            "type": "string",
+            "description": "Validity till the current quote is valid"
+        },
+        "bitcoin_optional_recipient": {
+            "type": "string",
+            "description": "An optional Bitcoin address to receive the output token, if specified."
+        },
+        "sig": {
+            "type": "string",
+            "description": ""
+        },
+        "instant_refund_tx_bytes": {
+            "type": "string",
+            "description": "The signature used to derive the transaction hash for an instant refund in case of transaction failure.",
+            "example": "90a36c9fc942109060165b9db0ada8f6499302288d9d3698c6b4fa9431b5bf22"
+        }
+    },
+    "additionalProperties": false
+}
