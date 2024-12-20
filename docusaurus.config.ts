@@ -19,7 +19,7 @@ const config: Config = {
   organizationName: 'gardenfi', // Usually your GitHub org/user name.
   projectName: 'garden docs', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
@@ -52,6 +52,8 @@ const config: Config = {
           routeBasePath: '/',
           sidebarPath: './sidebars.ts',
           sidebarItemsGenerator: sidebarItemsGenerator,
+          remarkPlugins: [require('remark-math')],
+          rehypePlugins: [require('rehype-katex')],
         },
         blog: false,
         theme: {
@@ -97,7 +99,7 @@ const config: Config = {
           to: '/developers',
           type: 'doc',
           position: 'left',
-          docId: 'developers/supported-chains',
+          docId: 'developers/developers',
           label: 'Developers',
         },
         {

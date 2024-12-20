@@ -1,5 +1,5 @@
 ---
-id: dlcbtc-btc
+id: ibtc-btc
 ---
 
 # How to swap dlcBTC to BTC

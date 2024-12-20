@@ -4,49 +4,41 @@ slug: /
 id: get-started
 ---
 
-# What is Garden?
+# Get started
 
-Garden is the first instant Bitcoin liquidity layer in Web3, designed to provide fast and accurately priced Bitcoin liquidity for traders and dApps.
+## What is Garden?
 
-Garden exists at the crossroads created by the Bitcoin renaissance, which led to three parallel budding Bitcoin ecosystems or the Bitcoin 2.0 stack:
+Garden is the fastest Bitcoin bridge, enabling cross-chain Bitcoin swaps in as little as 30 seconds. It is built using an intents-based architecture with trustless settlements, ensuring zero custody risk for the users.
 
-1. **Bitcoin L1 and L2s**: Bitcoin as an ecosystem has become imaginative and moved from its 'liquid gold' beginnings. Ordinals and L2 chains have created an alternate BTC-powered DeFi ecosystem that wasn't considered possible before.
-2. **Bitcoin on EVM**: Bitcoin accounts for 85% of all cross-chain volume. Being the biggest asset in Web3, Bitcoin-related use cases are a mainstay of EVM DeFi.
-3. **Centralized Markets**: Bitcoin still tops the charts on Binance, and the approval of Bitcoin ETFs brought deserved credibility and institutional investments for Bitcoin.
+With over a billion dollars in volume facilitated, Garden stands apart from other bridges thanks to these [benefits](fundamentals/benefits/Benefits.md).
 
-Bitcoin 2.0 is like a complex financial organism with its various centralized, decentralized, and siloed parts. It requires a deep, instant, and ownerless liquidity layer to function. That's where Garden comes in.
+## Use Cases[​](https://docs.garden.finance/#use-cases) <a href="#use-cases" id="use-cases"></a>
 
-## Use Cases
+### Swap <a href="#swap" id="swap"></a>
 
-### Swap
+Buy and sell Bitcoin with ease. Garden simplifies trustless bridging, making the process seamless and secure. If you're new to Garden, these guides will walk you through your first swap:
 
-Use Garden's Swap function to trustlessly swap your BTC to WBTC and any other asset (coming soon!) instantly on our [Supported Chains](./basics/SupportedChains.md).
+* [How to swap BTC to WBTC](../home/basics/guides/swap/BtcWbtc.md)
+* [How to swap WBTC to BTC](../home/basics/guides/swap/WbtcBtc.md)
 
-If you're a new user, these guides will help you perform your first swap on Garden:
+To learn how your swap is executed under the hood by Garden protocol, read the [intent lifecycle](fundamentals/how-it-works/IntentFlow.md).
 
-- [How to swap BTC to WBTC](./basics/guides/BtcWbtc.md)
-- [How to swap WBTC to BTC](./basics/guides/WbtcBtc.md)
-- [How to swap WBTC to WBTC](./basics/guides/WbtcWbtc.md)
+### Build <a href="#build" id="build"></a>
 
-To learn how swapping works under the hood, check out the [Swap](./basics/swap/Swap.md) section.
+Garden is a community-focused project that values and supports developers in creating innovative Bitcoin cross-chain applications using its composable development stack. If you're a developer interested in building or integrating with Garden, here are some key resources to get started:
 
-### Build
+* API: A straightforward guide to understanding and utilizing Garden's API.
+* [SDK](https://docs.garden.finance/developers/sdk/): A practical introduction to working with the Garden SDK.
+* [Cookbook](https://docs.garden.finance/cookbook/): Explore projects developed by our team and partners for inspiration.
 
-Garden is a community-driven project that encourages and appreciates developers' use of its composable dev stack to build cool Bitcoin cross-chain experiences.
-If you're a developer looking to integrate or build on Garden, these are good places to start:
+For hands-on exploration, head over to the [Developers](https://docs.garden.finance/developers/) section to dive into the Garden ecosystem.
 
-- [SDK](../developers/sdk/Sdk.md): A simple guide to using the Garden SDK.
-- [Cookbook](../developers/cookbook/Cookbook.md): If you're looking for some inspiration, you can find the projects cooked up by our devs and partners here! _chef's kiss_
-  To get your hands dirty in Garden (pun intended), check out the [Developers](../developers/SupportedChains.mdx) section.
+### Provide​ <a href="#provide" id="provide"></a>
 
-### Provide
+Provide liquidity to Garden and earn fees by becoming a [solver](fundamentals/introduction/Solvers.md) for the Garden protocol. If you are interested, reach out to us in the [townhall](https://discord.com/invite/Fp4ZmZZrFu) to discuss the next steps.
 
-Provide liquidity to Garden and earn fees by facilitating swaps. Check out [Liquidity Provision](./basics/LiquidityProvision.md) to understand the role of LPs or **Fillers** (as we like to call them) in the Garden ecosystem.
+### Stake <a href="#stake" id="stake"></a>
 
-If you wish to run a Filler, contact us on [Discord](https://discord.gg/kqMBgeAKAh) to discuss the next steps.
+Garden's [staking](fundamentals/introduction/Stakers.md) system employs a game-theoretic mechanism to ensure solver integrity while incentivizing long-term [**SEED**](governance/Tokenomics.md) commitment through native Bitcoin rewards.
 
-### Stake
-
-Garden's Staking program creates a [game-theoretic](https://garden.finance/blogs/market-making-and-staking/) mechanism to both incentivize HODLing **SEED** (Garden's [Token](./basics/token/Token.md)) and maintain Fillers' integrity. Check out [Stake](./basics/stake/Stake.md) to understand the role of **Stakers** in the Garden ecosystem.
-
-Jump straight to [How to stake SEED](./basics/guides/StakeSEED.md) for next steps.
+Jump straight to [How to stake SEED](../home/basics/guides/stake/StakeSEED.md) for next steps.&#x20;

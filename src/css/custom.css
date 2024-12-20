@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import 'katex/dist/katex.min.css';
 
 /**
  * Any CSS included here will be global. The classic template
