@@ -33,6 +33,7 @@
                                 },
                                 "data": {
                                     "type": "object",
+                                    "description": "The order object",
                                     "properties": {
                                         "$ref": "../components/order.json"
                                     }
@@ -50,10 +51,12 @@
                             "properties": {
                                 "status": {
                                     "type": "integer",
+                                    "description": "Returns a status code corresponding to the error",
                                     "example": "401"
                                 },
                                 "error": {
                                     "type": "string",
+                                    "description": "Returns a error message",
                                     "example": "Invalid amount: expected an integer"
                                 }
                             }

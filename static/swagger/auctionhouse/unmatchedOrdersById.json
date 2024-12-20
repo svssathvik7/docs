@@ -5,7 +5,7 @@
         "description": "Retrieves an unmatched order by its unique create ID from the order book.",
         "servers": [
             {
-                "url": "https://evm-swapper-relay.onrender.com/orders"
+                "url": "https://evm-swapper-relay.onrender.com"
             }
         ],
         "parameters": [
@@ -69,7 +69,7 @@
           }
         },
         "tags": [
-          "orderbook"
+          "auctionhouse"
         ]
     }
 }

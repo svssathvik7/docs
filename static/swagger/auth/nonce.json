@@ -1,27 +1,11 @@
 {
     "get": {
-        "operationId": "getOrderCountByUser",
-        "summary": "Get Order Count for User",
-        "description": "Fetches the total number of orders for a specific user based on their address.",
-        "servers": [
-            {
-                "url": "https://evm-swapper-relay.onrender.com/orders"
-            }
-        ],
-        "parameters": [
-            {
-                "name": "user",
-                "in": "path",
-                "required": true,
-                "schema": {
-                    "type": "string"
-                },
-                "description": "The user's address"
-            }
-        ],
+        "operationId": "getNonce",
+        "summary": "Generate Nonce",
+        "description": "Generates a unique nonce for the user to sign during authentication.",
         "responses": {
             "200": {
-                "description": "The total number of orders for the user.",
+                "description": "The generated nonce.",
                 "content": {
                     "application/json": {
                         "schema": {
@@ -29,19 +13,22 @@
                             "properties": {
                                 "status": {
                                     "type": "string",
-                                    "example": "Ok"
+                                    "example": "Ok",
+                                    "description": "Enum representing the success of /nonce",
+                                    "enum": ["Ok"]
                                 },
                                 "result": {
-                                    "type": "integer",
-                                    "example": 15
+                                    "type": "string",
+                                    "example": "d2ea8a7ce1d18f50db51de1f7522e45706330cf3a2dcf269930b5d38b5461fcb",
+                                    "description": "The generated nonce for user to sign."
                                 }
                             }
                         }
                     }
                 }
             },
-            "400": {
-                "description": "Bad Request. Invalid or missing parameters.",
+            "500": {
+                "description": "Internal Server Error. The server failed to process the request.",
                 "content": {
                     "application/json": {
                         "schema": {
@@ -49,11 +36,14 @@
                             "properties": {
                                 "status": {
                                     "type": "string",
-                                    "example": "Error"
+                                    "example": "Error",
+                                    "description": "Enum representing the failure of /nonce",
+                                    "enum": ["Error"]
                                 },
                                 "error": {
                                     "type": "string",
-                                    "example": "Invalid user address"
+                                    "example": "Failed to generate nonce",
+                                    "description": "Server failed to issue nonce!"
                                 }
                             }
                         }
@@ -62,7 +52,7 @@
             }
         },
         "tags": [
-          "orderbook"
+          "auth"
         ]
     }
 }

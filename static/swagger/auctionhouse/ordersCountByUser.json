@@ -1,27 +1,27 @@
 {
     "get": {
-        "operationId": "getMatchedOrderById",
-        "summary": "Get Matched Order by ID",
-        "description": "Retrieves a matched order by its unique create ID from the order book.",
+        "operationId": "getOrderCountByUser",
+        "summary": "Get Order Count for User",
+        "description": "Fetches the total number of orders for a specific user based on their address.",
         "servers": [
             {
-                "url": "https://evm-swapper-relay.onrender.com/orders"
+                "url": "https://evm-swapper-relay.onrender.com"
             }
         ],
         "parameters": [
             {
-                "name": "id",
+                "name": "user",
                 "in": "path",
                 "required": true,
                 "schema": {
                     "type": "string"
                 },
-                "description": "The create ID of the matched order"
+                "description": "The user's address"
             }
         ],
         "responses": {
             "200": {
-                "description": "The matched order.",
+                "description": "The total number of orders for the user.",
                 "content": {
                     "application/json": {
                         "schema": {
@@ -29,18 +29,11 @@
                             "properties": {
                                 "status": {
                                     "type": "string",
-                                    "enum": [
-                                        "Ok",
-                                        "Error"
-                                    ],
                                     "example": "Ok"
                                 },
                                 "result": {
-                                    "type": "object",
-                                    "properties": {
-                                        "$ref": "./components/matchedOrderVerbose.json"
-                                    },
-                                    "description": "Returns matched order if a match is found or returns null"
+                                    "type": "integer",
+                                    "example": 15
                                 }
                             }
                         }
@@ -60,7 +53,7 @@
                                 },
                                 "error": {
                                     "type": "string",
-                                    "example": "Invalid ID or missing parameters"
+                                    "example": "Invalid user address"
                                 }
                             }
                         }
@@ -69,7 +62,7 @@
             }
         },
         "tags": [
-            "orderbook"
+          "auctionhouse"
         ]
     }
 }

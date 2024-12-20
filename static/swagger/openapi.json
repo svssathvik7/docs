@@ -36,9 +36,9 @@
       "description": "The relayer enables secure initiation, redemption, and order creation for cross-chain swaps with health monitoring."
     },
     {
-      "name": "orderbook",
-      "x-displayName": "Orderbook",
-      "description": "At the core of the Garden lies the Orderbook. It is responsible for order creation, matching, and settlement. One can create orders, track their status, and securely settle them using Atomic Swaps."
+      "name": "auctionhouse",
+      "x-displayName": "Auction House",
+      "description": "At the core of the Garden lies the auctionhouse. It is responsible for order creation, matching, and settlement. One can create orders, track their status, and securely settle them using Atomic Swaps."
     },
     {
       "name": "quote",
@@ -48,51 +48,51 @@
   ],
   "paths": {
     "/auth/nonce": {
-      "$ref": "./auth/nounce.json"
+      "$ref": "./auth/nonce.json"
     },
     "/auth/verify": {
       "$ref": "./auth/verify.json"
     },
-    "/gasless/order/initiate": {
+    "/gasless/intent/initiate": {
       "$ref": "./relayer/initiateSwapWithSign.json"
     },
-    "/gasless/order/redeem": {
+    "/gasless/intent/settlement": {
       "$ref": "./relayer/redeemSwap.json"
     },
-    "/gasless/order": {
+    "/gasless/intent": {
       "$ref": "./relayer/createOrder.json"
     },
-    "/gasless/order/refund": {
+    "/gasless/intent/refund": {
       "$ref": "./relayer/instantRefund.json"
     },
     "/health": {
       "$ref": "./relayer/checkHealth.json"
     },
-    "/unmatched": {
-      "$ref": "./orderbook/unmatchedOrders.json"
+    "/intents/unmatched": {
+      "$ref": "./auctionhouse/unmatchedOrders.json"
     },
-    "/matched": {
-      "$ref": "./orderbook/matchedOrders.json"
+    "/intents/matched": {
+      "$ref": "./auctionhouse/matchedOrders.json"
     },
-    "/id/{id}/unmatched": {
-      "$ref": "./orderbook/unmatchedOrdersById.json"
+    "/intents/id/{id}/unmatched": {
+      "$ref": "./auctionhouse/unmatchedOrdersById.json"
     },
-    "/id/{id}/matched": {
-      "$ref": "./orderbook/matchedOrdersById.json"
+    "/intents/id/{id}/matched": {
+      "$ref": "./auctionhouse/matchedOrdersById.json"
     },
-    "/user/{user}/unmatched": {
-      "$ref": "./orderbook/unmatchedOrdersByUser.json"
+    "/intents/user/{user}/unmatched": {
+      "$ref": "./auctionhouse/unmatchedOrdersByUser.json"
     },
-    "/user/{user}/matched": {
-      "$ref": "./orderbook/matchedOrdersByUser.json"
+    "/intents/user/{user}/matched": {
+      "$ref": "./auctionhouse/matchedOrdersByUser.json"
     },
-    "/user/{user}/count": {
-      "$ref": "./orderbook/ordersCountByUser.json"
+    "/intents/user/{user}/count": {
+      "$ref": "./auctionhouse/ordersCountByUser.json"
     },
     "/fiat": {
       "$ref": "./quote/fiat.json"
     },
-    "/quote": {
+    "/quote/attested": {
       "$ref": "./quote/quote.json"
     },
     "/strategies": {

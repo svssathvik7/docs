@@ -5,7 +5,7 @@
     "description": "Retrieves all unmatched orders for a specific user, with optional pagination.",
     "servers": [
       {
-        "url": "https://evm-swapper-relay.onrender.com/orders"
+        "url": "https://evm-swapper-relay.onrender.com"
       }
     ],
     "parameters": [
@@ -116,7 +116,7 @@
       }
     },
     "tags": [
-      "orderbook"
+      "auctionhouse"
     ]
   }
 }

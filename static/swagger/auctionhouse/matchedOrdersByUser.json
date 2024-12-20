@@ -1,14 +1,23 @@
 {
     "get": {
-        "operationId": "getAllMatchedOrders",
-        "summary": "Get All Matched Orders",
-        "description": "Retrieves all matched orders with optional pagination.",
+        "operationId": "getMatchedOrdersByUser",
+        "summary": "Get Matched Orders by User",
+        "description": "Retrieves all matched orders for a specific user, with optional pagination and pending action filtering.",
         "servers": [
             {
-                "url": "https://evm-swapper-relay.onrender.com/orders"
+                "url": "https://evm-swapper-relay.onrender.com"
             }
         ],
         "parameters": [
+            {
+                "name": "user",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "description": "The user's address"
+            },
             {
                 "name": "page",
                 "in": "query",
@@ -26,11 +35,20 @@
                     "default": 10
                 },
                 "description": "Number of items per page"
+            },
+            {
+                "name": "pending",
+                "in": "query",
+                "schema": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "description": "User pending actions"
             }
         ],
         "responses": {
             "200": {
-                "description": "The paginated matched orders.",
+                "description": "The paginated matched orders for the user.",
                 "content": {
                     "application/json": {
                         "schema": {
@@ -38,7 +56,6 @@
                             "properties": {
                                 "status": {
                                     "type": "string",
-                                    "enum": ["Ok","Error"],
                                     "example": "Ok"
                                 },
                                 "result": {
@@ -54,7 +71,7 @@
                                         },
                                         "total": {
                                             "type": "integer",
-                                            "example": 100
+                                            "example": 50
                                         },
                                         "data": {
                                             "type": "array",
@@ -85,7 +102,7 @@
                                 },
                                 "error": {
                                     "type": "string",
-                                    "example": "Invalid pagination parameters"
+                                    "example": "Invalid user address or pagination parameters"
                                 }
                             }
                         }
@@ -94,7 +111,7 @@
             }
         },
         "tags": [
-            "orderbook"
+          "auctionhouse"
         ]
     }
 }
