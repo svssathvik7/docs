@@ -4,7 +4,7 @@ id: governance-process
 
 # Governance process
 
-Garden's governance framework was created to solidify our community-first ethos. To participate, one must be an active [staker](../fundamentals/introduction/stakers.md). The number of governance votes you own is dependent on the staking multiplier, similar to staking rewards.
+Garden's governance framework was created to solidify our community-first ethos. To participate, one must be an active [staker](../../home/fundamentals/introduction/Stakers.md). The number of governance votes you own is dependent on the staking multiplier, similar to staking rewards.
 
 <figure><img src="/assets/voting_multiplier.png" alt=""/><figcaption></figcaption></figure>
 

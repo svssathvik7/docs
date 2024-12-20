@@ -1,10 +1,9 @@
 ---
-id: relayer
+id: garden-api
 ---
 
-# Relayer
-
+# Garden API
 import React from 'react';
 import RedocComponent from './redoc/RedocComponent';
 
-<RedocComponent specUrl="/swagger/relayer.json" />
+<RedocComponent specUrl="/swagger/openapi.json" />

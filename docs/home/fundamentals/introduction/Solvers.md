@@ -5,7 +5,7 @@ id: solvers
 
 Solvers are the market makers of Garden protocol, responsible for ensuring user [intents](Intents.md) are executed efficiently and securely. By leveraging diverse liquidity sources—on-chain, off-chain, and private order flows—solvers are incentivized to optimize every transaction for users, delivering competetive quotes.
 
-Solvers address key challenges in decentralized systems. They enhance liquidity access by enabling the protocol to utilize existing DeFi liquidity rather than fragmenting it with native pools. For users, solvers offer [benefits](Intents.md#why-are-intents-better) such as better pricing, MEV resistance, and higher chances of transaction finality, making the system more efficient and user-friendly.
+Solvers address key challenges in decentralized systems. They enhance liquidity access by enabling the protocol to utilize existing DeFi liquidity rather than fragmenting it with native pools. For users, solvers offer [benefits](../../fundamentals/benefits/Benefits.md) such as better pricing, MEV resistance, and higher chances of transaction finality, making the system more efficient and user-friendly.
 
 ## How do solvers work?
 

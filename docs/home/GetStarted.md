@@ -27,11 +27,11 @@ To learn how your swap is executed under the hood by Garden protocol, read the [
 
 Garden is a community-focused project that values and supports developers in creating innovative Bitcoin cross-chain applications using its composable development stack. If you're a developer interested in building or integrating with Garden, here are some key resources to get started:
 
-* API: A straightforward guide to understanding and utilizing Garden's API.
-* [SDK](https://docs.garden.finance/developers/sdk/): A practical introduction to working with the Garden SDK.
-* [Cookbook](https://docs.garden.finance/cookbook/): Explore projects developed by our team and partners for inspiration.
+* [API](../developers/api/OpenApi.md): A straightforward guide to understanding and utilizing Garden's API.
+* [SDK](../developers/sdk/Sdk.md): A practical introduction to working with the Garden SDK.
+* [Cookbook](../developers/cookbook/Cookbook.md): Explore projects developed by our team and partners for inspiration.
 
-For hands-on exploration, head over to the [Developers](https://docs.garden.finance/developers/) section to dive into the Garden ecosystem.
+For hands-on exploration, head over to the [Developers](../developers/Developers.md) section to dive into the Garden ecosystem.
 
 ### Provide​ <a href="#provide" id="provide"></a>
 

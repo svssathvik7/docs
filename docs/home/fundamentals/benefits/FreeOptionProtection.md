@@ -4,7 +4,7 @@ id: free-option-protection
 
 # Free option protection
 
-The **free option problem** in [atomic swaps](../introduction/atomic-swaps.md) arises when one party exploits market conditions by deciding to complete or abort a swap based on price movements, leaving the counterparty at a disadvantage. These cases are covered in [scenarios and safeguards](../introduction/atomic-swaps.md#scenarios-and-safeguards).
+The **free option problem** in [atomic swaps](../introduction/AtomicSwaps.mdx) arises when one party exploits market conditions by deciding to complete or abort a swap based on price movements, leaving the counterparty at a disadvantage. These cases are covered in [scenarios and safeguards](../introduction/AtomicSwaps.mdx#scenarios-and-safeguards).
 
 Garden addresses this challenge with built-in mechanisms that ensure fairness and accountability for the participants.
 
