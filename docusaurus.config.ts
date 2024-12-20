@@ -102,13 +102,13 @@ const config: Config = {
           docId: 'developers/developers',
           label: 'Developers',
         },
-        {
-          to: '/developers/api/garden-api',
-          type: 'doc',
-          position: 'left',
-          docId: 'developers/api/garden-api',
-          label: 'Garden API',
-        },
+        // {
+        //   to: '/developers/api/garden-api',
+        //   type: 'doc',
+        //   position: 'left',
+        //   docId: 'developers/api/garden-api',
+        //   label: 'Garden API',
+        // },
         {
           href: 'https://github.com/catalogfi/garden.js',
           position: 'right',

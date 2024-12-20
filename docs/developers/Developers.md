@@ -23,7 +23,9 @@ Garden operates using [intents](../home/fundamentals/introduction/Intents.md), w
 
 With these components working in harmony, Garden ensures a seamless cross-chain experience for developers and users alike.
 
-### Consider integrating BTC to cbBTC swap on Base, here’s how the process unfolds programmatically:s
+### Integrating BTC to cbBTC swap on Base:
+
+<figure><img src="/assets/btc-cbbtc.png" alt=""/><figcaption></figcaption></figure>
 
 1. Start by creating a 32-byte random secret. Calculate its SHA-256 hash (`secretHash`), which will serve as the key identifier for the swap.  
 
