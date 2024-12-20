@@ -3,6 +3,11 @@
         "operationId": "price",
         "summary": "Get a quote for an order pair",
         "description": "Retrieves a quote for the specified order pair, considering the exact output or input amount.",
+        "servers": [
+            {
+                "url": "https://quote-knrp.onrender.com"
+            }
+        ],
         "parameters": [
             {
                 "name": "order_pair",

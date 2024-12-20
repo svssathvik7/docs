@@ -3,6 +3,11 @@
         "operationId": "usdForOrderPair",
         "summary": "Get USD prices for an order pair",
         "description": "Retrieves the USD prices for the input and output tokens of the specified order pair.",
+        "servers": [
+            {
+                "url": "https://quote-knrp.onrender.com"
+            }
+        ],
         "security": [],
         "parameters": [
             {
