@@ -3,6 +3,7 @@
         "operationId": "verifyMessage",
         "summary": "Verify Message",
         "description": "Verifies a signed SIWE message with a nonce and issues a JWT for authentication.",
+        "security": [],
         "requestBody": {
             "required": true,
             "content": {
@@ -12,7 +13,7 @@
                         "properties": {
                             "message": {
                                 "type": "string",
-                                "example": "Garden.fi",
+                                "example": "Sign in with Ethereum to example.com",
                                 "description": "The message to be verified."
                             },
                             "signature": {
@@ -49,7 +50,7 @@
                                     "description": "Enum representing the success of /nonce",
                                     "enum": ["Ok"]
                                 },
-                                "data": {
+                                "result": {
                                     "type": "string",
                                     "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.CwQHc49-QhP9O-d78b6oAAGv1FlMY_MBOxxr06vNPSgTSOx40HpNqTTlLwFExC-U-KajJZ2izwSKVhNlD2DqTf-V2M-wQTZsG9Ucqg-QZ-V_L02ePyyJ8mn5vJUtTfxmf_WyytvjxIRkPqKkPmu3tJl00cRVt4kFiD_F_XRhPT8QNmEodf5Q9jcByq5J3eyVgfge4wZA9V5nYBz9N-i_AcDttXQmsxtzvthlwszi5Sscw4yIbw1lnz_fHxuK6-lpoIh8IbOdPfGMlg_Mc0AzVObrhMKbT0OnNfbtk9tI0vErzOnoD7A2vDdBz01XccFZ36txcxQ95JZ-_WNs7g",
                                     "description": "JWT token issued for authenticated user, containing encoded user claims and used for session validation in subsequent API requests."
@@ -89,13 +90,17 @@
                         "schema": {
                             "type": "object",
                             "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "Error",
+                                    "description": "Enum representing the success of /nonce",
+                                    "enum": ["Error"]
+                                },
                                 "error": {
                                     "type": "string",
-                                    "description": "Error message explaining the server-side issue."
+                                    "description": "Error message explaining the server-side issue.",
+                                    "example": "internal error"
                                 }
-                            },
-                            "example": {
-                                "error": "Failed to verify message"
                             }
                         }
                     }
