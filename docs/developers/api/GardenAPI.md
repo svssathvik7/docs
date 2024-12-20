@@ -1,5 +1,5 @@
 ---
-id: openapi
+id: garden-api
 ---
 
 # Garden API
