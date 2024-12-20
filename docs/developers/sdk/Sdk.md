@@ -2,16 +2,17 @@
 id: sdk
 ---
 
+# Garden SDK
+
 import DocCardList from '@theme/DocCardList';
 
-# Garden SDK
 The **Garden SDK** is a set of typescript packages that allow you to bridge Bitcoin to EVM or non-EVM chains. It is an abstraction over the Garden APIs, allowing developers to integrate Garden components into their dApps easily.
 
-Want to know how everything works internally? Check out [Core Concepts](./CoreConcepts.md).
-
 ## Features
+
 - **Cross-chain swaps**: Swap assets between Bitcoin and EVM or non EVM chains.
 - **OTAs**: Create one-time Bitcoin accounts using your Web3 providers, giving you access to all Bitcoin wallet features.
+
 ### Integrating Garden SDK v2
 
 Integrating Garden SDK v2 into your dApp should feel as smooth as planting seeds in fertile soil (pun intended). Let’s get you up and running in no time.  
@@ -65,7 +66,8 @@ The contract has a refund mechanism if the trader fails to redeem the funds. The
 ![refunding](../images/refunding.png)
 ---
 
-#### What’s new in v2?  
+### What’s new in v2?
+
 We’ve reduced user dependencies and improved the overall experience, making it simpler and more intuitive for both developers and users alike.
 
 ## How it works with code?
@@ -80,4 +82,4 @@ We’ve reduced user dependencies and improved the overall experience, making it
 - **Garden core**: The heart of the SDK for creating and managing orders.  
 - **Relay service**: For gasless swaps using the `EvmRelay`.  
 
-> **Note:** If you’re using our React hooks, we’ve abstracted these complexities for you—making integration effortless! 🎉
+> **Note:** If you’re using our React hooks, we’ve abstracted these complexities for you—making integration effortless!

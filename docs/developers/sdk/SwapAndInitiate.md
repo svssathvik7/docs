@@ -85,4 +85,4 @@ The user must remain online during the swap process. If they leave, the transact
 ## Tips  
 
 - **Error handling**: Always validate responses and handle errors gracefully to ensure a smooth user experience.  
-- **React hooks**: If you're using our **React hooks**, this process is already streamlined for you. Just call `swapAndInitiate` with the necessary parameters and let it handle the rest. 
+- **React hooks**: If you're using our **React hooks**, this process is already streamlined for you. Just call `swapAndInitiate` with the necessary parameters and let it handle the rest.

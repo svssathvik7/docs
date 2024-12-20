@@ -45,8 +45,6 @@ Refunds allow users to recover their funds if a swap fails or the time lock expi
 - **HTLC Expiry**: Refunds become available after the time lock in the HTLC expires without a successful redeem.  
 - **Funds Recovery**: The original funds are returned to the user on the source chain.  
 
-### Implementation  
-
 Here's how to handle a refund operation:  
 
 ```tsx
