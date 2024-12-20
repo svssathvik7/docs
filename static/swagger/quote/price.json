@@ -8,6 +8,7 @@
                 "url": "https://quote-knrp.onrender.com"
             }
         ],
+        "security": [],
         "parameters": [
             {
                 "name": "order_pair",

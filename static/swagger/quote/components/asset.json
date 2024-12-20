@@ -3,7 +3,8 @@
     "properties": {
         "symbol": {
             "type": "string",
-            "description": "Symbol of the asset."
+            "description": "Symbol of the asset.",
+            "example": ""
         },
         "decimals": {
             "type": "integer",

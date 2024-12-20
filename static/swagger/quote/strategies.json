@@ -8,6 +8,7 @@
                 "url": "https://quote-knrp.onrender.com"
             }
         ],
+        "security": [],
         "responses": {
             "200": {
                 "description": "Successfully retrieved strategies.",
@@ -23,6 +24,7 @@
                                 },
                                 "data": {
                                     "type": "object",
+                                    "description": "Retrieves a hashmap of strategies",
                                     "properties": {
                                         "$ref": "./components/additionalProperties.json" 
                                     }

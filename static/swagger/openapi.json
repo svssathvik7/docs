@@ -95,7 +95,7 @@
     "/quote/attested": {
       "$ref": "./quote/quote.json"
     },
-    "/strategies": {
+    "/quote/strategies": {
       "$ref": "./quote/strategies.json"
     },
     "/price": {
