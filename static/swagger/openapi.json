@@ -32,8 +32,8 @@
     },
     {
       "name": "relayer",
-      "x-displayName": "Relayer",
-      "description": "The relayer enables secure initiation, redemption, and intent creation for cross-chain swaps with health monitoring."
+      "x-displayName": "Gasless API",
+      "description": "The Gasless API enables secure initiation, redemption, and intent creation for cross-chain swaps with health monitoring."
     },
     {
       "name": "auctionhouse",
