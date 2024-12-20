@@ -2,21 +2,21 @@
 id: tokenomics
 ---
 
-# Token
+# Tokenomics
 
 SEED is the utility token of Garden and is designed to facilitate participation in the protocol.The token launched on [January 18th, 2024](https://etherscan.io/tx/0x02446e6d65cef97f2a172382179c035bf5cd5738dfc1ba3c01c7f8a8439ec00d).
 
 SEED empowers holders to actively shape the Garden ecosystem:
 
-* **Term-staking**: [Stake](../fundamentals/introduction/stakers.md) SEED to participate in protocol governance and earn a share of platform revenue. A minimum of 2,100 SEED are required to stake.
-* **Perma-staking:** You can choose to permanently burn 21,000 SEED (perma-stake) to mint a Gardener Pass. This pass comes with all the benefits of permanently staking seed, and also gives you the flexibility to transfer ownership to a different wallet or put it up for sale as its an NFT.
+* **Staking**: [Stake](../fundamentals/introduction/stakers.md) SEED to participate in protocol governance and earn a share of platform revenue. A minimum of 2,100 SEED are required to stake.
 * **Market making**: Holding 210,000 SEED tokens grants eligibility to become a [solver](../fundamentals/introduction/solvers.md).&#x20;
 * **Governance:** Participate in protocol decision-making, have a say in selecting community incentive programs, giving grants, and treasury allocation.
+* **Mint and burn:** You can choose to permanently burn 21,000 SEED (perma-stake) to mint a Gardener Pass. This pass comes with all the benefits of permanently staking seed, and also gives you the flexibility to transfer ownership to a different wallet or put it up for sale as its an NFT.
 * **Exclusive access**: SEED holders receive early access to new features, exclusive contests, and other benefits, enriching their engagement within the Garden ecosystem.
 
 ### Allocation and emission <a href="#tokenomics-and-allocation" id="tokenomics-and-allocation"></a>
 
-<figure><img src="/assets/token_allocations.png" alt="" /><figcaption></figcaption></figure>
+<figure><img src="/assets/token_allocations.png" alt=""/><figcaption></figcaption></figure>
 
 **Total Supply**: 147,000,000 SEED
 
@@ -28,13 +28,13 @@ SEED empowers holders to actively shape the Garden ecosystem:
 
 ### Emission schedule <a href="#seed-emission-schedule" id="seed-emission-schedule"></a>
 
-_\[as of 16th December 2024]_[_​_](https://docs.garden.finance/home/basics/token/#seed-emission-schedule)
+_\[as of 16th December 2024]_[_​_](https://docs.garden.finance/home/basics/tokenomics/#seed-emission-schedule)
 
-**Community, partnerships & grants**
+**Community incentives**
 
-The community allocation accounts for **96 million SEED**, designed to drive ecosystem growth through grants, campaigns, and other initiatives.
+The community incentives allocation accounts for **96 million SEED**, designed to drive ecosystem growth through grants, campaigns, and other initiatives.
 
-* **Distributed to date:** 11.293 million SEED (11.8%).
+* **Distributed to date:** 11.293 million SEED (14.1%).
 * **Remaining funds:** Controlled by the DAO, which determines their use through the governance process.
 
 **Team and investor incentives**
@@ -44,15 +44,13 @@ The team and investor incentives allocation account for **51 million SEED**. Bot
 * **Investor incentives** are streamed over a 24-month period following the cliff.
 * **Team incentives** are streamed over a 30-month period following the cliff.
 
-<figure><img src="/assets/incentives.png" alt="" /><figcaption></figcaption></figure>
+<figure><img src="/assets/incentives.png" alt=""/><figcaption></figcaption></figure>
 
 | Category  | Cliff ends   | Year 1 | Year 2 | Year 3 | Total |
 | --------- | ------------ | ------ | ------ | ------ | ----- |
 | Investors | Jul 18, 2025 | 7.25 M | 14.5 M | 7.25 M | 29 M  |
 | Team      | Jul 18, 2025 | 4.4 M  | 8.8 M  | 8.8 M  | 22 M  |
 
-### Future outlook[​](https://docs.garden.finance/home/basics/token/#future-outlook) <a href="#future-outlook" id="future-outlook"></a>
+### Future Outlook[​](https://docs.garden.finance/home/basics/tokenomics/#future-outlook) <a href="#future-outlook" id="future-outlook"></a>
 
 The SEED allocation for community incentives is dynamic, with the DAO determining its distribution to ensure alignment with community needs. Transparent tokenomics and governance-driven decisions will remain central as Garden evolves. Initiatives to onboard new chief gardeners and enhance community engagement will expand in future phases of the protocol.
-
-SEED empowers holders to actively shape the Garden ecosystem.
