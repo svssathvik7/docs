@@ -51,9 +51,6 @@
     display: flex!important;
     flex-direction: row-reverse!important;
 }
-.property.token.string, .sc-txhaY, .sc-eWPXlR, .sc-txhaY{
-    color: #fff!important;
-}
 .sc-keTIit, .sc-etPtWW, .sc-fufdwm, .sc-UblHX{
     color: var(--ifm-invert-font-color)!important;
 }
@@ -231,16 +228,17 @@ tr:first-child:last-child > *{
 .sc-uYFMi button{
     color: #fff!important;
 }
-.token.punctuation, .collapser, .ellipsis, .collapsed, .hoverable{
-    color: #fff!important;
-}
 /* response samples values */
-.token.string, .token.number{
+.redoc-json .token.string, .redoc-json .token.number{
     background-color: transparent!important;
     color: rgb(160, 251, 170)!important;
 }
+.property.token.string, .sc-txhaY, .sc-eWPXlR, .sc-txhaY, .token.punctuation, .collapser, .ellipsis, .collapsed, .hoverable{
+    color: #fff!important;
+}
+
 /* null values */
-.token.keyword{
+.redoc-json .token.keyword{
     color: rgb(209, 148, 158)!important;
 }
 /* endpoint text */
