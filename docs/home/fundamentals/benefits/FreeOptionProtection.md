@@ -12,7 +12,7 @@ Garden addresses this challenge with built-in mechanisms that ensure fairness an
 
 * Solver and its respective stakers are slashed if the solver fails to initiate a deposit on their side after the user’s deposit. The slashed amount is awarded to the user.
 * This penalty directly discourages solver misuse and also ensures stakers will keep solvers accountable as they can always switch their vote to another solver.
-* Settlement speed is already factored into the solver score [formula](../introduction/auctions.md), reducing the ability of unreliable solvers to win future intents.
+* Settlement speed is already factored into the solver score [formula](../introduction/Auctions.md), reducing the ability of unreliable solvers to win future intents.
 
 ### **User safeguards**
 

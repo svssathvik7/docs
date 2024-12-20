@@ -6,7 +6,7 @@ import DocCardList from '@theme/DocCardList';
 
 # Swap
 
-Garden is unlike traditional 'bridges' and doesn't have a custodian network or multi-sig securing the bridge. It is built using a decentralized [Order Matching Engine](/docs/home/basics/swap/OrderMatchingEngine.md) and peer-to-peer [Atomic Swaps](/docs/home/basics/swap/AtomicSwaps.md). As a result, Garden's security and decentralization are deferred to the chains on which it is deployed, making it less vulnerable to attacks.
+Garden is unlike traditional 'bridges' and doesn't have a custodian network or multi-sig securing the bridge. It is built using a decentralized [Order Matching Engine](../../basics/swap/OrderMatchingEngine.md) and peer-to-peer [Atomic Swaps](/docs/home/basics/guides/swap/Swap.md). As a result, Garden's security and decentralization are deferred to the chains on which it is deployed, making it less vulnerable to attacks.
 
 ![existingSolutions](../../images/existingSolutions.png)
 
@@ -14,9 +14,9 @@ By integrating the Garden [SDK](/docs/developers/sdk/Sdk.md), you unlock the pot
 
 ## New to Garden?
 
-- [How to swap BTC to WBTC](/docs/home/basics/guides/BtcWbtc.md)
-- [How to swap WBTC to BTC](/docs/home/basics/guides/WbtcBtc.md)
-- [How to swap WBTC to WBTC](/docs/home/basics/guides/WbtcWbtc.md)
+- [How to swap BTC to WBTC](/docs/home/basics/guides/swap/BtcWbtc.md)
+- [How to swap WBTC to BTC](/docs/home/basics/guides/swap/WbtcBtc.md)
+- [How to swap WBTC to WBTC](/docs/home/basics/guides/swap/WbtcWbtc.md)
 
 Garden's significant advantage is its ability to perform these swaps quickly and across different blockchains. This broad compatibility aims to enable seamless and secure Bitcoin support for various decentralized applications (dApps), expanding Bitcoin's utility and accessibility within the broader blockchain ecosystem.
 

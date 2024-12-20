@@ -23,4 +23,4 @@ Garden’s Snapshot system features two key roles:
 
 ## Voting power
 
-Voting power in Garden is determined by staking [multipliers](../fundamentals/introduction/stakers.md) and ownership of the Gardener Pass NFT. Stakers gain increased voting power based on their staking multiplier, which rewards long-term commitment to the protocol. Additionally, Gardener Pass NFT holders receive a fixed voting power of 70 votes.
+Voting power in Garden is determined by staking [multipliers](../fundamentals/introduction/Stakers.md) and ownership of the Gardener Pass NFT. Stakers gain increased voting power based on their staking multiplier, which rewards long-term commitment to the protocol. Additionally, Gardener Pass NFT holders receive a fixed voting power of 70 votes.
