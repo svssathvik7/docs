@@ -1,8 +1,8 @@
 {
     "get": {
-        "operationId": "getMatchedOrderById",
-        "summary": "Get Matched Order by ID",
-        "description": "Retrieves a matched order by its unique create ID from the order book.",
+        "operationId": "getMatchedIntentById",
+        "summary": "Get Matched Intent by ID",
+        "description": "Retrieves a matched intent by its unique create ID from the intent book.",
         "servers": [
             {
                 "url": "https://evm-swapper-relay.onrender.com"
@@ -16,12 +16,12 @@
                 "schema": {
                     "type": "string"
                 },
-                "description": "The create ID of the matched order"
+                "description": "The create ID of the matched intent"
             }
         ],
         "responses": {
             "200": {
-                "description": "The matched order.",
+                "description": "The matched intent.",
                 "content": {
                     "application/json": {
                         "schema": {
@@ -40,7 +40,7 @@
                                     "properties": {
                                         "$ref": "./components/matchedOrderVerbose.json"
                                     },
-                                    "description": "Returns matched order if a match is found or returns null"
+                                    "description": "Returns matched intent if a match is found or returns null"
                                 }
                             }
                         }

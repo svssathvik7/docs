@@ -2,7 +2,7 @@
     "post": {
         "operationId": "initiateSwapWithSign",
         "summary": "Intiate swap",
-        "description": "Initiates a token swap by submitting an order signature and specifying the execution side.",
+        "description": "Initiates a token swap by submitting an intent signature and specifying the execution side.",
         "requestBody": {
             "required": true,
             "content": {
@@ -12,7 +12,7 @@
                         "properties": {
                             "order_id": {
                                 "type": "string",
-                                "description": "The unique order ID",
+                                "description": "The unique intent ID",
                                 "example": 12345
                             },
                             "signature": {
@@ -86,7 +86,7 @@
                                 "error": {
                                     "type": "string",
                                     "description": "Error message",
-                                    "example": "Order already initiated"
+                                    "example": "Intent already initiated"
                                 }
                             },
                             "required": [

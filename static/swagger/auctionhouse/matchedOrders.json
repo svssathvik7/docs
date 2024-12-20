@@ -1,8 +1,8 @@
 {
     "get": {
-        "operationId": "getAllMatchedOrders",
-        "summary": "Get All Matched Orders",
-        "description": "Retrieves all matched orders with optional pagination.",
+        "operationId": "getAllMatchedIntents",
+        "summary": "Get All Matched Intents",
+        "description": "Retrieves all matched intents with optional pagination.",
         "servers": [
             {
                 "url": "https://evm-swapper-relay.onrender.com"
@@ -30,7 +30,7 @@
         ],
         "responses": {
             "200": {
-                "description": "The paginated matched orders.",
+                "description": "The paginated matched intents.",
                 "content": {
                     "application/json": {
                         "schema": {

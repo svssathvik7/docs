@@ -12,7 +12,7 @@
                         "properties": {
                             "order_id": {
                                 "type": "string",
-                                "description": "The ID of the order to redeem",
+                                "description": "The ID of the intent to redeem",
                                 "example": "12345"
                             },
                             "secret": {

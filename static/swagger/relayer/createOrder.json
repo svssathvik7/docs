@@ -1,8 +1,8 @@
 {
     "post": {
-        "operationId": "createOrder",
-        "summary": "Create Order",
-        "description": "Creates a new cross-chain swap order with specified parameters and strategy details.",
+        "operationId": "createIntent",
+        "summary": "Create Intent",
+        "description": "Creates a new cross-chain swap intent with specified parameters and strategy details.",
         "requestBody": {
             "required": true,
             "content": {
@@ -34,7 +34,7 @@
         },
         "responses": {
             "200": {
-                "description": "Order created successfully",
+                "description": "Intent created successfully",
                 "content": {
                     "application/json": {
                         "schema": {
@@ -76,7 +76,7 @@
                                 "error": {
                                     "type": "string",
                                     "description": "Error message",
-                                    "example": "order expired"
+                                    "example": "intent expired"
                                 }
                             }
                         }

@@ -1,8 +1,8 @@
 {
     "get": {
-        "operationId": "usdForOrderPair",
-        "summary": "Get USD prices for an order pair",
-        "description": "Retrieves the USD prices for the input and output tokens of the specified order pair.",
+        "operationId": "usdForIntentPair",
+        "summary": "Get USD prices for an intent pair",
+        "description": "Retrieves the USD prices for the input and output tokens of the specified intent pair.",
         "servers": [
             {
                 "url": "https://quote-knrp.onrender.com"
@@ -16,7 +16,7 @@
                 "required": true,
                 "schema": {
                     "type": "string",
-                    "description": "The order pair for which USD prices are needed.",
+                    "description": "The intent pair for which USD prices are needed.",
                     "example": "ethereum:USDC::arbitrum:USDT"
                 }
             }
@@ -40,13 +40,13 @@
                                         "input_token_price": {
                                             "type": "number",
                                             "format": "double",
-                                            "description": "The USD price of the input token in the order pair.",
+                                            "description": "The USD price of the input token in the intent pair.",
                                             "example": 1.00
                                         },
                                         "output_token_price": {
                                             "type": "number",
                                             "format": "double",
-                                            "description": "The USD price of the output token in the order pair.",
+                                            "description": "The USD price of the output token in the intent pair.",
                                             "example": 0.99
                                         }
                                     }

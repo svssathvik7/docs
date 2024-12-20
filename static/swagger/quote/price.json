@@ -1,8 +1,8 @@
 {
     "get": {
         "operationId": "price",
-        "summary": "Get a quote for an order pair",
-        "description": "Retrieves a quote for the specified order pair, considering the exact output or input amount.",
+        "summary": "Get a quote for an intent pair",
+        "description": "Retrieves a quote for the specified intent pair, considering the exact output or input amount.",
         "servers": [
             {
                 "url": "https://quote-knrp.onrender.com"
@@ -16,7 +16,7 @@
                 "required": true,
                 "schema": {
                     "type": "string",
-                    "description": "The order pair for which the quote is needed.",
+                    "description": "The intent pair for which the quote is needed.",
                     "example": "ethereum_sepolia:0x3C6a17b8cD92976D1D91E491c93c98cd81998265::bitcoin_testnet:primary"
                 }
             },

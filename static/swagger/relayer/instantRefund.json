@@ -2,7 +2,7 @@
     "post": {
         "operationId": "addInstantRefund",
         "summary": "Add instant refund sacp",
-        "description": "Add instant refund SACP for a matched order by validating and storing the refund transaction details.",
+        "description": "Add instant refund SACP for a matched intent by validating and storing the refund transaction details.",
         "requestBody": {
             "required": true,
             "content": {
@@ -12,7 +12,7 @@
                         "properties": {
                             "order_id": {
                                 "type": "string",
-                                "description": "The ID of the order to redeem",
+                                "description": "The ID of the intent to redeem",
                                 "example": "12345"
                             },
                             "instant_refund_tx_bytes": {
@@ -27,7 +27,7 @@
         },
         "responses": {
             "200": {
-                "description": "Returned when the instant refund SACP is successfully added and updated in the order.",
+                "description": "Returned when the instant refund SACP is successfully added and updated in the intent.",
                 "content": {
                     "text/plain": {
                         "schema": {
@@ -54,7 +54,7 @@
                     "text/plain": {
                         "schema": {
                             "type": "string",
-                            "example": "Failed to update order"
+                            "example": "Failed to update intent"
                         }
                     }
                 }

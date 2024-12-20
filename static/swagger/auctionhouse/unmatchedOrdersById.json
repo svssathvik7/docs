@@ -1,8 +1,8 @@
 {
     "get": {
-        "operationId": "getUnmatchedOrderById",
-        "summary": "Retrieve Unmatched Order by Id",
-        "description": "Retrieves an unmatched order by its unique create ID from the order book.",
+        "operationId": "getUnmatchedIntentById",
+        "summary": "Retrieve Unmatched Intent by Id",
+        "description": "Retrieves an unmatched intent by its unique create ID from the intent book.",
         "servers": [
             {
                 "url": "https://evm-swapper-relay.onrender.com"
@@ -17,12 +17,12 @@
               "type": "string",
               "example": "123456"
             },
-            "description": "The create ID of the unmatched order"
+            "description": "The create ID of the unmatched intent"
           }
         ],
         "responses": {
             "200": {
-            "description": "Order retrieved successfully",
+            "description": "Intent retrieved successfully",
             "content": {
               "application/json": {
                 "schema": {
