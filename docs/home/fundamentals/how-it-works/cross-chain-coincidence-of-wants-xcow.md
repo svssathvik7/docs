@@ -8,15 +8,21 @@ Garden’s xCoW mechanism builds upon the concept of Coincidence of Wants (CoW),
 
 ## Types of xCoW scenarios
 
-### **Simple user-to-user matching**
+### Simple user-to-user matching
+
+<figure><img src="/assets/xcow-simple.png" alt=""/><figcaption></figcaption></figure>
 
 xCoW matches users with complementary intents directly. For example, if one user wants to swap Bitcoin (BTC) for USDC and another wants to swap USDC for BTC, xCoW connects them peer-to-peer, eliminating intermediaries and improving pricing and execution speed.
 
-### **Trader rings (more than 2 participants)**
+### Trader rings (more than 2 participants)
+
+<figure><img src="/assets/xcow-multi.png" alt=""/><figcaption></figcaption></figure>
 
 For intents involving three or more participants, xCoW creates trading rings. These interconnected settlements optimize liquidity usage and reduce costs, enabling trades that might otherwise rely on fragmented liquidity pools to be executed efficiently across multiple users and chains.
 
-### **Intermediary CoW events**
+### Intermediary CoW events
+
+<figure><img src="/assets/xcow-intermediate.png" alt=""/><figcaption></figcaption></figure>
 
 When trades require intermediate assets, xCoW matches overlapping intents to improve execution. For example:
 
@@ -31,5 +37,7 @@ Both trades pass through USDC as an intermediary:
 Here, xCoW matches the BTC ↔ USDC portion directly between users, minimizing slippage and improving pricing for both trades.
 
 ### Batching
+
+<figure><img src="/assets/batching.png" alt=""/><figcaption></figcaption></figure>
 
 xCoW supports batching in order to reduce gas costs. Multiple transactions are grouped and submitted on-chain as a single operation, lowering the gas cost per transaction. This mechanism ensures cost efficiency at scale, particularly for high-volume trade scenarios.

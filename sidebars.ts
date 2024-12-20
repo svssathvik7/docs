@@ -52,6 +52,7 @@ const sidebars: SidebarsConfig = {
             'home/fundamentals/benefits/cross-chain-intents',
             'home/fundamentals/benefits/free-option-protection',
             'home/fundamentals/benefits/better-price',
+            'home/fundamentals/benefits/no-custody-risk',
           ],
         },
         {
@@ -63,7 +64,7 @@ const sidebars: SidebarsConfig = {
             {
               type: 'category',
               label: 'Swap',
-              link: { type: 'doc', id: 'home/basics/guides/swap/btc-wbtc' },
+              link: { type: 'doc', id: 'home/basics/guides/swap/swap' },
 
               items: [
                 'home/basics/guides/swap/btc-wbtc',
