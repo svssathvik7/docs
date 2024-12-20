@@ -11,7 +11,7 @@ Garden operates using [intents](../home/fundamentals/introduction/Intents.md), w
 
 ---
 
-## How a Swap Works  
+## How a swap works  
 
 **Intent creation:** The user specifies the swap details, including source and destination assets, amounts, secretHash and the unique intent parameters.
 
