@@ -8,8 +8,8 @@ SEED is the utility token of Garden and is designed to facilitate participation 
 
 SEED empowers holders to actively shape the Garden ecosystem:
 
-* **Staking**: [Stake](../fundamentals/introduction/stakers.md) SEED to participate in protocol governance and earn a share of platform revenue. A minimum of 2,100 SEED are required to stake.
-* **Market making**: Holding 210,000 SEED tokens grants eligibility to become a [solver](../fundamentals/introduction/solvers.md).&#x20;
+* **Staking**: [Stake](../../home/fundamentals/introduction/Stakers.md) SEED to participate in protocol governance and earn a share of platform revenue. A minimum of 2,100 SEED are required to stake.
+* **Market making**: Holding 210,000 SEED tokens grants eligibility to become a [solver](../../home/fundamentals/introduction/Solvers.md).&#x20;
 * **Governance:** Participate in protocol decision-making, have a say in selecting community incentive programs, giving grants, and treasury allocation.
 * **Mint and burn:** You can choose to permanently burn 21,000 SEED (perma-stake) to mint a Gardener Pass. This pass comes with all the benefits of permanently staking seed, and also gives you the flexibility to transfer ownership to a different wallet or put it up for sale as its an NFT.
 * **Exclusive access**: SEED holders receive early access to new features, exclusive contests, and other benefits, enriching their engagement within the Garden ecosystem.

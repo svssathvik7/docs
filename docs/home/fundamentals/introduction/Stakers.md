@@ -8,7 +8,7 @@ Staking serves as the gateway for users to engage with the Garden protocol, supp
 
 ## How does it work?
 
-1. Anyone holding a minimum of **2,100 SEED** tokens is eligible to [stake](https://app.garden.finance/stake/). Staking has to be done in multiples of 2,100 SEED. Stakers deposit **SEED tokens** into the protocol, locking them for a chosen duration. Longer lock periods result in a higher staking multiplier, increasing both votes and potential rewards. Follow [this tutorial](basics/guides/stake/StakeSEED.md) for a step-by-step breakdown of staking.
+1. Anyone holding a minimum of **2,100 SEED** tokens is eligible to [stake](https://app.garden.finance/stake/). Staking has to be done in multiples of 2,100 SEED. Stakers deposit **SEED tokens** into the protocol, locking them for a chosen duration. Longer lock periods result in a higher staking multiplier, increasing both votes and potential rewards. Follow [this tutorial](../../basics/guides/stake/StakeSEED.md) for a step-by-step breakdown of staking.
 
 <figure><img src="/assets/staking.png" alt=""/><figcaption></figcaption></figure>
 
