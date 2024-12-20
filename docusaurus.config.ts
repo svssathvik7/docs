@@ -103,10 +103,10 @@ const config: Config = {
           label: 'Developers',
         },
         {
-          to: '/developers/api/openapi',
+          to: '/developers/api/gardenapi',
           type: 'doc',
           position: 'left',
-          docId: 'developers/api/openapi',
+          docId: 'developers/api/gardenapi',
           label: 'Garden API',
         },
         {
