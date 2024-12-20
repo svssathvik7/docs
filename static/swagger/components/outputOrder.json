@@ -67,10 +67,10 @@
     "additional_data": {
         "type": "object",
         "properties": {
-            "$ref": "./inputAdditionalProperties.json"
+            "$ref": "./additionalProperties.json"
         },
         "required": [
-            "strategy_id", "bitcoin_optional_recipient"
+            "strategy_id", "bitcoin_optional_recipient","input_token_price","output_token_price","deadline","sig","instant_refund_tx_bytes"
         ]
     }
 }

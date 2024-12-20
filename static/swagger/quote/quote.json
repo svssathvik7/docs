@@ -3,6 +3,7 @@
         "operationId": "attestedQuote",
         "summary": "Get an attested quote for an order",
         "description": "Validates the order and retrieves an attested quote based on token prices. The input order includes only the `strategy_id` in the `additional_data` field, while the output includes fully populated `additional_data`.",
+        "security": [],
         "requestBody": {
             "required": true,
             "content": {
@@ -11,7 +12,22 @@
                         "type": "object",
                         "properties": {
                             "$ref": "../components/order.json"
-                        }
+                        },
+                        "required": [
+                            "source_chain",
+                            "destination_chain",
+                            "source_asset",
+                            "destination_asset",
+                            "initiator_source_address",
+                            "initiator_destination_address",
+                            "source_amount",
+                            "destination_amount",
+                            "fee",
+                            "nonce",
+                            "min_destination_confirmations",
+                            "timelock",
+                            "secret_hash"
+                        ]
                     }
                 }
             }
@@ -31,12 +47,27 @@
                                     ],
                                     "example": "Ok"
                                 },
-                                "data": {
+                                "result": {
                                     "type": "object",
                                     "description": "The order object",
                                     "properties": {
-                                        "$ref": "../components/order.json"
-                                    }
+                                        "$ref": "../components/outputOrder.json"
+                                    },
+                                    "required": [
+                                        "source_chain",
+                                        "destination_chain",
+                                        "source_asset",
+                                        "destination_asset",
+                                        "initiator_source_address",
+                                        "initiator_destination_address",
+                                        "source_amount",
+                                        "destination_amount",
+                                        "fee",
+                                        "nonce",
+                                        "min_destination_confirmations",
+                                        "timelock",
+                                        "secret_hash"
+                                    ]
                                 }
                             }
                         }
@@ -50,14 +81,27 @@
                         "schema": {
                             "properties": {
                                 "status": {
-                                    "type": "integer",
-                                    "description": "Returns a status code corresponding to the error",
-                                    "example": "401"
+                                    "type": "string",
+                                    "enum": [
+                                        "Ok",
+                                        "Error"
+                                    ],
+                                    "example": "Error"
                                 },
                                 "error": {
-                                    "type": "string",
-                                    "description": "Returns a error message",
-                                    "example": "Invalid amount: expected an integer"
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number",
+                                            "description": "The numeric status code indicating the type of error or response.",
+                                            "example": 422
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "description": "A descriptive message providing details about the error or response.",
+                                            "example": "Failed to deserialize the JSON body into the target type: missing field `source_chain` at line 5 column 1"
+                                        }
+                                    }
                                 }
                             }
                         }
