@@ -40,7 +40,7 @@ fetchOrders();
 - **options**: Additional options for pagination or filters.  
   - `per_page`: Number of transactions to fetch per page.  
 
-## Monitoring Status  
+## Monitoring status  
 
 To provide real-time updates for swaps, you can listen for order events like errors or successes.  
 
@@ -61,12 +61,12 @@ garden.on("success", (order, action, txHash) => {
 });
 ```
 
-### Event Types  
+### Event types  
 
 - **error**: Triggered when a transaction encounters an issue.  
 - **success**: Triggered when a transaction is successfully completed.  
 
-## Best Practices  
+## Best practices  
 
 - **Poll regularly**: For long-running transactions, poll the orderBook periodically to provide accurate updates.  
 - **User notifications**: Notify users when their transactions are pending, completed, or require attention.  
