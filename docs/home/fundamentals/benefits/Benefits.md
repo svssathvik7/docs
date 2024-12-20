@@ -10,12 +10,6 @@ import DocCardList from '@theme/DocCardList';
     items={[
         {
             type: "link",
-            href: "./better-price",
-            label: "Better Price",
-            docId: "home/fundamentals/benefits/better-price",
-        },
-        {
-            type: "link",
             href: "./cross-chain-intents",
             label: "Cross chain intents",
             docId: "home/fundamentals/benefits/cross-chain-intents",
@@ -25,6 +19,12 @@ import DocCardList from '@theme/DocCardList';
             href: "./free-option-protection",
             label: "Free option protection",
             docId: "home/fundamentals/benefits/free-option-protection",
+        },
+         {
+            type: "link",
+            href: "./better-price",
+            label: "Better price",
+            docId: "home/fundamentals/benefits/better-price",
         },
     ]}
 />

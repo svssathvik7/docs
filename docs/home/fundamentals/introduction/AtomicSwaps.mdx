@@ -23,13 +23,17 @@ This is what we call a happy flow where everything runs as expected. In the next
 
 ## Scenarios and safeguards
 
-1. **Lock Asset B doesn't happen**
+1. **Lock Asset A and B happens, but claim asset B doesn't happen**
 
-* **Penalty:** Solver and stakers are slashed 0.5% of the intent value.
-* **User resolution:** Refund of Asset A after 48 hours, plus slashed SEED as compensation.
-
-2. **Lock Asset A and B happens, but claim asset B doesn't happen**
+<figure><img src="/assets/fail_s1.png" alt=""/><figcaption></figcaption></figure>
 
 * **Penalty:** Stakers are slashed 1% of the intent value.
 * **Solver resolution:** Refund of Asset B after 24 hours, plus slashed SEED as compensation.
 * **User resolution:** Refund of Asset A after 48 hours.
+
+2. **Lock Asset B doesn't happen**
+
+<figure><img src="/assets/fail_s2.png" alt=""/><figcaption></figcaption></figure>
+
+* **Penalty:** Solver and stakers are slashed 0.5% of the intent value.
+* **User resolution:** Refund of Asset A after 48 hours, plus slashed SEED as compensation.

@@ -11,13 +11,13 @@ import DocCardList from '@theme/DocCardList';
         {
             type: "link",
             href: "./intent-flow",
-            label: "Intent Flow",
+            label: "Intent flow",
             docId: "home/fundamentals/how-it-works/intent-flow",
         },
         {
             type: "link",
             href: "./cross-chain-coincidence-of-wants-xcow",
-            label: "Cross-chain Coincidence of Wants (xCoW)",
+            label: "Cross-chain coincidence of wants (xCoW)",
             docId: "home/fundamentals/how-it-works/cross-chain-coincidence-of-wants-xcow",
         },
     ]}
