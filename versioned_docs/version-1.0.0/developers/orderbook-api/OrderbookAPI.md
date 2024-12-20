@@ -13,6 +13,10 @@ import OrderUpdates from "./responseStructures/OrderUpdates.mdx"
 
 # API Documentation
 
+:::warning
+Heads up! We're currently working on a new version of our Garden API alongside revamped documentation. Stay tuned—fresh documentation is coming soon!
+:::
+
 <DocCardList
 items={[
 {
