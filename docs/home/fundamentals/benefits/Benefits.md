@@ -26,5 +26,11 @@ import DocCardList from '@theme/DocCardList';
             label: "Better price",
             docId: "home/fundamentals/benefits/better-price",
         },
+         {
+            type: "link",
+            href: "./no-custody-risk",
+            label: "No custody risk",
+            docId: "home/fundamentals/benefits/no-custody-risk",
+        },
     ]}
 />
