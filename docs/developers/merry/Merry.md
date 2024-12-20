@@ -15,9 +15,9 @@ This CLI tool leverages Docker to effortlessly set up a multi-chain testing envi
 
 It supports a variety of features, including a faucet, Electrum services and an Orderbook with Filler.
 
-Orderbook is an order matching engine developed by Catalog, use this [section](/docs/developers/api/Orderbook.md) to learn more about it.
+Orderbook is an order matching engine developed by Catalog, use this [section](/docs/developers/api/GardenAPI.md) to learn more about it.
 
-Filler is a bot to fill orders based on strategies set, learn more about it in this [section](/docs/developers/api/Relayer.md).
+Filler is a bot to fill orders based on strategies set, learn more about it in this [section](/docs/developers/api/GardenAPI.md).
 
 ## Installation
 
