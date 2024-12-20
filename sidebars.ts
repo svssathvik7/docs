@@ -137,12 +137,12 @@ const sidebars: SidebarsConfig = {
       link: { type: 'doc', id: 'developers/merry/testing-in-localnet' },
       items: ['developers/merry/merry', 'developers/merry/merry-cmds', 'developers/merry/merry-services'],
     },
-    {
-      type: 'category',
-      label: 'Cookbook',
-      link: { type: 'doc', id: 'developers/cookbook/cookbook' },
-      items: [],
-    },
+    // {
+    //   type: 'category',
+    //   label: 'Cookbook',
+    //   link: { type: 'doc', id: 'developers/cookbook/cookbook' },
+    //   items: [],
+    // },
   ],
 
   // But you can create a sidebar manually
