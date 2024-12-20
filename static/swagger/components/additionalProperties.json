@@ -27,7 +27,7 @@
         },
         "sig": {
             "type": "string",
-            "description": "MEYCIQDYfLzU1MxP3RLlY5YXzkKcFvndv3tZyjGtHKqbrFqJ6QIhAMTytBYJ5Fb2+9NdXdHSTHz9BUEtwxE/n9VUwqP1X5fn"
+            "example": "MEYCIQDYfLzU1MxP3RLlY5YXzkKcFvndv3tZyjGtHKqbrFqJ6QIhAMTytBYJ5Fb2+9NdXdHSTHz9BUEtwxE/n9VUwqP1X5fn"
         },
         "instant_refund_tx_bytes": {
             "type": "string",
