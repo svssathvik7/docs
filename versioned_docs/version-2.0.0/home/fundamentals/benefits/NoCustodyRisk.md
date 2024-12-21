@@ -32,6 +32,6 @@ Garden takes a fundamentally different approach by enabling peer-to-peer atomic 
 - The solver can only claim funds on the source chain after fulfilling their obligations on the destination chain.
 - Simultaneous execution prevents custody transfer to intermediaries at any point.
 
-For more technical details, see [atomic swaps](../introduction/AtomicSwaps.mdx) and [intent flow](../introduction/Intents.md).
+For more technical details, see [atomic swaps](../introduction/AtomicSwaps.mdx) and [intent flow](../how-it-works/IntentFlow.md).
 
 Garden’s peer-to-peer architecture, cryptographic guarantees, and avoidance of custodial models set a new standard for secure and trustless swaps. By removing the need for intermediaries and ensuring full user control, Garden redefines what true ownership and trustlessness mean in cross-chain interoperability.
