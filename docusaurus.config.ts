@@ -152,10 +152,6 @@ const config: Config = {
               label: 'Stake',
               to: 'https://garden.finance/stake',
             },
-            {
-              label: 'Leaderboard',
-              to: 'https://garden.finance/leaderboard',
-            },
           ],
         },
         {

@@ -4,7 +4,7 @@ id: stake-seed
 
 # How to stake SEED
 
-1. Visit the [Stake page](https://app.garden.finance/swap/) in the Garden application and connect your wallet to the platform.
+1. Visit the [Stake page](https://app.garden.finance/stake/) in the Garden application and connect your wallet to the platform.
 
    ![step 1](../../../images/seed-1.png)
 
