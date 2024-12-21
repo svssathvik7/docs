@@ -2,7 +2,7 @@
 id: garden-api
 ---
 
-# Garden API
+# API
 import React from 'react';
 import RedocComponent from './redoc/RedocComponent';
 
