@@ -18,86 +18,75 @@ const sidebars: SidebarsConfig = {
   home: [
     { type: 'doc', label: 'Get Started', id: 'home/get-started' },
     {
+      type: 'html',
+      value: '<div style="font-weight: bold; margin-left:10px; margin-top: 10px;">Fundamentals</div>', // This adds a labeled divider
+    },
+
+    {
       type: 'category',
-      label: 'Fundamentals',
-      collapsible: false,
-
+      label: 'Introduction',
+      link: { type: 'doc', id: 'home/fundamentals/introduction/introduction' },
       items: [
-        {
-          type: 'category',
-          label: 'Introduction',
-          link: { type: 'doc', id: 'home/fundamentals/introduction/introduction' },
-          items: [
-            'home/fundamentals/introduction/intents',
-            'home/fundamentals/introduction/solvers',
-            'home/fundamentals/introduction/stakers',
-            'home/fundamentals/introduction/auctions',
-            'home/fundamentals/introduction/atomic-swaps',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'How it works',
-          link: { type: 'doc', id: 'home/fundamentals/how-it-works/how-it-works' },
-          items: [
-            'home/fundamentals/how-it-works/intent-flow',
-            'home/fundamentals/how-it-works/cross-chain-coincidence-of-wants-xcow',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Benefits',
-          link: { type: 'doc', id: 'home/fundamentals/benefits/benefits' },
-          items: [
-            'home/fundamentals/benefits/cross-chain-intents',
-            'home/fundamentals/benefits/free-option-protection',
-            'home/fundamentals/benefits/better-price',
-            'home/fundamentals/benefits/no-custody-risk',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Guides',
-          collapsible: false,
-
-          items: [
-            {
-              type: 'category',
-              label: 'Swap',
-              link: { type: 'doc', id: 'home/basics/guides/swap/swap' },
-
-              items: [
-                'home/basics/guides/swap/btc-wbtc',
-                'home/basics/guides/swap/wbtc-btc',
-                'home/basics/guides/swap/wbtc-wbtc',
-                'home/basics/guides/swap/btc-ibtc',
-                'home/basics/guides/swap/ibtc-btc',
-                'home/basics/guides/swap/btc-swbtc',
-                'home/basics/guides/swap/swbtc-btc',
-              ],
-            },
-            {
-              type: 'category',
-              label: 'Stake',
-              link: { type: 'doc', id: 'home/basics/guides/stake/stake-seed' },
-
-              items: []
-            },
-          ],
-        },
+        'home/fundamentals/introduction/intents',
+        'home/fundamentals/introduction/solvers',
+        'home/fundamentals/introduction/stakers',
+        'home/fundamentals/introduction/auctions',
+        'home/fundamentals/introduction/atomic-swaps',
       ],
     },
     {
       type: 'category',
-      label: 'Governance',
-      collapsible: false,
+      label: 'How it works',
+      link: { type: 'doc', id: 'home/fundamentals/how-it-works/how-it-works' },
+      items: [
+        'home/fundamentals/how-it-works/intent-flow',
+        'home/fundamentals/how-it-works/cross-chain-coincidence-of-wants-xcow',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Benefits',
+      link: { type: 'doc', id: 'home/fundamentals/benefits/benefits' },
+      items: [
+        'home/fundamentals/benefits/cross-chain-intents',
+        'home/fundamentals/benefits/free-option-protection',
+        'home/fundamentals/benefits/better-price',
+        'home/fundamentals/benefits/no-custody-risk',
+      ],
+    },
+    {
+      type: 'html',
+      value: '<div style="font-weight: bold; margin-left:10px; margin-top: 10px;">Guides</div>', // This adds a labeled divider
+    },
+    {
+      type: 'category',
+      label: 'Swap',
+      link: { type: 'doc', id: 'home/basics/guides/swap/swap' },
 
       items: [
-        'home/governance/tokenomics',
-        'home/governance/governance-process',
-        'home/governance/snapshot',
-      ]
+        'home/basics/guides/swap/btc-wbtc',
+        'home/basics/guides/swap/wbtc-btc',
+        'home/basics/guides/swap/wbtc-wbtc',
+        'home/basics/guides/swap/btc-ibtc',
+        'home/basics/guides/swap/ibtc-btc',
+        'home/basics/guides/swap/btc-swbtc',
+        'home/basics/guides/swap/swbtc-btc',
+      ],
     },
+    {
+      type: 'category',
+      label: 'Stake',
+      link: { type: 'doc', id: 'home/basics/guides/stake/stake-seed' },
+
+      items: []
+    },
+    {
+      type: 'html',
+      value: '<div style="font-weight: bold; margin-left:10px; margin-top: 10px;">Governance</div>', // This adds a labeled divider
+    },
+    { type: 'doc', label: 'Tokenomics', id: 'home/governance/tokenomics' },
+    { type: 'doc', label: 'Governance process', id: 'home/governance/governance-process' },
+    { type: 'doc', label: 'Snapshot', id: 'home/governance/snapshot' },
   ],
 
   developers: [

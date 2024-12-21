@@ -95,13 +95,13 @@ const config: Config = {
           docId: 'home/get-started',
           label: 'Home',
         },
-        {
-          to: '/developers',
-          type: 'doc',
-          position: 'left',
-          docId: 'developers/developers',
-          label: 'Developers',
-        },
+        // {
+        //   to: '/developers',
+        //   type: 'doc',
+        //   position: 'left',
+        //   docId: 'developers/developers',
+        //   label: 'Developers',
+        // },
         // {
         //   to: '/developers/api/garden-api',
         //   type: 'doc',

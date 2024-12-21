@@ -8,7 +8,7 @@ Custody risk is a persistent challenge in interoperability and more so for Bitco
 
 - **Centralized custody**: Hacks like the $600M Ronin Bridge exploit or exchange collapses (e.g., Mt. Gox, FTX) highlight the catastrophic risks of entrusting funds to third parties.
 
-- **Decentralized custody**: Even decentralized solutions relying on Multi-Party Computation (MPC) or liquidity pools aren’t immune, as seen with the Nomad Bridge ($190M hack) or smart contract bugs in Wormhole ($325M hack).
+- **Decentralized custody**: Even decentralized solutions relying on Multi-Party Computation (MPC) or liquidity pools aren’t immune, as seen with the Nomad Bridge (&dollar;190M hack) or smart contract bugs in Wormhole (&dollar;325M hack).
 
 It’s clear that even “self-custody” solutions involving shared smart contracts or MPC nodes come with significant risks.
 
@@ -32,6 +32,6 @@ Garden takes a fundamentally different approach by enabling peer-to-peer atomic 
 - The solver can only claim funds on the source chain after fulfilling their obligations on the destination chain.
 - Simultaneous execution prevents custody transfer to intermediaries at any point.
 
-For more technical details, see [atomic swaps](#) and [intent flow](#).
+For more technical details, see [atomic swaps](../introduction/AtomicSwaps.mdx) and [intent flow](../introduction/Intents.md).
 
 Garden’s peer-to-peer architecture, cryptographic guarantees, and avoidance of custodial models set a new standard for secure and trustless swaps. By removing the need for intermediaries and ensuring full user control, Garden redefines what true ownership and trustlessness mean in cross-chain interoperability.

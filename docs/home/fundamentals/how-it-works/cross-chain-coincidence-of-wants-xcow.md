@@ -38,6 +38,6 @@ Here, xCoW matches the BTC ↔ USDC portion directly between users, minimizing s
 
 ### Batching
 
-<figure><img src="/assets/batching.png" alt=""/><figcaption></figcaption></figure>
+<figure><img src="/assets/xcow-batching.png" alt=""/><figcaption></figcaption></figure>
 
 xCoW supports batching in order to reduce gas costs. Multiple transactions are grouped and submitted on-chain as a single operation, lowering the gas cost per transaction. This mechanism ensures cost efficiency at scale, particularly for high-volume trade scenarios.
