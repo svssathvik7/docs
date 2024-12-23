@@ -233,8 +233,12 @@ tr:first-child:last-child > *{
     background-color: transparent!important;
     color: rgb(160, 251, 170)!important;
 }
-.property.token.string, .sc-txhaY, .sc-eWPXlR, .sc-txhaY, .token.punctuation, .collapser, .ellipsis, .collapsed, .hoverable{
+.redoc-json .property.token.string, .sc-txhaY, .sc-eWPXlR, .sc-txhaY, .redoc-json .token.punctuation, .collapser, .ellipsis, .collapsed, .hoverable{
     color: #fff!important;
+}
+
+.token.punctuation{
+    color: var(--ifm-font-color-base)!important;
 }
 
 /* null values */
