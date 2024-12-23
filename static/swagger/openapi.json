@@ -38,7 +38,7 @@
     {
       "name": "auctionhouse",
       "x-displayName": "Auction House",
-      "description": "At the core of the garden lies the auctionhouse. It is responsible for intent creation, matching, and settlement. One can create intents, track their status, and securely settle them using atomic swaps."
+      "description": "At the core of the Garden lies the auctionhouse. It is responsible for intent creation, matching, and settlement. One can create intents, track their status, and securely settle them using atomic swaps."
     },
     {
       "name": "quote",
