@@ -97,10 +97,11 @@ div[role="button"] div.sc-hSyjfr[class]{
 
 /* Code block styles */
 code span,
-code span span {
+code span span,
+code span span span {
   font-size: var(--ifm-code-font-size);
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
-    'Courier New', monospace;
+    'Courier New', monospace!important;
 }
 
 /* JSON response styling */
@@ -119,6 +120,10 @@ span.sc-txhaY[class],
 .collapsed,
 .hoverable > * {
   color: #fff !important;
+}
+
+.token.punctuation{
+  color: var(--ifm-font-color-base)!important;
 }
 
 li.react-tabs__tab--selected.tab-error[class],
