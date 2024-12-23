@@ -123,7 +123,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Testing in localnet',
-      link: { type: 'doc', id: 'developers/merry/testing-in-localnet' },
+      link: { type: 'doc', id: 'developers/merry/merry' },
       items: ['developers/merry/merry', 'developers/merry/merry-cmds', 'developers/merry/merry-services'],
     },
     // {
