@@ -6,7 +6,7 @@
 }
 /* api description - api response pairs */
 .sc-dntaoT *{
-    color: white!important;
+    color: white;
 }
 /* total side and content panels */
 .sc-iMPxVN *{
@@ -38,7 +38,7 @@
     padding: 0.5rem 0!important;
     background-color: transparent!important;
 }
-.sc-dFqmTM *{
+.sc-dFqmTM *, .sc-enMaOJ{
     background-color: transparent!important;
     color: var(--ifm-font-color-base)!important;
 }
@@ -291,4 +291,11 @@ td.sc-eOzmre{
 .sc-erSfwj[type="post"]{
     background-color: #186FAF!important;
     color: #fff!important;
+}
+
+
+/* code block stylings */
+code span, code span span{
+    font-size: var(--ifm-code-font-size)!important;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace!important;
 }
