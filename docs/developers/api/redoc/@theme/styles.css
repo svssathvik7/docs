@@ -129,6 +129,10 @@ li.react-tabs__tab--selected.tab-success[class] {
   color: #333 !important;
 }
 
+.api-reference--btn{
+  color: var(--ifm-color-primary)!important;
+}
+
 /* Media queries */
 @media print, screen and (min-width: 75rem) {
   .sc-fAUdSK {
