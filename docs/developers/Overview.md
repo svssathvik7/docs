@@ -8,15 +8,13 @@ Garden was built with the purpose of enabling Bitcoin in DeFi as seamlessly as p
 
 ## What does Garden unlock?
 
-Traditionally, cross-chain flows require users to manually bridge their Bitcoin before using those funds in dApps. Garden simplifies this with an [SDK](./sdk/Sdk.md) and [API](./api/GardenAPI.md) that abstracts the bridging process, letting users directly utilize Bitcoin within DeFi ecosystems.
+Traditionally, cross-chain flows require users to manually bridge their Bitcoin before using those funds in dApps. Garden simplifies this with an [SDK](./sdk/Sdk.md) and [API](./api/GardenAPI.md) that abstracts the bridging process, letting users directly utilize Bitcoin within DeFi ecosystems. Here's what Garden can enable:
 
-### Here’s the proposition
+- Access to Bitcoin’s existing liquidity, seamlessly integrated into your product or chain.
+- A native Bitcoin experience for users, free from bridging complexities.
+- Customizable SDK and API tools designed to fit your unique use case.
 
-- With Garden’s super-fast bridging, users get a native asset experience for Bitcoin on any chain.
-- Bitcoin has the potential to become a powerful driver for your distribution as it unlocks a lot of liquidity. By integrating Garden, you provide users with direct access to Bitcoin.
-- Garden enables innovative Bitcoin-based applications on EVM-compatible chains without worrying about bridging complexities.
-
-## Choosing between API and SDK
+## Choosing between SDK and API
 
 Choosing between Garden’s [SDK](./sdk/Sdk.md) and [API](./api/GardenAPI.md) depends on your project’s requirements and technical expertise:
 
