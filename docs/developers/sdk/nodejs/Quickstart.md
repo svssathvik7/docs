@@ -1,12 +1,77 @@
 ---
-id: configure-sdk
+id: quickstart
+title: Quickstart
 ---
 
-# Configure SDK  
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import InstallAlert from "./\_install-alert.mdx";
+
+## 1. Installation
+
+<InstallAlert/>
+
+<Tabs>  
+
+<TabItem value="npm" label="npm">  
+
+```bash
+npm install @gardenfi/core @gardenfi/utils
+```  
+
+</TabItem>  
+
+<TabItem value="yarn" label="yarn">  
+
+```bash
+yarn add @gardenfi/core @gardenfi/utils
+```  
+
+</TabItem>  
+
+<TabItem value="pnpm" label="pnpm">  
+
+```bash
+pnpm add @gardenfi/core @gardenfi/utils
+```  
+
+</TabItem>  
+
+</Tabs>  
+
+**Additional dependencies**
+
+<Tabs>  
+
+<TabItem value="npm" label="npm">  
+
+```bash
+npm install viem @catalogfi/wallets
+```  
+
+</TabItem>  
+
+<TabItem value="yarn" label="yarn">  
+
+```bash
+yarn add viem @catalogfi/wallets
+```  
+
+</TabItem>  
+
+<TabItem value="pnpm" label="pnpm">  
+
+```bash
+pnpm add viem @catalogfi/wallets
+```  
+
+</TabItem>  
+
+</Tabs>  
 
 To use the Garden SDK, you’ll need to set up wallets, API clients, and initialize the core components. Follow the steps below:  
 
-## 1. Initialize dependencies
+## 2. Initialize dependencies
 
 Set up your Ethereum wallet, along with the necessary API clients.  
 
@@ -24,11 +89,13 @@ const ethereumWalletClient = createWalletClient({
 });
 
 // API Clients
-const auth = new Siwe(new URL(orderBookApi), ethereumWalletClient, {
+const ORDERBOOK_API = https://orerbookv2.garden.finance/
+const auth = new Siwe(new URL(ORDERBOOK_API), ethereumWalletClient, {
   store: new MemoryStorage(),
 });
 
-const quote = new Quote(quoteApi);
+const QUOTE_API = https://pricev2.garden.finance/
+const quote = new Quote(QUOTE_API);
 
 const bitcoinProvider = new BitcoinProvider(
   BitcoinNetwork.Testnet,
@@ -38,7 +105,7 @@ const bitcoinProvider = new BitcoinProvider(
 
 ---
 
-## 2. Set up wallets and secret manager  
+## 3. Set up wallets and secret manager  
 
 Use the **SecretManager** to securely manage secrets for your Bitcoin wallet.  
 
@@ -59,7 +126,7 @@ const btcWallet = BitcoinWallet.fromPrivateKey(
 
 ---
 
-## 3. Configure Garden core  
+## 4. Configure Garden core  
 
 Initialize the **Garden** instance with the required components.  
 
@@ -77,5 +144,3 @@ const garden = new Garden({
   },
 });
 ```
-
-Your setup is now ready to execute swaps and manage orders!

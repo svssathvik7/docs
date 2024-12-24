@@ -1,30 +1,66 @@
 ---
 id: quickstart
+title: Quickstart
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import InstallAlert from "../nodejs/\_install-alert.mdx";
 
-# Quickstart  
+## Installation
 
-## What you’ll need before we start  
+<InstallAlert/>
 
-- **WBTC/BTC balance** on testnet (we’ll provide testnet funds—just ask).  
-- **SepoliaETH** for gas fees on Sepolia.  
-- **A BTC wallet** supporting testnet4 (we recommend Unisat).  
-- **wagmi** already set up in your dApp.  
-- **A bit of patience**—just in case!  
+### Garden dependencies  
 
----
+<Tabs>
+    <TabItem value="npm" label="npm">
+    
+    ```bash
+    npm install @gardenfi/core @gardenfi/orderbook @gardenfi/react-hooks
+    ```
 
-We’ve Got React Hooks to Make Integration Easy  
+    </TabItem>
+    <TabItem value="yarn" label="yarn">
+    
+    ```bash
+    yarn add @gardenfi/core @gardenfi/orderbook @gardenfi/react-hooks
+    ```
 
-Add Supported Testnets to Your `wagmi` Config  
-[Link to Wallet Config](#).  
+    </TabItem>
+    <TabItem value="pnpm" label="pnpm">
+    
+    ```bash
+    pnpm add @gardenfi/core @gardenfi/orderbook @gardenfi/react-hooks
+    ```
 
----
+    </TabItem>
+</Tabs>
 
-### Wrap your app with `GardenProvider`  
-This handles swap secrets for HTLCs and ensures transactions complete even if the user reconnects later.  
+### wagmi dependencies
+
+<Tabs>
+    <TabItem value="npm" label="npm">
+    ```bash
+    npm install @tanstack/react-query wagmi
+    ```
+
+    </TabItem>
+    <TabItem value="yarn" label="yarn">
+    
+    ```bash
+    yarn add @tanstack/react-query wagmi
+    ```
+
+    </TabItem>
+    <TabItem value="pnpm" label="pnpm">
+    
+    ```bash
+    pnpm add @tanstack/react-query wagmi
+    ```
+    </TabItem>
+</Tabs>
+ 
+Setup the Garden provider in your React app.
 
 <Tabs>
    <TabItem value="main.tsx" label="main.tsx" default>
@@ -74,9 +110,8 @@ export const wagmiConfig = createConfig({
 </TabItem>
 </Tabs>
 
-## Integrate swap logic into your component  
-
-### Example Code  
+## Swapping WBTC to BTC
+  
 <Tabs>
    <TabItem value="swap.tsx" label="swap.tsx" default>
 ```tsx 
@@ -85,10 +120,15 @@ import { useGarden } from '@gardenfi/react-hooks';
 export const SwapComponent = () => {
   const { initializeSecretManager, swapAndInitiate, getQuote } = useGarden();
 
+  const inputToken = SupportedAssets.ethereum_sepolia_WBTC;
+  const outputToken = SupportedAssets.bitcoin_testnet_BTC;
+  const amount = new BigNumber(0.01).multipliedBy(10 ** inputToken.decimals);
+
   const quote = await getQuote({
     fromAsset: inputToken,
     toAsset: outputToken,
-    amount: sendAmount,
+    amount: amount,
+    isExactOut //OPTIONAL: if true, amount is the output amount
   });
 
   const [_strategy, quoteAmount] = Object.entries(quote.val.quotes)[0];
@@ -110,7 +150,7 @@ export const SwapComponent = () => {
 </TabItem>
 </Tabs>
 
-#### Bitcoin as source chain
+#### Incase of BTC to WBTC swap
 
 ```tsx
 import {isBitcoin} from "@gardenfi/orderbook"
@@ -121,13 +161,11 @@ if (isBitcoin(res.val.source_swap.chain)) {
       }
 ```
 
-Once the user funds the generated Bitcoin address, our backend will detect the transaction and automatically complete the swap.
-
 :::note  
 Heads-up: The client needs to active (user needs to stay on app) during the process. If they leave, the transaction will pause and resume when they’re back.  
 :::  
 
-And that’s it! 🎉 Now, wait for the transaction to complete.  
+And that’s it! Now, wait for the transaction to complete.  
 
 ### Common Questions
 
@@ -135,7 +173,7 @@ And that’s it! 🎉 Now, wait for the transaction to complete.
 It simplifies the complexity of atomic swaps. By generating and managing secrets/secret hashes via a MasterKey, the `GardenProvider` takes care of everything securely, generating and retrieving secrets in-memory.  
 
 #### What if `swapAndInitiate` fails?  
-No worries! Occasionally initiating on EVM testnets (fund issues, gas, etc.). 
+Occasionally initiating on EVM testnets (fund issues, gas, etc.). 
 Use the `evmInitiate` from `useGarden` hook to re-initiate the swap. 
  
 ```ts
@@ -161,7 +199,3 @@ const getPendingOrders = async () => {
   return pendingOrders;
 };
 ```
-
-For detailed examples, check out the Cookbook. And if you ever get stuck, we’re just a message away.
-
-Happy swapping! 🚀

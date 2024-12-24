@@ -2,7 +2,7 @@
 id: swap-and-initiate
 ---
 
-# Swap and Initiate  
+# Swap and initiate  
 
 The `swapAndInitiate` function is at the core of executing swaps in the Garden SDK. This process involves creating a swap order, initializing the HTLC (Hashed Timelock Contract), and starting the swap on the source chain.
 
@@ -81,8 +81,3 @@ console.log("Swap initiated successfully!", res);
 :::note  
 The user must remain online during the swap process. If they leave, the transaction will pause and resume once they're back online.  
 :::
-
-## Tips  
-
-- **Error handling**: Always validate responses and handle errors gracefully to ensure a smooth user experience.  
-- **React hooks**: If you're using our **React hooks**, this process is already streamlined for you. Just call `swapAndInitiate` with the necessary parameters and let it handle the rest.

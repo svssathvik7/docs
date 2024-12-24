@@ -1,12 +1,12 @@
 ---
-id: redeems-and-refunds
+id: redeem-and-refund
 ---
 
-# Redeems and refunds  
+# Redeem and refund  
 
-Handling redeems and refunds is a critical aspect of ensuring your atomic swaps operate securely and efficiently. These processes manage the completion or recovery of funds on the destination chain based on the state of the swap.  
+Redeem and refund manage the completion or recovery of funds on the destination chain based on the state of the swap.  
 
-## Redeems  
+## Redeem
 
 Redeeming a swap finalizes the transaction on the destination chain, allowing the user to claim their funds.  
 
@@ -36,7 +36,7 @@ if (redeemResult.error) {
 console.log("Redeem successful:", redeemResult);
 ```
 
-## Refunds  
+## Refund
 
 Refunds allow users to recover their funds if a swap fails or the time lock expires.  
 
@@ -62,12 +62,6 @@ if (refundResult.error) {
 
 console.log("Refund successful:", refundResult);
 ```
-
-## Best Practices  
-
-- **Monitor time locks**: Ensure your application monitors the status of swaps and time locks to manage redeems and refunds efficiently.  
-- **Notify users**: Notify users about the status of their swaps and prompt them to take action when required.  
-- **React hooks advantage**: If you're using our **React hooks**, redeem and refund functionalities are abstracted for you, making the process easier.  
 
 :::info  
 For detailed examples and troubleshooting tips, refer to the [Cookbook](../cookbook/Cookbook.md) or reach out to us.  

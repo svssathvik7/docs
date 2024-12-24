@@ -25,7 +25,3 @@ The `useGarden` hook is a comprehensive, pre-packaged React hook that simplifies
 | **quote**                  | The quote instance for programmatically fetching swap price details.                                                                                         | `IQuote`                                                                 |
 
 ---
-
-## Summary
-
-`useGarden` consolidates the functionality of `useOrderbook` and `useSecretManager` while exposing additional utilities for swaps, quotes, and order management. It streamlines the integration process, reducing boilerplate code and ensuring a seamless user experience with the Garden SDK.
