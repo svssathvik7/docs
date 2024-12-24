@@ -22,7 +22,7 @@ Choosing between Garden’s [SDK](./sdk/Sdk.md) and [API](./api/GardenAPI.md) de
 
 ### SDK
 
-Garden SDK is a customizable API wrapper tailored for React and Node-based dApps. It simplifies integration with a plug-and-play approach, requiring minimal setup. This is ideal for developers seeking a quick and efficient way to integrate Bitcoin swaps with minimal setup. Check out the quick start [guides](./sdk/Sdk.md) for [React](./sdk/react/index.md) and [Node](./sdk/nodejs/index.md) to get an understanding.
+Garden SDK is a customizable API wrapper tailored for React and Node-based dApps. It simplifies integration with a plug-and-play approach, requiring minimal setup. This is ideal for developers seeking a quick and efficient way to integrate Bitcoin swaps with minimal setup. Check out the quick start guides for [React](./sdk/react/Quickstart.mdx) and [Node](./sdk/nodejs/Quickstart.md) to get an understanding.
 
 ### API
 
@@ -32,8 +32,8 @@ Garden APIs are designed for broader application environments, such as wallets, 
 |-------------------------|-----------------------------|--------------------------------------|
 | **Integration speed**   | Quick and simple            | Requires more effort and expertise   |
 | **Best for**            | React, Node-based dApps     | Wallets, mobile apps, diverse setups |
-| **Customization Level** | High                        | High                                 |
-| **Recommended Use Cases** | Standard swaps in existing products | Advanced workflows and unique environments |
+| **Customization level** | High                        | High                                 |
+| **Recommended use cases** | Standard swaps in existing products | Advanced workflows and unique environments |
 
 ## How to get started
 

@@ -12,7 +12,7 @@ items={[
 type: "link",
 href: "./quickstart",
 label: "Quickstart",
-description: "",
+description: "Quickly set up and integrate Garden into your node project",
 docId: "developers/sdk/nodejs/quickstart",
 },
 {

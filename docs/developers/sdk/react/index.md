@@ -2,7 +2,7 @@
 id: react
 ---
 
-# React hooks
+# React
 
 import DocCardList from '@theme/DocCardList';
 
@@ -12,6 +12,7 @@ items={[
 type: "link",
 href: "./quickstart",
 label: "Quickstart",
+description: "Quickly set up and integrate Garden into your react project",
 docId: "developers/sdk/react/quickstart",
 },
 {
