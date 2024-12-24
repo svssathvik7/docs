@@ -108,6 +108,7 @@ const sidebars: SidebarsConfig = {
             'developers/sdk/react/usegarden-hook',
             'developers/sdk/react/swap-and-initiate',
             'developers/sdk/react/redeem-and-refund',
+            'developers/sdk/react/get-transactions',
           ],
         },
         {
