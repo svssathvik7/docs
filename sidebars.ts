@@ -129,6 +129,7 @@ const sidebars: SidebarsConfig = {
     },
     'developers/supported-chains',
     'developers/testing/testing',
+    'developers/troubleshooting',
 
     {
       type: 'category',
