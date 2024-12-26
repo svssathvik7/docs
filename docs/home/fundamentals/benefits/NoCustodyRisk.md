@@ -23,11 +23,11 @@ Garden takes a fundamentally different approach by enabling peer-to-peer atomic 
    - No custody risk arises here, as funds are not involved during the solver selection process.
 3. Settlement
    - After a solver is selected, the user locks their funds in a Hashed Timelock Contract (HTLC) on the source chain. HTLCs enforce conditional asset transfers using cryptographic hashes and timelocks. This ensures:
-    - Funds can only be claimed by the rightful owner when swap conditions are met.
-    - Funds are automatically refunded to the user if the timelock expires without settlement.
+     - Funds can only be claimed by the rightful owner when swap conditions are met.
+     - Funds are automatically refunded to the user if the timelock expires without settlement.
 4. Redemption
    - The user redeems their funds on the destination chain using a cryptographic secret. This guarantees:
-    - The solver can only claim funds on the source chain after fulfilling their obligations on the destination chain.
-    - Simultaneous execution prevents custody transfer to intermediaries at any point.
+     - The solver can only claim funds on the source chain after fulfilling their obligations on the destination chain.
+     - Simultaneous execution prevents custody transfer to intermediaries at any point.
 
 For more details, see [atomic swaps](../introduction/AtomicSwaps.mdx) and [intent flow](../introduction/Intents.md).
