@@ -6,7 +6,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import InstallAlert from "../nodejs/\_install-alert.mdx";
 
-## Installation
+## 1. Installation
 
 <InstallAlert/>
 
@@ -60,7 +60,7 @@ import InstallAlert from "../nodejs/\_install-alert.mdx";
     </TabItem>
 </Tabs>
  
-Setup the Garden provider in your React app.
+## 2. Setup the Garden provider in your React app.
 
 <Tabs>
    <TabItem value="main.tsx" label="main.tsx" default>
@@ -76,11 +76,12 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <WagmiProvider config={wagmiConfig}>
       <QueryClientProvider client={new QueryClient()}>
-        <GardenProvider 
-        config={{
-                store: localStorage,
-                environment: environment.testnet,
-              }}>
+        <GardenProvider // Wraps app with Garden context
+          config={{
+            store: localStorage, // Persists Garden-related data in local storage
+            environment: environment.testnet, // Sets the environment to testnet | mainnet
+          }}
+        >
           <App />
         </GardenProvider>
       </QueryClientProvider>
@@ -110,7 +111,7 @@ export const wagmiConfig = createConfig({
 </TabItem>
 </Tabs>
 
-## Swapping WBTC to BTC
+## 3. Swapping WBTC to BTC
   
 <Tabs>
    <TabItem value="swap.tsx" label="swap.tsx" default>
@@ -120,6 +121,7 @@ import { useGarden } from '@gardenfi/react-hooks';
 export const SwapComponent = () => {
   const { initializeSecretManager, swapAndInitiate, getQuote } = useGarden();
 
+// choose asset pair from SupportedAssets
   const inputToken = SupportedAssets.ethereum_sepolia_WBTC;
   const outputToken = SupportedAssets.bitcoin_testnet_BTC;
   const amount = new BigNumber(0.01).multipliedBy(10 ** inputToken.decimals);
@@ -127,15 +129,18 @@ export const SwapComponent = () => {
   const quote = await getQuote({
     fromAsset: inputToken,
     toAsset: outputToken,
-    amount: amount,
+    amount, // decimal adjusted amount
     isExactOut //OPTIONAL: if true, amount is the output amount
   });
 
+  // select a quote from available solver strategies
   const [_strategy, quoteAmount] = Object.entries(quote.val.quotes)[0];
 
+  // initialize secret manager for handling atomic swap secrets and hashes
   const secretManager = await initializeSecretManager();
 
   if (secretManager.ok && secretManager.val.getMasterPrivKey()) {
+    
     const res = await swapAndInitiate({
       fromAsset: inputToken,
       toAsset: outputToken,
@@ -144,58 +149,34 @@ export const SwapComponent = () => {
       additionalData: { btcAddress, strategyId: _strategy },
     }); //creates order and initiates the tx if source chain is EVM
 
+    if (res.ok) {
+      // order created and tx initiated
+    } else {
+      // error handling
+    }
+
   }
 };
 ```
 </TabItem>
 </Tabs>
 
-#### Incase of BTC to WBTC swap
+#### Here's BTC to WBTC swap
 
 ```tsx
 import {isBitcoin} from "@gardenfi/orderbook"
 
+// verify if the source chain is Bitcoin
 if (isBitcoin(res.val.source_swap.chain)) {
-      const bitcoinAddress = res.val.source_swap.swap_id;
-        //user needs to fund the bitcoinAddress
-      }
+  //user needs to fund the bitcoinAddress
+  const bitcoinAddress = res.val.source_swap.swap_id;
+}
 ```
 
 :::note  
-Heads-up: The client needs to active (user needs to stay on app) during the process. If they leave, the transaction will pause and resume when they’re back.  
-:::  
+**Important:** The user must stay on the app during the process. If they navigate away, the transaction will pause and only resume when they return.  
 
-And that’s it! Now, wait for the transaction to complete.  
+This is because the `GardenProvider` actively polls the transaction status and uses our Gasless API to submit the transaction on-chain to complete the swap.  
+:::
 
-### Common Questions
-
-#### What’s the secret manager for?  
-It simplifies the complexity of atomic swaps. By generating and managing secrets/secret hashes via a MasterKey, the `GardenProvider` takes care of everything securely, generating and retrieving secrets in-memory.  
-
-#### What if `swapAndInitiate` fails?  
-Occasionally initiating on EVM testnets (fund issues, gas, etc.). 
-Use the `evmInitiate` from `useGarden` hook to re-initiate the swap. 
- 
-```ts
-evmInitiate?: (order: MatchedOrder) => AsyncResult<MatchedOrder, string>;
-```
-
-#### How can I check order status?  
-You can use the `orderBook` from `useGarden` to fetch order details:  
-
-```tsx
-import { OrderStatus } from "@gardenfi/core"
-const { orderBook } = useGarden();
-
-const getPendingOrders = async () => {
-  const res = await orderBook.fetchOrders(true, false, { per_page: 4 });
-
-  const pendingOrders = res.val.data.filter(
-        (order) =>
-          order.status !== OrderStatus.RedeemDetected &&
-          order.status !== OrderStatus.Matched
-      );
-
-  return pendingOrders;
-};
-```
+Now you can track the [status](../../core/GetOrders.mdx) of the order while it gets executed

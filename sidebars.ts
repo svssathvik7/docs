@@ -93,6 +93,17 @@ const sidebars: SidebarsConfig = {
     'developers/overview',
     {
       type: 'category',
+      label: 'Core',
+      link: {
+        type: 'doc',
+        id: 'developers/core/core',
+      },
+      items: [
+        'developers/core/get-orders',
+      ],
+    },
+    {
+      type: 'category',
       label: 'SDK',
       link: { type: 'doc', id: 'developers/sdk/sdk' },
       items: [
