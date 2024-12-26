@@ -49,6 +49,6 @@ Solvers with a score greater than 1 get priority in the auction. Solver scores a
 
 <figure><img src="/assets/solver_one_select.png" alt=""/><figcaption></figcaption></figure>
 
-**Multiple sovlers accept:** Among the solvers who accept the best quote, the one with the highest **staker score** wins the auction and fills the order.
+**Multiple solvers accept:** Among the solvers who accept the best quote, the one with the highest **staker score** wins the auction and fills the order.
 
 <figure><img src="/assets/solver_multiple_select.png" alt=""/><figcaption></figcaption></figure>
