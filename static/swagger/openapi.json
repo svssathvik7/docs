@@ -7,7 +7,12 @@
   },
   "servers": [
     {
-      "url": "https://evm-swapper-relay.onrender.com"
+      "url": "https://evm-swapper-relay.onrender.com",
+      "description": "Auth, Gasless, Orderbook server"
+    },
+    {
+      "url":"https://quote-knrp.onrender.com",
+      "description": "Quote server"
     }
   ],
   "security": [],

@@ -67,7 +67,7 @@
     padding: 1rem !important;
 }
 .swagger-ui .scheme-container {
-    display: none;
+    width: 75dvw;
 }
 .swagger-ui .opblock-summary-control {
     outline: none !important;
