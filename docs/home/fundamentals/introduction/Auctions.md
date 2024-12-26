@@ -38,8 +38,8 @@ Solvers with a score greater than 1 get priority in the auction. Solver scores a
 
 ## How does a typical auction work?
 
-1. All solvers submit their quotes for a given intent to the Auction House. Each quote specifies the solver’s proposed execution price for fulfilling the intent.
-2. The Auction House identifies the solver with the best price (i.e., the lowest quote).
+1. All solvers submit their quotes for a given intent to the order book. Each quote specifies the solver’s proposed execution price for fulfilling the intent.
+2. The order book identifies the solver with the best price (i.e., the lowest quote).
 3. Solvers with a **staker score** higher than the solver with the best quote have a 5-second window to accept the best quote. This mechanism ensures that solvers with higher backing from stakers have the opportunity to get first dibs on intents.
 4. The outcome depends on the participation during the acceptance period:
 
