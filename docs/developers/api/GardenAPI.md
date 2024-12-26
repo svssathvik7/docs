@@ -4,6 +4,6 @@ id: garden-api
 
 # API
 import React from 'react';
-import RedocComponent from './redoc/RedocComponent';
+import SwaggerComponent from './swagger/SwaggerComponent';
 
-<RedocComponent specUrl="/swagger/openapi.json" />
+<SwaggerComponent url="/swagger/openapi.json" />

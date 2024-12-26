@@ -1,22 +1,22 @@
 {
     "strategy_id": {
         "type": "string",
-        "description": "Provided by the quote server",
+        "description": "Provided by the quote server.",
         "example": "bre112"
     },
     "input_token_price": {
         "type": "number",
         "format": "float",
-        "description": "Provided by the quote server"
+        "description": "Provided by the quote server."
     },
     "output_token_price": {
         "type": "number",
         "format": "float",
-        "description": "Provided by the quote server"
+        "description": "Provided by the quote server."
     },
     "deadline": {
         "type": "string",
-        "description": "Validity till the current quote is valid"
+        "description": "Validity till the current quote is valid."
     },
     "bitcoin_optional_recipient": {
         "type": "string",

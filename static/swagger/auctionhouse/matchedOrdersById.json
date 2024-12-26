@@ -1,75 +1,90 @@
 {
     "get": {
-        "operationId": "getMatchedIntentById",
-        "summary": "Get matched intent by ID.",
-        "description": "Retrieves a matched intent by its unique create ID from the intent book.",
-        "servers": [
-            {
-                "url": "https://evm-swapper-relay.onrender.com"
-            }
-        ],
-        "parameters": [
-            {
-                "name": "id",
-                "in": "path",
-                "required": true,
-                "schema": {
-                    "type": "string"
+      "operationId": "getMatchedOrderById",
+      "summary": "Get matched order by ID.",
+      "description": "Retrieves a matched order using its unique order ID from the order book. It returns the order details if the order has been picked up by `Orderbook`.",
+      "servers": [
+        {
+          "url": "https://evm-swapper-relay.onrender.com"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "The create ID of the matched order."
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "The matched order.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "Ok",
+                      "Error"
+                    ],
+                    "example": "Ok",
+                    "description": "An enum representing the possible outcomes of the endpoint, indicating whether the request was successful."
+                  },
+                  "result": {
+                    "$ref": "./components/schemas.json#/components/schemas/MatchedOrderVerbose"
+                  }
                 },
-                "description": "The create ID of the matched intent"
+                "description": "Returns matched order if a match is found or returns null."
+              }
             }
-        ],
-        "responses": {
-            "200": {
-                "description": "The matched intent.",
-                "content": {
-                    "application/json": {
-                        "schema": {
-                            "type": "object",
-                            "properties": {
-                                "status": {
-                                    "type": "string",
-                                    "enum": [
-                                        "Ok",
-                                        "Error"
-                                    ],
-                                    "example": "Ok"
-                                },
-                                "result": {
-                                    "type": "object",
-                                    "properties": {
-                                        "$ref": "./components/matchedOrderVerbose.json"
-                                    },
-                                    "description": "Returns matched intent if a match is found or returns null"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "400": {
-                "description": "Bad Request. Invalid or missing parameters.",
-                "content": {
-                    "application/json": {
-                        "schema": {
-                            "type": "object",
-                            "properties": {
-                                "status": {
-                                    "type": "string",
-                                    "example": "Error"
-                                },
-                                "error": {
-                                    "type": "string",
-                                    "example": "Invalid ID or missing parameters"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+          }
         },
-        "tags": [
-            "auctionhouse"
-        ]
+        "400": {
+          "description": "Bad request. Invalid or missing parameters.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string",
+                    "example": "Error",
+                    "description": "An enum representing the possible outcomes of the endpoint, indicating whether the request was successful.",
+                    "enum": [
+                      "Ok",
+                      "Error"
+                    ]
+                  },
+                  "error": {
+                    "type": "object",
+                    "properties": {
+                      "code": {
+                        "type": "number",
+                        "description": "The numeric status code indicating the type of error or response.",
+                        "example": 401
+                      },
+                      "message": {
+                        "type": "string",
+                        "description": "A descriptive message providing details about the error or response.",
+                        "example": "Invalid Id or missing parameters."
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "tags": [
+        "Orderbook"
+      ]
     }
-}
+  }
+  

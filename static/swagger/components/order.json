@@ -40,7 +40,7 @@
         "example": "0.97"
     },
     "fee": {
-        "type": "string",
+        "type": "number",
         "description": "The total cost associated with the swap transaction.",
         "example": 1
     },
@@ -67,10 +67,20 @@
     "additional_data": {
         "type": "object",
         "properties": {
-            "$ref": "./inputAdditionalProperties.json"
+            "strategy_id": {
+                "type": "string",
+                "description": "Provided by the quote server",
+                "example": "bre112"
+            },
+            "bitcoin_optional_recipient": {
+                "type": "string",
+                "description": "An optional Bitcoin address to receive the output token, if specified.",
+                "example": "1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa"
+            }
         },
         "required": [
-            "strategy_id", "bitcoin_optional_recipient"
+            "strategy_id",
+            "bitcoin_optional_recipient"
         ]
     }
 }

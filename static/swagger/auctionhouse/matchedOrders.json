@@ -1,8 +1,8 @@
 {
     "get": {
-        "operationId": "getAllMatchedIntents",
-        "summary": "Get all matched intents.",
-        "description": "Retrieves all matched intents with optional pagination.",
+        "operationId": "getAllMatchedOrders",
+        "summary": "Get all matched orders.",
+        "description": "This endpoint retrieves all matched orders, where `Orderbook` has picked up the order. Pagination is optional for limiting the results.",
         "servers": [
             {
                 "url": "https://evm-swapper-relay.onrender.com"
@@ -16,7 +16,7 @@
                     "type": "integer",
                     "default": 1
                 },
-                "description": "Page number for pagination"
+                "description": "Page number for pagination."
             },
             {
                 "name": "per_page",
@@ -25,12 +25,12 @@
                     "type": "integer",
                     "default": 10
                 },
-                "description": "Number of items per page"
+                "description": "Number of items per page."
             }
         ],
         "responses": {
             "200": {
-                "description": "The paginated matched intents.",
+                "description": "The paginated matched orders.",
                 "content": {
                     "application/json": {
                         "schema": {
@@ -38,34 +38,15 @@
                             "properties": {
                                 "status": {
                                     "type": "string",
-                                    "enum": ["Ok","Error"],
-                                    "example": "Ok"
+                                    "enum": [
+                                        "Ok",
+                                        "Error"
+                                    ],
+                                    "example": "Ok",
+                                    "description": "An enum representing the possible outcomes of the endpoint, indicating whether the request was successful."
                                 },
                                 "result": {
-                                    "type": "object",
-                                    "properties": {
-                                        "page": {
-                                            "type": "integer",
-                                            "example": 1
-                                        },
-                                        "per_page": {
-                                            "type": "integer",
-                                            "example": 10
-                                        },
-                                        "total": {
-                                            "type": "integer",
-                                            "example": 100
-                                        },
-                                        "data": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "$ref": "./components/matchedOrderVerbose.json"
-                                                }
-                                            }
-                                        }
-                                    }
+                                    "$ref": "./components/schemas.json#/components/schemas/MatchedOrderVerbose"
                                 }
                             }
                         }
@@ -81,7 +62,9 @@
                             "properties": {
                                 "status": {
                                     "type": "string",
-                                    "example": "Error"
+                                    "example": "Error",
+                                    "enum": ["Ok","Error"],
+                                    "description": "An enum representing the possible outcomes of the endpoint, indicating whether the request was successful."
                                 },
                                 "error": {
                                     "type": "string",
@@ -94,7 +77,7 @@
             }
         },
         "tags": [
-            "auctionhouse"
+            "Orderbook"
         ]
     }
 }

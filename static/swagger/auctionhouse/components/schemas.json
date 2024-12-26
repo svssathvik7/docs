@@ -1,0 +1,326 @@
+{
+    "components": {
+        "schemas": {
+            "PaginatedCreateOrders": {
+                "allOf": [
+                    {
+                        "type": "object",
+                        "properties": {
+                            "data": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/CreateOrder"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "#/components/schemas/PaginationData"
+                    }
+                ]
+            },
+            "PaginationData": {
+"type": "object",
+                "properties": {
+                    "page": {
+                        "type": "integer",
+                        "description": "Current page number",
+                        "example": 1
+                    },
+                    "total_pages": {
+                        "type": "integer",
+                        "description": "Total number of pages available",
+                        "example": 10
+                    },
+                    "total_items": {
+                        "type": "integer",
+                        "description": "Total number of items across all pages",
+                        "example": 100
+                    },
+                    "per_page": {
+                        "type": "integer",
+                        "description": "Number of items per page",
+                        "example": 10
+                    }
+                }
+            },
+            "PaginatedMatchedOrdersVerbose": {
+                "allOf": [
+                    {
+                        "type": "object",
+                        "properties": {
+                            "data": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/MatchedOrderVerbose"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "#/components/schemas/PaginationData"
+                    }
+                ]
+            },
+            "CreateOrder": {
+                "type": "object",
+                "properties": {
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "The timestamp when the resource was created.",
+                        "example": "2024-12-25T15:30:00Z"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "The timestamp when the resource was last updated.",
+                        "example": "2024-12-26T10:00:00Z"
+                    },
+                    "deleted_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true,
+                        "description": "The timestamp when the resource was deleted, if applicable.",
+                        "example": null
+                    },
+                    "create_id": {
+                        "type": "string",
+                        "description": "The ID of the creator of the resource.",
+                        "example": "c83062ed3b4cb06f2f8e030d2cbc2b5fc9274f19966498442c0848ce249fcbc2"
+                    },
+                    "block_number": {
+                        "type": "string",
+                        "description": "The ethereum block number.",
+                        "example": "17500000"
+                    },
+                    "source_chain": {
+                        "type": "string",
+                        "description": "The blockchain network where the swap originates.",
+                        "example": "bitcoin"
+                    },
+                    "destination_chain": {
+                        "type": "string",
+                        "description": "The blockchain network where the swap completes.",
+                        "example": "ethereum"
+                    },
+                    "source_asset": {
+                        "type": "string",
+                        "description": "The asset being swapped on the source blockchain.",
+                        "example": "primary"
+                    },
+                    "destination_asset": {
+                        "type": "string",
+                        "description": "The asset to be received on the destination blockchain.",
+                        "example": "0xd8a6e3fca403d79b6ad6216b60527f51cc967d39"
+                    },
+                    "initiator_source_address": {
+                        "type": "string",
+                        "description": "The wallet address initiating the swap on the source blockchain.",
+                        "example": "0x5A4b7eD8c2a1F1e34C8e9...6A3C5D2B1f8E7A9C"
+                    },
+                    "initiator_destination_address": {
+                        "type": "string",
+                        "description": "The wallet address to receive the asset on the destination blockchain.",
+                        "example": "0x5A4b7eD8c2a1F1e34C8e9...6A3C5D2B1f8E7A9C"
+                    },
+                    "source_amount": {
+                        "type": "string",
+                        "description": "The amount of the asset being swapped on the source blockchain, expressed in its lowest denomination.",
+                        "example": "1"
+                    },
+                    "destination_amount": {
+                        "type": "string",
+                        "description": "The amount of the asset being swapped on the destination blockchain, expressed in its lowest denomination.",
+                        "example": "0.97"
+                    },
+                    "fee": {
+                        "type": "string",
+                        "description": "The total cost associated with the swap transaction.",
+                        "example": "1"
+                    },
+                    "nonce": {
+                        "type": "string",
+                        "description": "A unique identifier for the swap transaction to prevent duplication.",
+                        "example": "b8bc718d6af38a0d2cac5085c53f617a52e590b0ff4ad2c4abb0825e9cc39079"
+                    },
+                    "min_destination_confirmations": {
+                        "type": "integer",
+                        "description": "The minimum number of confirmations required on the destination blockchain to finalize the swap.",
+                        "example": 0
+                    },
+                    "timelock": {
+                        "type": "integer",
+                        "description": "A timeout period after which the swap expires if not completed.",
+                        "example": 288
+                    },
+                    "secret_hash": {
+                        "type": "string",
+                        "description": "A cryptographic hash used to verify the transaction's security.",
+                        "example": "f4a3b8d16e58cd30b8a0e9f504b1c7f9f24d1c70eaf2a3794b3c7e5bb7c90f5d"
+                    },
+                    "additional_data": {
+                        "type": "object",
+                        "properties": {
+                            "strategy_id": {
+                                "type": "string",
+                                "description": "Provided by the quote server.",
+                                "example": "bre112"
+                            },
+                            "bitcoin_optional_recipient": {
+                                "type": "string",
+                                "description": "An optional Bitcoin address to receive the output token, if specified.",
+                                "example": "1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa"
+                            }
+                        }
+                    }
+                }
+            },
+            "SingleSwap": {
+                "type": "object",
+                "properties": {
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "The timestamp when the swap was created.",
+                        "example": "2024-12-25T15:30:00Z"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "The timestamp when the swap was last updated.",
+                        "example": "2024-12-26T10:00:00Z"
+                    },
+                    "deleted_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true,
+                        "description": "The timestamp when the swap was deleted, if applicable.",
+                        "example": null
+                    },
+                    "swap_id": {
+                        "type": "string",
+                        "description": "Unique identifier for the swap.",
+                        "example": "swap_123"
+                    },
+                    "chain": {
+                        "type": "string",
+                        "description": "The blockchain network where the swap occurs.",
+                        "example": "ethereum"
+                    },
+                    "asset": {
+                        "type": "string",
+                        "description": "The asset being swapped.",
+                        "example": "0xd8a6e3fca403d79b6ad6216b60527f51cc967d39"
+                    },
+                    "initiator": {
+                        "type": "string",
+                        "description": "Address of the party initiating the swap.",
+                        "example": "0x5A4b7eD8c2a1F1e34C8e9...6A3C5D2B1f8E7A9C"
+                    },
+                    "redeemer": {
+                        "type": "string",
+                        "description": "Address of the party redeeming the swap.",
+                        "example": "0x6B5c8eD8d2a1F1e34C8e9...7B4D6E3F2C1A9B8"
+                    },
+                    "timelock": {
+                        "type": "integer",
+                        "description": "The timeout period for the swap.",
+                        "example": 288
+                    },
+                    "filled_amount": {
+                        "type": "string",
+                        "description": "The amount that has been filled in the swap.",
+                        "example": "0.5"
+                    },
+                    "amount": {
+                        "type": "string",
+                        "description": "The total amount of the swap.",
+                        "example": "1.0"
+                    },
+                    "secret_hash": {
+                        "type": "string",
+                        "description": "Hash of the secret used for the atomic swap.",
+                        "example": "f4a3b8d16e58cd30b8a0e9f504b1c7f9f24d1c70eaf2a3794b3c7e5bb7c90f5d"
+                    },
+                    "secret": {
+                        "type": "string",
+                        "description": "The revealed secret for the atomic swap.",
+                        "example": ""
+                    },
+                    "initiate_tx_hash": {
+                        "type": "string",
+                        "description": "Transaction hash of the initiation transaction.",
+                        "example": ""
+                    },
+                    "redeem_tx_hash": {
+                        "type": "string",
+                        "description": "Transaction hash of the redeem transaction.",
+                        "example": ""
+                    },
+                    "refund_tx_hash": {
+                        "type": "string",
+                        "description": "Transaction hash of the refund transaction, if any.",
+                        "example": ""
+                    },
+                    "initiate_block_number": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Block number of the initiation transaction.",
+                        "example": "17500000"
+                    },
+                    "redeem_block_number": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Block number of the redeem transaction.",
+                        "example": "17500010"
+                    },
+                    "refund_block_number": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Block number of the refund transaction.",
+                        "example": null
+                    },
+                    "required_confirmations": {
+                        "type": "integer",
+                        "description": "Number of confirmations required for the swap.",
+                        "example": 6
+                    }
+                }
+            },
+            "MatchedOrderVerbose": {
+                "type": "object",
+                "properties": {
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "The timestamp when the matched order was created.",
+                        "example": "2024-12-25T15:30:00Z"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "The timestamp when the matched order was last updated.",
+                        "example": "2024-12-26T10:00:00Z"
+                    },
+                    "deleted_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true,
+                        "description": "The timestamp when the matched order was deleted, if applicable.",
+                        "example": null
+                    },
+                    "source_swap": {
+                        "$ref": "#/components/schemas/SingleSwap"
+                    },
+                    "destination_swap": {
+                        "$ref": "#/components/schemas/SingleSwap"
+                    },
+                    "create_order": {
+                        "$ref": "#/components/schemas/CreateOrder"
+                    }
+                }
+            }
+        }
+    }
+}
