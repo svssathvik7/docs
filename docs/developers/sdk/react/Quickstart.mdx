@@ -6,6 +6,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import InstallAlert from "../nodejs/\_install-alert.mdx";
 
+
 ## 1. Installation
 
 <InstallAlert/>
@@ -59,8 +60,10 @@ import InstallAlert from "../nodejs/\_install-alert.mdx";
     ```
     </TabItem>
 </Tabs>
+
+---
  
-## 2. Setup the Garden provider in your React app.
+## 2. Setup your React app.
 
 <Tabs>
    <TabItem value="main.tsx" label="main.tsx" default>
@@ -79,7 +82,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <GardenProvider // Wraps app with Garden context
           config={{
             store: localStorage, // Persists Garden-related data in local storage
-            environment: environment.testnet, // Sets the environment to testnet | mainnet
+            environment: environment.mainnet, // Sets the environment to testnet | mainnet
           }}
         >
           <App />
@@ -111,7 +114,16 @@ export const wagmiConfig = createConfig({
 </TabItem>
 </Tabs>
 
-## 3. Swapping WBTC to BTC
+---
+
+## 3. Create a swap component
+
+Let’s explore the lifecycle of a swap:
+- Get a quote (supports 'exact out' as well).  
+- Pick the best quote from the available options.  
+- Initialize the [secret manager](../../core/SecretManager.mdx) to handle atomic swap secrets securely.  
+- Initiate the transaction to complete the swap.
+- Track the order [status](../../core/GetOrders.mdx) to monitor progress.
   
 <Tabs>
    <TabItem value="swap.tsx" label="swap.tsx" default>
@@ -122,8 +134,8 @@ export const SwapComponent = () => {
   const { initializeSecretManager, swapAndInitiate, getQuote } = useGarden();
 
 // choose asset pair from SupportedAssets
-  const inputToken = SupportedAssets.ethereum_sepolia_WBTC;
-  const outputToken = SupportedAssets.bitcoin_testnet_BTC;
+  const inputToken = SupportedAssets.mainnet.base_cbBTC;
+  const outputToken = SupportedAssets.mainnet.bitcoin_BTC;
   const amount = new BigNumber(0.01).multipliedBy(10 ** inputToken.decimals);
 
   const quote = await getQuote({
@@ -142,8 +154,8 @@ export const SwapComponent = () => {
   if (secretManager.ok && secretManager.val.getMasterPrivKey()) {
     
     const res = await swapAndInitiate({
-      fromAsset: inputToken,
-      toAsset: outputToken,
+      fromAsset: inputToken, //cbBTC on base
+      toAsset: outputToken, //BTC on Bitcoin
       sendAmount: sendAmount.toString(),
       receiveAmount: quoteAmount.toString(),
       additionalData: { btcAddress, strategyId: _strategy },
@@ -179,4 +191,4 @@ if (isBitcoin(res.val.source_swap.chain)) {
 This is because the `GardenProvider` actively polls the transaction status and uses our Gasless API to submit the transaction on-chain to complete the swap.  
 :::
 
-Now you can track the [status](../../core/GetOrders.mdx) of the order while it gets executed
+Now you can track the [status](../../core/GetOrders.mdx) of the order while it gets executed.
