@@ -18,9 +18,9 @@
       "description": "The `/auth` endpoint facilitates user authentication by generating a unique `nonce`, verifying `signed messages` for authenticity, and issuing a secure `JSON web token` (JWT) upon successful verification. This ensures authorized access to protected resources."
     },
     {
-      "name": "Gasless",
-      "x-displayName": "Gasless",
-      "description": "The `/gasless` endpoints facilitates secure `initiation`, `redemption`, and `order creation` for cross-chain swaps. It ensures seamless transactions without gas fees while providing basic `health monitoring` for the service's status."
+      "name": "Quote",
+      "x-displayName": "Quote",
+      "description": "Retrieves `token prices` and `Garden quotes` to provide users with up-to-date information for informed decision-making."
     },
     {
       "name": "Orderbook",
@@ -28,9 +28,9 @@
       "description": "At the core of the Garden lies the `orderbook`. It is responsible for `order creation`, `matching`, and `settlement`. One can `create orders`, `track their status`, and securely settle them using `Atomic Swaps`."
     },
     {
-      "name": "Quote",
-      "x-displayName": "Quote",
-      "description": "Retrieves `token prices` and `Garden quotes` to provide users with up-to-date information for informed decision-making."
+      "name": "Gasless",
+      "x-displayName": "Gasless",
+      "description": "The `/gasless` endpoints facilitates secure `initiation`, `redemption`, and `order creation` for cross-chain swaps. It ensures seamless transactions without gas fees while providing basic `health monitoring` for the service's status."
     }
   ],
   "paths": {
