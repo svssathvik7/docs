@@ -102,6 +102,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'developers/core/get-orders',
         'developers/core/secret-manager',
+        'developers/core/auth',
       ],
     },
     {
