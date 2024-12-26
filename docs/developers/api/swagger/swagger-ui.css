@@ -1,0 +1,91 @@
+.swagger-ui *::selection {
+    background-color: var(--ifm-color-primary);
+    color: white;
+}
+.swagger-ui .opblock-tag {
+    line-height: 2;
+}
+.swagger-ui {
+    font-family: Satoshi, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji !important;
+    width: 75dvw;
+}
+.swagger-ui .renderedMarkdown code {
+    padding: 0rem 0.5rem;
+}
+.swagger-ui table thead tr td {
+    padding: 1rem;
+}
+.swagger-ui .info .title, 
+.swagger-ui .info p, 
+.swagger-ui a.nostyle, 
+.swagger-ui .opblock-tag small, 
+.swagger-ui .opblock .opblock-summary-description, 
+.swagger-ui .renderedMarkdown p, 
+.swagger-ui .opblock-description-wrapper p, 
+.swagger-ui .response-col_status, 
+.swagger-ui table thead tr td, 
+.swagger-ui .tab li button.tablinks, 
+.swagger-ui .response-control-media-type__title, 
+.swagger-ui .parameter__name, 
+.swagger-ui .parameter__type, 
+.swagger-ui .parameter__in, 
+.swagger-ui .prop-format, 
+.swagger-ui table thead tr th, 
+.swagger-ui .model, 
+.swagger-ui .model .property.primitive {
+    color: var(--ifm-font-color-base);
+}
+.swagger-ui .renderedMarkdown code {
+    color: var(--ifm-font-color-base);
+    background: var(--ifm-invert-code-color);
+}
+.swagger-ui .response-col_links {
+    display: none;
+}
+.swagger-ui .arrow {
+    fill: var(--ifm-font-color-base);
+}
+.swagger-ui .model-box-control:focus {
+    outline: none;
+}
+.swagger-ui .unlocked {
+    fill: var(--ifm-border-background-color);
+}
+.swagger-ui .auth-btn-wrapper {
+    justify-content: space-evenly;
+}
+.swagger-ui table.model tr.property-row td {
+    color: var(--ifm-font-color-base);
+}
+.swagger-ui .opblock-tag .nostyle {
+    width: 8rem;
+}
+.swagger-ui .opblock-tag {
+    flex-wrap: wrap;
+}
+.swagger-ui td {
+    padding: 1rem !important;
+}
+.swagger-ui .scheme-container {
+    display: none;
+}
+.swagger-ui .opblock-summary-control {
+    outline: none !important;
+}
+.swagger-ui table.model tbody tr td:first-of-type {
+    width: fit-content;
+}
+.swagger-ui td {
+    min-width: 75px;
+}
+@media (max-width: 630px) {
+    .swagger-ui .opblock-tag {
+        width: 100%;
+    }
+    .swagger-ui .opblock-tag .nostyle {
+        width: 100%;
+    }
+    .swagger-ui {
+        width: 100%;
+    }
+}

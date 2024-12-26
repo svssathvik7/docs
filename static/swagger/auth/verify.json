@@ -1,8 +1,8 @@
 {
     "post": {
         "operationId": "verifyMessage",
-        "summary": "Verify Message",
-        "description": "Verifies a signed SIWE message with a nonce and issues a JWT for authentication.",
+        "summary": "Verify message.",
+        "description": "The `/auth/verify` endpoint verifies a signed Sign-In with Ethereum (`SIWE`) message along with the provided `nonce`, and, upon successful verification, issues a `JSON Web Token` (JWT) for authentication.",
         "security": [],
         "requestBody": {
             "required": true,
@@ -13,7 +13,7 @@
                         "properties": {
                             "message": {
                                 "type": "string",
-                                "example": "Sign in with Ethereum to example.com",
+                                "example": "localhost:4200 wants you to sign in with your Ethereum account: 0x8F4f2B8ab0341Af0cAe29e3C0F35C30eE00A3dE9\nDeFiHub\nURI: http://localhost:4200/\nVersion: 2\nChain ID: 3\nNonce: b8bc718d6af38a0d2cac5085c53f617a52e590b0ff4ad2c4abb0825e9cc39079\nIssued At: 2024-12-24T14:15:30.123Z",
                                 "description": "The message to be verified."
                             },
                             "signature": {
@@ -47,8 +47,8 @@
                                 "status": {
                                     "type": "string",
                                     "example": "Ok",
-                                    "description": "Enum representing the success of /nonce",
-                                    "enum": ["Ok"]
+                                    "description": "An enum representing the possible outcomes of the endpoint, indicating whether the request was successful.",
+                                    "enum": ["Ok","Error"]
                                 },
                                 "result": {
                                     "type": "string",
@@ -70,8 +70,8 @@
                                 "status": {
                                     "type": "string",
                                     "example": "Error",
-                                    "description": "Enum representing the success of /nonce",
-                                    "enum": ["Error"]
+                                    "description": "An enum representing the possible outcomes of the endpoint, indicating whether the request was successful.",
+                                    "enum": ["Ok","Error"]
                                 },
                                 "error": {
                                     "type": "string",
@@ -108,7 +108,7 @@
             }
         },
         "tags": [
-            "auth"
+            "Auth"
         ]
     }
 }

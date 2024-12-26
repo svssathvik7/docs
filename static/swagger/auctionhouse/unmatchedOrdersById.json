@@ -1,75 +1,89 @@
 {
-    "get": {
-        "operationId": "getUnmatchedIntentById",
-        "summary": "Retrieve unmatched intent by ID.",
-        "description": "Retrieves an unmatched intent by its unique create ID from the intent book.",
-        "servers": [
-            {
-                "url": "https://evm-swapper-relay.onrender.com"
-            }
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
+  "get": {
+    "operationId": "getUnmatchedOrderById",
+    "summary": "Retrieve unmatched order by ID.",
+    "description": "Retrieves a unmatched order using its unique order ID from the order book. It returns the order details if the order has not been picked up by `Orderbook`.",
+    "servers": [
+      {
+        "url": "https://evm-swapper-relay.onrender.com"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "example": "123456"
+        },
+        "description": "The create ID of the unmatched order."
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Order retrieved successfully",
+        "content": {
+          "application/json": {
             "schema": {
-              "type": "string",
-              "example": "123456"
-            },
-            "description": "The create ID of the unmatched intent"
-          }
-        ],
-        "responses": {
-            "200": {
-            "description": "Intent retrieved successfully",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "enum": ["Ok","Error"],
-                      "example": "Ok"
-                    },
-                    "result": {
-                      "type": "object",
-                      "properties": {
-                        "$ref": "../components/order.json"
-                      }
-                    }
-                  },
-                  "required": ["status", "result"]
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "Ok",
+                    "Error"
+                  ],
+                  "example": "Ok",
+                  "description": "An enum representing the possible outcomes of the endpoint, indicating whether the request was successful."
+                },
+                "result": {
+                  "$ref": "./components/schemas.json#/components/schemas/CreateOrder"
                 }
               }
             }
-          },
-          "400": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
+          }
+        }
+      },
+      "400": {
+        "description": "Bad Request. Invalid or missing parameters.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "Ok",
+                    "Error"
+                  ],
+                  "example": "Error",
+                  "description": "An enum representing the possible outcomes of the endpoint, indicating whether the request was successful."
+                },
+                "error": {
                   "type": "object",
                   "properties": {
-                    "status": {
-                      "type": "string",
-                      "enum": ["Ok","Error"],
-                      "example": "Error"
+                    "code": {
+                      "type": "number",
+                      "description": "The numeric status code indicating the type of error or response.",
+                      "example": 401
                     },
-                    "error": {
+                    "message": {
                       "type": "string",
+                      "description": "A descriptive message providing details about the error or response.",
                       "example": "unauthorized"
                     }
-                  },
-                  "required": ["status", "error"]
+                  }
                 }
               }
             }
           }
-        },
-        "tags": [
-          "auctionhouse"
-        ]
-    }
+        }
+      }
+    },
+    "tags": [
+      "Orderbook"
+    ]
+  }
 }
