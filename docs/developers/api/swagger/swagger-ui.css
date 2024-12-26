@@ -37,7 +37,7 @@
 }
 .swagger-ui .renderedMarkdown code {
     color: var(--ifm-font-color-base);
-    background: var(--ifm-invert-code-color);
+    background: var(--docusaurus-highlighted-code-line-bg);
 }
 .swagger-ui .response-col_links {
     display: none;
@@ -77,6 +77,12 @@
 }
 .swagger-ui td {
     min-width: 75px;
+}
+.swagger-ui th{
+    padding: 1rem!important;
+}
+.model-title__text{
+    display: none;
 }
 @media (max-width: 630px) {
     .swagger-ui .opblock-tag {
