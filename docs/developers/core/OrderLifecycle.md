@@ -4,9 +4,9 @@ id: order-lifecycle
 
 # Order lifecycle
 
-Understanding the lifecycle of an order is critical for developers integrating with Garden protocol. This page outlines the various states an order (or [intent](Intents.md)) can go through during the swap process, helping you manage integration logic effectively. For a high-level explanation of the order flow, refer to the [intent flow](IntentFlow.md).
+Understanding the lifecycle of an order is critical for developers integrating with Garden protocol. This page outlines the various states an order (or [intent](../../home/fundamentals/introduction/Intents.md)) can go through during the swap process, helping you manage integration logic effectively. For a high-level explanation of the order flow, refer to the [intent flow](../../home/fundamentals/how-it-works/IntentFlow.md).
 
-An order's lifecycle starts when a user creates an intent to swap assets and continues through matching, execution, and final settlement. Each stage is tracked programmatically using the `OrderStatus` and `SwapStatus` enums. To track the current status of an order, refer to [get order](GetOrder.md) for SDK implementations or [orderbook API](GardenAPI.md) for API-based integrations.
+An order's lifecycle starts when a user creates an intent to swap assets and continues through matching, execution, and final settlement. Each stage is tracked programmatically using the `OrderStatus` and `SwapStatus` enums. To track the current status of an order, refer to [get order](../sdk/react/GetOrder.md) for SDK implementations or [orderbook API](../api/GardenAPI.md) for API-based integrations.
 
 ## Order states
 The tables below classify all the order statuses, providing descriptions and the corresponding actions. The **Actions** column is particularly useful for API integrators, detailing the steps they need to implement for each state. For SDK implementations, these actions are already handled, so the information serves as a reference to understand the underlying process.
@@ -40,7 +40,7 @@ The tables below classify all the order statuses, providing descriptions and the
 
 | Status                       | Description                                                              | Action                                      |
 |------------------------------|--------------------------------------------------------------------------|------------------------------------------------------|
-| **`CounterPartySwapExpired`**| The solver’s [HTLC](AtomicSwaps.md) has expired. |  The user must wait for their HTLC to expire to claim a refund. |
+| **`CounterPartySwapExpired`**| The solver’s [HTLC](../../home/fundamentals/introduction/AtomicSwaps.mdx) has expired. |  The user must wait for their HTLC to expire to claim a refund. |
 | **`Expired`**                | The user’s HTLC has expired.            | The user has to refund their funds.    |
 | **`RefundDetected`**         | The user’s refund transaction is detected on-chain but not confirmed.    | --          |
 | **`Refunded`**               | The user’s refund is confirmed, and they have reclaimed their funds.     | --                    |
