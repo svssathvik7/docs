@@ -7,33 +7,32 @@ import MerryTitle from "./Title";
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Introducing Merry: our in-house tool designed to streamline cross-chain testing. With Merry, you no longer have to wait for blocks to be mined—take full control of your testing timeline.
+Localnet testing is a crucial step in ensuring your Garden SDK integration works as intended before deploying it to a testnet or mainnet. To support your testing, we provide **Merry**, an in-house tool designed for comprehensive cross-chain testing in a local environment.
 
 ## <MerryTitle />
 
-This CLI tool leverages Docker to effortlessly set up a multi-chain testing environment in a single command. Merry includes Bitcoin regtest node, Ethereum localnet node, and essential Catalog services(Filler and Orderbook), providing a self-contained space to test your applications independently of external services.
+Merry is a CLI tool that leverages Docker to set up a multi-chain testing environment with a single command. It includes:
 
-It supports a variety of features, including a faucet, Electrum services and an Orderbook with Filler.
+- **Bitcoin regtest node:** A local Bitcoin testnet environment.
+- **EVM localnet nodes:** Local Ethereum and Arbitrum test environments. Simply add the localnet details to your EVM wallet to detect and interact.
+- **Filler bot:** Simulates the behavior of a live [solver](Solvers.md) based on predefined strategies.
+- **Orderbook:** Local version of the [order book](Auctions.md) to test how intents are matched and fulfilled.
+- **Faucet:** Generate unlimited test funds for seamless testing.
+- **Electrum services:** Lightweight wallet support for interacting with Bitcoin network.
 
-Orderbook is an order matching engine developed by Catalog, use this [section](/docs/developers/api/GardenAPI.md) to learn more about it.
-
-Solver is a bot to fill orders based on strategies set, learn more about it in this [section](/docs/developers/api/GardenAPI.md).
+Merry eliminates block mining delays, provides a complete environment for multi-chain workflows, and allows developers to test integrations independently of external services. It’s customizable, fast, and supports iterative testing with features like local service replacement. 
 
 ## Installation
 
-:::note
-Merry supports arm64 and amd64 architectures. For Windows users, you are required to use Windows Subsystem for Linux (WSL) to run Merry.
-:::
-
 ### Prerequisites
+- Ensure Docker is installed and running. Download Docker from [here](https://www.docker.com).
+- Merry supports arm64 and amd64 architectures. For Windows, use Windows Subsystem for Linux (WSL).
 
-Before using Merry, ensure you have Docker installed and running on your system. If not, you'll need to download and install Docker from the official [website](https://www.docker.com).
-
-## Install using the script
+Run these srcipts based on your environment.
 
 <Tabs>
 <TabItem value="unix" label="Linux & MacOS" default>
-Run the following command to install Merry
+Run the following command to install Merry:
 
 ```bash
 curl https://get.merry.dev | bash
@@ -41,7 +40,7 @@ curl https://get.merry.dev | bash
 
 </TabItem>
 <TabItem value="windows" label="Windows">
-In a WSL terminal, run `sudo dockerd` and verify if the docker daemon is running, then
+In a WSL terminal, run `sudo dockerd` and verify if the docker daemon is running, then:
 
 ```bash
 curl https://get.merry.dev | bash
@@ -50,104 +49,103 @@ curl https://get.merry.dev | bash
 </TabItem>
 </Tabs>
 
-Merry stores its configuration files and other data in a directory on your system. This directory is typically named `.merry`.
+Merry stores its configuration and other data in a `.merry` directory on your system.
 
 ## Commands
 
-Merry provides a variety of commands to manage your testing environment:
+Merry provides a variety of commands to manage your testing environment.
 
-### Starting Merry
+### Start Merry
+
+Start all services with:
 
 ```bash
 merry go
 ```
 
-Starts all services, including the Bitcoin regtest node, Ethereum localnet node, explorers for the nodes and the catalog services.
+Optional flags:
 
-- `--bare` flag: Starts only the multi-chain services (Bitcoin and Ethereum nodes with explorers) and excludes catalog services. This option is useful if you don't need the additional functionalities such as Filler and Orderbook by Catalog.
+- `--bare`: Starts multi-chain services only (Bitcoin and Ethereum nodes with explorers) without Garden services.
 
-- `--headless` flag: Starts all services except for frontend interfaces. This can be helpful for running Merry in headless environments (e.g., servers) where a graphical user interface is not required.
+- `--headless`: Starts all services without frontend interfaces for server environments.
 
-### Stopping Merry
+### Stop Merry
+
+Stops all running services with:
 
 ```bash
 merry stop
-
-# reset data
+```
+ Use `--delete` or `-d` to remove data.
+```bash
 merry stop -d
 ```
 
-Stops all running services. Use `--delete` or `-d` to remove data.
-
-### Getting logs
-
-```bash
-merry logs -s <service>
-
-# getting logs of evm service
-merry logs -s evm
-```
-
-Replace \<service> with the specific service (e.g., Filler, EVM) to view its logs.
-
-### Replacing a service with a local one
-
-```bash
-merry replace <service>
-```
-
-This command allows you to replace a service with your local development version. Make sure you're in the directory containing the local service's Dockerfile. Supported services include Filler, Orderbook, and EVM.
-
-### Calling bitcoin rpc methods
-
-```bash
-merry rpc <method> <params>
-
-# example: get blockchain info
-merry rpc getblockchaininfo
-```
-
-Interact with the Bitcoin regtest node directly using RPC methods.
-
-### Updating Docker images
-
-```bash
-merry update
-```
-
-Keep your testing environment up-to-date by updating all Docker images.
-
-### Fund accounts
-
-```bash
-merry faucet --to <address>
-```
-
-Fund any EVM or Bitcoin address for testing purposes. Replace `<address/>` with the address you want to fund. It could be a Bitcoin or Ethereum address.
-
 ### List all commands
 
+Display all available commands:
 ```bash
 merry --help
 ```
 
-### Generate auto-completion scripts
+### Get logs
 
+Access logs for specific [services](#supported-services) using:
+```bash
+merry logs -s <service>
+```
+
+Replace \<service> with the specific service (e.g., filler, orderbook) to view its logs.
+
+```bash
+merry logs -s evm
+```
+
+### Replace a service with local version
+
+Replace a service with your local development version using:
+```bash
+merry replace <service>
+```
+
+Make sure you're in the directory containing the local service's Dockerfile. You can only replace filler, orderbook, and EVM chain services.
+
+### Interact with Bitcoin RPC
+
+Run Bitcoin RPC [commands](https://developer.bitcoin.org/reference/rpc/) directly:
+```bash
+merry rpc <method> <params>
+```
+Here's an example to get blockchain info.
+```bash
+merry rpc getblockchaininfo
+```
+
+### Fund accounts
+Use the faucet to fund Bitcoin or Ethereum addresses for testing:
+```bash
+merry faucet --to <address>
+```
+
+### Update Docker images
+Keep your environment up-to-date by pulling the latest Docker images:
+```bash
+merry update
+```
+
+### Generate auto-completion scripts
+Generate scripts for your shell (bash, zsh, fish, powershell):
 ```bash
 merry completion <shell>
 ```
 
-Generate auto-completion scripts for your shell. Supported shells include bash, zsh, fish, and powershell.
-
-### Get the version of Merry
-
+### Get version info
+Check the version of Merry installed:
 ```bash
 merry version
 ```
 
 ## Supported services
-
-Merry supports following services:
 
 | Service                         | Port                    |
 | ------------------------------- | ----------------------- |

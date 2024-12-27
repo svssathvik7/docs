@@ -100,11 +100,12 @@ const sidebars: SidebarsConfig = {
         id: 'developers/core/core',
       },
       items: [
-        'developers/core/get-orders',
-        'developers/core/secret-manager',
+        'developers/core/order-lifecycle',
+        'developers/core/sessions',
         'developers/core/auth',
       ],
     },
+    'developers/api/garden-api',
     {
       type: 'category',
       label: 'SDK',
@@ -119,10 +120,10 @@ const sidebars: SidebarsConfig = {
           },
           items: [
             'developers/sdk/react/quickstart',
-            'developers/sdk/react/usegarden-hook',
-            'developers/sdk/react/swap-and-initiate',
-            'developers/sdk/react/redeem-and-refund',
-            'developers/sdk/react/get-transactions',
+            'developers/sdk/react/hooks',
+            'developers/sdk/react/create-order',
+            'developers/sdk/react/settle-order',
+            'developers/sdk/react/get-order',
           ],
         },
         {
@@ -134,9 +135,9 @@ const sidebars: SidebarsConfig = {
           },
           items: [
             'developers/sdk/nodejs/quickstart',
-            'developers/sdk/nodejs/swap-and-initiate',
-            'developers/sdk/nodejs/redeem-and-refund',
-            'developers/sdk/nodejs/get-transactions',
+            'developers/sdk/nodejs/create-order',
+            'developers/sdk/nodejs/settle-order',
+            'developers/sdk/nodejs/get-order',
           ],
         },
       ],

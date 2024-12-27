@@ -17,21 +17,21 @@ docId: "developers/sdk/nodejs/quickstart",
 },
 {
 type: "link",
-href: "./swap-and-initiate",
-label: "Swap and initiate",
-docId: "developers/sdk/nodejs/swap-and-initiate",
+href: "./create-order",
+label: "Create order",
+docId: "developers/sdk/nodejs/create-order",
 },
 {
 type: "link",
-href: "./redeem-and-refund",
-label: "Redeems and refunds",
-docId: "developers/sdk/nodejs/redeem-and-refund",
+href: "./settle-order",
+label: "Settle order",
+docId: "developers/sdk/nodejs/settle-order",
 },
 {
 type: "link",
-href: "./get-transactions",
-label: "Get transactions",
-docId: "developers/sdk/nodejs/get-transactions",
+href: "./get-order",
+label: "Get order",
+docId: "developers/sdk/nodejs/get-order",
 }
 ]}
 />

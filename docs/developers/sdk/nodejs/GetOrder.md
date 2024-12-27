@@ -1,8 +1,8 @@
 ---
-id: get-transactions
+id: get-order
 ---
 
-# Get transactions  
+# Get order  
 
 Tracking the status of swaps is crucial for providing users with real-time updates about their transactions. The Garden SDK provides tools to monitor and fetch details of orders efficiently.
 

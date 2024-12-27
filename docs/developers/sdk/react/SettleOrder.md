@@ -1,8 +1,8 @@
 ---
-id: redeem-and-refund
+id: settle-order
 ---
 
-# Redeem and refund
+# Settle order
 
 Auto Redeems provide a seamless way to handle the settlement of funds on the destination chain without developers having to manually intervene. The system is designed to work autonomously, relying on the GardenProvider and our Gasless API to ensure that the settlement is handled securely and efficiently.
 

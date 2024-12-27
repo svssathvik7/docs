@@ -103,17 +103,6 @@ const config: Config = {
           label: 'Developers',
         },
         {
-          to: '/developers/api/garden-api',
-          type: 'doc',
-          position: 'left',
-          docId: 'developers/api/garden-api',
-          label: 'API',
-        },
-        {
-          type: 'docsVersionDropdown', // Add the version dropdown
-          position: 'right',
-        },
-        {
           href: 'https://github.com/catalogfi/garden.js',
           position: 'right',
           className: 'header-link header-github-link',

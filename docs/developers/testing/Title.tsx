@@ -8,7 +8,7 @@ export default function MerryTitle() {
       }}
     >
       <img height={56} src={"/img/merry.png"} />
-      <span>Merry</span>
+      <span>What is Merry?</span>
     </div>
   );
 }

@@ -81,7 +81,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <GardenProvider // Wraps app with Garden context
           config={{
             store: localStorage, // Persists Garden-related data in local storage
-            environment: environment.mainnet, // Sets the environment to testnet | mainnet
+            environment: environment.mainnet, // Sets the environment to testnet or mainnet
           }}
         >
           <App />
@@ -120,14 +120,16 @@ export const wagmiConfig = createConfig({
 Let’s explore the lifecycle of a swap:
 - Get a quote (supports 'exact out' as well).  
 - Pick the best quote from the available options.  
-- Initialize the [secret manager](../../core/SecretManager.mdx) to handle atomic swap secrets securely.  
+- Initialize the [secret manager](../../core/Sessions.mdx) to handle atomic swap secrets securely.  
 - Initiate the transaction to complete the swap.
-- Track the order [status](../../core/GetOrders.mdx) to monitor progress.
+- Track the order [status](../../core/OrderLifecycle.mdx) to monitor progress.
   
 <Tabs>
    <TabItem value="swap.tsx" label="swap.tsx" default>
 ```tsx 
 import { useGarden } from '@gardenfi/react-hooks';
+import { SupportedAssets } from '@gardenfi/core';
+import BigNumber from 'bignumber.js';
 
 export const SwapComponent = () => {
   const { initializeSecretManager, swapAndInitiate, getQuote } = useGarden();
@@ -175,13 +177,50 @@ export const SwapComponent = () => {
 #### Here's BTC to WBTC swap
 
 ```tsx
-import {isBitcoin} from "@gardenfi/orderbook"
+import { useGarden } from '@gardenfi/react-hooks';
+import { SupportedAssets } from '@gardenfi/core';
+import BigNumber from 'bignumber.js';
 
-// verify if the source chain is Bitcoin
-if (isBitcoin(res.val.source_swap.chain)) {
-  //user needs to fund the bitcoinAddress
-  const bitcoinAddress = res.val.source_swap.swap_id;
-}
+export const SwapComponent = () => {
+  const { initializeSecretManager, swapAndInitiate, getQuote } = useGarden();
+
+// choose asset pair from SupportedAssets
+  const inputToken = SupportedAssets.mainnet.bitcoin_BTC;
+  const outputToken = SupportedAssets.mainnet.base_cbBTC;
+  const amount = new BigNumber(0.01).multipliedBy(10 ** inputToken.decimals);
+
+  const quote = await getQuote({
+    fromAsset: inputToken,
+    toAsset: outputToken,
+    amount, // decimal adjusted amount
+    isExactOut //OPTIONAL: if true, amount is the output amount
+  });
+
+  // select a quote from available solver strategies
+  const [_strategy, quoteAmount] = Object.entries(quote.val.quotes)[0];
+
+  // initialize secret manager for handling atomic swap secrets and hashes
+  const secretManager = await initializeSecretManager();
+
+  if (secretManager.ok && secretManager.val.getMasterPrivKey()) {
+    
+    const res = await swapAndInitiate({
+      fromAsset: inputToken, //BTC on Bitcoin
+      toAsset: outputToken, //cbBTC on base
+      sendAmount: sendAmount.toString(),
+      receiveAmount: quoteAmount.toString(),
+      additionalData: { btcAddress, strategyId: _strategy },
+    }); //creates order and initiates the tx if source chain is EVM
+
+    if (res.ok) {
+      //user needs to fund the bitcoinAddress
+      const bitcoinAddress = res.val.source_swap.swap_id;
+    }
+    } else {
+      // error handling
+    }
+
+};
 ```
 
 :::note  
@@ -190,4 +229,4 @@ if (isBitcoin(res.val.source_swap.chain)) {
 This is because the `GardenProvider` actively polls the transaction status and uses our Gasless API to submit the transaction on-chain to complete the swap.  
 :::
 
-Now you can track the [status](../../core/GetOrders.mdx) of the order while it gets executed.
+Now you can track the [status](../../core/OrderLifecycle.mdx) of the order while it gets executed.
