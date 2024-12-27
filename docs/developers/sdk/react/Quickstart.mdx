@@ -11,7 +11,7 @@ import InstallAlert from "../nodejs/\_install-alert.mdx";
 <InstallAlert/>
 
 ### Garden dependencies  
-
+To install the required Garden packages:
 <Tabs>
     <TabItem value="npm" label="npm">
     
@@ -37,7 +37,7 @@ import InstallAlert from "../nodejs/\_install-alert.mdx";
 </Tabs>
 
 ### wagmi dependencies
-
+To install wagmi dependencies:
 <Tabs>
     <TabItem value="npm" label="npm">
     ```bash
@@ -63,7 +63,9 @@ import InstallAlert from "../nodejs/\_install-alert.mdx";
 ---
  
 ## 2. Setup your React app.
-
+Integrate Garden into your React app by wrapping it with the **GardenProvider**. This enables interaction with the protocol and handles session management.
+- `store`: Persists session data (e.g., in `localStorage`).
+- `environment`: Specifies the network (`mainnet` or `testnet`).
 <Tabs>
    <TabItem value="main.tsx" label="main.tsx" default>
 ```tsx
@@ -78,10 +80,10 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <WagmiProvider config={wagmiConfig}>
       <QueryClientProvider client={new QueryClient()}>
-        <GardenProvider // Wraps app with Garden context
+        <GardenProvider
           config={{
-            store: localStorage, // Persists Garden-related data in local storage
-            environment: environment.mainnet, // Sets the environment to testnet or mainnet
+            store: localStorage,
+            environment: environment.mainnet,
           }}
         >
           <App />
@@ -117,7 +119,7 @@ export const wagmiConfig = createConfig({
 
 ## 3. Create a swap component
 
-Let’s explore the lifecycle of a swap:
+This is the lifecycle of a swap:
 - Get a quote (supports 'exact out' as well).  
 - Pick the best quote from the available options.  
 - Initialize the [secret manager](../../core/Sessions.mdx) to handle atomic swap secrets securely.  
@@ -134,7 +136,7 @@ import BigNumber from 'bignumber.js';
 export const SwapComponent = () => {
   const { initializeSecretManager, swapAndInitiate, getQuote } = useGarden();
 
-// choose asset pair from SupportedAssets
+// Choose assets from SupportedAssets
   const inputToken = SupportedAssets.mainnet.base_cbBTC;
   const outputToken = SupportedAssets.mainnet.bitcoin_BTC;
   const amount = new BigNumber(0.01).multipliedBy(10 ** inputToken.decimals);
@@ -142,30 +144,30 @@ export const SwapComponent = () => {
   const quote = await getQuote({
     fromAsset: inputToken,
     toAsset: outputToken,
-    amount, // decimal adjusted amount
-    isExactOut //OPTIONAL: if true, amount is the output amount
+    amount, // Decimal adjusted
+    isExactOut // Optional: Specify if the amount is the output amount
   });
 
-  // select a quote from available solver strategies
+  // Select a quote from available solver options
   const [_strategy, quoteAmount] = Object.entries(quote.val.quotes)[0];
 
-  // initialize secret manager for handling atomic swap secrets and hashes
+  // Initialize secret manager for handling atomic swap secrets and hashes
   const secretManager = await initializeSecretManager();
 
   if (secretManager.ok && secretManager.val.getMasterPrivKey()) {
     
     const res = await swapAndInitiate({
-      fromAsset: inputToken, //cbBTC on base
-      toAsset: outputToken, //BTC on Bitcoin
+      fromAsset: inputToken,
+      toAsset: outputToken,
       sendAmount: sendAmount.toString(),
       receiveAmount: quoteAmount.toString(),
       additionalData: { btcAddress, strategyId: _strategy },
-    }); //creates order and initiates the tx if source chain is EVM
+    }); //Creates order and initiates the tx if source chain is EVM
 
     if (res.ok) {
-      // order created and tx initiated
+      // Order created and transaction initiated
     } else {
-      // error handling
+      // Handle error
     }
 
   }
@@ -174,7 +176,7 @@ export const SwapComponent = () => {
 </TabItem>
 </Tabs>
 
-#### Here's BTC to WBTC swap
+#### Example: BTC to cbBTC swap
 
 ```tsx
 import { useGarden } from '@gardenfi/react-hooks';
@@ -184,7 +186,7 @@ import BigNumber from 'bignumber.js';
 export const SwapComponent = () => {
   const { initializeSecretManager, swapAndInitiate, getQuote } = useGarden();
 
-// choose asset pair from SupportedAssets
+// Swapping Bitcoin to Coinbase Bitcoin (cbBTC)
   const inputToken = SupportedAssets.mainnet.bitcoin_BTC;
   const outputToken = SupportedAssets.mainnet.base_cbBTC;
   const amount = new BigNumber(0.01).multipliedBy(10 ** inputToken.decimals);
@@ -192,32 +194,30 @@ export const SwapComponent = () => {
   const quote = await getQuote({
     fromAsset: inputToken,
     toAsset: outputToken,
-    amount, // decimal adjusted amount
-    isExactOut //OPTIONAL: if true, amount is the output amount
+    amount, 
+    isExactOut // Optional: Specify if the amount is the output amount
   });
 
-  // select a quote from available solver strategies
   const [_strategy, quoteAmount] = Object.entries(quote.val.quotes)[0];
 
-  // initialize secret manager for handling atomic swap secrets and hashes
   const secretManager = await initializeSecretManager();
 
   if (secretManager.ok && secretManager.val.getMasterPrivKey()) {
     
     const res = await swapAndInitiate({
-      fromAsset: inputToken, //BTC on Bitcoin
-      toAsset: outputToken, //cbBTC on base
+      fromAsset: inputToken,
+      toAsset: outputToken,
       sendAmount: sendAmount.toString(),
       receiveAmount: quoteAmount.toString(),
       additionalData: { btcAddress, strategyId: _strategy },
-    }); //creates order and initiates the tx if source chain is EVM
+    });
 
     if (res.ok) {
-      //user needs to fund the bitcoinAddress
+      //User funds the Bitcoin HTLC address
       const bitcoinAddress = res.val.source_swap.swap_id;
     }
     } else {
-      // error handling
+      // Handle error
     }
 
 };
@@ -226,7 +226,5 @@ export const SwapComponent = () => {
 :::note  
 **Important:** The user must stay on the app during the process. If they navigate away, the transaction will pause and only resume when they return.  
 
-This is because the `GardenProvider` actively polls the transaction status and uses our Gasless API to submit the transaction on-chain to complete the swap.  
+This is because the `GardenProvider` actively polls the transaction status and uses our Gasless API to submit the transaction on-chain to complete the swap. For API integrations, you can customize how you interact with the required API endpoints to manage transaction polling and submission.
 :::
-
-Now you can track the [status](../../core/OrderLifecycle.mdx) of the order while it gets executed.
