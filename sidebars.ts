@@ -105,6 +105,7 @@ const sidebars: SidebarsConfig = {
         'developers/core/auth',
       ],
     },
+    'developers/api/garden-api',
     {
       type: 'category',
       label: 'SDK',
