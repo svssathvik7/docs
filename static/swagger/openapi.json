@@ -28,12 +28,12 @@
     {
       "name": "Auth",
       "x-displayName": "Auth",
-      "description": "The Auth API enables secure and seamless authentication using the Sign-In with Ethereum (`SIWE`) protocol. The `/auth/nonce` endpoint generates a unique nonce to ensure one-time usage and integrity. Users sign a message containing the nonce and other metadata with their Ethereum private key, then submit it to the `/auth/verify` endpoint for validation. This robust process ensures identity verification while maintaining the highest standards of security and decentralization."
+      "description": "The Auth API provides a secure and seamless authentication mechanism using the Sign-In with Ethereum (`SIWE`) protocol. The `/auth/nonce` endpoint generates a unique, one-time-use nonce to ensure integrity and prevent replay attacks. Users sign a message containing this nonce and relevant metadata with their Ethereum private key. The signed message is then submitted to the `/auth/verify` endpoint, which validates the signature and confirms the user's identity without compromising their private key."
     },
     {
       "name": "Quote",
       "x-displayName": "Quote",
-      "description": "The Quote API provides a suite of endpoints designed to facilitate real-time pricing, attested quotes, and strategic pricing insights for cross-chain swaps. It includes endpoints such as `/fiat`, which offers the current USD price for a given order pair, and `/quote/attested`, providing a time-sensitive quote valid until a specific point. The `/quote/strategies` endpoint lists available strategies for swaps, while `/price` requests the quote server for the price of a particular order pair and amount. This group ensures efficient, reliable, and dynamic pricing for seamless cross-chain transactions."
+      "description": "The Quote API provides a suite of endpoints designed to facilitate real-time pricing, attested quotes, and strategic pricing insights for cross-chain swaps. It includes endpoints such as `/fiat`, which offers the current USD price for a given order pair, and `/quote/attested`, providing a time-sensitive quote valid until a specific point. The `/quote/strategies` endpoint lists available strategies for swaps, while `/price` requests the quote server for the price of a particular order pair and amount."
     },
     {
       "name": "Orderbook",
