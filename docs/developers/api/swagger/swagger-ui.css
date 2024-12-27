@@ -37,7 +37,7 @@
 }
 .swagger-ui .renderedMarkdown code {
     color: var(--ifm-font-color-base);
-    background: var(--ifm-invert-code-color);
+    background: var(--docusaurus-highlighted-code-line-bg);
 }
 .swagger-ui .response-col_links {
     display: none;
@@ -67,7 +67,7 @@
     padding: 1rem !important;
 }
 .swagger-ui .scheme-container {
-    display: none;
+    border-radius: 0.7rem;
 }
 .swagger-ui .opblock-summary-control {
     outline: none !important;
@@ -78,7 +78,21 @@
 .swagger-ui td {
     min-width: 75px;
 }
-@media (max-width: 630px) {
+.swagger-ui th{
+    padding: 1rem!important;
+}
+.model-title__text{
+    display: none;
+}
+#auth-bearer-value{
+    color: black;
+}
+.api-reference--btn{
+    color: var(--ifm-color-primary)!important;
+    text-decoration: none;
+    font-weight: 400!important;
+}
+@media (max-width: 1024px) {
     .swagger-ui .opblock-tag {
         width: 100%;
     }

@@ -3,6 +3,11 @@
         "operationId": "addInstantRefund",
         "summary": "Add instant refund SACP.",
         "description": "Add instant refund SACP for a matched order by validating and storing the refund transaction details.",
+        "security": [
+            {
+                "bearer": []
+            }
+        ],
         "requestBody": {
             "required": true,
             "content": {

@@ -3,6 +3,11 @@
         "operationId": "redeemSwap",
         "summary": "Redeems a token swap.",
         "description": "Redeems a token swap by submitting the secret associated with the swap. The request also specifies the side of execution to finalize the transaction.",
+        "security": [
+            {
+                "bearer": []
+            }
+        ],
         "requestBody": {
             "required": true,
             "content": {
