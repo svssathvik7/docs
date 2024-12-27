@@ -84,6 +84,14 @@
 .model-title__text{
     display: none;
 }
+#auth-bearer-value{
+    color: black;
+}
+.api-reference--btn{
+    color: var(--ifm-color-primary)!important;
+    text-decoration: none;
+    font-weight: 400!important;
+}
 @media (max-width: 630px) {
     .swagger-ui .opblock-tag {
         width: 100%;

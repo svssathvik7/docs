@@ -7,7 +7,7 @@
   },
   "components": {
     "securitySchemes": {
-      "bearerAuth": {
+      "bearer": {
         "type": "http",
         "scheme": "bearer",
         "bearerFormat": "JWT"
@@ -29,22 +29,22 @@
     {
       "name": "Auth",
       "x-displayName": "Auth",
-      "description": "The `/auth` endpoint facilitates user authentication by generating a unique `nonce`, verifying `signed messages` for authenticity, and issuing a secure `JSON web token` (JWT) upon successful verification. This ensures authorized access to protected resources."
+      "description": "The Auth API enables secure and seamless authentication using the Sign-In with Ethereum (`SIWE`) protocol. The `/auth/nonce` endpoint generates a unique nonce to ensure one-time usage and integrity. Users sign a message containing the nonce and other metadata with their Ethereum private key, then submit it to the `/auth/verify` endpoint for validation. This robust process ensures identity verification while maintaining the highest standards of security and decentralization."
     },
     {
       "name": "Quote",
       "x-displayName": "Quote",
-      "description": "Retrieves `token prices` and `Garden quotes` to provide users with up-to-date information for informed decision-making."
+      "description": "The Quote API provides a suite of endpoints designed to facilitate real-time pricing, attested quotes, and strategic pricing insights for cross-chain swaps. It includes endpoints such as `/fiat`, which offers the current USD price for a given order pair, and `/quote/attested`, providing a time-sensitive quote valid until a specific point. The `/quote/strategies` endpoint lists available strategies for swaps, while `/price` requests the quote server for the price of a particular order pair and amount. This group ensures efficient, reliable, and dynamic pricing for seamless cross-chain transactions."
     },
     {
       "name": "Orderbook",
       "x-displayName": "Orderbook",
-      "description": "At the core of the Garden lies the `orderbook`. It is responsible for `order creation`, `matching`, and `settlement`. One can `create orders`, `track their status`, and securely settle them using `Atomic Swaps`."
+      "description": "The `Orderbook` API provides robust endpoints for managing and tracking orders in the Garden ecosystem. It allows users to query both `unmatched` and `matched` orders, filtered by `all`, specific `user ID`s, or `order ID`s. Unmatched orders represent those initiated by users but not yet picked up by the Orderbook, while matched orders signify successful solver allocation."
     },
     {
       "name": "Gasless",
       "x-displayName": "Gasless",
-      "description": "The `/gasless` endpoints facilitates secure `initiation`, `redemption`, and `order creation` for cross-chain swaps. It ensures seamless transactions without gas fees while providing basic `health monitoring` for the service's status."
+      "description": "The `Gasless` API group streamlines the order lifecycle by offering endpoints for `order initiation`, `settlement`, `creation`, and `instant refunds`, all secured with `authentication`. This group eliminates the need for users to manage gas fees, enhancing accessibility and ease of use. By facilitating `HTLC`-based fund redemption and instant cancellations, it ensures a seamless, trustless, and user-friendly experience for cross-chain transactions."
     }
   ],
   "paths": {

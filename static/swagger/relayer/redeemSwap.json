@@ -5,7 +5,7 @@
         "description": "Redeems a token swap by submitting the secret associated with the swap. The request also specifies the side of execution to finalize the transaction.",
         "security": [
             {
-                "bearerAuth": []
+                "bearer": []
             }
         ],
         "requestBody": {

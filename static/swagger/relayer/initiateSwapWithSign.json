@@ -5,7 +5,7 @@
         "description": "Performs all the required validation checks to ensure the swap request is valid and meets the necessary conditions. After successful verification, it sends the swap request to the executor, triggering the execution of the token swap based on the provided parameters and conditions.",
         "security": [
             {
-                "bearerAuth": []
+                "bearer": []
             }
         ],
         "requestBody": {
