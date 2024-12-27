@@ -92,6 +92,40 @@
     text-decoration: none;
     font-weight: 400!important;
 }
+.custom-alert{
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 200;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: thin solid var(--ifm-color-primary);
+    font-weight: bold;
+    background-color: #f4f4f4;
+}
+.custom-alert__close-btn{
+    font-size: 0.8rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 100%;
+    border: none;
+    width: 1rem;
+    height: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+    font-weight: bold;
+    cursor: pointer;
+}
+.custom-alert__container{
+    width: fit-content;
+    max-width: 15rem;
+    height: fit-content;
+    max-height: 15rem;
+    overflow-y: scroll;
+}
 @media (max-width: 1024px) {
     .swagger-ui .opblock-tag {
         width: 100%;
