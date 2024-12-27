@@ -32,7 +32,8 @@
 .swagger-ui .prop-format, 
 .swagger-ui table thead tr th, 
 .swagger-ui .model, 
-.swagger-ui .model .property.primitive {
+.swagger-ui .model .property.primitive,
+.swagger-ui .operation-servers h4.message {
     color: var(--ifm-font-color-base);
 }
 .swagger-ui .renderedMarkdown code {
