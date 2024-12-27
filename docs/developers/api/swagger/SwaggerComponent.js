@@ -4,6 +4,7 @@ import { SwaggerDoc } from './Swagger';
 const SwaggerComponent = ({ url }) => (
     <SwaggerDoc
       url={url}
+      docExpansion='none'
     />
     );
 

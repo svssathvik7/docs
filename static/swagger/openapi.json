@@ -2,8 +2,7 @@
   "openapi": "3.0.0",
   "info": {
     "title": "Garden API",
-    "version": "2.0.0",
-    "description": "These are the API references for API v2.0.0. If you are looking for API v1.0.0 references, <a target='_blank' href='https://docs.garden.finance/' class='api-reference--btn'>see here</a>."
+    "version": "2.0.0"
   },
   "components": {
     "securitySchemes": {

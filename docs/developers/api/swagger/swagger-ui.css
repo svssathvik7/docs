@@ -67,7 +67,7 @@
     padding: 1rem !important;
 }
 .swagger-ui .scheme-container {
-    width: 75dvw;
+    border-radius: 0.7rem;
 }
 .swagger-ui .opblock-summary-control {
     outline: none !important;
@@ -92,7 +92,7 @@
     text-decoration: none;
     font-weight: 400!important;
 }
-@media (max-width: 630px) {
+@media (max-width: 1024px) {
     .swagger-ui .opblock-tag {
         width: 100%;
     }
