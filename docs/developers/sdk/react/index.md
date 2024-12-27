@@ -25,7 +25,7 @@ docId: "developers/sdk/react/hooks",
 type: "link",
 href: "./create-order",
 label: "Create order",
-docId: "developers/sdk/react/swap-and-initiate",
+docId: "developers/sdk/react/create-order",
 },
 {
 type: "link",
