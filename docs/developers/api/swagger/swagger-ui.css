@@ -126,6 +126,9 @@
     max-height: 15rem;
     overflow-y: scroll;
 }
+input{
+    color: #000;
+}
 @media (max-width: 1024px) {
     .swagger-ui .opblock-tag {
         width: 100%;
