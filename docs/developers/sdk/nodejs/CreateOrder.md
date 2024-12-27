@@ -1,8 +1,8 @@
 ---
-id: swap-and-initiate
+id: create-order
 ---
 
-# Swap and initiate  
+# Create order  
 
 The `swapAndInitiate` function is at the core of executing swaps in the Garden SDK. This process involves creating a swap order, initializing the HTLC (Hashed Timelock Contract), and starting the swap on the source chain.
 

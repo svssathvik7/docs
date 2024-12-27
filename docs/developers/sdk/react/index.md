@@ -17,27 +17,27 @@ docId: "developers/sdk/react/quickstart",
 },
 {
 type: "link",
-href: "./usegarden-hook",
+href: "./hooks",
 label: "useGarden",
-docId: "developers/sdk/react/usegarden-hook",
+docId: "developers/sdk/react/hooks",
 },
 {
 type: "link",
-href: "./swap-and-initiate",
-label: "Swap and initiate",
+href: "./create-order",
+label: "Create order",
 docId: "developers/sdk/react/swap-and-initiate",
 },
 {
 type: "link",
-href: "./redeem-and-refund",
-label: "Redeem and refund",
-docId: "developers/sdk/react/redeem-and-refund",
+href: "./settle-order",
+label: "Settle order",
+docId: "developers/sdk/react/settle-order",
 },
 {
 type: "link",
-href: "./get-transactions",
-label: "Get transactions",
-docId: "developers/sdk/react/get-transactions",
+href: "./get-order",
+label: "Get order",
+docId: "developers/sdk/react/get-order",
 }
 ]}
 />

@@ -1,8 +1,8 @@
 ---
-id: swap-and-initiate
+id: create-order
 ---
 
-# Swap and initiate
+# Create order
 
 The `swapAndInitiate` method in the React Hooks section is a crucial function that simplifies the process of initiating an atomic swap. It combines multiple steps, including order creation, and initiating the transaction on the source chain, all while ensuring secure handling of secrets through the Secret Manager.
 

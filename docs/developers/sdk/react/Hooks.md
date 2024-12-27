@@ -1,8 +1,9 @@
 ---
-id: usegarden-hook
+id: hooks
+title: Hooks
 ---
 
-# useGarden
+## useGarden
 
 The `useGarden` hook is a comprehensive, pre-packaged React hook that simplifies the integration of Garden SDK into your dApp. It encapsulates the functionality of both `useOrderbook` and `useSecretManager` while exposing a unified API to handle all core interactions, from order management to secret handling.
 

@@ -1,8 +1,8 @@
 ---
-id: redeem-and-refund
+id: settle-order
 ---
 
-# Redeem and refund  
+# Settle order
 
 Redeem and refund manage the completion or recovery of funds on the destination chain based on the state of the swap.  
 
