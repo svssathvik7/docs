@@ -30,7 +30,6 @@ Garden APIs are designed for broader application environments, such as wallets, 
 |-------------------------|-----------------------------|--------------------------------------|
 | **Integration speed**   | Quick and simple            | Requires more effort and expertise   |
 | **Best for**            | React, Node-based dApps     | Wallets, mobile apps, diverse setups |
-| **Customization level** | High                        | High                                 |
 | **Recommended use cases** | Standard swaps in existing products | Advanced workflows and unique environments |
 
 ## How to get started
