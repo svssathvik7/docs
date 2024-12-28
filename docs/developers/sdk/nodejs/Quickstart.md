@@ -11,8 +11,6 @@ import InstallAlert from "./\_install-alert.mdx";
 
 ## 1. Installation
 
-<InstallAlert/>
-
 <Tabs>
 
 <TabItem value="npm" label="npm">
