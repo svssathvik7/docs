@@ -7,7 +7,7 @@
 }
 .swagger-ui {
     font-family: Satoshi, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji !important;
-    width: 75dvw;
+    padding: 0 2rem;
 }
 .swagger-ui .renderedMarkdown code {
     padding: 0rem 0.5rem;
@@ -69,6 +69,10 @@
 }
 .swagger-ui .scheme-container {
     border-radius: 0.7rem;
+    background-color: var(--docusaurus-highlighted-code-line-bg);
+}
+.swagger-ui .scheme-container *{
+    color: var(--ifm-font-color-base);
 }
 .swagger-ui .opblock-summary-control {
     outline: none !important;
@@ -130,6 +134,9 @@
 input{
     color: #000;
 }
+#servers{
+    background-color: transparent;
+}
 @media (max-width: 1024px) {
     .swagger-ui .opblock-tag {
         width: 100%;
@@ -139,5 +146,14 @@ input{
     }
     .swagger-ui {
         width: 100%;
+    }
+    .swagger-ui {
+        padding: 0;
+    }
+    .swagger-ui .wrapper{
+        padding: 0;
+    }
+    .swagger-ui .scheme-container{
+        padding: 1rem;
     }
 }

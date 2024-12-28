@@ -38,7 +38,7 @@
     {
       "name": "Orderbook",
       "x-displayName": "Orderbook",
-      "description": "The `Orderbook` API provides robust endpoints for managing and tracking orders in the Garden ecosystem. It allows users to query both `unmatched` and `matched` orders, filtered by `all`, specific `user ID`s, or `order ID`s. Unmatched orders represent those initiated by users but not yet picked up by the Orderbook, while matched orders signify successful solver allocation."
+      "description": "The `Orderbook` API provides robust endpoints for managing and tracking orders in the Garden ecosystem. It allows users to query both `unmatched` and `matched` orders, filtered by all, specific `user ID`s, or `order ID`s. Unmatched orders represent those initiated by users but not yet picked up by the Orderbook, while matched orders signify successful solver allocation."
     },
     {
       "name": "Gasless",
