@@ -1,8 +1,8 @@
 {
     "get": {
-        "operationId": "getMatchedIntentsByUser",
-        "summary": "Get Matched Intents by User",
-        "description": "Retrieves all matched intents for a specific user, with optional pagination and pending action filtering.",
+        "operationId": "getMatchedOrdersByUser",
+        "summary": "Get matched orders by user.",
+        "description": "Retrieves all unmatched orders for a specific user, identified by their unique address, with optional pagination. It returns the orders that have been initiated and picked up by `Orderbook`.",
         "servers": [
             {
                 "url": "https://evm-swapper-relay.onrender.com"
@@ -16,7 +16,7 @@
                 "schema": {
                     "type": "string"
                 },
-                "description": "The user's address"
+                "description": "The user's address."
             },
             {
                 "name": "page",
@@ -25,7 +25,7 @@
                     "type": "integer",
                     "default": 1
                 },
-                "description": "Page number for pagination"
+                "description": "Page number for pagination."
             },
             {
                 "name": "per_page",
@@ -34,7 +34,7 @@
                     "type": "integer",
                     "default": 10
                 },
-                "description": "Number of items per page"
+                "description": "Number of items per page."
             },
             {
                 "name": "pending",
@@ -43,12 +43,12 @@
                     "type": "boolean",
                     "default": false
                 },
-                "description": "User pending actions"
+                "description": "User pending actions."
             }
         ],
         "responses": {
             "200": {
-                "description": "The paginated matched intents for the user.",
+                "description": "The paginated matched orders for the user.",
                 "content": {
                     "application/json": {
                         "schema": {
@@ -59,30 +59,7 @@
                                     "example": "Ok"
                                 },
                                 "result": {
-                                    "type": "object",
-                                    "properties": {
-                                        "page": {
-                                            "type": "integer",
-                                            "example": 1
-                                        },
-                                        "per_page": {
-                                            "type": "integer",
-                                            "example": 10
-                                        },
-                                        "total": {
-                                            "type": "integer",
-                                            "example": 50
-                                        },
-                                        "data": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "$ref": "./components/matchedOrderVerbose.json"
-                                                }
-                                            }
-                                        }
-                                    }
+                                    "$ref": "./components/schemas.json#/components/schemas/PaginatedMatchedOrdersVerbose"
                                 }
                             }
                         }
@@ -101,8 +78,19 @@
                                     "example": "Error"
                                 },
                                 "error": {
-                                    "type": "string",
-                                    "example": "Invalid user address or pagination parameters"
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number",
+                                            "description":"The numeric status code indicating the type of error or response.",
+                                            "example": 401
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "description": "A descriptive message providing details about the error or response.",
+                                            "example": "Invalid user adress or pagination parameters"
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -111,7 +99,7 @@
             }
         },
         "tags": [
-          "auctionhouse"
+            "Orderbook"
         ]
     }
 }

@@ -1,8 +1,13 @@
 {
     "post": {
         "operationId": "addInstantRefund",
-        "summary": "Add instant refund sacp",
-        "description": "Add instant refund SACP for a matched intent by validating and storing the refund transaction details.",
+        "summary": "Add instant refund SACP.",
+        "description": "Add instant refund SACP for a matched order by validating and storing the refund transaction details.",
+        "security": [
+            {
+                "bearer": []
+            }
+        ],
         "requestBody": {
             "required": true,
             "content": {
@@ -12,7 +17,7 @@
                         "properties": {
                             "order_id": {
                                 "type": "string",
-                                "description": "The ID of the intent to redeem",
+                                "description": "The ID of the order to redeem",
                                 "example": "12345"
                             },
                             "instant_refund_tx_bytes": {
@@ -27,26 +32,50 @@
         },
         "responses": {
             "200": {
-                "description": "Returned when the instant refund SACP is successfully added and updated in the intent.",
+                "description": "Returned when the instant refund SACP is successfully added and updated in the order.",
                 "content": {
                     "text/plain": {
                         "schema": {
-                            "type": "string",
-                            "example": "Instant refund SACP added"
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "string",
+                                    "example": "Instant refund SACP added"
+                                }
+                            }
                         }
                     }
                 }
             },
             "400": {
-                "description": "Returned when a bad request is processed",
+                "description": "Returned when a bad request is processed.",
                 "content": {
                     "text/plain": {
                         "schema": {
-                            "type": "string",
-                            "example": "Expected source chain to be bitcoin, bitcoin_regtest or bitcoin_testnet"
+                            "type": "object",
+                            "properties": {
+                                "error": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number",
+                                            "description": "The numeric status code indicating the type of error or response.",
+                                            "example": 400
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "description": "A descriptive message providing details about the error or response.",
+                                            "example": "Order not initiated."
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
+            },
+            "401": {
+                "description": "Bad request - Unauthorized"
             },
             "500": {
                 "description": "Returned on internal server error",
@@ -54,14 +83,14 @@
                     "text/plain": {
                         "schema": {
                             "type": "string",
-                            "example": "Failed to update intent"
+                            "example": "Failed to update order"
                         }
                     }
                 }
             }
         },
         "tags": [
-          "relayer"
+          "Gasless"
         ]
     }
 }

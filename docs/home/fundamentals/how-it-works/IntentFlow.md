@@ -10,8 +10,8 @@ Now that we know all the actors and modules in the system, let's take a detailed
 
 Here’s a simplified representation of the process:
 
-1. User requests quote → Signs intent → Submits intent to Auction House
-2. Auction House selects solver → Solver begins settlement
+1. User requests quote → Signs intent → Submits intent to order book
+2. Order book selects solver → Solver begins settlement
 3. User initiates transaction → Solver executes on destination chain
 4. User redeems funds → Solver completes settlement
 
@@ -23,9 +23,9 @@ Here is the detailed look into each step of the process.
 2. The user receives the quote and must **accept it** by creating a **signed intent message.**
 3. This signed intent represents the user's objective, including parameters like assets, chains, amounts, and expiration details.
 
-### **Selection of solver in the Auction House**
+### **Selection of solver in the order book**
 
-* Once the user signs the intent, it is submitted to the **Auction House**, a decentralized system where solvers compete to fulfill the intent.
+* Once the user signs the intent, it is submitted to the **order book**, a decentralized system where solvers compete to fulfill the intent.
 * Auction process:
   1. All solvers submit their quotes based on the intent's parameters.
   2. The **best quote** (lowest price or highest efficiency) is determined.

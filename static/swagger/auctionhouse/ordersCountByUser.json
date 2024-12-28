@@ -1,8 +1,8 @@
 {
     "get": {
-        "operationId": "getIntentCountByUser",
-        "summary": "Get Intent Count for User",
-        "description": "Fetches the total number of intents for a specific user based on their address.",
+        "operationId": "getOrderCountByUser",
+        "summary": "Get order count for user.",
+        "description": "Fetches the total number of orders for a specific user based on their address.",
         "servers": [
             {
                 "url": "https://evm-swapper-relay.onrender.com"
@@ -16,12 +16,12 @@
                 "schema": {
                     "type": "string"
                 },
-                "description": "The user's address"
+                "description": "The user's address."
             }
         ],
         "responses": {
             "200": {
-                "description": "The total number of intents for the user.",
+                "description": "The total number of orders for the user.",
                 "content": {
                     "application/json": {
                         "schema": {
@@ -52,8 +52,19 @@
                                     "example": "Error"
                                 },
                                 "error": {
-                                    "type": "string",
-                                    "example": "Invalid user address"
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number",
+                                            "description":"The numeric status code indicating the type of error or response.",
+                                            "example": 401
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "description": "A descriptive message providing details about the error or response.",
+                                            "example": "Invalid user address"
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -62,7 +73,7 @@
             }
         },
         "tags": [
-          "auctionhouse"
+          "Orderbook"
         ]
     }
 }

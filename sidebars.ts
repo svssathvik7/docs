@@ -91,62 +91,68 @@ const sidebars: SidebarsConfig = {
   ],
 
   developers: [
-    'developers/developers',
+    'developers/overview',
     {
       type: 'category',
-      label: 'Garden SDK',
+      label: 'Core',
+      link: {
+        type: 'doc',
+        id: 'developers/core/core',
+      },
+      items: [
+        'developers/core/order-lifecycle',
+        'developers/core/sessions',
+        'developers/core/auth',
+      ],
+    },
+    'developers/api/garden-api',
+    {
+      type: 'category',
+      label: 'SDK',
       link: { type: 'doc', id: 'developers/sdk/sdk' },
       items: [
         {
           type: 'category',
-          label: 'React hooks (recommended)',
+          label: 'React',
           link: {
             type: 'doc',
-            id: 'developers/sdk/react-hooks/installation',
+            id: 'developers/sdk/react/react',
           },
           items: [
-            'developers/sdk/react-hooks/installation',
-            'developers/sdk/react-hooks/quickstart',
-            'developers/sdk/react-hooks/usegarden-hook',
-            'developers/sdk/react-hooks/swap-and-initiate',
-            'developers/sdk/react-hooks/auto-redeems',
+            'developers/sdk/react/quickstart',
+            'developers/sdk/react/hooks',
+            'developers/sdk/react/create-order',
+            'developers/sdk/react/settle-order',
+            'developers/sdk/react/get-order',
           ],
         },
-        'developers/sdk/installation',
-        'developers/sdk/configure-sdk',
-        'developers/sdk/quote',
-        'developers/sdk/swap-and-initiate',
-        'developers/sdk/redeems-and-refunds',
-        'developers/sdk/get-transactions',
+        {
+          type: 'category',
+          label: 'Node.js',
+          link: {
+            type: 'doc',
+            id: 'developers/sdk/nodejs/nodejs',
+          },
+          items: [
+            'developers/sdk/nodejs/quickstart',
+            'developers/sdk/nodejs/create-order',
+            'developers/sdk/nodejs/settle-order',
+            'developers/sdk/nodejs/get-order',
+          ],
+        },
       ],
     },
+    'developers/supported-chains',
+    'developers/testing/testing',
+    'developers/troubleshooting',
 
     {
       type: 'category',
-      label: 'Testing in localnet',
-      link: { type: 'doc', id: 'developers/merry/merry' },
-      items: ['developers/merry/merry', 'developers/merry/merry-cmds', 'developers/merry/merry-services'],
-    },
-    // {
-    //   type: 'category',
-    //   label: 'Cookbook',
-    //   link: { type: 'doc', id: 'developers/cookbook/cookbook' },
-    //   items: [],
-    // },
-  ],
-
-  // But you can create a sidebar manually
-  /*
-  tutorialSidebar: [
-    'intro',
-    'hello',
-    {
-      type: 'category',
-      label: 'Tutorial',
-      items: ['tutorial-basics/create-a-document'],
+      label: 'Cookbook',
+      link: { type: 'doc', id: 'developers/cookbook/cookbook' },
+      items: [],
     },
   ],
-   */
 };
 
 export default sidebars;

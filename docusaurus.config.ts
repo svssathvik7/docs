@@ -99,15 +99,8 @@ const config: Config = {
           to: '/developers',
           type: 'doc',
           position: 'left',
-          docId: 'developers/developers',
+          docId: 'developers/overview',
           label: 'Developers',
-        },
-        {
-          to: '/developers/api/garden-api',
-          type: 'doc',
-          position: 'left',
-          docId: 'developers/api/garden-api',
-          label: 'API',
         },
         {
           href: 'https://github.com/catalogfi/garden.js',
