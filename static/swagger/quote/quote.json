@@ -64,7 +64,7 @@
                             "nonce": {
                                 "type": "string",
                                 "description": "A unique identifier for the swap transaction to prevent duplication.",
-                                "example": "b8bc718d6af38a0d2cac5085c53f617a52e590b0ff4ad2c4abb0825e9cc39079"
+                                "example": "2823718269638702204650851539617852959060194412043720825395239079"
                             },
                             "min_destination_confirmations": {
                                 "type": "integer",

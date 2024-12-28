@@ -111,6 +111,55 @@ To confirm the order, the client signs the quote details using their private key
 
 ### 3. Attesting the quote
 
+- Once the user accepts the quote and requests the order, an "attested quote" request is sent to the backend. 
+- The request, attestedQuoteReq, includes additional data such as the strategy ID and the user's refund address. 
+- The backend then returns an attested quote, which includes further data necessary for creating the final order.
+
 ### 4. Creating the Order
 
-## Order Progress
+- The create order request includes the additional data from the attested quote, along with the previously prepared order details. 
+- This request is sent to the backend to create the order. Upon success, the response contains the result, which includes the `swapId` (order ID).
+
+## Order Remeption
+
+### Overview
+
+The **order redemption** flow typically involves claiming the swapped assets on the destination chain after the swap order has been successfully initiated.
+
+### Step-by-Step Flow
+
+### 1. Pre-requisites for Redemption
+
+- The swap must be complete on the source chain, and assets must be ready on the destination chain.
+- The secret generated during order creation must be revealed.
+
+### 2. Retrieving Order Details
+
+- The application fetches the order using the swapId or transaction hash. This includes:
+   - **Status of the Order**: Whether the assets are ready for redemption.
+   - **Secret Hash**: Used to verify that the order can only be redeemed by the user who initiated it.
+
+### 3. Constructing the Redemption Request
+
+To redeem the order
+
+- The **secret** created during the order creation phase is sent along with the redemption request. This proves ownership and validates the right to claim the destination assets.
+- Redemption details typically include:
+   - **Order ID** (`swapId`)
+   - **Secret** (the revealed value from `secretHash`)
+   - **Destination Address** (e.g., user’s Ethereum address for receiving WBTC)
+
+
+### 4. Sending the Redemption Request
+
+- The redemption request is sent to the smart contract or relayer on the **destination chain** (e.g., Ethereum Sepolia).
+- The request triggers a smart contract call that:
+   - Verifies the provided `secret` matches the `secretHash` stored in the order.
+   - Transfers the destination asset (e.g., WBTC) to the user's address.
+   - Marks the order as redeemed, preventing duplicate redemptions.
+
+### 5. Confirmation of Redemption
+
+Once the redemption is processed:
+- The smart contract emits a `redemption event`, indicating the swap's successful completion.
+- The application listens for this event to update the UI, showing that the destination assets are now available in the user’s wallet.

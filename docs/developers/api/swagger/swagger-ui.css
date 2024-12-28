@@ -2,6 +2,9 @@
     background-color: var(--ifm-color-primary);
     color: white;
 }
+.swagger-ui .scheme-container *{
+    color: var(--ifm-font-color-base);
+}
 .swagger-ui .opblock-tag {
     line-height: 2;
 }
@@ -71,9 +74,6 @@
     border-radius: 0.7rem;
     background-color: var(--docusaurus-highlighted-code-line-bg);
 }
-.swagger-ui .scheme-container *{
-    color: var(--ifm-font-color-base);
-}
 .swagger-ui .opblock-summary-control {
     outline: none !important;
 }
@@ -136,6 +136,14 @@ input{
 }
 #servers{
     background-color: transparent;
+}
+#auth-bearer-value{
+    outline: none;
+    width: 100%;
+}
+
+.swagger-ui .info .title small.version-stamp{
+    padding: 1 0.8rem;
 }
 @media (max-width: 1024px) {
     .swagger-ui .opblock-tag {
