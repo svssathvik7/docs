@@ -129,6 +129,7 @@ const sidebars: SidebarsConfig = {
             'developers/sdk/classes/quote',
             'developers/sdk/classes/orderbook',
             'developers/sdk/classes/secret-manager',
+            'developers/sdk/classes/async-result',
           ],
         },
         {
@@ -139,11 +140,12 @@ const sidebars: SidebarsConfig = {
             id: 'developers/sdk/types/types',
           },
           items: [
-            'developers/sdk/types/async-result',
+            'developers/sdk/types/order',
             'developers/sdk/types/IQuote',
             'developers/sdk/types/IOrderbook',
             'developers/sdk/types/ISecretManager',
             'developers/sdk/types/create-order',
+            'developers/sdk/types/Enumerations',
           ],
         },
         {
