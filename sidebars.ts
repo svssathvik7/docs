@@ -19,7 +19,8 @@ const sidebars: SidebarsConfig = {
     { type: 'doc', label: 'Get started', id: 'home/get-started' },
     {
       type: 'html',
-      value: '<div style="font-weight: bold; margin-left:10px; margin-top: 10px;">Fundamentals</div>', // This adds a labeled divider
+      value:
+        '<div style="font-weight: bold; margin-left:10px; margin-top: 10px;">Fundamentals</div>', // This adds a labeled divider
     },
 
     {
@@ -56,7 +57,8 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'html',
-      value: '<div style="font-weight: bold; margin-left:10px; margin-top: 10px;">Guides</div>', // This adds a labeled divider
+      value:
+        '<div style="font-weight: bold; margin-left:10px; margin-top: 10px;">Guides</div>', // This adds a labeled divider
     },
     {
       type: 'category',
@@ -78,14 +80,19 @@ const sidebars: SidebarsConfig = {
       label: 'Stake',
       link: { type: 'doc', id: 'home/basics/guides/stake/stake-seed' },
 
-      items: []
+      items: [],
     },
     {
       type: 'html',
-      value: '<div style="font-weight: bold; margin-left:10px; margin-top: 10px;">Governance</div>', // This adds a labeled divider
+      value:
+        '<div style="font-weight: bold; margin-left:10px; margin-top: 10px;">Governance</div>', // This adds a labeled divider
     },
     { type: 'doc', label: 'Tokenomics', id: 'home/governance/tokenomics' },
-    { type: 'doc', label: 'Governance process', id: 'home/governance/governance-process' },
+    {
+      type: 'doc',
+      label: 'Governance process',
+      id: 'home/governance/governance-process',
+    },
     { type: 'doc', label: 'Snapshot', id: 'home/governance/snapshot' },
     { type: 'doc', label: 'Brand guide', id: 'home/garden-brand-guide' },
   ],
@@ -111,6 +118,28 @@ const sidebars: SidebarsConfig = {
       label: 'SDK',
       link: { type: 'doc', id: 'developers/sdk/sdk' },
       items: [
+        {
+          type: 'category',
+          label: 'Classes',
+          link: {
+            type: 'doc',
+            id: 'developers/sdk/classes/quote',
+          },
+          items: [
+            'developers/sdk/classes/quote',
+            'developers/sdk/classes/orderbook',
+            'developers/sdk/classes/secret-manager',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Types',
+          link: {
+            type: 'doc',
+            id: 'developers/sdk/types/types',
+          },
+          items: ['developers/sdk/types/IQuote'],
+        },
         {
           type: 'category',
           label: 'React',
