@@ -144,7 +144,6 @@ const sidebars: SidebarsConfig = {
             'developers/sdk/types/IQuote',
             'developers/sdk/types/IOrderbook',
             'developers/sdk/types/ISecretManager',
-            'developers/sdk/types/create-order',
             'developers/sdk/types/Enumerations',
           ],
         },
