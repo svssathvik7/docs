@@ -138,7 +138,13 @@ const sidebars: SidebarsConfig = {
             type: 'doc',
             id: 'developers/sdk/types/types',
           },
-          items: ['developers/sdk/types/IQuote'],
+          items: [
+            'developers/sdk/types/async-result',
+            'developers/sdk/types/IQuote',
+            'developers/sdk/types/IOrderbook',
+            'developers/sdk/types/ISecretManager',
+            'developers/sdk/types/create-order',
+          ],
         },
         {
           type: 'category',
