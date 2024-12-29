@@ -11,6 +11,12 @@ The `Quote` class is a key component in the Garden SDK, offering methods to:
 - Generate attested quotes with signature for order validation.
 - Retrieve available strategies for quoting, including fees, limits, and order pair details.
 
+## Usage
+
+```ts
+import { Quote } from '@gardenfi/core';
+```
+
 ## Constructor
 
 ```ts
@@ -48,7 +54,7 @@ new Quote(quoteUrl: string): IQuote
 
 **Returns:**
 
-- `AsyncResult<QuoteResponse, string>`
+- [`AsyncResult<QuoteResponse, string>`](../types/quote.md#quoteresponse)
 
 ### getAttestedQuote
 
@@ -68,7 +74,7 @@ This method generates an attested quote for a given order. It includes the order
 
 **Returns:**
 
-- `AsyncResult<CreateOrderRequestWithAdditionalData, string>`
+- [`AsyncResult<CreateOrderRequestWithAdditionalData, string>`](../types/Order.md#createorderrequestwithadditionaldata)
 
 ### getStrategies
 
@@ -82,4 +88,4 @@ This method retrieves the available strategies for quoting. It returns a list of
 
 **Returns:**
 
-- `AsyncResult<Strategies, string>`
+- [`AsyncResult<Strategies, string>`](../types/quote.md#strategies)

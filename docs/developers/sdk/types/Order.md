@@ -105,3 +105,12 @@ The `CreateOrderReqWithStrategyId` type represents the details of an order creat
 | --------------------------------------------------------------- | ------------------------------------------------------------ | ---------------------------------------------------------------------- |
 | (All properties from [CreateOrderRequest](#createorderrequest)) | -                                                            | As described in the [CreateOrderRequest](#createorderrequest) section. |
 | additional_data                                                 | `{strategy_id: string;bitcoin_optional_recipient?: string;}` | As described in the [AdditionalData](#additionaldata) section.         |
+
+## CreateOrderRequestWithAdditionalData
+
+The `CreateOrderRequestWithAdditionalData` type represents the details of an order creation request with additional data. It contains the following properties:
+
+| Property                                                        | Type | Description                                                            |
+| --------------------------------------------------------------- | ---- | ---------------------------------------------------------------------- |
+| (All properties from [CreateOrderRequest](#createorderrequest)) | -    | As described in the [CreateOrderRequest](#createorderrequest) section. |
+| (All properties from [AdditionalData](#additionaldata))         | -    | As described in the [AdditionalData](#additionaldata) section.         |

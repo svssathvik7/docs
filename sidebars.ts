@@ -127,6 +127,7 @@ const sidebars: SidebarsConfig = {
           },
           items: [
             'developers/sdk/classes/quote',
+            'developers/sdk/classes/orders-provider',
             'developers/sdk/classes/orderbook',
             'developers/sdk/classes/secret-manager',
             'developers/sdk/classes/async-result',
@@ -141,6 +142,8 @@ const sidebars: SidebarsConfig = {
           },
           items: [
             'developers/sdk/types/order',
+            'developers/sdk/types/quote',
+            'developers/sdk/types/pagination',
             'developers/sdk/types/IQuote',
             'developers/sdk/types/IOrderbook',
             'developers/sdk/types/ISecretManager',

@@ -32,3 +32,17 @@ Chain is a type that represents the possible values of the `Chains` enumeration.
 ```ts
 type Chain = keyof typeof Chains;
 ```
+
+## OrderPair
+
+The `OrderPair` type represents a pair of assets that can be traded on the platform. It is a string that combines the source chain and destination chain with a colon (`:`) separator.
+
+```ts
+type OrderPair = `${Chain}:${Asset}`;
+```
+
+#### Example
+
+```ts
+'bitcoin_testnet:primary::arbitrum_sepolia:0x1cd0bBd55fD66B4C5F7dfE434eFD009C09e628d1';
+```
