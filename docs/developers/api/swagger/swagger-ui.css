@@ -170,6 +170,13 @@ input{
     background: var(--ifm-drop-down-image);
     background-size: 1.5rem;
 }
+.docMainContainer_TBSr{
+    scrollbar-width: none!important;
+    -ms-overflow-style: none!important;
+}
+.docMainContainer_TBSr::-webkit-scrollbar{
+    display: none!important;
+}
 @media (max-width: 1024px) {
     .swagger-ui .opblock-tag {
         width: 100%;
