@@ -223,7 +223,7 @@ if (initRes.error) {
 
 await garden.execute();
 
-// Subscribe to Garden events to track transaction statuses in real-time
+// Subscribe to Garden events to track transaction statuses
 garden.on('error', (order, error) => {
   console.error(
     `Error occurred for order ID: ${order.create_order.create_id}, Details:`,
@@ -245,6 +245,7 @@ garden.on('success', (order, action, txHash) => {
   // Wait for the swap to complete. Use Ctrl+C to stop the script when done.
   // This ensures the script continues running to monitor the swap's progress.
 
-  await new Promise((resolve) => setTimeout(resolve, 10000000000));
 });
+
+await new Promise((resolve) => setTimeout(resolve, 10000000000));
 ```
