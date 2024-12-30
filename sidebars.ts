@@ -128,7 +128,6 @@ const sidebars: SidebarsConfig = {
           items: [
             'developers/sdk/react/quickstart',
             'developers/sdk/react/hooks',
-            'developers/sdk/react/create-order',
             'developers/sdk/react/settle-order',
             'developers/sdk/react/get-order',
           ],
@@ -142,7 +141,6 @@ const sidebars: SidebarsConfig = {
           },
           items: [
             'developers/sdk/nodejs/quickstart',
-            'developers/sdk/nodejs/create-order',
             'developers/sdk/nodejs/settle-order',
             'developers/sdk/nodejs/get-order',
           ],

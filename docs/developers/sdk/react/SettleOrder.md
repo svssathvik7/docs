@@ -11,7 +11,7 @@ Auto Redeems provide a seamless way to handle the settlement of funds on the des
 The `GardenProvider` will periodically check the `pendingOrders` endpoint to retrieve a list of orders that require settlement on the destination chain. It will then execute the appropriate method—either `btcRedeem` for Bitcoin-based orders or `evmRedeem` for Ethereum-based orders—based on the chain type of each order. Additionally, our relayer will handle all associated fees, so users do not need to worry about them.
 
 ```ts
-private async evmRedeem(order: MatchedOrder, secret: string): Promise<void>;
+evmRedeem(order: MatchedOrder, secret: string): Promise<void>;
 ```
 
 - **Parameters:**
