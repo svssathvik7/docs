@@ -120,38 +120,6 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: 'category',
-          label: 'Classes',
-          link: {
-            type: 'doc',
-            id: 'developers/sdk/classes/quote',
-          },
-          items: [
-            'developers/sdk/classes/quote',
-            'developers/sdk/classes/orders-provider',
-            'developers/sdk/classes/orderbook',
-            'developers/sdk/classes/secret-manager',
-            'developers/sdk/classes/async-result',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Types',
-          link: {
-            type: 'doc',
-            id: 'developers/sdk/types/types',
-          },
-          items: [
-            'developers/sdk/types/order',
-            'developers/sdk/types/quote',
-            'developers/sdk/types/pagination',
-            'developers/sdk/types/IQuote',
-            'developers/sdk/types/IOrderbook',
-            'developers/sdk/types/ISecretManager',
-            'developers/sdk/types/Enumerations',
-          ],
-        },
-        {
-          type: 'category',
           label: 'React',
           link: {
             type: 'doc',
@@ -177,6 +145,41 @@ const sidebars: SidebarsConfig = {
             'developers/sdk/nodejs/create-order',
             'developers/sdk/nodejs/settle-order',
             'developers/sdk/nodejs/get-order',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Classes',
+          link: {
+            type: 'doc',
+            id: 'developers/sdk/classes/quote',
+          },
+          items: [
+            'developers/sdk/classes/quote',
+            'developers/sdk/classes/orders-provider',
+            'developers/sdk/classes/orderbook',
+            'developers/sdk/classes/secret-manager',
+            'developers/sdk/classes/async-result',
+            'developers/sdk/classes/event-broker',
+            'developers/sdk/classes/garden',
+            'developers/sdk/classes/evm-relay',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Types',
+          link: {
+            type: 'doc',
+            id: 'developers/sdk/types/types',
+          },
+          items: [
+            'developers/sdk/types/order',
+            'developers/sdk/types/quote',
+            'developers/sdk/types/pagination',
+            'developers/sdk/types/IQuote',
+            'developers/sdk/types/IOrderbook',
+            'developers/sdk/types/ISecretManager',
+            'developers/sdk/types/Enumerations',
           ],
         },
       ],
