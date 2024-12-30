@@ -10,7 +10,7 @@ This guide accompanies the [gardenfi/api-demo-dapp](https://github.com/catalogfi
 
 ## Introduction
 
-This guide demonstrates how to use the [Garden API](../api/garden-api) to develop a basic dApp for swapping BTC (testnet4) to WBTC (Ethereum Sepolia). The user interface looks like this:
+This guide demonstrates how to use the [Garden API](../api/garden-api) to develop a basic dApp for swapping BTC (`testnet4`) to WBTC (`Ethereum Sepolia`). The user interface looks like this:
 
 ![API Demo APP UI](./images/api-demo-ui.webp)
 
@@ -39,7 +39,7 @@ This guide demonstrates how to use the [Garden API](../api/garden-api) to develo
 
 ## Authentication
 
-The authentication section provides a detailed walkthrough of how to securely authenticate users using Garden’s Auth API, leveraging the Sign-In with Ethereum (SIWE) protocol. This method ensures seamless and trustless authentication without compromising user security. Below, we explain the flow of the authentication process and how each step guarantees integrity and security.
+The authentication section provides a detailed walkthrough of how to securely authenticate users using Garden’s Auth API, leveraging the Sign-In with Ethereum (`SIWE`) protocol. This method ensures seamless and trustless authentication without compromising user security. Below, we explain the flow of the authentication process and how each step guarantees integrity and security.
 
 ### Overview
 
@@ -59,8 +59,13 @@ The first step in the authentication flow is to generate a unique, single-use no
 import axios from "axios";
 import { API } from "../helpers/utils";
 
+type APIResponse = {
+   status: "Ok" | "Error",
+   error?: string
+}
+
 async function GetNonce() {
-try{
+   try{
       const { data } = await axios.get(`${API().orderbook}/auth/nonce`);
       return data.result;
    } catch (error) {
@@ -102,17 +107,17 @@ async function VerifySIWE(message: string, signature: string, nonce: string) {
 
 ## Order creation
 
-The order creation process in Garden allows users to initiate cross-chain swaps using a seamless, secure, and trustless mechanism.
+The order creation process in Garden allows users to initiate `cross-chain swaps` using a seamless, secure, and trustless mechanism.
 
 ### Overview
 
-When a user is ready to create an order, the process begins with retrieving a price quote based on the user’s selected order pair, which consists of the source chain, source asset, destination chain, destination asset, and the amount to be swapped. After receiving the quote, the user confirms the order by signing it through their wallet. The order is then attested by Garden's API and validated, followed by the final order creation via the /gasless/order endpoint.
+When a user is ready to create an order, the process begins with retrieving a price quote based on the user’s selected order pair, which consists of the source chain, source asset, destination chain, destination asset, and the amount to be swapped. After receiving the quote, the user confirms the order by signing it through their wallet. The order is then attested by Garden's API and validated, followed by the final order creation via the `/gasless/order` endpoint.
 
 ### Step-by-Step Flow
 
 ### 1. Requesting a Quote
 
-The first step in the order creation process is for the client to request a price quote from the /price endpoint. Based on the selected order pair (source_chain:source_asset::destination_chain:destination_asset, and amount), the API responds with the following details:
+The first step in the order creation process is for the client to request a price quote from the /price endpoint. Based on the selected order pair (`source_chain:source_asset::destination_chain:destination_asset`, and `amount`), the API responds with the following details:
 
 - **Input token price**
 - **Output token price**
@@ -164,15 +169,15 @@ const fetchQuote = useCallback(async (): Promise<number | undefined> => {
 
 Once the client has reviewed the quote, the user confirms the order by signing it using their wallet. This ensures that the order creation process is secure and the user is intentionally initiating the swap.
 
-To confirm the order, the client signs the quote details using their private key, which guarantees the legitimacy of the action and the user's consent to the swap.
+To confirm the order, the client signs the quote details using their wallet, which guarantees the legitimacy of the action and the user's consent to the swap.
 
 ![Signing the Order](./images/api-demo-order-sign.png)
 
 ### 3. Attesting the quote
 
-- Once the quote is signed, the client sends it to the /quote/attested endpoint for Garden to attest the quote.
-- Garden responds with an attested quote, which includes a signature that is used for further order creation.
-- An attested quote signifies that the quote is valid until a specified deadline.
+- Once the quote is signed, the client sends it to the `/quote/attested` endpoint for Garden to attest the quote.
+- Garden responds with an attested quote, which includes a `signature` that is used for further order creation.
+- An attested quote signifies that the quote is valid until a specified `deadline`.
 
 ```tsx
 import axios from "axios";
@@ -432,7 +437,7 @@ const initiateRedeem = useCallback(async () => {
          perform_on: "Destination"
       };
       const { data: redeemResponse } = await axios.post<RedeemResponse>(
-         `${API().orderbook}/relayer/redeem`,
+         `${API().orderbook}/gasless/settlement`,
          redeemRequest,
          {
             headers: { Authorization: `Bearer ${authToken}` }

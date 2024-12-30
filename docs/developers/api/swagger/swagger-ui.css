@@ -36,7 +36,8 @@
 .swagger-ui table thead tr th, 
 .swagger-ui .model, 
 .swagger-ui .model .property.primitive,
-.swagger-ui .operation-servers h4.message {
+.swagger-ui .operation-servers h4.message,
+.swagger-ui .servers *{
     color: var(--ifm-font-color-base);
 }
 .swagger-ui .renderedMarkdown code {
@@ -144,6 +145,30 @@ input{
 
 .swagger-ui .info .title small.version-stamp{
     padding: 1 0.8rem;
+}
+
+.swagger-ui .btn.authorize svg{
+    fill: var(--ifm-color-primary);
+}
+.swagger-ui .btn.authorize{
+    color: var(--ifm-color-primary);
+    border-color: var(--ifm-color-primary);
+}
+.swagger-ui .btn{
+    color: #000;
+}
+.swagger-ui label[for="auth-bearer-value"]{
+    color: #333;
+}
+.modal-ux-inner{
+    background-color: var(--ifm-code-background);
+}
+.swagger-ui .auth-container code{
+    color: #000;
+}
+.swagger-ui .scheme-container select, .servers select{
+    background: var(--ifm-drop-down-image);
+    background-size: 1.5rem;
 }
 @media (max-width: 1024px) {
     .swagger-ui .opblock-tag {
