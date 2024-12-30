@@ -27,6 +27,8 @@ new Orderbook(orderbookConfig: OrderbookConfig): IOrderbook
 
 - [`IOrderbook`](../types/IOrderbook.md)
 
+---
+
 ## Methods
 
 ### createOrder

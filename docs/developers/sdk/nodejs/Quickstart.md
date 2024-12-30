@@ -72,18 +72,13 @@ pnpm add viem @catalogfi/wallets
 ## 2. Set up wallets and providers
 
 ```typescript
-import { SecretManager } from "@gardenfi/core";
-import { 
-  BitcoinProvider, 
-  BitcoinNetwork, 
-  BitcoinWallet 
-  } from "@catalogfi/wallets";
-import { 
-  privateKeyToAccount, 
-  createWalletClient, 
-  http, 
-  sepolia 
-  } from "viem";
+import { SecretManager } from '@gardenfi/core';
+import {
+  BitcoinProvider,
+  BitcoinNetwork,
+  BitcoinWallet,
+} from '@catalogfi/wallets';
+import { privateKeyToAccount, createWalletClient, http, sepolia } from 'viem';
 
 // Ethereum wallet setup
 const account = privateKeyToAccount(YOUR_PRIVATE_KEY);
@@ -93,7 +88,6 @@ const ethereumWalletClient = createWalletClient({
   chain: sepolia,
   transport: http(),
 });
-
 
 // initialize secret manager for handling atomic swap secrets and hashes
 const result = await SecretManager.fromWalletClient(ethereumWalletClient);
@@ -118,17 +112,17 @@ const bitcoinProvider = new BitcoinProvider(
 
 ---
 
-## 3. Configure Garden core  
+## 3. Configure Garden core
 
-Initialize the **Garden** instance.  
+Initialize the **Garden** instance.
 
 ```typescript
-import { Garden } from "@gardenfi/core";
+import { Garden } from '@gardenfi/core';
 
 const garden = new Garden({
-    environment: Environment.TESTNET,
-    evmWallet: ethereumWalletClient,
-  });
+  environment: Environment.TESTNET,
+  evmWallet: ethereumWalletClient,
+});
 ```
 
 ---
@@ -140,15 +134,15 @@ import { Quote, SupportedAssets, Asset, SwapParams } from "@gardenfi/core";
 
 // Try printing out the SupportedAssets object to see the other assets you can use
 const orderConfig = {
-  fromAsset: 
+  fromAsset:
   SupportedAssets.testnet.ethereum_sepolia_WBTC,
-  toAsset: 
+  toAsset:
   SupportedAssets.testnet.bitcoin_BTC,
   sendAmount: '1000000', // 0.01 Bitcoin
 };
 
 // helper function to create the order pair
-const constructOrderpair = 
+const constructOrderpair =
 (fromAsset: Asset, toAsset: Asset) =>
   `${fromAsset.chain}:${fromAsset.atomicSwapAddress}
   ::${toAsset.chain}:${toAsset.atomicSwapAddress}`;
@@ -197,19 +191,19 @@ console.log('Order created with id', swapResult.val.create_order.create_id);
 ## 5. Initiate the swap
 
 ```typescript
-import { EvmRelay } from "@gardenfi/core";
+import { EvmRelay } from '@gardenfi/core';
 
 // Use the EVM relay service for gasless initiates
 // The relay handles transaction execution on behalf of the user.
 
 const evmRelay = new EvmRelay(swapResult.val, orderBookApi, auth);
 
-// Initiate the swap. 
-// Note: The first swap requires ETH for token approval. 
+// Initiate the swap.
+// Note: The first swap requires ETH for token approval.
 // Subsequent swaps will be gasless.
-// Common error: "transfer amount exceeds balance," 
+// Common error: "transfer amount exceeds balance,"
 // indicating insufficient token balance in your wallet.
-// Important: If swapping from Bitcoin to WBTC, 
+// Important: If swapping from Bitcoin to WBTC,
 // ensure funds are deposited into the `order.source_swap_id`.
 
 const initRes = await evmRelay.init(ethereumWalletClient);
@@ -224,34 +218,33 @@ if (initRes.error) {
 
 ```typescript
 // Automatically manages the execution of redeems or refunds.
-// Regularly polls the orderbook to track the status of orders 
+// Regularly polls the orderbook to track the status of orders
 // and triggers appropriate actions (redeem or refund) based on their state.
 
 await garden.execute();
 
 // Subscribe to Garden events to track transaction statuses in real-time
-garden.on("error", (order, error) => {
+garden.on('error', (order, error) => {
   console.error(
     `Error occurred for order ID: ${order.create_order.create_id}, Details:`,
     error
   );
 });
 
-garden.on("success", (order, action, txHash) => {
+garden.on('success', (order, action, txHash) => {
   console.log(`${order} ${action} ${txHash}`);
 
   // Important note about Bitcoin redeems:
-  // Until the Bitcoin transaction is mined and visible at the above URL, 
+  // Until the Bitcoin transaction is mined and visible at the above URL,
   // it is highly recommended to keep the Garden instance running.
-  // Garden will automatically resubmit the redeem transaction if required, 
+  // Garden will automatically resubmit the redeem transaction if required,
   // handling scenarios like dropped transactions or network issues.
-  // If the instance is stopped, restarting it will ensure Garden checks the 
+  // If the instance is stopped, restarting it will ensure Garden checks the
   // status of the order and resubmits the redeem if necessary.
 
+  // Wait for the swap to complete. Use Ctrl+C to stop the script when done.
+  // This ensures the script continues running to monitor the swap's progress.
 
-   // Wait for the swap to complete. Use Ctrl+C to stop the script when done.
-   // This ensures the script continues running to monitor the swap's progress.
-
-   await new Promise((resolve) => setTimeout(resolve, 10000000000));  
+  await new Promise((resolve) => setTimeout(resolve, 10000000000));
 });
 ```

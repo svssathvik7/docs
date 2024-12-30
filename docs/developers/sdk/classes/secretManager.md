@@ -38,6 +38,8 @@ static fromWalletClient(walletClient: WalletClient): SecretManager
 
 - [ISecretManager](../types/ISecretManager.md)
 
+---
+
 ## Methods
 
 ### initialize

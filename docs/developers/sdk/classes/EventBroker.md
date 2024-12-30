@@ -34,12 +34,14 @@ new EventBroker<E extends Events>()
 
 - An instance of the `EventBroker` class.
 
+---
+
 ## Methods
 
 ### emit
 
 ```ts
-emit<K extends keyof E>(event: K, ...args: Parameters<E[K]>): void
+protected emit<K extends keyof E>(event: K, ...args: Parameters<E[K]>): void
 ```
 
 Emits a specified event, invoking all registered listeners with the provided arguments.

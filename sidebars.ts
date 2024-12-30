@@ -163,6 +163,7 @@ const sidebars: SidebarsConfig = {
             'developers/sdk/classes/event-broker',
             'developers/sdk/classes/garden',
             'developers/sdk/classes/evm-relay',
+            'developers/sdk/classes/block-number-fetcher',
           ],
         },
         {

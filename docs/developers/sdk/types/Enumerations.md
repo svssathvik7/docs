@@ -46,3 +46,14 @@ type OrderPair = `${Chain}:${Asset}`;
 ```ts
 'bitcoin_testnet:primary::arbitrum_sepolia:0x1cd0bBd55fD66B4C5F7dfE434eFD009C09e628d1';
 ```
+
+## `OrderActions`
+
+Represents the different states or actions that can be performed on an order.
+
+| Value      | Description                                                   |
+| ---------- | ------------------------------------------------------------- |
+| `Idle`     | The order is in an inactive state, waiting for further action |
+| `Initiate` | The order is being initiated.                                 |
+| `Redeem`   | The order is being redeemed.                                  |
+| `Refund`   | The order is being refunded.                                  |
