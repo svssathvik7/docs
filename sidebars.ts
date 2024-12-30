@@ -180,8 +180,16 @@ const sidebars: SidebarsConfig = {
             'developers/sdk/types/IQuote',
             'developers/sdk/types/IOrderbook',
             'developers/sdk/types/ISecretManager',
-            'developers/sdk/types/Enumerations',
           ],
+        },
+        {
+          type: 'category',
+          label: 'Enumerations',
+          link: {
+            type: 'doc',
+            id: 'developers/sdk/Enumerations',
+          },
+          items: [],
         },
       ],
     },

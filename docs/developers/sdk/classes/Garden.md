@@ -149,7 +149,7 @@ Emitted when an order action is successfully completed.
 **Parameters:**
 
 - `order` ([MatchedOrder](../types/Order.md#matchedorder)): The successfully processed order
-- `action` ([OrderActions](../types/Enumerations.md#orderactions)): The type of action that was completed
+- `action` ([OrderActions](../Enumerations.md#orderactions)): The type of action that was completed
 - `result` (string): Details about the successful operation
 
 ### `onPendingOrdersChanged`

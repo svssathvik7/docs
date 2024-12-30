@@ -57,3 +57,13 @@ Represents the different states or actions that can be performed on an order.
 | `Initiate` | The order is being initiated.                                 |
 | `Redeem`   | The order is being redeemed.                                  |
 | `Refund`   | The order is being refunded.                                  |
+
+## `Environment`
+
+Represents the different network environments in which the system can operate.
+
+| **Name**   | **Value**    |
+| ---------- | ------------ |
+| `MAINNET`  | `'mainnet'`  |
+| `TESTNET`  | `'testnet'`  |
+| `LOCALNET` | `'localnet'` |
