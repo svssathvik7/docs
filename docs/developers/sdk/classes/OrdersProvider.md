@@ -27,6 +27,8 @@ new OrdersProvider(url: string | Url)
 
 - [`IOrderProvider`](../types/IOrderProvider.md)
 
+---
+
 ## Methods
 
 ### getOrder

@@ -161,6 +161,7 @@ const sidebars: SidebarsConfig = {
             'developers/sdk/classes/event-broker',
             'developers/sdk/classes/garden',
             'developers/sdk/classes/evm-relay',
+            'developers/sdk/classes/block-number-fetcher',
           ],
         },
         {
@@ -177,8 +178,16 @@ const sidebars: SidebarsConfig = {
             'developers/sdk/types/IQuote',
             'developers/sdk/types/IOrderbook',
             'developers/sdk/types/ISecretManager',
-            'developers/sdk/types/Enumerations',
           ],
+        },
+        {
+          type: 'category',
+          label: 'Enumerations',
+          link: {
+            type: 'doc',
+            id: 'developers/sdk/Enumerations',
+          },
+          items: [],
         },
       ],
     },

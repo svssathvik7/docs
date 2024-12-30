@@ -25,28 +25,28 @@ The Swap type represents the details of a swap transaction on a specific blockch
 - Source Swap: Represents the transaction on the initiator's source chain.
 - Destination Swap: Represents the transaction on the follower's destination chain.
 
-| Property               | Type                             | Description                                              |
-| ---------------------- | -------------------------------- | -------------------------------------------------------- |
-| created_at             | string                           | Timestamp when the swap was created                      |
-| updated_at             | string                           | Timestamp when the swap was last updated                 |
-| deleted_at             | string \| null                   | Timestamp when the swap was deleted, or null if active   |
-| swap_id                | string                           | Unique identifier for the swap                           |
-| chain                  | [Chain](./Enumerations.md#Chain) | The blockchain network where the swap occurs             |
-| asset                  | string                           | The asset being swapped                                  |
-| initiator              | string                           | Address of the party initiating the swap                 |
-| redeemer               | string                           | Address of the party redeeming the swap                  |
-| timelock               | number                           | Time lock period for the swap                            |
-| filled_amount          | string                           | Amount that has been filled in the swap                  |
-| amount                 | string                           | Total amount of the swap                                 |
-| secret_hash            | string                           | Hash of the secret used in the atomic swap               |
-| secret                 | string                           | Secret value used in the atomic swap                     |
-| initiate_tx_hash       | string                           | Transaction hash of the swap initiation                  |
-| redeem_tx_hash         | string                           | Transaction hash of the swap redemption                  |
-| refund_tx_hash         | string                           | Transaction hash of the swap refund                      |
-| initiate_block_number  | string \| null                   | Block number of the initiation, or null if not initiated |
-| redeem_block_number    | string \| null                   | Block number of the redemption, or null if not redeemed  |
-| refund_block_number    | string \| null                   | Block number of the refund, or null if not refunded      |
-| required_confirmations | number                           | Number of confirmations required for the swap            |
+| Property               | Type                                   | Description                                              |
+| ---------------------- | -------------------------------------- | -------------------------------------------------------- |
+| created_at             | string                                 | Timestamp when the swap was created                      |
+| updated_at             | string                                 | Timestamp when the swap was last updated                 |
+| deleted_at             | string \| null                         | Timestamp when the swap was deleted, or null if active   |
+| swap_id                | string                                 | Unique identifier for the swap                           |
+| chain                  | [Chain](../Enumerations.md#type-chain) | The blockchain network where the swap occurs             |
+| asset                  | string                                 | The asset being swapped                                  |
+| initiator              | string                                 | Address of the party initiating the swap                 |
+| redeemer               | string                                 | Address of the party redeeming the swap                  |
+| timelock               | number                                 | Time lock period for the swap                            |
+| filled_amount          | string                                 | Amount that has been filled in the swap                  |
+| amount                 | string                                 | Total amount of the swap                                 |
+| secret_hash            | string                                 | Hash of the secret used in the atomic swap               |
+| secret                 | string                                 | Secret value used in the atomic swap                     |
+| initiate_tx_hash       | string                                 | Transaction hash of the swap initiation                  |
+| redeem_tx_hash         | string                                 | Transaction hash of the swap redemption                  |
+| refund_tx_hash         | string                                 | Transaction hash of the swap refund                      |
+| initiate_block_number  | string \| null                         | Block number of the initiation, or null if not initiated |
+| redeem_block_number    | string \| null                         | Block number of the redemption, or null if not redeemed  |
+| refund_block_number    | string \| null                         | Block number of the refund, or null if not refunded      |
+| required_confirmations | number                                 | Number of confirmations required for the swap            |
 
 ## CreateOrder
 
@@ -66,21 +66,21 @@ The `CreateOrder` type represents the details of an order creation request. It c
 
 The `CreateOrderRequest` type represents the details of an order creation request. It contains the following properties:
 
-| Property                      | Type                             | Description                                                                                      |
-| ----------------------------- | -------------------------------- | ------------------------------------------------------------------------------------------------ |
-| source_chain                  | [Chain](./Enumerations.md#Chain) | The blockchain network for the source asset                                                      |
-| destination_chain             | [Chain](./Enumerations.md#Chain) | The blockchain network for the destination asset                                                 |
-| source_asset                  | string                           | The asset being sent                                                                             |
-| destination_asset             | string                           | The asset being received                                                                         |
-| initiator_source_address      | string                           | The address of the initiator on the source chain, or the public key if the chain is Bitcoin      |
-| initiator_destination_address | string                           | The address of the initiator on the destination chain, or the public key if the chain is Bitcoin |
-| source_amount                 | string                           | Amount of source asset (as BigDecimal string)                                                    |
-| destination_amount            | string                           | Amount of destination asset (as BigDecimal string)                                               |
-| fee                           | string                           | Fee amount (as BigDecimal string)                                                                |
-| nonce                         | string                           | Nonce value (as BigDecimal string)                                                               |
-| min_destination_confirmations | number                           | Minimum required confirmations on destination chain                                              |
-| timelock                      | number                           | Time lock period for the order                                                                   |
-| secret_hash                   | string                           | Hash of the secret used in the atomic swap                                                       |
+| Property                      | Type                                   | Description                                                                                      |
+| ----------------------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| source_chain                  | [Chain](../Enumerations.md#type-chain) | The blockchain network for the source asset                                                      |
+| destination_chain             | [Chain](../Enumerations.md#type-chain) | The blockchain network for the destination asset                                                 |
+| source_asset                  | string                                 | The asset being sent                                                                             |
+| destination_asset             | string                                 | The asset being received                                                                         |
+| initiator_source_address      | string                                 | The address of the initiator on the source chain, or the public key if the chain is Bitcoin      |
+| initiator_destination_address | string                                 | The address of the initiator on the destination chain, or the public key if the chain is Bitcoin |
+| source_amount                 | string                                 | Amount of source asset (as BigDecimal string)                                                    |
+| destination_amount            | string                                 | Amount of destination asset (as BigDecimal string)                                               |
+| fee                           | string                                 | Fee amount (as BigDecimal string)                                                                |
+| nonce                         | string                                 | Nonce value (as BigDecimal string)                                                               |
+| min_destination_confirmations | number                                 | Minimum required confirmations on destination chain                                              |
+| timelock                      | number                                 | Time lock period for the order                                                                   |
+| secret_hash                   | string                                 | Hash of the secret used in the atomic swap                                                       |
 
 - `Asset` should be the contract address of the token that needs to be swapped, and `'primary'` in the case of Bitcoin-related transactions.
 

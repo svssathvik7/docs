@@ -31,6 +31,8 @@ new Quote(quoteUrl: string): IQuote
 
 - [`IQuote`](../types/IQuote.md)
 
+---
+
 ## Methods
 
 ### getQuote
