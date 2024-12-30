@@ -182,8 +182,6 @@ let swapParams: SwapParams = {
   },
 };
 
-console.log('Creating an order...\n');
-
 // This creates the order on chain and then returns the matched order
 const swapResult = await garden.swap(swapParams);
 

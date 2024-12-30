@@ -13,7 +13,7 @@ The `swapAndInitiate` method in the React Hooks section is a crucial function th
 If the initiation fails on EVM chains (e.g., due to insufficient gas or amount), developers can use the `evmInitiate` function to retry the initiation.
 
 ```ts
-evmInitiate?: (order: MatchedOrder) => AsyncResult<MatchedOrder, string>;
+evmInitiate(order: MatchedOrder) => AsyncResult<MatchedOrder, string>;
 ```
 
 ### Bitcoin as the source chain

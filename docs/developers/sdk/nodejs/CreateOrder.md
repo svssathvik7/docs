@@ -75,9 +75,3 @@ if (res.error) {
 
 console.log("Swap initiated successfully!", res);
 ```
-
-## Heads-up  
-
-:::note  
-The user must remain online during the swap process. If they leave, the transaction will pause and resume once they're back online.  
-:::
