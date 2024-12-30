@@ -80,7 +80,7 @@ Once the client receives the nonce, the user signs it with their Ethereum privat
 
 Example Message:
 
-![SIWE Message](./images/auth_message.png)
+![SIWE Message](./images/api_demo_message.png)
 
 The signed message ensures that:
 
