@@ -42,11 +42,11 @@ fetchOrders(
 import { OrdersProvider } from '@gardenfi/orderbook';
 
 const ORDERBOOK_API = "https://orderbookv2.garden.finance/";
-const orderbook = new OrdersProvider(ORDERBOOK_API);
+const orderbookProvider = new OrdersProvider(ORDERBOOK_API);
     
 const fetchOrders = async () => {
   try {
-    const res = await orderBook.fetchOrders(true, false, { per_page: 10 });
+    const res = await orderbookProvider.fetchOrders(true, false, { per_page: 10 });
     console.log("Fetched Orders:", res);
   } catch (error) {
     console.error("Error fetching orders:", error);

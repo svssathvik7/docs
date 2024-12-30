@@ -12,7 +12,7 @@ After creating an order (or multiple orders), you can settle them on the destina
 await garden.execute();
 ```
 
-For a detailed understanding of the various and how they progress, refer to the [**Order Lifecycle**](../../core/OrderLifecycle.md) documentation.
+For a detailed understanding of the various statuses and how they progress, refer to the [**Order lifecycle**](../../core/OrderLifecycle.md) documentation.
 
 :::info  
 For detailed examples and troubleshooting tips, refer to the [Cookbook](../cookbook/Cookbook.md) or reach out to us.  
