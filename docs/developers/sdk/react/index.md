@@ -23,12 +23,6 @@ docId: "developers/sdk/react/hooks",
 },
 {
 type: "link",
-href: "./create-order",
-label: "Create order",
-docId: "developers/sdk/react/create-order",
-},
-{
-type: "link",
 href: "./settle-order",
 label: "Settle order",
 docId: "developers/sdk/react/settle-order",
