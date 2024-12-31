@@ -26,13 +26,13 @@ This guide demonstrates how to use the [Garden API](../api/garden-api) to develo
 2. Install dependencies:
 
    ```bash
-   npm install
+   yarn install
    ```
 
 3. Start the development server:
 
    ```bash
-   npm run dev
+   yarn dev
    ```
 
 4. Open your browser and navigate to `http://localhost:5173`.
