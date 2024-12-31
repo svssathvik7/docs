@@ -2,7 +2,7 @@
 id: api-demo-app
 ---
 
-# API Demo App
+# API demo app
 
 :::note
 This guide accompanies the [gardenfi/api-demo-dapp](https://github.com/gardenfi/api-demo-dapp) and is intended solely for learning purposes, and not for production use.
@@ -14,7 +14,7 @@ This guide demonstrates how to use the [Garden API](../api/garden-api) to develo
 
 ![API Demo APP UI](./images/api-demo-ui.webp)
 
-## Getting Started
+## Getting started
 
 1. Clone the repository:
 
@@ -49,7 +49,7 @@ The Auth API facilitates authentication by:
 2. Allowing users to sign the nonce with their Ethereum wallet.
 3. Verifying the signed message to confirm the user’s identity.
 
-### Step-by-Step Flow
+### Step-by-step flow
 
 ### 1. Requesting a nonce
 
@@ -76,7 +76,7 @@ async function GetNonce() {
 
 ### 2. Signing the nonce
 
-Once the client receives the nonce, the user signs it with their Ethereum private key through their wallet. This step leverages the SIWE protocol to embed the nonce into a structured message containing metadata, such as domain and timestamp.
+Once the client receives the nonce, the user signs it with their Ethereum private key through their wallet. This step leverages the `SIWE` protocol to embed the nonce into a structured message containing metadata, such as domain and timestamp.
 
 Example Message:
 
@@ -113,9 +113,9 @@ The order creation process in Garden allows users to initiate `cross-chain swaps
 
 When a user is ready to create an order, the process begins with retrieving a price quote based on the user’s selected order pair, which consists of the source chain, source asset, destination chain, destination asset, and the amount to be swapped. After receiving the quote, the user confirms the order by signing it through their wallet. The order is then attested by Garden's API and validated, followed by the final order creation via the `/gasless/order` endpoint.
 
-### Step-by-Step Flow
+### Step-by-step flow
 
-### 1. Requesting a Quote
+### 1. Requesting a quote
 
 The first step in the order creation process is for the client to request a price quote from the /price endpoint. Based on the selected order pair (`source_chain:source_asset::destination_chain:destination_asset`, and `amount`), the API responds with the following details:
 
@@ -165,7 +165,7 @@ const fetchQuote = useCallback(async (): Promise<number | undefined> => {
 }, [inAmount, handleError]);
 ```
 
-### 2. Signing the Order
+### 2. Signing the order
 
 Once the client has reviewed the quote, the user confirms the order by signing it using their wallet. This ensures that the order creation process is secure and the user is intentionally initiating the swap.
 
@@ -235,7 +235,7 @@ async function getAttestedQuote(
 }
 ```
 
-### 4. Creating the Order
+### 4. Creating the order
 
 - The create order request includes the additional data from the attested quote, along with the previously prepared order details.
 - This request is sent to the Garden to create the order. Upon success, the response contains the result, which includes the `order ID`.
@@ -367,23 +367,23 @@ const initiateSwap = useCallback(async () => {
 ]);
 ```
 
-## Order Remeption
+## Order remeption
 
 ### Overview
 
 The **order redemption** flow typically involves claiming the swapped assets on the destination chain after the swap order has been successfully initiated.
 
-### Step-by-Step Flow
+### Step-by-step flow
 
-### 1. Pre-requisites for Redemption
+### 1. Pre-requisites for redemption
 
 - The swap must be complete on the source chain, and assets must be ready on the destination chain.
 - The secret generated during order creation must be revealed.
 
-### 2. Retrieving Order Details
+### 2. Retrieving order details
 
 - The application fetches the order using the swapId or transaction hash. This includes:
-  - **Status of the Order**: Whether the assets are ready for redemption.
+  - **Status of the order**: Whether the assets are ready for redemption.
    ```tsx
    import {useCallback} from "react";
    import axios from "axios";
@@ -407,7 +407,7 @@ The **order redemption** flow typically involves claiming the swapped assets on 
    ```
   - **Secret**: Used to verify that the order can only be redeemed by the user who initiated it.
 
-### 3. Constructing the Redemption Request
+### 3. Constructing the redemption request
 
 To redeem the order
 
@@ -455,7 +455,7 @@ const initiateRedeem = useCallback(async () => {
 }, [orderId]);
 ```
 
-### 4. Sending the Redemption Request
+### 4. Sending the redemption request
 
 - The redemption request is sent to the smart contract or relayer on the **destination chain** (e.g., Ethereum Sepolia).
 - The request triggers a smart contract call that:
