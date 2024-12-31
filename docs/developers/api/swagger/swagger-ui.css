@@ -125,6 +125,9 @@
     font-weight: bold;
     cursor: pointer;
 }
+.custom-alert *{
+    color: #554b6a;
+}
 .custom-alert__container{
     width: fit-content;
     max-width: 15rem;
@@ -176,6 +179,9 @@ input{
 }
 .docMainContainer_TBSr::-webkit-scrollbar{
     display: none!important;
+}
+.swagger-ui .responses-inner h4, .swagger-ui[class] .responses-inner[class] h5{
+    color: var(--ifm-font-color-base);
 }
 @media (max-width: 1024px) {
     .swagger-ui .opblock-tag {
