@@ -18,7 +18,7 @@ docId: "developers/sdk/react/quickstart",
 {
 type: "link",
 href: "./hooks",
-label: "useGarden",
+label: "Hooks",
 docId: "developers/sdk/react/hooks",
 },
 {

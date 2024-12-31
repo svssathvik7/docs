@@ -1,5 +1,5 @@
 ---
-id: Enumerations
+id: enumerations
 title: Enumerations
 ---
 
