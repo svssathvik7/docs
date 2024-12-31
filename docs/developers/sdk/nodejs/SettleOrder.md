@@ -4,65 +4,31 @@ id: settle-order
 
 # Settle order
 
-Redeem and refund manage the completion or recovery of funds on the destination chain based on the state of the swap.  
+Redeeming and refunding ensure the completion of swaps or the recovery of funds, depending on the swap's state.  
 
-## Redeem
+After creating an order (or multiple orders), you can settle them on the destination chain using the `execute` method from the Garden instance. This method automatically polls the order book for orders pending settlement on the destination chain and submits them on-chain—without requiring users to pay gas fees.  
 
-Redeeming a swap finalizes the transaction on the destination chain, allowing the user to claim their funds.  
-
-### How it works  
-
-- **HTLC completion**: The secret generated during the initiation phase is used to unlock the HTLC and complete the transaction.  
-- **Funds transfer**: The redeemed funds are sent to the specified wallet on the destination chain.  
-
-### Implementation  
-
-Here's how to handle a redeem operation:  
-
-```tsx
-import { useGarden } from '@gardenfi/react-hooks';
-
-const { redeem } = useGarden();
-
-const redeemResult = await redeem({
-  orderId: "your-order-id",
-  btcAddress: "destination-bitcoin-address",
-});
-
-if (redeemResult.error) {
-  throw new Error(redeemResult.error);
-}
-
-console.log("Redeem successful:", redeemResult);
+```typescript
+await garden.execute();
 ```
 
-## Refund
+## Subscribe to Garden events
 
-Refunds allow users to recover their funds if a swap fails or the time lock expires.  
+It is crucial to keep the Garden instance running until the Bitcoin transaction is mined and visible at the provided URL. This ensures that Garden can automatically resubmit the redeem transaction if necessary, addressing issues such as dropped transactions or network disruptions. If the instance is stopped, restarting it will prompt Garden to check the order status and resubmit the redeem if required, ensuring seamless transaction completion.
 
-### How It Works  
-
-- **HTLC Expiry**: Refunds become available after the time lock in the HTLC expires without a successful redeem.  
-- **Funds Recovery**: The original funds are returned to the user on the source chain.  
-
-Here's how to handle a refund operation:  
-
-```tsx
-import { useGarden } from '@gardenfi/react-hooks';
-
-const { refund } = useGarden();
-
-const refundResult = await refund({
-  orderId: "your-order-id",
+```typescript
+garden.on('error', (order, error) => {
+  console.error(
+    `Error occurred for order ID: ${order.create_order.create_id}, Details:`,
+    error
+  );
 });
 
-if (refundResult.error) {
-  throw new Error(refundResult.error);
-}
-
-console.log("Refund successful:", refundResult);
+garden.on('success', (order, action, txHash) => {
+  console.log(`${order} ${action} ${txHash}`);
+});
 ```
 
-:::info  
-For detailed examples and troubleshooting tips, refer to the [Cookbook](../cookbook/Cookbook.md) or reach out to us.  
-:::
+For a detailed understanding of the various statuses and how they progress, refer to the [**Order lifecycle**](../../core/OrderLifecycle.md) documentation.
+
+Refer to the [Cookbook](../cookbook/Cookbook.md) or reach out to us.  

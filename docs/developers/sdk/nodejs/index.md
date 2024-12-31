@@ -17,12 +17,6 @@ docId: "developers/sdk/nodejs/quickstart",
 },
 {
 type: "link",
-href: "./create-order",
-label: "Create order",
-docId: "developers/sdk/nodejs/create-order",
-},
-{
-type: "link",
 href: "./settle-order",
 label: "Settle order",
 docId: "developers/sdk/nodejs/settle-order",
