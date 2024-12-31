@@ -19,7 +19,8 @@ const sidebars: SidebarsConfig = {
     { type: 'doc', label: 'Get started', id: 'home/get-started' },
     {
       type: 'html',
-      value: '<div style="font-weight: bold; margin-left:10px; margin-top: 10px;">Fundamentals</div>', // This adds a labeled divider
+      value:
+        '<div style="font-weight: bold; margin-left:10px; margin-top: 10px;">Fundamentals</div>', // This adds a labeled divider
     },
 
     {
@@ -56,7 +57,8 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'html',
-      value: '<div style="font-weight: bold; margin-left:10px; margin-top: 10px;">Guides</div>', // This adds a labeled divider
+      value:
+        '<div style="font-weight: bold; margin-left:10px; margin-top: 10px;">Guides</div>', // This adds a labeled divider
     },
     {
       type: 'category',
@@ -78,14 +80,19 @@ const sidebars: SidebarsConfig = {
       label: 'Stake',
       link: { type: 'doc', id: 'home/basics/guides/stake/stake-seed' },
 
-      items: []
+      items: [],
     },
     {
       type: 'html',
-      value: '<div style="font-weight: bold; margin-left:10px; margin-top: 10px;">Governance</div>', // This adds a labeled divider
+      value:
+        '<div style="font-weight: bold; margin-left:10px; margin-top: 10px;">Governance</div>', // This adds a labeled divider
     },
     { type: 'doc', label: 'Tokenomics', id: 'home/governance/tokenomics' },
-    { type: 'doc', label: 'Governance process', id: 'home/governance/governance-process' },
+    {
+      type: 'doc',
+      label: 'Governance process',
+      id: 'home/governance/governance-process',
+    },
     { type: 'doc', label: 'Snapshot', id: 'home/governance/snapshot' },
     { type: 'doc', label: 'Brand guide', id: 'home/garden-brand-guide' },
   ],
@@ -121,7 +128,6 @@ const sidebars: SidebarsConfig = {
           items: [
             'developers/sdk/react/quickstart',
             'developers/sdk/react/hooks',
-            'developers/sdk/react/create-order',
             'developers/sdk/react/settle-order',
             'developers/sdk/react/get-order',
           ],
@@ -135,9 +141,71 @@ const sidebars: SidebarsConfig = {
           },
           items: [
             'developers/sdk/nodejs/quickstart',
-            'developers/sdk/nodejs/create-order',
             'developers/sdk/nodejs/settle-order',
             'developers/sdk/nodejs/get-order',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Reference',
+          link: {
+            type: 'doc',
+            id: 'developers/sdk/classes/quote',
+          },
+          items: [
+            {
+              type: 'category',
+              label: 'Classes',
+              link: {
+                type: 'doc',
+                id: 'developers/sdk/classes/quote',
+              },
+              items: [
+                'developers/sdk/classes/quote',
+                'developers/sdk/classes/orders-provider',
+                'developers/sdk/classes/orderbook',
+                'developers/sdk/classes/secret-manager',
+                'developers/sdk/classes/async-result',
+                'developers/sdk/classes/event-broker',
+                'developers/sdk/classes/garden',
+                'developers/sdk/classes/evm-relay',
+                'developers/sdk/classes/block-number-fetcher',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Types',
+              link: {
+                type: 'doc',
+                id: 'developers/sdk/types/types',
+              },
+              items: [
+                'developers/sdk/types/order',
+                'developers/sdk/types/quote',
+                'developers/sdk/types/pagination',
+                'developers/sdk/types/IQuote',
+                'developers/sdk/types/IOrderbook',
+                'developers/sdk/types/ISecretManager',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Enumerations',
+              link: {
+                type: 'doc',
+                id: 'developers/sdk/enumerations',
+              },
+              items: [],
+            },
+            {
+              type: 'category',
+              label: 'Interfaces',
+              link: {
+                type: 'doc',
+                id: 'developers/sdk/interfaces',
+              },
+              items: [],
+            },
           ],
         },
       ],
