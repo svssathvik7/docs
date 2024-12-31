@@ -63,7 +63,7 @@
     color: var(--ifm-font-color-base);
 }
 .swagger-ui .opblock-tag .nostyle {
-    width: 8rem;
+    width: 9rem;
 }
 .swagger-ui .opblock-tag {
     flex-wrap: wrap;
