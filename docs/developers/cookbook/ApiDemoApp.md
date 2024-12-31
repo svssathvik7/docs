@@ -5,7 +5,7 @@ id: api-demo-app
 # API Demo App
 
 :::note
-This guide accompanies the [gardenfi/api-demo-dapp](https://github.com/catalogfi/api-demo-dapp) and is intended solely for learning purposes, and not for production use.
+This guide accompanies the [gardenfi/api-demo-dapp](https://github.com/gardenfi/api-demo-dapp) and is intended solely for learning purposes, and not for production use.
 :::
 
 ## Introduction
