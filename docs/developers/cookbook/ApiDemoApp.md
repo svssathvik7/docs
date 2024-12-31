@@ -463,9 +463,4 @@ const initiateRedeem = useCallback(async () => {
   - Transfers the destination asset (e.g., WBTC) to the user's address.
   - Marks the order as redeemed, preventing duplicate redemptions.
 
-### 5. Confirmation of Redemption
-
-Once the redemption is processed:
-
-- The smart contract emits a `redemption event`, indicating the swap's successful completion.
-- The application listens for this event to update the UI, showing that the destination assets are now available in the user’s wallet.
+  
