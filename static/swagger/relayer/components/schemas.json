@@ -5,22 +5,22 @@
             "source_chain": {
                 "type": "string",
                 "description": "The blockchain network where the swap originates.",
-                "example": "bitcoin"
+                "example": "ethereum_sepolia"
             },
             "destination_chain": {
                 "type": "string",
                 "description": "The blockchain network where the swap completes.",
-                "example": "ethereum"
+                "example": "citrea_testnet"
             },
             "source_asset": {
                 "type": "string",
                 "description": "The asset being swapped on the source blockchain.",
-                "example": "primary"
+                "example": "0x3C6a17b8cD92976D1D91E491c93c98cd81998265"
             },
             "destination_asset": {
                 "type": "string",
                 "description": "The asset to be received on the destination blockchain.",
-                "example": "0xd8a6e3fca403d79b6ad6216b60527f51cc967d39"
+                "example": "0xaD9d14CA82d9BF97fFf745fFC7d48172A1c0969E"
             },
             "initiator_source_address": {
                 "type": "string",
@@ -35,12 +35,12 @@
             "source_amount": {
                 "type": "string",
                 "description": "The amount of the asset being swapped on the source blockchain, expressed in its lowest denomination.",
-                "example": "1"
+                "example": "1000000"
             },
             "destination_amount": {
                 "type": "string",
                 "description": "The amount of the asset being swapped on the destination blockchain, expressed in its lowest denomination.",
-                "example": "0.97"
+                "example": "9970000000000000"
             },
             "fee": {
                 "type": "string",
@@ -50,7 +50,7 @@
             "nonce": {
                 "type": "string",
                 "description": "A unique identifier for the swap transaction to prevent duplication.",
-                "example": "b8bc718d6af38a0d2cac5085c53f617a52e590b0ff4ad2c4abb0825e9cc39079"
+                "example": "5"
             },
             "min_destination_confirmations": {
                 "type": "integer",
@@ -60,12 +60,12 @@
             "timelock": {
                 "type": "integer",
                 "description": "A timeout period after which the swap expires if not completed.",
-                "example": 288
+                "example": 7200
             },
             "secret_hash": {
                 "type": "string",
                 "description": "A cryptographic hash used to verify the transaction's security.",
-                "example": "f4a3b8d16e58cd30b8a0e9f504b1c7f9f24d1c70eaf2a3794b3c7e5bb7c90f5d"
+                "example": "c1f286d511fc428a82...e5920f7ff812091cfbee3a5484a087682839"
             },
             "additional_data": {
                 "type": "object",
@@ -73,33 +73,35 @@
                     "strategy_id": {
                         "type": "string",
                         "description": "Provided by the quote server",
-                        "example": "bre112"
+                        "example": "ea56cte9"
                     },
                     "input_token_price": {
                         "type": "number",
                         "format": "double",
                         "description": "Provided by the quote server",
-                        "example": 97056.37479601552
+                        "example": 95339.72353861976
                     },
                     "output_token_price": {
                         "type": "number",
                         "format": "double",
                         "description": "Provided by the quote server",
-                        "example": 97056.37479601552
+                        "example": 95339.72353861976
                     },
                     "deadline": {
-                        "type": "string",
-                        "description": "Validity till the current quote is valid"
+                        "type": "number",
+                        "description": "Validity till the current quote is valid",
+                        "example": 1735801988
                     },
                     "bitcoin_optional_recipient": {
                         "type": "string",
                         "description": "An optional Bitcoin address to receive the output token, if specified.",
-                        "example": "1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa"
+                        "example": "1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa",
+                        "nullable": true
                     },
                     "sig": {
                         "type": "string",
-                        "description": "",
-                        "example": "MEYCIQDYfLzU1MxP3RLlY5YXzkKcFvndv3tZyjGtHKqbrFqJ6QIhAMTytBYJ5Fb2+9NdXdHSTHz9BUEtwxE/n9VUwqP1X5fn"
+                        "description": "The signature from the attested quote",
+                        "example": "939c73a014b9a016cbe...7adce0bc76f170a2deaafa1304f572b808341edcd93058b7b60af994b780a12f24dac0c905615d00d8059b6e6326446cc9d61c"
                     },
                     "instant_refund_tx_bytes": {
                         "type": "string",
