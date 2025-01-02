@@ -16,7 +16,7 @@ Fetch a unique singe time challange from `Garden`.
 
 ```bash
 curl -X 'GET' \
-  'https://evm-swapper-relay.onrender.com/auth/nonce' \
+  'https://orderbook.garden.finance/auth/nonce' \
   -H 'accept: application/json'
 ```
 
@@ -26,7 +26,7 @@ Sign the nonce and verify with `Garden` for `authentication`.
 
 ```bash
 curl -X 'POST' \
-  'https://evm-swapper-relay.onrender.com/auth/verify' \
+  'https://orderbook.garden.finance/auth/verify' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -44,7 +44,7 @@ Fetch the quote for the choosen [Order Pair](../sdk/Enumerations.md#orderpair) a
 
 ```bash
 curl -X 'GET' \
-  'https://quote-knrp.onrender.com/price?order_pair=ethereum_sepolia%253A0x3C6a17b8cD92976D1D91E491c93c98cd81998265%253A%253Acitrea_testnet%253A0xaD9d14CA82d9BF97fFf745fFC7d48172A1c0969E&exact_out=false&amount=1000000' \
+  'https://quote.garden.finance/price?order_pair=ethereum_sepolia%253A0x3C6a17b8cD92976D1D91E491c93c98cd81998265%253A%253Acitrea_testnet%253A0xaD9d14CA82d9BF97fFf745fFC7d48172A1c0969E&exact_out=false&amount=1000000' \
   -H 'accept: application/json'
 ```
 
@@ -54,7 +54,7 @@ Create order with the signature and `Order` details.
 
 ```bash
 curl -X 'POST' \
-  'https://evm-swapper-relay.onrender.com/gasless/order' \
+  'https://orderbook.garden.finance/gasless/order' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -89,7 +89,7 @@ Initiates swap with `signature`.
 
 ```bash
 curl -X 'POST' \
-  'https://evm-swapper-relay.onrender.com/gasless/order/initiate' \
+  'https://orderbook.garden.finance/gasless/order/initiate' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -111,7 +111,7 @@ Poll for order status at regular intervals to check whether the `Orderbook` has 
 
 ```bash
 curl -X 'GET' \
-  'https://evm-swapper-relay.onrender.com/orders/id/dab9648aef33aacbb4324a3874f78f2fa2faaea6ac714fba7028776fc6c96c41/matched' \
+  'https://orderbook.garden.finance/orders/id/dab9648aef33aacbb4324a3874f78f2fa2faaea6ac714fba7028776fc6c96c41/matched' \
   -H 'accept: application/json'
 ```
 
@@ -121,7 +121,7 @@ Upon order match, settle the order by `redeeming` the funds.
 
 ```bash
 curl -X 'POST' \
-  'https://evm-swapper-relay.onrender.com/gasless/order/settlement' \
+  'https://orderbook.garden.finance/gasless/order/settlement' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
