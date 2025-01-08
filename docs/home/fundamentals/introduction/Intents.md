@@ -6,7 +6,7 @@ id: intents
 
 Intents offer a fundamentally user-centric approach to on-chain interactions. Instead of signing a raw transaction—a rigid sequence of machine-readable instructions dictating what actions to take (as seen on platforms like Uniswap or Aave)—users define an overarching objective, or "intent," and sign that instead. This intent encapsulates the desired outcome in a structured message. For Garden, this means specifying parameters such as assets, chains, and amounts for the swap.
 
-<figure><img src="/assets/transaction requirements.png" alt=""/><figcaption></figcaption></figure>
+<figure><img src="/assets/transaction-requirements.png" alt=""/><figcaption></figcaption></figure>
 
 By abstracting away the granular steps, intents align the interaction more closely with desired goals, making the process both intuitive and efficient. This approach is increasingly adopted as a standard in the industry, with Across using intents-based bridging and CoW Protocol applying intents for DEX trading.
 
