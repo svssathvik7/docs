@@ -39,17 +39,17 @@ The community incentives allocation accounts for **96 million SEED**, designed t
 
 **Team and investor incentives**
 
-The team and investor incentives allocation account for **51 million SEED**. Both investors and the team have an **18-month cliff** starting from TGE (January 18, 2024). Post-cliff, SEED tokens are streamed over a multi-year schedule as outlined below. This predictable and fair distribution model aligns with the protocol’s long-term goals.
+The team and investor incentives allocation account for **51 million SEED**. Both investors and the team have an **24-month cliff** starting from TGE (January 18, 2024). Post-cliff, SEED tokens are streamed over a multi-year schedule as outlined below. This predictable and fair distribution model aligns with the protocol’s long-term goals.
 
 * **Investor incentives** are streamed over a 24-month period following the cliff.
 * **Team incentives** are streamed over a 30-month period following the cliff.
 
 <figure><img src="/assets/incentives.png" alt=""/><figcaption></figcaption></figure>
 
-| Category  | Cliff ends   | Year 1 | Year 2 | Year 3 | Total |
-| --------- | ------------ | ------ | ------ | ------ | ----- |
-| Investors | Jul 18, 2025 | 7.25 M | 14.5 M | 7.25 M | 29 M  |
-| Team      | Jul 18, 2025 | 4.4 M  | 8.8 M  | 8.8 M  | 22 M  |
+| Category  | TGE | Year 1 | Year 2 | Year 3 | Year 4 | Year 5 | Total |
+| --------- | --- | ------ | ------ | ------ | ------ | ------ | ----- |
+| Investors | 0   | 0      | 0      | 14.5 M | 14.5 M | 0      | 29 M  |
+| Team      | 0   | 0      | 0      | 7.33 M | 7.33 M | 7.34 M | 22 M  |
 
 ### Future Outlook[​](https://docs.garden.finance/home/basics/tokenomics/#future-outlook) <a href="#future-outlook" id="future-outlook"></a>
 
