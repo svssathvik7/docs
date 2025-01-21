@@ -5,7 +5,7 @@ title: Orderbook
 
 # Orderbook
 
-The `Orderbook` class extends [IOrdersProvider](../types/IOrderProvider.md) and allows creating and managing orders easily.
+The `Orderbook` class extends [IOrdersProvider](../types/IOrderbook.md) and allows creating and managing orders easily.
 
 ## Usage
 

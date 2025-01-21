@@ -25,7 +25,7 @@ new OrdersProvider(url: string | Url)
 
 **Returns:**
 
-- [`IOrderProvider`](../Interfaces.md#iordersprovider)
+- [`IOrderProvider`](../../Interfaces.md#iordersprovider)
 
 ---
 

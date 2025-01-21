@@ -8,6 +8,8 @@
 .docusaurus
 .cache-loader
 
+debugger.txt
+
 # Misc
 .DS_Store
 .env
