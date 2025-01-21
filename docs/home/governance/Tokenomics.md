@@ -49,7 +49,7 @@ The team and investor incentives allocation account for **51 million SEED**. Bot
 | Category  | TGE | Year 1 | Year 2 | Year 3 | Year 4 | Year 5 | Total |
 | --------- | --- | ------ | ------ | ------ | ------ | ------ | ----- |
 | Investors | 0   | 0      | 0      | 14.5 M | 14.5 M | 0      | 29 M  |
-| Team      | 0   | 0      | 0      | 7.33 M | 7.33 M | 7.34 M | 22 M  |
+| Team      | 0   | 0      | 0      | 8.8 M  | 8.8 M  | 4.4 M  | 22 M  |
 
 ### Future Outlook[​](https://docs.garden.finance/home/basics/tokenomics/#future-outlook) <a href="#future-outlook" id="future-outlook"></a>
 
