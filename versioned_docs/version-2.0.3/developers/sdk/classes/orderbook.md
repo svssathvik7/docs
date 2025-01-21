@@ -68,7 +68,7 @@ Fetches orders from the orderbook. Returns either matched or unmatched orders ba
 
 - `matched` (boolean): true to fetch matched orders, false for unmatched orders.
 - `pending` (boolean, optional): Filter for pending orders. Defaults to false.
-- `paginationConfig` ([PaginationConfig](../types/pagination.md), optional): Configuration for pagination.
+- `paginationConfig` ([PaginationConfig](../types/Pagination.md), optional): Configuration for pagination.
 
 **Returns:**
 
@@ -91,7 +91,7 @@ Subscribes to order updates by polling the orderbook at a specified interval. Th
 
 - `interval` (number): The interval (in milliseconds) at which updates are fetched.
 - `cb` (function): Callback invoked with the updated list of matched orders.
-- `paginationConfig` ([PaginationConfig](../types/pagination.md), optional): Configuration for pagination.
+- `paginationConfig` ([PaginationConfig](../types/Pagination.md), optional): Configuration for pagination.
 - `pending` (boolean, optional): Filter for pending orders.
 
 **Returns:**

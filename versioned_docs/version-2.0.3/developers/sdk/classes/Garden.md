@@ -43,7 +43,7 @@ new Garden(config: GardenConfig): IGarden
 swap(params: SwapParams): AsyncResult<MatchedOrder, string>
 ```
 
-The `swap` function creates a new order based on the provided parameters. It validates the input, uses the [secretManager](./secretManager.md) to generate a secret and secret hash using a nonce, which is calculated as the user's number of orders plus one, and fetch attested quote from the [quote](./quote.md) module. After these steps, it posts the order to the [orderbook](./orderbook.md) to create a new order.
+The `swap` function creates a new order based on the provided parameters. It validates the input, uses the [secretManager](./SecretManager.md) to generate a secret and secret hash using a nonce, which is calculated as the user's number of orders plus one, and fetch attested quote from the [quote](./Quote.md) module. After these steps, it posts the order to the [orderbook](./Orderbook.md) to create a new order.
 
 This function simplifies the process of creating a swap by handling validation, secret generation, and order creation automatically.
 
