@@ -93,6 +93,11 @@ const sidebars: SidebarsConfig = {
       label: 'Governance process',
       id: 'home/governance/governance-process',
     },
+    {
+      type: 'doc',
+      label: 'Gardener pass',
+      id: 'home/governance/gardener-pass'
+    },
     { type: 'doc', label: 'Snapshot', id: 'home/governance/snapshot' },
     { type: 'doc', label: 'Brand guide', id: 'home/garden-brand-guide' },
   ],

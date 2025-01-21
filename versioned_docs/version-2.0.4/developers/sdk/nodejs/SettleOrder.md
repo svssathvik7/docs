@@ -31,4 +31,4 @@ garden.on('success', (order, action, txHash) => {
 
 For a detailed understanding of the various statuses and how they progress, refer to the [**Order lifecycle**](../../core/OrderLifecycle.md) documentation.
 
-Refer to the [Cookbook](../cookbook/Cookbook.md) or reach out to us.  
+Refer to the [Cookbook](../../cookbook/Cookbook.md) or reach out to us.  
