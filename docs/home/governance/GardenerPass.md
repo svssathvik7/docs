@@ -12,7 +12,7 @@ Initially introduced during the [seasons](https://garden.finance/blog/seasons-in
 * **Enhanced governance power:** Staking 21,000 SEED normally gives you 10 governance votes. However, Garden pass holders receive 70 votes because of the 7x multiplier, offering substantial influence in protocol governance and revenue sharing.
 * **Tradeability:**  As a fully tradable NFT, the pass can be sold or transferred on [marketplaces](https://opensea.io/collection/gardener-pass). Minting a pass requires permanently staking SEED, effectively burning it, which establishes its inherent value.
 
-You can mint the Gardener Pass by staking **21,000 SEED** indefinitely on the staking page.
+You can mint the Gardener Pass by staking **21,000 SEED** indefinitely on the [staking page](../basics/guides/stake/StakeSEED.md).
 
 ## What’s next?
 
