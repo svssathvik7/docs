@@ -52,7 +52,7 @@ curl -X 'GET' \
 
 - `order_pair`: String representation of [OrderPair](../sdk/Enumerations.md#orderpair).
 - `amount`: The amount should be in the smallest unit of the source asset or destination asset depending on the `exact_out` flag.
-- `exact_out`: Whether to fetch the quote for exact output.
+- `exact_out`: Indicates whether the quote should be fetched for an exact output amount. If set to `true`, the quote will calculate the required input amount to achieve the specified output. If set to `false`, the quote will calculate the expected output for a given input amount.
 
 ## Create order
 
@@ -148,7 +148,7 @@ curl -X 'POST' \
 
 ## Order redemption
 
-Poll the order details at regular intervals to check if the filler has initiated the swap. If you see a transaction hash in `order.destination_swap.initiate_tx_hash`, it means the filler has initiated the order, and you can proceed to redeem the order.
+Poll the order details at regular intervals to check if the solver has initiated the swap. If you see a transaction hash in `order.destination_swap.initiate_tx_hash`, it means the filler has initiated the order, and you can proceed to redeem the order.
 
 For Bitcoin, you need to manually redeem the funds by creating a transaction and setting the witness to the secret, which will unlock the funds.
 
