@@ -35,10 +35,10 @@ type Chain = keyof typeof Chains;
 
 ## OrderPair
 
-The `OrderPair` type represents a pair of assets that can be traded on the platform. It is a string that combines the source chain and destination chain with a colon (`:`) separator.
+The `OrderPair` type represents a pair of assets that can be traded on the platform. It is a string that specifies the source chain and source asset, followed by the destination chain and destination asset. The source chain and source asset are separated by a colon (`:`), and the pair is combined with the destination chain and destination asset using a double colon (`::`). Here, the Asset refers to the atomic swap contract address.
 
 ```ts
-type OrderPair = `${Chain}:${Asset}`;
+type OrderPair = `${Chain}:${Asset}::${Chain}:${Asset}`;
 ```
 
 #### Example

@@ -117,7 +117,26 @@ const sidebars: SidebarsConfig = {
         'developers/core/auth',
       ],
     },
-    'developers/api/garden-api',
+    {
+      type: 'category',
+      label: 'API',
+      link: {
+        type: 'doc',
+        id: 'developers/api/api',
+      },
+      items: [
+        {
+          type: 'doc',
+          id: 'developers/api/quickstart',
+          label: 'Quickstart',
+        },
+        {
+          type: 'doc',
+          id: 'developers/api/garden-api',
+          label: 'Garden API',
+        },
+      ],
+    },
     {
       type: 'category',
       label: 'SDK',
