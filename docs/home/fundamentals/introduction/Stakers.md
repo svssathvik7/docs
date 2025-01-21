@@ -8,12 +8,15 @@ Staking serves as the gateway for users to engage with the Garden protocol, supp
 
 ## How does it work?
 
-1. Anyone holding a minimum of **2,100 SEED** tokens is eligible to [stake](https://app.garden.finance/stake/). Staking has to be done in multiples of 2,100 SEED. Stakers deposit **SEED tokens** into the protocol, locking them for a chosen duration. Longer lock periods result in a higher staking multiplier, increasing both votes and potential rewards. Follow [this tutorial](../../basics/guides/stake/StakeSEED.md) for a step-by-step breakdown of staking.
+1. Anyone holding a minimum of **2,100 SEED** tokens is eligible to [stake](https://app.garden.finance/stake/). Staking has to be done in multiples of 2,100 SEED. Stakers deposit **SEED tokens** into the protocol, locking them for a chosen duration. Longer lock periods result in a higher staking multiplier, increasing both votes and potential rewards. Follow [this tutorial](../../basics/guides/stake/StakeSEED.md) for a step-by-step breakdown of staking.  
+For those looking to maximize their staking benefits, staking 21,000 SEED permanently mints the [Gardener pass](../../governance/GardenerPass.md), an exclusive NFT hat unlocks enhanced rewards, governance power, and tradability.
 
 <figure><img src="/assets/staking.png" alt=""/><figcaption></figcaption></figure>
 
 2. Stakers allocate their votes to specific solvers based on performance metrics and projected APY. A solver’s ability to process intents is proportional to the votes they receive.
+
 3. Stakers earn a share of solver fees based on their voting weight. Staking rewards are distributed on a weekly basis in **Bitcoin**. The staking multiplier ensures that longer commitments lead to higher APY, encouraging stability in the protocol.
+
 4. If a solver fails or behaves maliciously, the stakers who voted them face a minor penalty, ensuring accountability and improving solver reliability over time.
 
 ## Why are stakers important?

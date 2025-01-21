@@ -19,7 +19,7 @@
       "description": "Auth, Gasless, Orderbook server"
     },
     {
-      "url":"https://quote.garden.finance",
+      "url": "https://price.garden.finance",
       "description": "Quote server"
     }
   ],
