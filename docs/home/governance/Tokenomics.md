@@ -23,8 +23,8 @@ SEED empowers holders to actively shape the Garden ecosystem:
 * **Community incentives**: 54.4% (80,000,000 SEED) allocated for community growth and engagement through various programs.
 * **Liquidity and partnerships**: 5.5% (8,000,000 SEED) to support liquidity on and establish strategic partnerships.
 * **Grants**: 5.5% (8,000,000 SEED) reserved for both tech and non-tech community grants.
-* **Team**: 15% (22,000,000 SEED) allocated to the Garden team, subject to an 18-month cliff from TGE and subsequent streaming.
-* **Investors**: 19.6% (29,000,000 SEED) allocated to early backers, subject to an 18-month cliff from TGE and subsequent streaming
+* **Team**: 15% (22,000,000 SEED) allocated to the Garden team, subject to a 24-month cliff from TGE and subsequent streaming.
+* **Investors**: 19.6% (29,000,000 SEED) allocated to early backers, subject to a 24-month cliff from TGE and subsequent streaming
 
 ### Emission schedule <a href="#seed-emission-schedule" id="seed-emission-schedule"></a>
 
@@ -39,7 +39,7 @@ The community incentives allocation accounts for **96 million SEED**, designed t
 
 **Team and investor incentives**
 
-The team and investor incentives allocation account for **51 million SEED**. Both investors and the team have an **24-month cliff** starting from TGE (January 18, 2024). Post-cliff, SEED tokens are streamed over a multi-year schedule as outlined below. This predictable and fair distribution model aligns with the protocol’s long-term goals.
+The team and investor incentives allocation account for **51 million SEED**. Both investors and the team have a **24-month cliff** starting from TGE (January 18, 2024). Post-cliff, SEED tokens are streamed over a multi-year schedule as outlined below. This predictable and fair distribution model aligns with the protocol’s long-term goals.
 
 * **Investor incentives** are streamed over a 24-month period following the cliff.
 * **Team incentives** are streamed over a 30-month period following the cliff.
