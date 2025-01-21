@@ -4,25 +4,27 @@ id: quickstart
 
 # Quickstart
 
-:::note  
-Users can authenticate using Garden's `Auth` endpoints or the Garden `Dev Dashboard`.
-:::
+This page is intended to show developers integrating Garden API, which endpoints to use in the different stages of an order. For best understanding, read [intent flow](../../home/fundamentals/how-it-works/IntentFlow.md) and [order lifecycle](../core/OrderLifecycle.md) while you play with the endpoints.
 
-## 1. Authentication
+At a high level, the order lifecycle begins with authentication, proceeds through order creation and initiation, and concludes with redemption and settlement. Below, we describe the APIs and how they map to each stage.
 
-### Nonce
+## Authentication
 
-Fetch a unique singe time challange from `Garden`.
+Authentication is the first step before interacting with the Garden protocol. It involves fetching a unique nonce and verifying the user’s signature.
+
+### Fetch nonce
+
+Use this endpoint to get a unique single-time nonce.
 
 ```bash
 curl -X 'GET' \
-  'https://orderbook.garden.finance/auth/nonce' \
+  'https://orderbook.garden.finance/nonce' \
   -H 'accept: application/json'
 ```
 
-### Verify
+### Verify nonce
 
-Sign the nonce and verify with `Garden` for `authentication`.
+The retrieved nonce should be included in a message formatted according to EIP-4361. The user will sign this message using their wallet. Upon successful verification, an authorization token will be provided in the response.
 
 ```bash
 curl -X 'POST' \
@@ -30,27 +32,35 @@ curl -X 'POST' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
-  "message": "beta.garden.finance wants you to sign in with your Ethereum account:\n0xDda1.........007394611D789EF789a9Aae5CF5\n\nGarden.fi\n\nURI: https://beta.garden.finance\nVersion: 1\nChain ID: 11155111\nNonce: ccecfc7e76a9c1f3d60ed7d7a7f12af7522714ad6e1c3a34980118d0d7866dbb\nIssued At: 2024-12-31T12:07:23.770Z\nNot Before: 2024-12-31T12:12:23.365Z",
-  "signature": "0x966de683f1b41097bf5212a0c98a4f422df76b462a81ef45225a9f13bf83c643054126472d1045537f47e26a1f0a3b166e1c46a6a64255044db502e5975cbc691c",
-  "nonce": "b8bc718d6af38a0d2cac5085c53f617a52e590b0ff4ad2c4abb0825e9cc39079"
-}'
+    "message": "<constructed_message>",
+    "signature": "<user_signature>",
+    "nonce": "<nonce>"
+  }'
 ```
 
-## 2. Order creation and progress
+## Fetch quote
 
-### Quote
-
-Fetch the quote for the choosen [Order Pair](../sdk/Enumerations.md#orderpair) and `amount` with optinal `exact_out`.
+Use this endpoint to fetch pricing for a given `OrderPair` and amount. The response will return an array of objects, where each object contains a `strategy_id` as the key and the corresponding amount as the value. The amount will be in the smallest decimal unit of the source asset or destination asset, depending on the `exact_out` flag. Select a strategy from the response and save the `strategy_id`, as it must be passed in the next steps.
 
 ```bash
 curl -X 'GET' \
-  'https://quote.garden.finance/price?order_pair=ethereum_sepolia%253A0x3C6a17b8cD92976D1D91E491c93c98cd81998265%253A%253Acitrea_testnet%253A0xaD9d14CA82d9BF97fFf745fFC7d48172A1c0969E&exact_out=false&amount=1000000' \
+ 'https://price.garden.finance/price?order_pair=<order_pair>&amount=<amount>&exact_out=<true/false>' \
   -H 'accept: application/json'
 ```
 
-### Create order
+**Parameters:**
 
-Create order with the signature and `Order` details.
+- `order_pair`: String representation of [OrderPair](../sdk/Enumerations.md#orderpair).
+- `amount`: The amount should be in the smallest unit of the source asset or destination asset depending on the `exact_out` flag.
+- `exact_out`: Whether to fetch the quote for exact output.
+
+## Create order
+
+Creating an order involves two steps: attesting the quote and then creating the order.
+
+### Attest quote
+
+First, you need to attest the quote by submitting the `strategy_id` obtained from the previous step along with the complete order details. This step verifies the quote and all other details of the order, confirming the pricing. In response, you'll receive the same object with added `signature`, `deadline`, and asset price fields inside `additional_data`, which you will use in the next step to create the order. The order should be created and initiated within the `deadline` to ensure the quote remains valid.
 
 ```bash
 curl -X 'POST' \
@@ -58,75 +68,100 @@ curl -X 'POST' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
-  "source_chain": "ethereum_sepolia",
-  "destination_chain": "citrea_testnet",
-  "source_asset": "0x3C6a17b8cD92976D1D91E491c93c98cd81998265",
-  "destination_asset": "0xaD9d14CA82d9BF97fFf745fFC7d48172A1c0969E",
-  "initiator_source_address": "0x5A4b7eD8c2a1F1e34C8e9...6A3C5D2B1f8E7A9C",
-  "initiator_destination_address": "0x5A4b7eD8c2a1F1e34C8e9...6A3C5D2B1f8E7A9C",
-  "source_amount": "1000000",
-  "destination_amount": "9970000000000000",
-  "fee": "1",
-  "nonce": "5",
-  "min_destination_confirmations": 0,
-  "timelock": 7200,
-  "secret_hash": "c1f286d511fc428a82...e5920f7ff812091cfbee3a5484a087682839",
+  "source_chain": "<source_chain>",
+  "destination_chain": "<destination_chain>",
+  "source_asset": "<source_asset>",
+  "destination_asset": "<destination_asset>",
+  "initiator_source_address": "<initiator_source_address>",
+  "initiator_destination_address": "<initiator_destination_address>",
+  "source_amount": "<source_amount>",
+  "destination_amount": "<destination_amount>",
+  "fee": "<fee>",
+  "nonce": "<nonce>",
+  "min_destination_confirmations": "<min_destination_confirmations>",
+  "timelock": "<timelock>",
+  "secret_hash": "<secret_hash>",
   "additional_data": {
-    "strategy_id": "ea56cte9",
-    "input_token_price": 95339.72353861976,
-    "output_token_price": 95339.72353861976,
-    "deadline": 1735801988,
-    "bitcoin_optional_recipient": "1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa",
-    "sig": "939c73a014b9a016cbe...7adce0bc76f170a2deaafa1304f572b808341edcd93058b7b60af994b780a12f24dac0c905615d00d8059b6e6326446cc9d61c",
-    "instant_refund_tx_bytes": null
+    "strategy_id": "<strategy_id>",
+    "bitcoin_optional_recipient": "<user_bitcoin_address>",
   }
 }'
 ```
 
-### Initiate order
+**Parameters:**
 
-Initiates swap with `signature`.
+- `bitcoin_optional_recipient`(optional): The user's Bitcoin address, to be provided if either the source or destination asset is Bitcoin.
+- `timelock`: The timelock value should be provided in the source chain's block numbers, calculated based on the block time for a 24-hour period.
+- `nonce`: The nonce is a unique identifier used to manage secrets. To generate a secret, we sign this nonce with the user's wallet. While the nonce can technically be any random string, in Garden we use it as the total number of orders placed so far, plus one. You can find the number of orders by checking the [`/user/count`](./GardenAPI.md) endpoint.
+
+### Create order
+
+After attesting the quote, send the response from the attested quote to this endpoint to create the order. This will return the order ID, which you will use in the next step to initiate the order or retrieve the order details.
 
 ```bash
 curl -X 'POST' \
-  'https://orderbook.garden.finance/gasless/order/initiate' \
+  'https://orderbook.garden.finance/gasless/create-order' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer <authorization_token>' \
+  -d '{
+  ...response_from_attest_quote
+  }'
+```
+
+The order is considered successfully created and matched if you receive a valid order object response from the [`getOrder`](#get-order) endpoint.
+
+## Get order
+
+Retrieve the order details using the order ID.
+
+```bash
+curl -X 'GET' \
+  'https://orderbook.garden.finance/orders/id/matched/<order_id>' \
+  -H 'accept: application/json'
+```
+
+## Initiate order
+
+For Bitcoin initiation, the user must send the exact amount of funds to the `order.source_swap.swap_id` address.
+
+For EVM-based initiation, you can either directly interact with the contract to transfer the funds or use Garden's relay service to facilitate the transaction.
+
+To initiate the order using the relay service, the user must sign a message following the EIP-712 standard. The message must include the following details:
+
+- `redeemer`: `order.source_swap.redeemer` – The address of the party who will redeem.
+- `timelock`: `order.create_order.timelock`
+- `amount`: `order.source_swap.amount` – The amount to be swapped.
+- `secretHash`: `order.create_order.secret_hash` (without `0x` prefix) – The hash of the secret used in the swap.
+
+```bash
+curl -X 'POST' \
+  'https://orderbook.garden.finance/gasless/initiate' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
-  "order_id": "ee0397d...5aed66ffb0a0ede00e86d0446d468e681cf0b6166fcc413dafe",
-  "signature": "0xe71e...22220bb369c7db189d749b6d34d4b444f863b6bafa1ab107b07031e465b652e2959b73de0ea1700d2414734dea44a04eb20b8bf85c178604b6b461b",
+  "order_id": "<order_id>",
+  "signature": "<signature>",
   "perform_on": "Source"
 }'
 ```
 
-## 3. Order redemption
+## Order redemption
 
-### Poll order status
+Poll the order details at regular intervals to check if the filler has initiated the swap. If you see a transaction hash in `order.destination_swap.initiate_tx_hash`, it means the filler has initiated the order, and you can proceed to redeem the order.
 
-:::note  
-`Garden` by default polls the order status for every `10 seconds`.
-:::
+For Bitcoin, you need to manually redeem the funds by creating a transaction and setting the witness to the secret, which will unlock the funds.
 
-Poll for order status at regular intervals to check whether the `Orderbook` has picked up the order.
-
-```bash
-curl -X 'GET' \
-  'https://orderbook.garden.finance/orders/id/dab9648aef33aacbb4324a3874f78f2fa2faaea6ac714fba7028776fc6c96c41/matched' \
-  -H 'accept: application/json'
-```
-
-### Settle order
-
-Upon order match, settle the order by `redeeming` the funds.
+For EVM chains, you can either redeem directly through the contract or use our relay service. If using the relay service, simply submit the secret, and our relayer will handle the redemption process for you.
 
 ```bash
 curl -X 'POST' \
-  'https://orderbook.garden.finance/gasless/order/settlement' \
+  'https://orderbook.garden.finance/gasless/redeem' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
-  "order_id": "dab96...cbb4324a3874f78f2fa2faaea6ac714fba7028776fc6c96c41",
-  "secret": "6c5185...68d080073867cf0235f2639162e676a0f099d62236f1a9a22dad",
+  "order_id": "<order_id>",
+  "secret": "<secret>",
   "perform_on": "Destination"
 }'
 ```
