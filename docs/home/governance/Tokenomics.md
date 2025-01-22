@@ -44,7 +44,7 @@ The team and investor incentives allocation account for **51 million SEED**. Bot
 * **Investor incentives** are streamed over a 24-month period following the cliff.
 * **Team incentives** are streamed over a 30-month period following the cliff.
 
-<figure><img src="/assets/incentives.png" alt=""/><figcaption></figcaption></figure>
+<figure><img src="/assets/emission.png" alt=""/><figcaption></figcaption></figure>
 
 | Category  | TGE | Year 1 | Year 2 | Year 3 | Year 4 | Year 5 | Total |
 | --------- | --- | ------ | ------ | ------ | ------ | ------ | ----- |
