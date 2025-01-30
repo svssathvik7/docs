@@ -1,5 +1,5 @@
 ---
-id: btc-to-any
+id: non-btc-to-non-btc
 ---
 
 # How to bridge between non-Bitcoin assets

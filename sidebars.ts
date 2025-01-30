@@ -87,6 +87,7 @@ const sidebars: SidebarsConfig = {
           items: [
             "home/basics/guides/swap/act2/btc-to-any",
             "home/basics/guides/swap/act2/any-to-btc",
+            "home/basics/guides/swap/act2/non-btc-to-non-btc",
           ],
         },
       ],
