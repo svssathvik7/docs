@@ -8,23 +8,21 @@ Bridge Bitcoin to any asset on Garden by following these steps.
 
 1. Open Garden's swap interface and connect both your **EVM wallet** and **Bitcoin wallet**.
 
-[we will have a image here]("../../../../../../images/fail_s1.png")
+   ![step 1](../../../../images/swap/btc-to-any-1.png)
 
-2. Choose **Bitcoin (BTC)** as the **Send** asset and your desired asset and chain in **Receive** (e.g., cbBTC on Base).
+2) Choose **Bitcoin (BTC)** as the **Send** asset and your desired asset and chain in **Receive** (e.g., cbBTC on Base).
 
-3. Input the amount you wish to send or receive and hit the **Swap** button.
+3) Input the amount you wish to send or receive and hit the **Swap** button.
 
-[we will have a image here]("../../../../../../images/fail_s1.png")
+   ![step 3](../../../../images/swap/btc-to-any-2.png)
 
 4. You’ll first be prompted to approve the transaction in your EVM wallet, then in your Bitcoin wallet to approve and send the Bitcoin.
 
-[we will have a image here]("../../../../../../images/fail_s1.png")
-[we will have a image here]("../../../../../../images/fail_s1.png")
-[we will have a image here]("../../../../../../images/fail_s1.png")
+![step 4](../../../../images/swap/btc-to-any-3.png)
 
 5. Keep the browser open while the swap is in progress. You’ll receive a notification once it’s successful.
 
-[we will have a image here]("../../../../../../images/fail_s1.png")
+![step 5](../../../../images/swap/btc-to-any-4.png)
 
 For subsequent swaps during an app session, you only need to sign once from the **Send** wallet.
 
