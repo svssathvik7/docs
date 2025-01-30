@@ -82,7 +82,7 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: "category",
-          label: "Act 2(beta)",
+          label: "Act 2",
           link: { type: "doc", id: "home/basics/guides/swap/beta-act-2-swap" },
           items: [
             "home/basics/guides/swap/act2/btc-to-any",

@@ -2,7 +2,7 @@
 id: any-to-btc
 ---
 
-# Bridge any asset to Bitcoin
+# Swap any asset to Bitcoin
 
 Bridge any of your assets to Bitcoin on Garden by following these steps.
 

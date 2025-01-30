@@ -2,7 +2,7 @@
 id: non-btc-to-non-btc
 ---
 
-# Bridge between non-Bitcoin assets
+# Swap between non-Bitcoin assets
 
 You can easily swap non-Bitcoin assets on Garden by following these steps.
 
