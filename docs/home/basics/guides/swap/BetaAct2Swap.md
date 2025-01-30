@@ -4,9 +4,9 @@ id: beta-act-2-swap
 
 import DocCardList from '@theme/DocCardList';
 
-# Beta Act2 Swap
+# Act 2
 
-Act-2 Swap Description
+Act 2 introduces an upgraded swapping experience with reduced swap times, one-click swaps, improved UI, and support for more chains and assets. This guide covers the following swap pairs:
 
 <DocCardList
 items={

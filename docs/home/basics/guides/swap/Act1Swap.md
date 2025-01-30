@@ -4,9 +4,9 @@ id: act-1-swap
 
 import DocCardList from '@theme/DocCardList';
 
-# Act1 Swap
+# Act 1
 
-Act-1 Swap Description
+The Act 1 guide provides a step-by-step walkthrough for swapping Bitcoin to EVM and vice versa. By the end of this guide, you will understand how to swap on Garden. This guide covers the following swap pairs:
 
 <DocCardList
 items={[
