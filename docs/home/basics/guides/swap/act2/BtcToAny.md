@@ -2,7 +2,7 @@
 id: btc-to-any
 ---
 
-# How to bridge Bitcoin to any asset
+# Bridge Bitcoin to any asset
 
 Bridge Bitcoin to any asset on Garden by following these steps.
 
