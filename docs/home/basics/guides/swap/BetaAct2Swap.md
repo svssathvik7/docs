@@ -26,7 +26,7 @@ docId: "home/basics/guides/swap/act2/any-to-btc",
 {
 type: "link",
 href: "./act2/non-btc-to-non-btc",
-label: "Non BTC assets to Non BTC assets",
+label: "non-BTC assets",
 docId: "home/basics/guides/swap/act2/non-btc-to-non-btc",
 }
 ]
