@@ -3,7 +3,7 @@ name: Docs build and versioning
 on:
   push:
     branches:
-      - feat/ci-pipeline
+      - main
 
 env:
   ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
@@ -110,5 +110,5 @@ jobs:
 
             **Branch:** ${{ github.ref_name }}
             **Commit:** ${{ github.sha }}
-          color: "#e36492"
+          colour: "#e36492"
           username: Garden docs
