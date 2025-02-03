@@ -21,6 +21,7 @@ jobs:
           node-version: 'lts/*'
 
   install:
+    needs: setup-environment
     runs-on: ubuntu-latest
     steps:
       - name: Setup yarn
@@ -31,12 +32,14 @@ jobs:
         run: yarn install
 
   build:
+    needs: install
     runs-on: ubuntu-latest
     steps:
       - name: Build Project
         run: yarn build
 
   versioning-docs:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Get Latest Version
@@ -66,8 +69,8 @@ jobs:
 
       - name: Commit and Push Changes
         run: |
-          git config --global user.name 'GitHub Actions Bot'
-          git config --global user.email 'actions@github.com'
+          git config --global user.name "${{ github.event.pusher.name }}"
+          git config --global user.email "${{ github.event.pusher.email }}"
           git add versioned_docs/
           git commit -m "docs: Add new version ${{ steps.get-version.outputs.new_version }}"
           git push
