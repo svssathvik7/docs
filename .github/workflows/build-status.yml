@@ -96,3 +96,19 @@ jobs:
           git add versioned_docs/
           git commit -m "docs: Add new version ${{ steps.get-version.outputs.new_version }}"
           git push
+  notify:
+    needs: versioning-docs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Discord Notification (Stegzilla)
+        uses: stegzilla/discord-notify@v2
+        with:
+          webhook_url: ${{ secrets.DISCORD_WEBHOOK }}
+          title: "Docs v2 upgrade"
+          message: |
+            New pushes to main
+
+            **Branch:** ${{ github.ref_name }}
+            **Commit:** ${{ github.sha }}
+          color: "#e36492"
+          username: Garden docs
