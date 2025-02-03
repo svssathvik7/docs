@@ -1,4 +1,4 @@
-name: Docs Versioning
+name: Docs build and versioning
 
 on:
   push:
@@ -24,17 +24,35 @@ jobs:
     needs: setup-environment
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Node.js Environment Setup
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
       - name: Setup yarn
         run: |
           corepack enable
           yarn set version stable
       - name: Install Dependencies
-        run: yarn install
+        run: yarn install --immutable
 
   build:
     needs: install
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Node.js Environment Setup
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+      - name: Setup yarn
+        run: |
+          corepack enable
+          yarn set version stable
+      - name: Install Dependencies
+        run: yarn install --immutable
       - name: Build Project
         run: yarn build
 
@@ -42,6 +60,20 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Node.js Environment Setup
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+      - name: Setup yarn
+        run: |
+          corepack enable
+          yarn set version stable
+      - name: Install Dependencies
+        run: yarn install --immutable
+      - name: Build Project
+        run: yarn build
       - name: Get Latest Version
         id: get-version
         run: |
