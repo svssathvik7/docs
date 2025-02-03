@@ -3,10 +3,10 @@ name: Docs Versioning
 on:
   push:
     branches:
-      - test
+      - feat/ci-pipeline
 
 jobs:
-  version-docs:
+  setup-environment:
     runs-on: ubuntu-latest
 
     env:
@@ -23,6 +23,7 @@ jobs:
         with:
           node-version: 'lts/*'
 
+    install:
       - name: Setup yarn
         run: |
           corepack enable
@@ -31,9 +32,11 @@ jobs:
       - name: Install Dependencies
         run: yarn install
 
+    build:
       - name: Build Project
         run: yarn build
 
+    versioning-docs:
       - name: Get Latest Version
         id: get-version
         run: |
