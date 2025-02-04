@@ -3,7 +3,7 @@ name: Docs build and versioning
 on:
   push:
     branches:
-      - main
+      - feat/ci-pipeline
 
 env:
   ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
@@ -64,7 +64,7 @@ jobs:
         run: yarn install --immutable
       - name: Build Project
         run: yarn build
-      - name: Get Latest Version
+      - name: Get latest version
         id: get-version
         run: |
           if [ -d "versioned_docs" ]; then
@@ -88,14 +88,28 @@ jobs:
           mkdir -p "versioned_docs/$NEW_VERSION"
           cp -r build/home "versioned_docs/$NEW_VERSION/"
           cp -r build/developers "versioned_docs/$NEW_VERSION/"
-
+  
+      - name: Update versions.json
+        run: |
+          NEW_VERSION="${{ steps.get-version.outputs.new_version }}"
+          NEW_VERSION_NUMBER="${NEW_VERSION#version-}"
+          if [ -f "versions.json" ]; then
+            # Read existing versions and add new version at the beginning
+            VERSIONS=$(cat versions.json | jq ". |= [\"$NEW_VERSION_NUMBER\"] + .")
+            echo "$VERSIONS" > versions.json
+          else
+            # Create new versions.json if it doesn't exist
+            echo "[\"$NEW_VERSION_NUMBER\"]" > versions.json
+          fi
+  
       - name: Commit and Push Changes
         run: |
           git config --global user.name "${{ github.event.pusher.name }}"
           git config --global user.email "${{ github.event.pusher.email }}"
-          git add versioned_docs/
+          git add versioned_docs/ versions.json
           git commit -m "docs: Add new version ${{ steps.get-version.outputs.new_version }}"
           git push
+
   notify:
     needs: versioning-docs
     runs-on: ubuntu-latest
