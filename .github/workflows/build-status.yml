@@ -16,16 +16,27 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+
       - name: Node.js Environment Setup
         uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
-      - name: Setup yarn
+
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            .yarn/cache
+            node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Setup yarn and install
         run: |
           corepack enable
           yarn set version stable
-      - name: Install Dependencies
-        run: yarn install --immutable
+          yarn install --immutable
 
   build:
     needs: install
@@ -33,18 +44,27 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+
       - name: Node.js Environment Setup
         uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
-      - name: Setup yarn
-        run: |
-          corepack enable
-          yarn set version stable
-      - name: Install Dependencies
-        run: yarn install --immutable
+
+      - name: Restore cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            .yarn/cache
+            node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+
       - name: Build Project
         run: yarn build
+      - name: Cache build
+        uses: actions/cache@v3
+        with:
+          path: build
+          key: ${{ runner.os }}-build-${{ github.sha }}
 
   versioning-docs:
     needs: build
@@ -52,18 +72,12 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-      - name: Node.js Environment Setup
-        uses: actions/setup-node@v4
+      - name: Restore build
+        uses: actions/cache@v3
         with:
-          node-version: 'lts/*'
-      - name: Setup yarn
-        run: |
-          corepack enable
-          yarn set version stable
-      - name: Install Dependencies
-        run: yarn install --immutable
-      - name: Build Project
-        run: yarn build
+          path: build
+          key: ${{ runner.os }}-build-${{ github.sha }}
+
       - name: Get latest version
         id: get-version
         run: |
@@ -80,35 +94,35 @@ jobs:
             mkdir -p versioned_docs
             NEW_VERSION="version-2.0.1"
           fi
-          echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
+          echo "new_version=$NEW_VERSION" >> $GITHUB_ENV
 
       - name: Copy Docs to Versioned Directory
         run: |
-          NEW_VERSION=${{ steps.get-version.outputs.new_version }}
           mkdir -p "versioned_docs/$NEW_VERSION"
           cp -r build/home "versioned_docs/$NEW_VERSION/"
           cp -r build/developers "versioned_docs/$NEW_VERSION/"
-  
+
       - name: Update versions.json
         run: |
-          NEW_VERSION="${{ steps.get-version.outputs.new_version }}"
           NEW_VERSION_NUMBER="${NEW_VERSION#version-}"
           if [ -f "versions.json" ]; then
-            # Read existing versions and add new version at the beginning
             VERSIONS=$(cat versions.json | jq ". |= [\"$NEW_VERSION_NUMBER\"] + .")
             echo "$VERSIONS" > versions.json
           else
-            # Create new versions.json if it doesn't exist
             echo "[\"$NEW_VERSION_NUMBER\"]" > versions.json
           fi
-  
+
       - name: Commit and Push Changes
         run: |
-          git config --global user.name "${{ github.event.pusher.name }}"
-          git config --global user.email "${{ github.event.pusher.email }}"
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
           git add versioned_docs/ versions.json
-          git commit -m "docs: Add new version ${{ steps.get-version.outputs.new_version }}"
-          git push
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "docs: Add new version $NEW_VERSION"
+            git push
+          fi
 
   notify:
     needs: versioning-docs
@@ -120,10 +134,10 @@ jobs:
           webhook_url: ${{ secrets.DISCORD_WEBHOOK }}
           title: "Docs v2 upgrade"
           message: |
-            New pushes to main
+            New push detected to feat/ci-pipeline
 
             **Branch:** ${{ github.ref_name }}
             **Commit:** ${{ github.sha }}
-            **Author:** ${{ github.event.pusher.name }}
+            **Author:** ${{ github.actor }}
           colour: "#e36492"
           username: Garden docs
