@@ -3,7 +3,7 @@ name: Build Status
 on: 
   push:
     branches:
-      - main
+      - update/ci-pipeline
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -34,10 +34,11 @@ jobs:
         id: version
         run: |
           LATEST_VERSION=$(ls versioned_docs | grep -E "version-2\.0\.[0-9]+" | sort -V | tail -n 1 || echo "version-2.0.0")
-          CURRENT_NUMBER=$(echo $LATEST_VERSION | grep -oE "[0-9]+$")
+          CURRENT_NUMBER=$(echo $LATEST_VERSION | grep -oE "2\.0\.[0-9]+" | cut -d. -f3)
           NEW_NUMBER=$((CURRENT_NUMBER + 1))
-          NEW_VERSION="2.0.$NEW_NUMBER"
+          NEW_VERSION="version-2.0.$NEW_NUMBER"
           echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
+      
 
       - name: Create New Version
         run: yarn docusaurus docs:version ${{ steps.version.outputs.new_version }}
